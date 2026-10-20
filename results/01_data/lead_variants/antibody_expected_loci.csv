@@ -1,0 +1,9 @@
+"trait","locus","expected_snp","expected_chr","expected_bp_1kg","is_lead","nearest_lead","nearest_lead_bp","nearest_lead_log10p","n_leads_within_500kb"
+"jcv_vp1_log_all","FUT2","rs681343",19,49206462,TRUE,"rs681343",49206462,15.9555,1
+"jcv_vp1_log_all","FUT2","rs676388",19,49211969,FALSE,"rs681343",49206462,15.9555,1
+"jcv_vp1_log_all","HLA","rs9271055",6,32575369,TRUE,"rs9271055",32575369,55.2061,2
+"jcv_vp1_log_all","HLA","rs3130287",6,32050544,FALSE,,,,0
+"mcv_vp1_log_all","FUT2","rs681343",19,49206462,FALSE,,,,0
+"mcv_vp1_log_all","FUT2","rs676388",19,49211969,FALSE,,,,0
+"mcv_vp1_log_all","HLA","rs9271055",6,32575369,TRUE,"rs9271055",32575369,33.4506,1
+"mcv_vp1_log_all","HLA","rs3130287",6,32050544,FALSE,,,,0

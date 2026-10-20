@@ -1,0 +1,11 @@
+"sample","stage","n_participants"
+"log_hba1c","keep",463840
+"log_hba1c","non_missing_log_hba1c",463840
+"log_hba1c","complete_covariates",463840
+"log_hba1c","in_bgen_sample",441144
+"hba1c_nodiab","keep",440390
+"hba1c_nodiab","non_missing_hba1c",440390
+"hba1c_nodiab","complete_covariates",440390
+"hba1c_nodiab","in_bgen_sample",420416
+"log_hba1c","diabetes_cases",20728
+"log_hba1c","diabetes_controls",420416

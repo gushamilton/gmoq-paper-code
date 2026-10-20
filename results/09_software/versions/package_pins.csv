@@ -1,0 +1,4 @@
+"role","commit","short","version","lib","pin_json_commit","pin_json_matches","install_job","note"
+"stage1","9c47e7ba56370e708810fff8c2c9ad3b723cbccf","9c47e7b",,"/user/work/fh6520/G-MoQ-validation-9c47e7b",,,,"Stage 1 quantile regressions (RIF-OLS) for every GWAS in the paper"
+"stage2 (current pin)","9fee67d1e510b81368d33b5b0ee223792bc6a3bd","9fee67d","0.5.0","/user/work/fh6520/gmoq-paper-v1/Rlib/stage2-9fee67d",,,,"gmoq: Stage 2 projections, mixture models and lack-of-fit tests"
+"stage2 history (759b5b3)","759b5b3a0698a5fb0ab29a5fca554079aeb87f69","759b5b3","0.4.0","/user/work/fh6520/gmoq-paper-v1/Rlib/stage2-759b5b3",,,,"gmoq, earlier release: model-profile angles, BMI polygenic-score interactions and the weight-design simulation; default output identical to the current release"

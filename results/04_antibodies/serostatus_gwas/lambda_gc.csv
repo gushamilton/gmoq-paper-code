@@ -1,0 +1,5 @@
+"trait","analysis","n_snps","lambda_gc","n_gws","n_p_lt_1e5","n_median","n_cases","n_controls"
+"jcv_vp1_log_all","seropositivity",1204907,1.02114891952458,94,169,9145,5223,3922
+"jcv_vp1_log_all","seropositive_igg",1204594,0.998450729815383,24,64,5223,,
+"mcv_vp1_log_all","seropositivity",1204907,1.01873372588825,75,181,9145,6070,3075
+"mcv_vp1_log_all","seropositive_igg",1204689,1.01537042303856,28,99,6070,,

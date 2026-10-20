@@ -1,0 +1,37 @@
+"workload","method","n","m","metric","mean_value","count"
+"n2000_m1","ordinary_rif_ols",2000,1,"fit + SE seconds",0.00234020408242941,3
+"n2000_m1","ordinary_rif_ols",2000,1,"whole-process seconds",0.48,3
+"n2000_m1","ordinary_rif_ols",2000,1,"peak RSS MiB",33.7486979166667,3
+"n2000_m1","gmoq",2000,1,"fit + SE seconds",0.00176635943353176,3
+"n2000_m1","gmoq",2000,1,"whole-process seconds",0.42,3
+"n2000_m1","gmoq",2000,1,"peak RSS MiB",31.5494791666667,3
+"n2000_m1","gmoq_jackknife",2000,1,"fit + SE seconds",0.0138727606584628,3
+"n2000_m1","gmoq_jackknife",2000,1,"whole-process seconds",0.513333333333333,3
+"n2000_m1","gmoq_jackknife",2000,1,"peak RSS MiB",38.5533854166667,3
+"n2000_m256","ordinary_rif_ols",2000,256,"fit + SE seconds",0.215794205044707,3
+"n2000_m256","ordinary_rif_ols",2000,256,"whole-process seconds",0.943333333333333,3
+"n2000_m256","ordinary_rif_ols",2000,256,"peak RSS MiB",41.1041666666667,3
+"n2000_m256","gmoq",2000,256,"fit + SE seconds",0.0175559741134445,3
+"n2000_m256","gmoq",2000,256,"whole-process seconds",0.276666666666667,3
+"n2000_m256","gmoq",2000,256,"peak RSS MiB",40.6263020833333,3
+"n2000_m256","gmoq_jackknife",2000,256,"fit + SE seconds",0.286670399519304,3
+"n2000_m256","gmoq_jackknife",2000,256,"whole-process seconds",1.12,3
+"n2000_m256","gmoq_jackknife",2000,256,"peak RSS MiB",54.421875,3
+"n400000_m1","ordinary_rif_ols",4e+05,1,"fit + SE seconds",0.535470440983772,3
+"n400000_m1","ordinary_rif_ols",4e+05,1,"whole-process seconds",1.28333333333333,3
+"n400000_m1","ordinary_rif_ols",4e+05,1,"peak RSS MiB",469.048177083333,3
+"n400000_m1","gmoq",4e+05,1,"fit + SE seconds",0.247634213107328,3
+"n400000_m1","gmoq",4e+05,1,"whole-process seconds",2.01333333333333,3
+"n400000_m1","gmoq",4e+05,1,"peak RSS MiB",462.736979166667,3
+"n400000_m1","gmoq_jackknife",4e+05,1,"fit + SE seconds",0.414123337405423,3
+"n400000_m1","gmoq_jackknife",4e+05,1,"whole-process seconds",1.17,3
+"n400000_m1","gmoq_jackknife",4e+05,1,"peak RSS MiB",498.998697916667,3
+"n400000_m1000","ordinary_rif_ols",4e+05,1000,"fit + SE seconds",371.026758457224,3
+"n400000_m1000","ordinary_rif_ols",4e+05,1000,"whole-process seconds",387.243333333333,3
+"n400000_m1000","ordinary_rif_ols",4e+05,1000,"peak RSS MiB",3617.34375,3
+"n400000_m1000","gmoq",4e+05,1000,"fit + SE seconds",15.4496783114349,3
+"n400000_m1000","gmoq",4e+05,1000,"whole-process seconds",29.76,3
+"n400000_m1000","gmoq",4e+05,1000,"peak RSS MiB",6424.93619791667,3
+"n400000_m1000","gmoq_jackknife",4e+05,1000,"fit + SE seconds",11.6269525988027,3
+"n400000_m1000","gmoq_jackknife",4e+05,1000,"whole-process seconds",27.57,3
+"n400000_m1000","gmoq_jackknife",4e+05,1000,"peak RSS MiB",6636.70442708333,3

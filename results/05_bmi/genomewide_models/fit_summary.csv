@@ -1,0 +1,5 @@
+"model","scale","cohort","params","n_chr","n_snps","n_samples","k","stage2_commit","stage2_seconds_total","lambda_gc_additive","n_gws_additive","lambda_gc_multiplicative_c0","n_gws_multiplicative_c0","lambda_gc_multiplicative","n_gws_multiplicative","lambda_gc_joint","n_gws_joint","lambda_gc_meanlog","n_gws_meanlog","lambda_gc_sdlog","n_gws_sdlog"
+"additive","log","log_bmi","additive",22,1200240,461320,1,"9fee67d1e510b81368d33b5b0ee223792bc6a3bd",128.003,2.47879438708339,14810,,,,,,,,,,
+"log_additive","log","log_bmi","multiplicative_c0",22,1200240,461320,1,"9fee67d1e510b81368d33b5b0ee223792bc6a3bd",122.413,,,2.49319749729514,15063,,,,,,,,
+"both","log","log_bmi","additive,multiplicative",22,1200240,461320,2,"9fee67d1e510b81368d33b5b0ee223792bc6a3bd",125.915,1.11353524922438,133,,,1.40815400992026,963,1.7210456352057,13024,,,,
+"logscale_vqtl","log","log_bmi","meanlog,sdlog",22,1200240,461320,2,"9fee67d1e510b81368d33b5b0ee223792bc6a3bd",124.907,,,,,,,1.71910604688145,13002,2.4805198480595,14857,1.11098194904701,128

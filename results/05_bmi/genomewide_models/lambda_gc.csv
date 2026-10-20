@@ -1,0 +1,9 @@
+"model","test","lambda_gc","n_snps","n_gws","df"
+"additive","additive",2.47879438708339,1200240,14810,1
+"log_additive","multiplicative_c0",2.49319749729514,1200240,15063,1
+"both","additive",1.11353524922438,1200240,133,1
+"both","multiplicative",1.40815400992026,1200240,963,1
+"both","joint",1.7210456352057,1200240,13024,2
+"logscale_vqtl","meanlog",2.4805198480595,1200240,14857,1
+"logscale_vqtl","sdlog",1.11098194904701,1200240,128,1
+"logscale_vqtl","joint",1.71910604688145,1200240,13002,2

@@ -1,0 +1,10 @@
+"baseline","param","max_rel_diff_analytic_vs_density_ratio","pass"
+"lognormal","additive",7.07747749295606e-09,TRUE
+"lognormal","log_additive",1.81610475200419e-10,TRUE
+"lognormal","sigma2",5.1616834506717e-10,TRUE
+"shifted_lognormal_qfit","additive",5.33930077928346e-09,TRUE
+"shifted_lognormal_qfit","log_additive",1.72671577947443e-10,TRUE
+"shifted_lognormal_qfit","sigma2",1.20526178347759e-10,TRUE
+"shifted_lognormal_ml","additive",1.43016345433011e-08,TRUE
+"shifted_lognormal_ml","log_additive",5.29603860814837e-10,TRUE
+"shifted_lognormal_ml","sigma2",8.89205484307267e-11,TRUE

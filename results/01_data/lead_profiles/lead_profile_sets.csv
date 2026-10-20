@@ -1,0 +1,51 @@
+"lead_set","trait","stage1_source","n_requested","n_found","n_missing","missing_ids","n_duplicate_dropped","n_flipped","alignment","n_own_sign_disagree","min_abs_z","median_d_resid"
+"bmi_A_regenie","bmi","bmi",639,639,0,"",0,328,"own delta_mu > 0",0,4.34750610659199,199268.42
+"log_bmi_A_regenie","log_bmi","log_bmi",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,4.1944510391691,199268.092
+"weight_A_regenie","weight","weight",701,701,0,"",0,367,"own delta_mu > 0",0,4.99238798726214,200164.571
+"testosterone_A_regenie","testosterone","testosterone",5,5,0,"",0,3,"own delta_mu > 0",0,4.31960977496211,95984.5077
+"testosterone_shrink_0_2_A_regenie","testosterone_shrink_0_2","testosterone_shrink_0_2",5,5,0,"",0,3,"own delta_mu > 0",0,5.59667610050235,95984.5059
+"testosterone_shrink_0_5_A_regenie","testosterone_shrink_0_5","testosterone_shrink_0_5",10,10,0,"",0,5,"own delta_mu > 0",0,5.45367004257513,147450.835
+"testosterone_shrink_0_7_A_regenie","testosterone_shrink_0_7","testosterone_shrink_0_7",31,31,0,"",0,17,"own delta_mu > 0",0,5.52315632054022,148292.395
+"jcv_vp1_log_all_A_regenie","jcv_vp1_log_all","jcv_vp1_log_all",3,3,0,"",0,3,"own delta_mu > 0",0,7.42439753263755,4125.6809
+"mcv_vp1_log_all_A_regenie","mcv_vp1_log_all","mcv_vp1_log_all",4,4,0,"",0,3,"own delta_mu > 0",0,5.98160344021867,2950.631955
+"albumin_A_deltamu","albumin","albumin",317,317,0,"",0,171,"own delta_mu > 0",0,5.45318896125183,161036.62
+"fev1_fvc_ratio_A_deltamu","fev1_fvc_ratio","fev1_fvc_ratio",421,421,0,"",0,203,"own delta_mu > 0",0,5.46524593093572,141862.952
+"hba1c_nodiab_A_deltamu","hba1c_nodiab","hba1c_nodiab",533,533,0,"",0,269,"own delta_mu > 0",0,5.45466395078674,166548.939
+"height_A_deltamu","height","height",1931,1931,0,"",0,966,"own delta_mu > 0",0,5.45333211110469,186197.318
+"ldl_A_deltamu","ldl","ldl",230,230,0,"",0,118,"own delta_mu > 0",0,5.4554942341242,167123.41
+"log_alt_A_deltamu","log_alt","log_alt",316,316,0,"",0,147,"own delta_mu > 0",0,5.45132282573902,180863.9765
+"log_bilirubin_total_A_deltamu","log_bilirubin_total","log_bilirubin_total",183,183,0,"",0,92,"own delta_mu > 0",0,5.45999208039148,161997.118
+"log_calcium_A_deltamu","log_calcium","log_calcium",291,291,0,"",0,130,"own delta_mu > 0",0,5.45229303849709,167488.68
+"log_crp_A_deltamu","log_crp","log_crp",389,389,0,"",0,201,"own delta_mu > 0",0,5.46450162284076,188421.373
+"log_ggt_A_deltamu","log_ggt","log_ggt",454,454,0,"",0,249,"own delta_mu > 0",0,5.4552012171246,175096.4915
+"log_hba1c_A_deltamu","log_hba1c","log_hba1c",472,472,0,"",0,236,"own delta_mu > 0",0,5.4596137413764,172946.597
+"log_hdl_A_deltamu","log_hdl","log_hdl",452,452,0,"",0,232,"own delta_mu > 0",0,5.45143236124684,162572.6115
+"log_igf1_A_deltamu","log_igf1","log_igf1",644,644,0,"",0,319,"own delta_mu > 0",0,5.45525541691584,182409.8235
+"log_lipoprotein_a_A_deltamu","log_lipoprotein_a","log_lipoprotein_a",35,35,0,"",0,12,"own delta_mu > 0",0,5.63653331738044,78699.163
+"log_total_protein_A_deltamu","log_total_protein","log_total_protein",420,420,0,"",0,201,"own delta_mu > 0",0,5.45265608103152,166686.632
+"log_triglycerides_A_deltamu","log_triglycerides","log_triglycerides",450,450,0,"",0,211,"own delta_mu > 0",0,5.45221343455502,174753.6695
+"log_urate_A_deltamu","log_urate","log_urate",396,396,0,"",0,193,"own delta_mu > 0",0,5.45460320393434,178379.8425
+"mch_A_deltamu","mch","mch",583,583,0,"",0,297,"own delta_mu > 0",0,5.45593225469924,178526.54
+"monocyte_pct_A_deltamu","monocyte_pct","monocyte_pct",531,531,0,"",0,262,"own delta_mu > 0",0,5.4522067920361,176051.569
+"phosphate_A_deltamu","phosphate","phosphate",245,245,0,"",0,118,"own delta_mu > 0",0,5.45715915499295,160407.738
+"log_platelet_dist_width_A_deltamu","log_platelet_dist_width","log_platelet_dist_width",619,619,0,"",0,312,"own delta_mu > 0",0,5.45458271277525,171559.303
+"log_waist_A_deltamu","log_waist","log_waist",487,487,0,"",0,271,"own delta_mu > 0",0,5.45141609323163,198693.826
+"rdw_A_deltamu","rdw","rdw",445,445,0,"",0,224,"own delta_mu > 0",0,5.45540944786496,180480.838
+"log_vitamin_d_rawloco_A_deltamu","log_vitamin_d_rawloco","log_vitamin_d_rawloco",95,95,0,"",0,43,"own delta_mu > 0",0,5.47386977331126,159749.268
+"weight_A_deltamu","weight","weight",716,716,0,"",0,379,"own delta_mu > 0",0,5.45518750349538,199966.9455
+"weight_B_deltamu","weight","weight",403,403,0,"",0,209,"own delta_mu > 0",0,5.45245938067515,203292.668
+"testosterone_female_sexstrat_B","testosterone","testosterone",97,97,0,"",0,41,"own delta_mu > 0",0,0.0358371254230094,152572.749
+"testosterone_male_sexstrat_B","testosterone","testosterone",111,111,0,"",0,55,"own delta_mu > 0",0,0.00194030117238131,147310.433
+"testosterone_shrink_0_2_female_sexstrat_B","testosterone_shrink_0_2","testosterone_shrink_0_2",96,96,0,"",0,49,"own delta_mu > 0",0,0.0432164974428217,153645.4165
+"testosterone_shrink_0_2_male_sexstrat_B","testosterone_shrink_0_2","testosterone_shrink_0_2",111,111,0,"",0,55,"own delta_mu > 0",0,0.000975292397463414,147310.33
+"testosterone_shrink_0_5_female_sexstrat_B","testosterone_shrink_0_5","testosterone_shrink_0_5",96,96,0,"",0,46,"own delta_mu > 0",0,0.0855176538137895,152396.73
+"testosterone_shrink_0_5_male_sexstrat_B","testosterone_shrink_0_5","testosterone_shrink_0_5",111,111,0,"",0,57,"own delta_mu > 0",0,0.0259175351968108,147309.853
+"testosterone_shrink_0_7_female_sexstrat_B","testosterone_shrink_0_7","testosterone_shrink_0_7",97,97,0,"",0,47,"own delta_mu > 0",0,1.04295984049864,154718.122
+"testosterone_shrink_0_7_male_sexstrat_B","testosterone_shrink_0_7","testosterone_shrink_0_7",112,112,0,"",0,55,"own delta_mu > 0",0,0.197813228869284,145462.473
+"bmi_prs_none","bmi","bmi_prs_none",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,5.15752833227899,199271.075
+"bmi_prs_covariate","bmi","bmi_prs_covariate",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,4.34700346589921,199268.42
+"bmi_prs_subtract","bmi","bmi_prs_subtract",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,4.43939767902821,199271.075
+"bmi_prs_sex0","bmi","bmi_prs_sex0",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,1.65747900741644,108166.617
+"bmi_prs_sex1","bmi","bmi_prs_sex1",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,0.0280339790481424,91274.6228
+"log_bmi_prs_none","log_bmi","log_bmi_prs_none",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,4.96583220229973,199271.075
+"log_bmi_prs_covariate","log_bmi","log_bmi_prs_covariate",639,639,0,"",0,328,"BMI-increasing allele (main BMI Stage 1)",0,4.18959169498544,199268.092

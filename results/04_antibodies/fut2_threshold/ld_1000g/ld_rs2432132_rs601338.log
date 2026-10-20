@@ -1,0 +1,47 @@
+PLINK v2.0.0-a.6.8LM AVX2 Intel (22 Jan 2025)
+Options in effect:
+  --bfile /user/work/fh6520/1kg_ref/EUR
+  --ld rs2432132 rs601338
+  --out ld_rs2432132_rs601338
+
+Hostname: bp1-compute093
+Working directory: /user/work/fh6520/gmoq-paper-v1/private/aux_fut2_reconcile/fut2rec-ld-20260928-01
+Start time: Mon Sep 28 18:02:41 2026
+
+Random number seed: 1790614961
+191551 MiB RAM detected, ~148172 available; reserving 95775 MiB for main
+workspace.
+Using up to 2 compute threads.
+503 samples (0 females, 0 males, 503 ambiguous; 503 founders) loaded from
+/user/work/fh6520/1kg_ref/EUR.fam.
+8550156 variants loaded from /user/work/fh6520/1kg_ref/EUR.bim.
+Note: No phenotype data present.
+Calculating allele frequencies... done.
+
+--ld rs2432132 rs601338:
+
+rs2432132 alleles:
+  MAJOR = T
+  MINOR = C
+  (REF = C)
+rs601338 alleles:
+  MAJOR = REF = G
+  MINOR = A
+
+503 valid samples; 221 het pairs statistically phased.
+
+  r^2 = 0.641993    |D'| = 1
+
+        Frequencies      :              rs601338
+  (expectations under LE)          MAJOR       MINOR
+                                 ----------  ----------
+                           MAJOR  0.110338    0.441352
+                                 (0.308200)  (0.243489)
+                 rs2432132
+                           MINOR  0.448310    0
+                                 (0.250448)  (0.197863)
+
+  Major alleles are out of phase with each other.
+
+
+End time: Mon Sep 28 18:02:44 2026

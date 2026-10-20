@@ -1,0 +1,5 @@
+# figS02_stage1_timing
+
+Figure S2. Computational cost of Stage 1 G-MoQ and ordinary RIF-OLS on matched workloads. Four simulated workloads, each a sample size (top tick label) and a number of variants fitted in one run (bottom tick label): 2,000 participants with 1 or 256 variants, and 400,000 participants with 1 or 1,000 variants. Each run fits all 45 quantile levels on 1 core. Methods are ordinary RIF-OLS fitted separately at each quantile level, and G-MoQ Stage 1 with the pooled covariance or with the 1,000-block jackknife covariance (Methods). Each point is the arithmetic mean of three timing repeats of one method on one workload, on a log scale; no error bars are shown. **a**, Time to fit the coefficients and their standard errors (s). **b**, Wall time of the whole process (s). **c**, Peak resident memory (MiB). No statistical tests are shown. RIF-OLS, recentred influence function ordinary least squares; SE, standard error; MiB, mebibyte.
+
+Source data: results/08_simulations/summary.

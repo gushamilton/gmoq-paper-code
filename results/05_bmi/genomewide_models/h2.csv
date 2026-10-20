@@ -1,0 +1,8 @@
+"trait","model","param","h2","h2_se","ldsc_lambda_gc","mean_chi2","intercept","intercept_se","ratio","ratio_se","ratio_note","n_snps_ldsc"
+"regenie__log_bmi","regenie","BETA",0.2438,0.0071,2.5168,3.4677,1.1833,0.0177,0.0743,0.0072,,1180824
+"additive__additive","additive","additive",0.2417,0.0069,2.5027,3.4541,1.1854,0.0177,0.0755,0.0072,,1178210
+"log_additive__multiplicative_c0","log_additive","multiplicative_c0",0.2445,0.0071,2.5168,3.4775,1.186,0.0175,0.0751,0.0071,,1178210
+"both__additive","both","additive",0.0135,0.0014,1.1144,1.1311,1.0086,0.0074,0.0656,0.0562,,1178210
+"both__multiplicative","both","multiplicative",0.0575,0.0027,1.4104,1.5416,1.0276,0.0093,0.051,0.0172,,1178210
+"logscale_vqtl__meanlog","logscale_vqtl","meanlog",0.2422,0.0069,2.5027,3.4599,1.1869,0.0177,0.076,0.0072,,1178210
+"logscale_vqtl__sdlog","logscale_vqtl","sdlog",0.0133,0.0014,1.1113,1.128,1.0072,0.0072,0.0559,0.0561,,1178210

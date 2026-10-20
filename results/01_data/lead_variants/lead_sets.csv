@@ -1,0 +1,68 @@
+"lead_set","trait","rule","primary","source","n_candidates","n_leads","p1","p2","r2","kb","reproduces","n_reference","n_only_new","n_only_reference","reference","n_variants"
+"bmi_A_regenie","bmi","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/results/regenie/combined/bmi_all.regenie",13008,639,"5e-8","1e-3","0.01","10000",TRUE,639,0,0,"/user/work/fh6520/fungwas_paper/results/pruned_hits/bmi_pruned_hits_p5e8_clumped.txt",
+"log_bmi_A_regenie","log_bmi","A_regenie",TRUE,"inherited: same 639 as BMI (config leads.log_bmi.method = same_as_bmi)",13008,639,"5e-8","1e-3","0.01","10000",,,,,,
+"weight_A_regenie","weight","A_regenie",TRUE,"/user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step2 (22 files)",14412,701,"5e-8","1e-3","0.01","10000",,,,,,
+"testosterone_A_regenie","testosterone","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_all.regenie",52,5,"5e-8","1e-3","0.01","10000",,,,,,
+"testosterone_shrink_0_2_A_regenie","testosterone_shrink_0_2","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_2_all.regenie",80,5,"5e-8","1e-3","0.01","10000",,,,,,
+"testosterone_shrink_0_5_A_regenie","testosterone_shrink_0_5","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_5_all.regenie",213,10,"5e-8","1e-3","0.01","10000",,,,,,
+"testosterone_shrink_0_7_A_regenie","testosterone_shrink_0_7","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_7_all.regenie",518,31,"5e-8","1e-3","0.01","10000",,,,,,
+"jcv_vp1_log_all_A_regenie","jcv_vp1_log_all","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr01 (22 files)",143,3,"5e-8","1e-3","0.01","10000",,,,,,
+"mcv_vp1_log_all_A_regenie","mcv_vp1_log_all","A_regenie",TRUE,"/user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr01 (22 files)",150,4,"5e-8","1e-3","0.01","10000",,,,,,
+"albumin_A_deltamu","albumin","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",5578,317,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"albumin_B_deltamu","albumin","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",5578,223,"5e-8","1e-4","0.001","10000",FALSE,224,0,1,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/albumin_leads.csv",1200240
+"fev1_fvc_ratio_A_deltamu","fev1_fvc_ratio","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",8097,421,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"fev1_fvc_ratio_B_deltamu","fev1_fvc_ratio","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",8097,269,"5e-8","1e-4","0.001","10000",FALSE,269,1,1,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/fev1_fvc_ratio_leads.csv",1200240
+"hba1c_nodiab_A_deltamu","hba1c_nodiab","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",13264,533,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"hba1c_nodiab_B_deltamu","hba1c_nodiab","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",13264,332,"5e-8","1e-4","0.001","10000",TRUE,332,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/hba1c_nodiab_leads.csv",1200240
+"height_A_deltamu","height","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",53053,1931,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"height_B_deltamu","height","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",53053,719,"5e-8","1e-4","0.001","10000",FALSE,720,1,2,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/height_leads.csv",1200240
+"ldl_A_deltamu","ldl","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",5207,230,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"ldl_B_deltamu","ldl","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",5207,145,"5e-8","1e-4","0.001","10000",TRUE,145,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/ldl_leads.csv",1200240
+"log_alt_A_deltamu","log_alt","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",6266,316,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_alt_B_deltamu","log_alt","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",6266,220,"5e-8","1e-4","0.001","10000",TRUE,220,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_alt_leads.csv",1200240
+"log_bilirubin_total_A_deltamu","log_bilirubin_total","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",4654,183,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_bilirubin_total_B_deltamu","log_bilirubin_total","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",4654,120,"5e-8","1e-4","0.001","10000",TRUE,120,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_bilirubin_total_leads.csv",1200240
+"log_calcium_A_deltamu","log_calcium","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",6138,291,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_calcium_B_deltamu","log_calcium","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",6138,219,"5e-8","1e-4","0.001","10000",FALSE,219,1,1,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_calcium_leads.csv",1200240
+"log_crp_A_deltamu","log_crp","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",8622,389,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_crp_B_deltamu","log_crp","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",8622,254,"5e-8","1e-4","0.001","10000",FALSE,255,2,3,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_crp_leads.csv",1200240
+"log_ggt_A_deltamu","log_ggt","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",10013,454,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_ggt_B_deltamu","log_ggt","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",10013,294,"5e-8","1e-4","0.001","10000",FALSE,293,1,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_ggt_leads.csv",1200240
+"log_hba1c_A_deltamu","log_hba1c","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",11688,472,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_hba1c_B_deltamu","log_hba1c","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",11688,299,"5e-8","1e-4","0.001","10000",TRUE,299,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_hba1c_leads.csv",1200240
+"log_hdl_A_deltamu","log_hdl","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",10448,452,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_hdl_B_deltamu","log_hdl","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",10448,280,"5e-8","1e-4","0.001","10000",TRUE,280,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_hdl_leads.csv",1200240
+"log_igf1_A_deltamu","log_igf1","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",16199,644,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_igf1_B_deltamu","log_igf1","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",16199,365,"5e-8","1e-4","0.001","10000",FALSE,366,0,1,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_igf1_leads.csv",1200240
+"log_lipoprotein_a_A_deltamu","log_lipoprotein_a","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",992,35,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_lipoprotein_a_B_deltamu","log_lipoprotein_a","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",992,11,"5e-8","1e-4","0.001","10000",TRUE,11,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_lipoprotein_a_leads.csv",1200240
+"log_total_protein_A_deltamu","log_total_protein","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",8167,420,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_total_protein_B_deltamu","log_total_protein","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",8167,273,"5e-8","1e-4","0.001","10000",TRUE,273,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_total_protein_leads.csv",1200240
+"log_triglycerides_A_deltamu","log_triglycerides","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",10703,450,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_triglycerides_B_deltamu","log_triglycerides","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",10703,276,"5e-8","1e-4","0.001","10000",TRUE,276,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_triglycerides_leads.csv",1200240
+"log_urate_A_deltamu","log_urate","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",9643,396,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_urate_B_deltamu","log_urate","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",9643,262,"5e-8","1e-4","0.001","10000",TRUE,262,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_urate_leads.csv",1200240
+"mch_A_deltamu","mch","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",15293,583,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"mch_B_deltamu","mch","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",15293,341,"5e-8","1e-4","0.001","10000",TRUE,341,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/mch_leads.csv",1200240
+"monocyte_pct_A_deltamu","monocyte_pct","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",11394,531,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"monocyte_pct_B_deltamu","monocyte_pct","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",11394,344,"5e-8","1e-4","0.001","10000",TRUE,344,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/monocyte_pct_leads.csv",1200240
+"phosphate_A_deltamu","phosphate","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",4338,245,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"phosphate_B_deltamu","phosphate","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",4338,173,"5e-8","1e-4","0.001","10000",TRUE,173,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/phosphate_leads.csv",1200240
+"log_platelet_dist_width_A_deltamu","log_platelet_dist_width","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",15232,619,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_platelet_dist_width_B_deltamu","log_platelet_dist_width","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",15232,346,"5e-8","1e-4","0.001","10000",TRUE,346,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_platelet_dist_width_leads.csv",1200240
+"log_waist_A_deltamu","log_waist","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",8339,487,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_waist_B_deltamu","log_waist","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",8339,323,"5e-8","1e-4","0.001","10000",TRUE,323,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_waist_leads.csv",1200240
+"rdw_A_deltamu","rdw","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",12184,445,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"rdw_B_deltamu","rdw","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",12184,279,"5e-8","1e-4","0.001","10000",TRUE,279,0,0,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/rdw_leads.csv",1200240
+"log_vitamin_d_rawloco_A_deltamu","log_vitamin_d_rawloco","A_deltamu",TRUE,"Stage 1 delta_mu (P01 registry)",1937,95,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"log_vitamin_d_rawloco_B_deltamu","log_vitamin_d_rawloco","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",1937,70,"5e-8","1e-4","0.001","10000",FALSE,71,0,1,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/log_vitamin_d_rawloco_leads.csv",1200240
+"weight_A_deltamu","weight","A_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",14728,716,"5e-8","1e-3","0.01","10000",,,,,,1200240
+"weight_B_deltamu","weight","B_deltamu",FALSE,"Stage 1 delta_mu (P01 registry)",14728,403,"5e-8","1e-4","0.001","10000",FALSE,404,178,179,"/user/work/fh6520/gmoq-trait-survey-20260922/leads/weight_leads.csv",1200240
+"testosterone_female_sexstrat_B","testosterone","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,97,,,,,,,,,,
+"testosterone_male_sexstrat_B","testosterone","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,111,,,,,,,,,,
+"testosterone_shrink_0_2_female_sexstrat_B","testosterone_shrink_0_2","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,96,,,,,,,,,,
+"testosterone_shrink_0_2_male_sexstrat_B","testosterone_shrink_0_2","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,111,,,,,,,,,,
+"testosterone_shrink_0_5_female_sexstrat_B","testosterone_shrink_0_5","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,96,,,,,,,,,,
+"testosterone_shrink_0_5_male_sexstrat_B","testosterone_shrink_0_5","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,111,,,,,,,,,,
+"testosterone_shrink_0_7_female_sexstrat_B","testosterone_shrink_0_7","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,97,,,,,,,,,,
+"testosterone_shrink_0_7_male_sexstrat_B","testosterone_shrink_0_7","sexstrat_B",FALSE,"/user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv",,112,,,,,,,,,,

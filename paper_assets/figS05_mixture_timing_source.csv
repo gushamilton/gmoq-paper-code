@@ -1,0 +1,31 @@
+"panel","n","M","method","metric","value","timing_repeats"
+"abc",10000,100,"gmoq_pooled","fit + SE seconds",3.06294801986466,3
+"abc",10000,100,"gmoq_pooled","whole-process seconds",5.13666666666667,3
+"abc",10000,100,"gmoq_pooled","peak RSS MiB",100.153645833333,3
+"abc",10000,100,"gmoq_jackknife","fit + SE seconds",3.4887660437574,3
+"abc",10000,100,"gmoq_jackknife","whole-process seconds",5.52666666666667,3
+"abc",10000,100,"gmoq_jackknife","peak RSS MiB",124.419270833333,3
+"abc",10000,100,"mixture_ml","fit + SE seconds",48.1882080603391,3
+"abc",10000,100,"mixture_ml","whole-process seconds",50.2466666666667,3
+"abc",10000,100,"mixture_ml","peak RSS MiB",83.0494791666667,3
+"abc",50000,100,"gmoq_pooled","fit + SE seconds",7.82749183289707,3
+"abc",50000,100,"gmoq_pooled","whole-process seconds",10.2233333333333,3
+"abc",50000,100,"gmoq_pooled","peak RSS MiB",195.799479166667,3
+"abc",50000,100,"gmoq_jackknife","fit + SE seconds",8.32226256156961,3
+"abc",50000,100,"gmoq_jackknife","whole-process seconds",10.3766666666667,3
+"abc",50000,100,"gmoq_jackknife","peak RSS MiB",224.029947916667,3
+"abc",50000,100,"mixture_ml","fit + SE seconds",174.140544258989,3
+"abc",50000,100,"mixture_ml","whole-process seconds",176.21,3
+"abc",50000,100,"mixture_ml","peak RSS MiB",124.158854166667,3
+"abc",4e+05,100,"gmoq_pooled","fit + SE seconds",53.334019134442,3
+"abc",4e+05,100,"gmoq_pooled","whole-process seconds",56.0833333333333,3
+"abc",4e+05,100,"gmoq_pooled","peak RSS MiB",1014.22786458333,3
+"abc",4e+05,100,"gmoq_jackknife","fit + SE seconds",55.1397717709964,3
+"abc",4e+05,100,"gmoq_jackknife","whole-process seconds",57.39,3
+"abc",4e+05,100,"gmoq_jackknife","peak RSS MiB",1212.88802083333,3
+"abc",4e+05,100,"mixture_ml","fit + SE seconds",1434.44974110927,3
+"abc",4e+05,100,"mixture_ml","whole-process seconds",1436.70666666667,3
+"abc",4e+05,100,"mixture_ml","peak RSS MiB",476.709635416667,3
+"d",4e+05,1200000,"Direct mixture ML","genome-wide CPU-hours",3354.29757901777,
+"d",4e+05,1200000,"G-MoQ Stage 1 + Stage 2","genome-wide CPU-hours",5.3117318362194,
+"d",4e+05,1200000,"Stage 2 alone","genome-wide CPU-hours",0.04911,

@@ -1,0 +1,13 @@
+"scale","n_lead","bonferroni","n_bonf","n_nominal_0.05","expected_nominal","median_share_leads","n_floored","median_share_null","median_share_sim","quantity","value"
+"normal_score",639,7.82472613458529e-05,0,36,31.95,0.484418457125913,0,0.979867739855032,0.472148797691061,,
+"raw",639,7.82472613458529e-05,1,43,31.95,0.497269813022455,0,,,,
+"log",639,7.82472613458529e-05,0,36,31.95,0.490817768484354,0,,,,
+"normal_score_from_log",639,7.82472613458529e-05,0,36,31.95,0.484716339464424,0,,,,
+,,,,,,,,,,"n_null_eligible",377038
+,,,,,,,,,,"n_null_sampled",20001
+,,,,,,,,,,"n_sim",20000
+,,,,,,,,,,"davies_imhof_max_abs_diff_300",4.68514116391816e-14
+,,,,,,,,,,"fhat_max_rel_dev_vs_rif_nuisance",2.291344667237e-15
+,,,,,,,,,,"E_Q_normal_score",43.0032047119325
+,,,,,,,,,,"E_Q_under_locz_selection",43.0012724772854
+,,,,,,,,,,"n_bonf_PC",0

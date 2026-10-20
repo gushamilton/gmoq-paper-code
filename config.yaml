@@ -1,0 +1,419 @@
+# Settings for every analysis script: where the UK Biobank-derived inputs are, which package
+# versions were used, and the analysis choices. Scripts read this file with read_config()
+# (R/results_io.R); figures and tables read only results/.
+#
+# All file paths below are the authors' paths on their cluster. To rerun an analysis, replace
+# them with the locations of your own copies of the inputs. Participant-level intermediates
+# are written under private_root and never leave the cluster.
+version: 1
+
+# Cluster: Slurm partition and working directories.
+bp:
+  env_bootstrap: /user/work/fh6520/Gmoq_paper-validation-20260917/.local/validation-bootstrap-20260917-02/activate.sh   # environment used for the speed benchmarks
+  account: sscm013902
+  partition: short
+  work_root: /user/work/fh6520/gmoq-paper-v1
+  private_root: /user/work/fh6520/gmoq-paper-v1/private      # participant-level intermediates
+
+# G-MoQ software. Stage 1 (Python) produced every quantile GWAS used here; Stage 2 is the R
+# package fungwasStage2. Both are pinned to the commits below.
+package:
+  repo: https://github.com/gushamilton/GMoQ
+  stage1:
+    commit: 9c47e7ba56370e708810fff8c2c9ad3b723cbccf
+    short: 9c47e7b
+    root: /user/work/fh6520/G-MoQ-validation-9c47e7b
+    python: /user/home/fh6520/miniforge3/envs/fungwas-stage1/bin/python
+  # Stage 2 version used for every result. It provides the mixture weight-density option
+  # density = "model" / "hybrid" / "stage1" for the weight builders.
+  stage2:
+    commit: 9fee67d1e510b81368d33b5b0ee223792bc6a3bd
+    short: 9fee67d
+    r_package: fungwasStage2
+    r_package_version: 0.5.0
+    lib: /user/work/fh6520/gmoq-paper-v1/Rlib/stage2-9fee67d
+  # Second name for the same Stage 2 version, read by some scripts.
+  stage2_hybrid:
+    commit: 9fee67d1e510b81368d33b5b0ee223792bc6a3bd
+    short: 9fee67d
+    r_package: fungwasStage2
+    r_package_version: 0.5.0
+    lib: /user/work/fh6520/gmoq-paper-v1/Rlib/stage2-9fee67d
+  # Earlier Stage 2 version; its default output is identical to the current one. Listed in
+  # the software table.
+  stage2_history:
+    - commit: 759b5b3a0698a5fb0ab29a5fca554079aeb87f69
+      short: 759b5b3
+      r_package_version: 0.4.0
+      lib: /user/work/fh6520/gmoq-paper-v1/Rlib/stage2-759b5b3
+      used_by: "model-profile angles (Fig. 4b), BMI polygenic-score interactions and the weight-design simulation"
+
+# Quantile levels u_t = seq(0.02, 0.98, length.out = 45) and the Stage 1 block structure.
+# Trapezoid weights on this grid sum to 0.96.
+grid:
+  tau_from: 0.02
+  tau_to: 0.98
+  n_tau: 45
+  blocks: 1000
+  block_seed: 42
+
+# Estimation choices shared by all analyses.
+estimation:
+  stage2_estimator: ols            # ordinary least squares in Stage 2 (no GLS)
+  cov_source: pooled               # pooled Stage 1 covariance for empirical analyses
+  density_mode: parametric_model_density   # single-component baselines (BMI, weight): weights use the model density
+  # Two-component mixtures (testosterone and its shrinkage variants, JCV VP1, MCV VP1) are
+  # fitted with both weight designs. 'model' divides every weight column by the fitted
+  # mixture density; 'hybrid' divides the membership column by the Stage 1 kernel density
+  # instead. 'model' is reported everywhere except unshrunk testosterone, where the gap
+  # between the components is nearly empty (mixture density 0.46 times the kernel density at
+  # u = 0.5) and 'hybrid' is reported. Read through mixture_design(cfg, fit).
+  mixture_weight_designs: [hybrid, model]
+  mixture_weights:
+    default: model
+    overrides:                     # hybrid where the weight-design simulation shows the model design
+      testosterone: hybrid         # under-recovers membership: well-separated or bimodal mixtures
+      testosterone_shrink_0_2: hybrid
+      mcv_vp1_log_all: hybrid
+  loco_mode: covariate             # Stage 1: REGENIE leave-one-chromosome-out prediction as a covariate
+  weight_gates:
+    beta_left_plus_right_tol: 1.0e-8   # tolerance on the mixture weight identity checked before fitting
+  joint_test: hotelling            # joint Wald tests: T (nu - k + 1) / (k nu) ~ F(k, nu - k + 1)
+  lack_of_fit: davies              # lack of fit: exact Davies p-values (Imhof and Satterthwaite as checks)
+  het_tau_excess: n_minus_1        # heterogeneity tau from Q - (n - 1)
+  het_boot: 2000                   # bootstrap resamples for heterogeneity intervals
+  pca_parallel_draws: 300          # null draws for parallel analysis
+  boot_seed: 20260923
+  # Scale-invariant heterogeneity in the principal-component frame (het_test_pc()): PC1 and
+  # PC2 scores of the whitened profiles, with directions cross-fitted over two random halves.
+  het_pc:
+    split_seed: 20260923           # the reported split; n_split further splits test sensitivity to it
+    folds: 2                       # more folds make the fold statistics correlated (over-dispersed null)
+    n_split: 50
+    floor_nsim: 1000               # simulations for the detection floor and the simulated null
+    floor_grid_step: 0.005
+    recovery_nsim: 200             # simulations for recovery of the observed tau
+    pc2_share_null_draws_per_resample: 50   # Fig. 5a interval: null draws per bootstrap resample
+    exclude_traits: [log_lipoprotein_a]   # 35 leads; the shift + spread frame fits poorly
+
+# Headline settings for BMI, the antibodies and the polygenic-score analysis.
+headline:
+  bmi_scale: log_bmi
+  bmi_het_tau_previous: 0.116      # tau from Q - n on the unit-variance basis, 639 leads (reported for comparison)
+  antibody_traits: [jcv_vp1_log_all, mcv_vp1_log_all]
+  fto_prs_contrast: top_vs_bottom_10pct
+  fig5d_twin_h2: 0.5               # twin heritability used as a sensitivity
+
+# Polygenic-score interaction with the FTO variant (no leave-one-chromosome-out adjustment).
+prs:
+  analysis_sample: /user/work/fh6520/gmoq-paper-v1/private/P15_prs/p15-20261020-ct1e-5/prep/analysis.rds   # BMI sample with the leave-one-chromosome-out scores
+  # Stage 1 runs restricted to the BMI lead variants, without LOCO (used for the PRS work)
+  stage1_leads_bmi: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/prs-tilt-checks-20260923/stage1   # <arm>/chrNN, arms none covariate subtract sex0 sex1
+  stage1_leads_log_bmi: /user/work/fh6520/gmoq-paper-v1/private/P05b_stage1_leads                          # log_bmi_<arm>/chrNN, arms none covariate
+  loco: none
+  score: plink_clump_threshold_1e-5_standardised_loo_chr   # PLINK C+T: r2 < 0.1, 250 kb, 1000 Genomes EUR, index P < 1e-5
+  hc: HC0                          # heteroskedasticity-robust standard errors
+  link_test_seed: 20260923
+  covariates: [age, sex, PC1-PC10]
+  run_id: p15-20261020-ct1e-5
+  n: 461320
+  lead_set: log_bmi_prs_none       # log-BMI lead profiles without LOCO; raw-scale BMI: bmi_prs_none
+  pheno: /user/work/fh6520/fungwas_paper/data/derived/paper/phenotypes_paper.txt       # Stage 1 phenotype file
+  covar: /user/work/fh6520/fungwas_paper/data/derived/paper/covars_with_sex_paper.txt  # Stage 1 covariates (age, sex, PC1-PC10)
+  pheno_interaction_old: /user/work/fh6520/fungwas_paper/data/processed/phenotypes_final.txt   # earlier inputs, agreement check only
+  covar_interaction_old: /user/work/fh6520/fungwas_paper/data/processed/covars_with_sex.txt
+  keep_matched: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/prs-tilt-checks-20260923/keep_bmi_matched.txt   # the 461,320 Stage 1 participants
+  partial_scores: /user/work/fh6520/gmoq-paper-v1/private/aux_prs_ld_fix/run-20261020-ct/p1e-5/partial_scores   # chrNN_partial.sscore
+  score_threshold: 1.0e-5           # index-variant P threshold of the clumping-and-thresholding score
+  score_training_gwas: /user/work/fh6520/fungwas_paper/results/regenie/combined/bmi_all.regenie   # REGENIE BMI GWAS (same participants: in-sample weights)
+  lead_dosage_dir: /user/work/fh6520/fungwas_paper/data/derived/bmi_loo_prs/dosage_raw   # chrNN_lead.raw (plink2 --export A, REF allele counted)
+  lead_pvar_dir: /user/work/fh6520/fungwas_paper/data/derived/bmi_loo_prs/pgen
+  natural_scale_table: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/g-heterogeneity-20260922/G_implied_natural_scale.csv
+  ldsc_h2_log_bmi: /user/work/fh6520/fungwas_paper/results/paper/ldsc/h2/regenie__log_bmi_additive.log   # LDSC 2.0.0, HapMap3, 1000 Genomes EUR LD scores
+  ldsc_h2_bmi: /user/work/fh6520/fungwas_paper/results/paper/ldsc/h2/regenie__bmi_additive.log
+  fto_snp: rs1421085
+  fto_tail: 0.10                   # top vs bottom 10% of the polygenic score excluding chromosome 16
+  boot: 2000
+
+# Stage 1 quantile GWAS. Each root holds chrNN/scan.stage1.tsv.gz, scan.sigma0.tsv.gz and
+# scan.sigma0.meta.json; n is the number of participants behind the pooled covariance.
+cohorts:
+  bmi:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-bmi/full/bmi
+    n: 461320
+  log_bmi:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-log_bmi/full/log_bmi
+    n: 461320
+  weight:
+    # Height-adjusted weight with genetic principal components: 16 covariates (see weight_pcs).
+    root: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/stage1
+    n: 461320
+    regenie_step2_dir: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step2
+    note: 16 covariates (sex, age, height, height_z2, log_height, height_z3, PC1-PC10); REGENIE step 1/2 rerun with the same set
+  testosterone:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-testosterone/full/testosterone
+    n: 399710
+    note: two chromosomes lack the covariance metadata file; the covariance itself is present
+  testosterone_shrink_0_2:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-testosterone_shrink_0_2/full/testosterone_shrink_0_2
+    n: 399710
+  testosterone_shrink_0_5:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-testosterone_shrink_0_5/full/testosterone_shrink_0_5
+    n: 399710
+  testosterone_shrink_0_7:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-testosterone_shrink_0_7/full/testosterone_shrink_0_7
+    n: 399710
+  jcv_vp1_log_all:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/antigen-scan-20260920-01/jcv_vp1_log_all
+    n: 9145
+    n_phenotyped: 9623
+  mcv_vp1_log_all:
+    root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/antigen-scan-20260920-01/mcv_vp1_log_all
+    n: 9145
+    n_phenotyped: 9623
+  # Trait survey: n is the analysed sample; loco says whether Stage 1 used a REGENIE
+  # leave-one-chromosome-out covariate; fig6: false marks traits left out of the survey figure.
+  survey:
+    root: /user/work/fh6520/gmoq-trait-survey-20260922/stage1
+    traits:
+      albumin:                 {n: 404090, loco: false}
+      fev1_fvc_ratio:          {n: 345566, loco: false}
+      hba1c_nodiab:            {n: 420416, loco: false}
+      height:                  {n: 461810, loco: true}
+      ldl:                     {n: 440496, loco: false}
+      log_alt:                 {n: 441159, loco: false}
+      log_bilirubin_total:     {n: 439485, loco: false}
+      log_calcium:             {n: 403941, loco: false}
+      log_crp:                 {n: 440369, loco: true}
+      log_ggt:                 {n: 441089, loco: false}
+      log_hba1c:               {n: 441144, loco: false}
+      log_hdl:                 {n: 403898, loco: false}
+      log_igf1:                {n: 438938, loco: false}
+      log_lipoprotein_a:       {n: 351681, loco: false}
+      log_total_protein:       {n: 403628, loco: false}
+      log_triglycerides:       {n: 440966, loco: true}
+      log_urate:               {n: 440788, loco: false}
+      mch:                     {n: 449036, loco: false}
+      monocyte_pct:            {n: 448238, loco: false}
+      phosphate:               {n: 403299, loco: false}
+      triglycerides:           {n: null, loco: null, note: "raw scale; not analysed (log triglycerides used)"}
+      log_platelet_dist_width: {n: 449031, loco: false, fig6: false}
+      log_waist:               {n: 462025, loco: false, fig6: false}
+      rdw:                     {n: 449037, loco: false, fig6: false}
+      log_vitamin_d:           {n: null, fig6: false, note: "no vitamin D"}
+      log_vitamin_d_rawloco:   {n: 421957, loco: true, fig6: false}
+
+# Lead variants per trait.
+leads:
+  bmi:
+    method: regenie_clump_inherited
+    n_leads: 639
+    source: /user/work/fh6520/fungwas_paper/results/pruned_hits/bmi_pruned_hits_p5e8_clumped.txt
+    p_threshold: 5.0e-8
+    note: same 639 used for log_bmi and every BMI scale; aligned to the BMI-increasing allele
+  log_bmi:
+    method: same_as_bmi
+  weight:
+    method: regenie_clump_rule_A   # REGENIE GWAS of height-adjusted weight, clumped as for BMI
+    p_threshold: 5.0e-8
+    note: the same clumping rule as BMI (secondary P < 1e-3, r2 < 0.01, 10 Mb, 1000 Genomes EUR)
+  testosterone:
+    source_dir: /user/work/fh6520/fungwas_paper/results/paper/lead_snps
+    method: regenie_clump
+  antibodies:
+    method: antigen_scan_clump
+  survey:
+    method: stage1_delta_mu_clump_rule_A   # clumped on the Stage 1 change in mean
+    p_threshold: 5.0e-8
+    note: survey traits are clumped on the Stage 1 location effect (no REGENIE GWAS)
+
+# Disclosure limits for exported aggregate results.
+privacy:
+  forbidden_column_patterns: ["(?i)^eid$", "(?i)^iid$", "(?i)^fid$", "(?i)^id$", "(?i)participant_?id", "(?i)sample_?id", "(?i)^f\\.eid"]
+  max_rows_non_snp: 5000           # a table that is not per variant may have at most this many rows
+  min_cell_count: 10               # histogram and count cells below this are suppressed
+  max_file_mb: 50
+
+# Height-adjusted weight GWAS with genetic principal components. Covariates: sex, age,
+# height, height_z2, log_height, height_z3 and PC1-PC10 (16). REGENIE steps 1 and 2 and
+# Stage 1 (45 quantile levels, 1000 blocks, LOCO as covariate, HapMap3 variants, pooled
+# covariance) were run with this set.
+weight_pcs:
+  run_id: weight-pcs-20260923-01
+  covar_height_model: /user/work/fh6520/fungwas_paper/data/derived/paper/covars_weight_height_model_paper.txt
+  covar_pcs_source: /user/work/fh6520/fungwas_paper/data/derived/paper/covars_with_sex_paper.txt
+  covar_new: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/covars/covars_weight_height_model_pcs.txt
+  covariates: [sex, age, height, height_z2, log_height, height_z3, PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10]
+  keep: /user/work/fh6520/fungwas_paper/data/derived/paper/keep_files/keep_weight.txt
+  regenie_step1: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step1/weight_step1_pred.list
+  regenie_step2_dir: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step2
+  stage1_root: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/stage1
+
+# The earlier weight GWAS without genetic principal components (6 covariates), used only
+# for the comparison with the analysis above.
+superseded:
+  weight_no_pcs:
+    stage1_root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260918-parallel-weight/full/weight
+    regenie_step1: /user/work/fh6520/fungwas_paper/results/paper/regenie_step1/full/weight/weight_step1_pred.list
+    regenie_step2_dir: /user/work/fh6520/fungwas_paper/results/paper/regenie_step2/weight
+    covariates: [sex, age, height, height_z2, log_height, height_z3]
+    note: "height-adjusted weight without genetic PCs (6 covariates); replaced by the run with PCs"
+
+# Genome-wide Stage 2 mixture fits (testosterone and antibodies) and the weight-trait fits.
+p07:
+  run_id: p07-20260923-02          # per-variant outputs: <private_root>/P07_stage2_mixtures/<run_id>/fits/<design>/<fit>
+  previous_run_id: p07-20260923-01 # earlier run with model-density weights only, checked against this one
+  weight_weights_from_run: p07-20260923-01   # run that holds the package-built weights for the weight trait
+  weight_trait_weights: P12_model_scores     # weight-trait fits use the baseline-fitted weight matrices
+  fit_run_ids:
+    weight_additive: p07-20260923-03
+    weight_shifted: p07-20260923-03
+    weight_both: p07-20260923-03
+  # Unshrunk testosterone chromosomes 1 and 22 come from an earlier Stage 1 run with the
+  # same version, covariates and sample (399,710).
+  stage1_fallback_root: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/clinical-overnight-20260917-01/full
+  testosterone_corrected_weights: /user/work/fh6520/Gmoq_paper-clinical-20260917/.local/testosterone-internal-mr-20260922/corrected_weights
+  lead_p: 5.0e-8
+  lead_window_bp: 1000000          # distance clumping of exported lead rows
+  manhattan_keep_p: 1.0e-5         # variants exported individually for Manhattan plots only below this p
+  manhattan_bin_bp: 1000000
+
+# Testosterone: recovery of sex-specific effects (Figs. 1 and 2).
+p08:
+  arms: [testosterone, testosterone_shrink_0_2, testosterone_shrink_0_5, testosterone_shrink_0_7]
+  # Sex-stratified REGENIE for the matched comparison: <regenie_combined>/testosterone_{female,male}_<arm>_all.regenie
+  # (199,572 women and 200,138 men = 399,710). Sensitivity: the sex-stratified REGENIE with the
+  # same phenotype file, covariates and LOCO as Stage 1 (regenie_paper_raw), which is also
+  # the reference for LDSC.
+  regenie_combined: /user/work/fh6520/fungwas_paper/results/regenie/combined
+  regenie_paper_raw: /user/work/fh6520/fungwas_paper/results/paper/ldsc/raw
+  # Reference for the membership parameter: a GWAS of chromosomal sex on exactly the
+  # testosterone Stage 1 sample (399,710).
+  sex_reference: /user/work/fh6520/gmoq-paper-v1/private/aux_sex_gwas_matched/sexgwasm-20260929-01/ldsc/reference/regenie__sex_matched.tsv
+  sex_reference_munged: /user/work/fh6520/gmoq-paper-v1/private/aux_sex_gwas_matched/sexgwasm-20260929-01/ldsc/munged/regenie__sex_matched.sumstats.gz
+  sex_reference_ldsc_id: regenie__sex_matched
+  sex_reference_n: 399710
+  # Sensitivity reference: the sex GWAS in the full cohort (462,869; 86% overlap with the
+  # Stage 1 sample).
+  sex_reference_full_cohort: /user/work/fh6520/fungwas_paper/results/paper/ldsc/raw/regenie__sex.tsv
+  sex_reference_full_cohort_munged: /user/work/fh6520/fungwas_paper/results/paper/ldsc/munged/regenie__sex.sumstats.gz
+  sex_reference_full_cohort_n: 462869
+  gamma_sign_vs_sex: -1            # the membership parameter moves mass to the lower (female) component; the sex GWAS codes male = 1
+  regenie_lead_snps: /user/work/fh6520/fungwas_paper/results/paper/lead_snps/lead_snps.tsv
+  ldsc_munged_ref: /user/work/fh6520/fungwas_paper/results/paper/ldsc/munged
+  ldsc_merge_alleles: /user/work/fh6520/fungwas_paper/inputs/data/w_hm3.snplist.gz
+  ldsc_ld_dir: /user/work/fh6520/1kg_ref/eur_w_ld_chr/
+  ldsc_module: ldsc
+  plink_module: apps/plink2/2.00a68LM
+  plink_bfile: /user/work/fh6520/1kg_ref/EUR
+  clump: {p1: 5.0e-8, p2: 1.0e-4, r2: 0.001, kb: 10000}   # LD clumping of lead variants
+  timings: /user/work/fh6520/Gmoq_paper-figures-20260917/.local/mixture-full-20260918-01/panel_timings.csv
+  phenotype_file: /user/work/fh6520/fungwas_paper/data/derived/paper/phenotypes_paper.txt
+  covar_file: /user/work/fh6520/fungwas_paper/data/derived/paper/covars_no_sex_paper.txt
+  sex_covar_file: /user/work/fh6520/fungwas_paper/data/derived/paper/covars_with_sex_paper.txt
+  keep_file: /user/work/fh6520/fungwas_paper/data/derived/paper/keep_files/keep_testosterone_series.txt
+  loco_list: /user/work/fh6520/fungwas_paper/results/paper/regenie_step1/full/testosterone/testosterone_step1_pred.list
+  bgen_sample: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr1-22.sample
+  histogram_bins: 80
+
+# Antibodies: JCV VP1 and MCV VP1 from the 44-antigen serology scan (n = 9,145).
+p09:
+  regenie_dir: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2   # chrNN/antigen_qt_chrNN_<trait>.regenie
+  lead_window_bp: 500000           # window (+/- 500 kb) for matching loci between analyses
+  example_loci: [rs681343, rs9271055, rs9276815]   # FUT2, HLA-DRB1/DQA1 and HLA-DQ
+  n_null: 2000
+  histogram_bins: 60
+  bgen_sample: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr1-22.sample
+
+# REGENIE GWAS of antibody serostatus on the same 9,145 participants:
+#   seropositivity    binary 0/1; step 1 --bt, step 2 --bt --firth --approx --pThresh 0.01
+#   seropositive_igg  log MFI among seropositive participants; steps 1 and 2 --qt
+# Serostatus is the assay provider's binary call when the phenotype file carries it
+# (serostatus_source: auto), otherwise MFI above the threshold.
+p09b:
+  run_id: p09b-20260928-02
+  phenotype_file: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/phenotypes_antibody_all.txt
+  covar_file: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/covars_antibody_all.txt
+  keep_all_complete: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/keep_files/keep_antibody_all_complete.txt
+  analysis_manifest: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/analysis_manifest.tsv
+  covariates: [age, sex, PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10]
+  serostatus_source: auto          # auto | manifest | derived
+  seropositivity_threshold: 250    # MFI; seropositive = MFI > 250
+  log_base: auto                   # auto | e | 10: base of the *_log_all columns (auto: checked from the data)
+  min_manifest_agreement: 0.95     # agreement between provider serostatus and MFI > threshold needed to infer the log base
+  regenie_module: apps/regenie/4.1
+  plink_module: apps/plink2/2.00a68LM
+  step1_bed: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/directly_genotyped/released/2017-07-04/data/derived/merged_chr1-22/chr1-22_merged
+  step1_qc: "--maf 0.01 --mac 100 --geno 0.1 --hwe 1e-15 0 --mind 0.1"
+  bgen_dir: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen   # data.chrNN.bgen
+  bgen_sample: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr1-22.sample
+  extract_template: /user/work/fh6520/fungwas_paper/inputs/data/w_hm3_chrNN_only.txt   # NN = two-digit chromosome
+  step2_bsize: 400
+  bt_flags: "--bt --firth --approx --pThresh 0.01"
+  manhattan_bin_bp: 1000000
+
+# Genome-wide Stage 2 of the BMI models on the baseline-fitted weights, with LDSC genetic
+# correlations (ordinary least squares, pooled covariance).
+p12b:
+  run_id: p12b-20260928-01
+  models: [additive, log_additive, both, logscale_vqtl]
+  regenie_role: comparator         # the standard REGENIE GWAS on the same sample is the comparator
+  manhattan_bin_bp: 1000000
+  lead_p: 5.0e-8
+
+# Chromosomal-sex GWAS effects at the Fig. 2 testosterone exemplar variants.
+p08b:
+  source_arm: testosterone         # arm whose effect allele defines the alignment (exemplars are selected on it)
+
+# UK Biobank imputed genotypes and tools ({chr} = 01..22). Authors' cluster paths; replace with your own.
+ukb:
+  bgen_dir: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen   # data.chrNN.bgen
+  bgen_sample: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr1-22.sample
+  bgenix: /user/work/fh6520/regenie_bgen/bgen_release_extract/bgen.tgz/build/apps/bgenix
+  plink2: plink2                     # PLINK 2.0.0-a.6.8 (module apps/plink2/2.00a68LM on our cluster)
+  bgen: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr{chr}.bgen
+  sample: /bp1/mrcieu1/data/ukbiobank/genetic/variants/arrays/imputed/released/2018-09-18/data/dosage_bgen/data.chr1-22.sample
+tools:
+  plink2: /software/local/apps/plink2-2025.01/plink2      # v2.0.0-a.6.8LM
+  ld_reference: /user/work/fh6520/1kg_ref/EUR              # 1000 Genomes phase 3 EUR plink prefix
+# REGENIE step 2: comparator = additive GWAS compared with the Stage 1 mean; leads = GWAS clumped for leads
+regenie_gwas:
+  bmi:
+    comparator: /user/work/fh6520/fungwas_paper/results/paper/regenie_step2/bmi/bmi_additive_chr{chr}_bmi.regenie
+    leads: /user/work/fh6520/fungwas_paper/results/regenie/combined/bmi_all.regenie
+  log_bmi:
+    comparator: /user/work/fh6520/fungwas_paper/results/paper/regenie_step2/log_bmi/log_bmi_additive_chr{chr}_log_bmi.regenie
+  weight:
+    comparator: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step2/weight_additive_chr{chr}_weight.regenie
+    leads: /user/work/fh6520/gmoq-paper-v1/private/weight_pcs/weight-pcs-20260923-01/regenie_step2/weight_additive_chr{chr}_weight.regenie
+  testosterone:
+    comparator: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_all.regenie
+  testosterone_shrink_0_2:
+    comparator: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_2_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_2_all.regenie
+  testosterone_shrink_0_5:
+    comparator: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_5_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_5_all.regenie
+  testosterone_shrink_0_7:
+    comparator: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_7_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/results/regenie/combined/testosterone_shrink_0_7_all.regenie
+  jcv_vp1_log_all:
+    comparator: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_jcv_vp1_log_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_jcv_vp1_log_all.regenie
+  mcv_vp1_log_all:
+    comparator: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_mcv_vp1_log_all.regenie
+    leads: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_mcv_vp1_log_all.regenie
+
+# HbA1c and diabetes (trait-survey phenotypes; UK Biobank application 43612).
+hba1c:
+  phenotypes: /user/work/fh6520/gmoq-trait-survey-20260922/pheno/phenotypes_43612.txt
+  keep_all: /user/work/fh6520/gmoq-trait-survey-20260922/keep_43612/keep_hba1c.txt
+  keep_no_diabetes: /user/work/fh6520/gmoq-trait-survey-20260922/keep_43612/keep_hba1c_nodiab.txt
+  diabetes_cases: /user/work/fh6520/gmoq-trait-survey-20260922/pheno/diabetes_ieu_43612.txt
+
+# Inputs for the comparison with SIQReg (non-genetic predictors of BMI).
+siqreg:
+  pcs40: /user/work/fh6520/fungwas_paper/data/pcs_age_sex_testosterone.tsv     # genetic PCs 1-40, age, sex
+  linker: /user/work/fh6520/fungwas_paper/data/linker_MY_APP.csv.gz            # UK Biobank ID linker
+  conquer_lib: /user/work/fh6520/gmoq-paper-v1/Rlib/siqreg-compare             # R library with conquer

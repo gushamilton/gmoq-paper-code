@@ -1,0 +1,5 @@
+# figS03_projection_targets
+
+Figure S3. Accuracy and calibration of Stage 2 estimates against their population projection targets. Simulated data on 400,000 participants under five scenario-parameter combinations (rows): a normal phenotype with a genetic effect on location, on dispersion or on both, with location (β_μ) and dispersion (β_σ²) estimates, and a two-component mixture with an effect on the left component (β_1). The target is the projection of the generating effect onto the model's weight columns (Methods). Each point summarizes 1,000 replicates of one row with the pooled or the 1,000-block jackknife covariance; the two share point estimates. MC interval, ±1.96 Monte Carlo standard errors. **a**, Bias as a fraction of the RMSE, with 95% MC intervals. **b**, Mean SE over the RMSE; the dashed line marks 1. **c**, Coverage of the nominal 95% confidence interval, with 95% MC intervals; the dashed line marks 0.95. No statistical tests are shown. MC, Monte Carlo; RMSE, root mean square error; SE, standard error; CI, confidence interval.
+
+Source data: results/08_simulations/summary.

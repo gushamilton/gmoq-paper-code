@@ -1,0 +1,73 @@
+"panel","design","parameter","n","method","value1","value2","value3"
+"a/b","S4","delta1",10000,"gmoq_jackknife",-0.0032369041273585,1.21271410669091,
+"a/b","S4","delta1",50000,"gmoq_jackknife",0.00154461280401673,1.20289692264959,
+"a/b","S4","delta1",4e+05,"gmoq_jackknife",0.00121239287017993,1.121823745202,
+"a/b","S4","delta1",10000,"gmoq_pooled",-0.00323690412735873,1.21388045777143,
+"a/b","S4","delta1",50000,"gmoq_pooled",0.00154461280401849,1.1896355041051,
+"a/b","S4","delta1",4e+05,"gmoq_pooled",0.00121239287022382,1.12640943627313,
+"a/b","S4","delta1",10000,"mixture_ml",-0.00306693254954919,1.32660207227118,
+"a/b","S4","delta1",50000,"mixture_ml",0.00235011915388416,1.21277365245721,
+"a/b","S4","delta1",4e+05,"mixture_ml",0.00125128542413804,1.18644123238212,
+"a/b","S4","delta2",10000,"gmoq_jackknife",-0.00707138899584301,1.04075796419417,
+"a/b","S4","delta2",50000,"gmoq_jackknife",5.60003954504e-05,0.989936203506511,
+"a/b","S4","delta2",4e+05,"gmoq_jackknife",-0.000415174462876134,1.27009016098653,
+"a/b","S4","delta2",10000,"gmoq_pooled",-0.00707138899584482,1.03367360354405,
+"a/b","S4","delta2",50000,"gmoq_pooled",5.6000395449537e-05,0.990309650830574,
+"a/b","S4","delta2",4e+05,"gmoq_pooled",-0.000415174462871036,1.2587902923199,
+"a/b","S4","delta2",10000,"mixture_ml",-0.00772695852028304,0.954147468087446,
+"a/b","S4","delta2",50000,"mixture_ml",0.000640665294468941,0.996262761020074,
+"a/b","S4","delta2",4e+05,"mixture_ml",-0.000333791334538133,1.28080401207192,
+"a/b","S4","gamma",10000,"gmoq_jackknife",-0.00124827909833133,0.766042458131884,
+"a/b","S4","gamma",50000,"gmoq_jackknife",0.00337478730546678,1.04638039004245,
+"a/b","S4","gamma",4e+05,"gmoq_jackknife",0.00108651119073504,1.37212389911971,
+"a/b","S4","gamma",10000,"gmoq_pooled",-0.00124827909833322,0.764956456831527,
+"a/b","S4","gamma",50000,"gmoq_pooled",0.00337478730546723,1.04327354417434,
+"a/b","S4","gamma",4e+05,"gmoq_pooled",0.00108651119073988,1.36413497487706,
+"a/b","S4","gamma",10000,"mixture_ml",-0.00174827163141733,0.783816518704721,
+"a/b","S4","gamma",50000,"mixture_ml",0.00396072670045493,1.03881631239093,
+"a/b","S4","gamma",4e+05,"mixture_ml",0.00114888252490684,1.38979693982166,
+"c","jcv_vp1","gamma",,"G-MoQ, pooled",0.945,0.905,0.985
+"c","jcv_vp1","beta_1",,"G-MoQ, pooled",0.95875,0.95,0.97
+"c","jcv_vp1","beta_2",,"G-MoQ, pooled",0.95375,0.94,0.965
+"c","jcv_vp1","gamma",,"G-MoQ, jackknife",0.95125,0.925,0.985
+"c","jcv_vp1","beta_1",,"G-MoQ, jackknife",0.96125,0.95,0.975
+"c","jcv_vp1","beta_2",,"G-MoQ, jackknife",0.96125,0.94,0.97
+"c","mcv_vp1","gamma",,"G-MoQ, pooled",0.94375,0.91,0.975
+"c","mcv_vp1","beta_1",,"G-MoQ, pooled",0.94375,0.935,0.955
+"c","mcv_vp1","beta_2",,"G-MoQ, pooled",0.93875,0.93,0.945
+"c","mcv_vp1","gamma",,"G-MoQ, jackknife",0.94,0.905,0.975
+"c","mcv_vp1","beta_1",,"G-MoQ, jackknife",0.9475,0.935,0.965
+"c","mcv_vp1","beta_2",,"G-MoQ, jackknife",0.94125,0.925,0.96
+"c","testosterone_shrink_0.2","gamma",,"G-MoQ, pooled",0.94875,0.915,0.975
+"c","testosterone_shrink_0.2","beta_1",,"G-MoQ, pooled",0.94875,0.92,0.965
+"c","testosterone_shrink_0.2","beta_2",,"G-MoQ, pooled",0.95125,0.915,0.965
+"c","testosterone_shrink_0.2","gamma",,"G-MoQ, jackknife",0.94875,0.91,0.975
+"c","testosterone_shrink_0.2","beta_1",,"G-MoQ, jackknife",0.948125,0.92,0.97
+"c","testosterone_shrink_0.2","beta_2",,"G-MoQ, jackknife",0.95625,0.935,0.97
+"c","testosterone_shrink_0.5","gamma",,"G-MoQ, pooled",0.949375,0.925,0.965
+"c","testosterone_shrink_0.5","beta_1",,"G-MoQ, pooled",0.95375,0.935,0.975
+"c","testosterone_shrink_0.5","beta_2",,"G-MoQ, pooled",0.953125,0.94,0.97
+"c","testosterone_shrink_0.5","gamma",,"G-MoQ, jackknife",0.95125,0.92,0.97
+"c","testosterone_shrink_0.5","beta_1",,"G-MoQ, jackknife",0.95625,0.945,0.975
+"c","testosterone_shrink_0.5","beta_2",,"G-MoQ, jackknife",0.95375,0.94,0.97
+"c","testosterone_shrink_0.7","gamma",,"G-MoQ, pooled",0.93875,0.905,0.975
+"c","testosterone_shrink_0.7","beta_1",,"G-MoQ, pooled",0.9475,0.915,0.985
+"c","testosterone_shrink_0.7","beta_2",,"G-MoQ, pooled",0.935,0.915,0.955
+"c","testosterone_shrink_0.7","gamma",,"G-MoQ, jackknife",0.94,0.91,0.97
+"c","testosterone_shrink_0.7","beta_1",,"G-MoQ, jackknife",0.9475,0.92,0.985
+"c","testosterone_shrink_0.7","beta_2",,"G-MoQ, jackknife",0.94625,0.925,0.965
+"c","testosterone_unshrunk","gamma",,"G-MoQ, pooled",0.95,0.935,0.96
+"c","testosterone_unshrunk","beta_1",,"G-MoQ, pooled",0.95875,0.945,0.98
+"c","testosterone_unshrunk","beta_2",,"G-MoQ, pooled",0.9475,0.925,0.965
+"c","testosterone_unshrunk","gamma",,"G-MoQ, jackknife",0.950625,0.94,0.96
+"c","testosterone_unshrunk","beta_1",,"G-MoQ, jackknife",0.96,0.95,0.98
+"c","testosterone_unshrunk","beta_2",,"G-MoQ, jackknife",0.949375,0.925,0.965
+"d","M100",,10000,"gmoq_jackknife",3.49735702946782,,
+"d","M100",,10000,"gmoq_pooled",3.06626033317298,,
+"d","M100",,10000,"mixture_ml",48.0287222601473,,
+"d","M100",,50000,"gmoq_jackknife",8.32777381874621,,
+"d","M100",,50000,"gmoq_pooled",7.65752788446844,,
+"d","M100",,50000,"mixture_ml",171.74597126618,,
+"d","M100",,4e+05,"gmoq_jackknife",54.6501268884167,,
+"d","M100",,4e+05,"gmoq_pooled",53.0318343956023,,
+"d","M100",,4e+05,"mixture_ml",1413.60687806178,,

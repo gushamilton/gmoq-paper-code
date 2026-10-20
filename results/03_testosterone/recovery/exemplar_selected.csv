@@ -1,0 +1,11 @@
+"weight_design","category","snp_id","chr","bp","pool_size"
+"hybrid","female_specific","rs11166576",1,101740406,207
+"hybrid","male_specific","rs7097461",10,67255662,207
+"hybrid","shared_concordant","rs1260326",2,27730940,207
+"hybrid","discordant","rs4149056",12,21331549,207
+"hybrid","membership","rs2048485",18,42090667,207
+"model","female_specific","rs2152318",1,179293511,206
+"model","male_specific","rs7097461",10,67255662,206
+"model","shared_concordant",,,,206
+"model","discordant","rs11973801",7,99102911,206
+"model","membership","rs10858891",12,89907474,206

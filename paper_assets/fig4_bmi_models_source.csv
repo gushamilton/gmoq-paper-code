@@ -1,0 +1,2101 @@
+"panel","series","x","y"
+"A","additive quantile_difference",0.02,2
+"A","additive quantile_difference",0.0248241206030151,2
+"A","additive quantile_difference",0.0296482412060302,2
+"A","additive quantile_difference",0.0344723618090452,2
+"A","additive quantile_difference",0.0392964824120603,2
+"A","additive quantile_difference",0.0441206030150754,2
+"A","additive quantile_difference",0.0489447236180904,2
+"A","additive quantile_difference",0.0537688442211055,2
+"A","additive quantile_difference",0.0585929648241206,2
+"A","additive quantile_difference",0.0634170854271357,2
+"A","additive quantile_difference",0.0682412060301508,2
+"A","additive quantile_difference",0.0730653266331658,2
+"A","additive quantile_difference",0.0778894472361809,2
+"A","additive quantile_difference",0.082713567839196,2
+"A","additive quantile_difference",0.087537688442211,2
+"A","additive quantile_difference",0.0923618090452261,2
+"A","additive quantile_difference",0.0971859296482412,2
+"A","additive quantile_difference",0.102010050251256,2
+"A","additive quantile_difference",0.106834170854271,2
+"A","additive quantile_difference",0.111658291457286,2
+"A","additive quantile_difference",0.116482412060302,2
+"A","additive quantile_difference",0.121306532663317,2
+"A","additive quantile_difference",0.126130653266332,2
+"A","additive quantile_difference",0.130954773869347,2
+"A","additive quantile_difference",0.135778894472362,2
+"A","additive quantile_difference",0.140603015075377,2
+"A","additive quantile_difference",0.145427135678392,2
+"A","additive quantile_difference",0.150251256281407,2
+"A","additive quantile_difference",0.155075376884422,2
+"A","additive quantile_difference",0.159899497487437,2
+"A","additive quantile_difference",0.164723618090452,2
+"A","additive quantile_difference",0.169547738693467,2
+"A","additive quantile_difference",0.174371859296482,2
+"A","additive quantile_difference",0.179195979899497,2
+"A","additive quantile_difference",0.184020100502513,2
+"A","additive quantile_difference",0.188844221105528,2
+"A","additive quantile_difference",0.193668341708543,2
+"A","additive quantile_difference",0.198492462311558,2
+"A","additive quantile_difference",0.203316582914573,2
+"A","additive quantile_difference",0.208140703517588,2
+"A","additive quantile_difference",0.212964824120603,2
+"A","additive quantile_difference",0.217788944723618,2
+"A","additive quantile_difference",0.222613065326633,2
+"A","additive quantile_difference",0.227437185929648,2
+"A","additive quantile_difference",0.232261306532663,2
+"A","additive quantile_difference",0.237085427135678,2
+"A","additive quantile_difference",0.241909547738693,2
+"A","additive quantile_difference",0.246733668341709,2
+"A","additive quantile_difference",0.251557788944724,2
+"A","additive quantile_difference",0.256381909547739,2
+"A","additive quantile_difference",0.261206030150754,2
+"A","additive quantile_difference",0.266030150753769,2
+"A","additive quantile_difference",0.270854271356784,2
+"A","additive quantile_difference",0.275678391959799,2
+"A","additive quantile_difference",0.280502512562814,2
+"A","additive quantile_difference",0.285326633165829,2
+"A","additive quantile_difference",0.290150753768844,2
+"A","additive quantile_difference",0.294974874371859,2
+"A","additive quantile_difference",0.299798994974874,2
+"A","additive quantile_difference",0.304623115577889,2
+"A","additive quantile_difference",0.309447236180905,2
+"A","additive quantile_difference",0.31427135678392,2
+"A","additive quantile_difference",0.319095477386935,2
+"A","additive quantile_difference",0.32391959798995,2
+"A","additive quantile_difference",0.328743718592965,2
+"A","additive quantile_difference",0.33356783919598,2
+"A","additive quantile_difference",0.338391959798995,2
+"A","additive quantile_difference",0.34321608040201,2
+"A","additive quantile_difference",0.348040201005025,2
+"A","additive quantile_difference",0.35286432160804,2
+"A","additive quantile_difference",0.357688442211055,2
+"A","additive quantile_difference",0.36251256281407,2
+"A","additive quantile_difference",0.367336683417085,2
+"A","additive quantile_difference",0.3721608040201,2
+"A","additive quantile_difference",0.376984924623116,2
+"A","additive quantile_difference",0.381809045226131,2
+"A","additive quantile_difference",0.386633165829146,2
+"A","additive quantile_difference",0.391457286432161,2
+"A","additive quantile_difference",0.396281407035176,2
+"A","additive quantile_difference",0.401105527638191,2
+"A","additive quantile_difference",0.405929648241206,2
+"A","additive quantile_difference",0.410753768844221,2
+"A","additive quantile_difference",0.415577889447236,2
+"A","additive quantile_difference",0.420402010050251,2
+"A","additive quantile_difference",0.425226130653266,2
+"A","additive quantile_difference",0.430050251256281,2
+"A","additive quantile_difference",0.434874371859296,2
+"A","additive quantile_difference",0.439698492462312,2
+"A","additive quantile_difference",0.444522613065327,2
+"A","additive quantile_difference",0.449346733668342,2
+"A","additive quantile_difference",0.454170854271357,2
+"A","additive quantile_difference",0.458994974874372,2
+"A","additive quantile_difference",0.463819095477387,2
+"A","additive quantile_difference",0.468643216080402,2
+"A","additive quantile_difference",0.473467336683417,2
+"A","additive quantile_difference",0.478291457286432,2
+"A","additive quantile_difference",0.483115577889447,2
+"A","additive quantile_difference",0.487939698492462,2
+"A","additive quantile_difference",0.492763819095477,2
+"A","additive quantile_difference",0.497587939698492,2
+"A","additive quantile_difference",0.502412060301507,2
+"A","additive quantile_difference",0.507236180904522,2
+"A","additive quantile_difference",0.512060301507538,2
+"A","additive quantile_difference",0.516884422110553,2
+"A","additive quantile_difference",0.521708542713568,2
+"A","additive quantile_difference",0.526532663316583,2
+"A","additive quantile_difference",0.531356783919598,2
+"A","additive quantile_difference",0.536180904522613,2
+"A","additive quantile_difference",0.541005025125628,2
+"A","additive quantile_difference",0.545829145728643,2
+"A","additive quantile_difference",0.550653266331658,2
+"A","additive quantile_difference",0.555477386934673,2
+"A","additive quantile_difference",0.560301507537688,2
+"A","additive quantile_difference",0.565125628140703,2
+"A","additive quantile_difference",0.569949748743719,2
+"A","additive quantile_difference",0.574773869346734,2
+"A","additive quantile_difference",0.579597989949749,2
+"A","additive quantile_difference",0.584422110552764,2
+"A","additive quantile_difference",0.589246231155779,2
+"A","additive quantile_difference",0.594070351758794,2
+"A","additive quantile_difference",0.598894472361809,2
+"A","additive quantile_difference",0.603718592964824,2
+"A","additive quantile_difference",0.608542713567839,2
+"A","additive quantile_difference",0.613366834170854,2
+"A","additive quantile_difference",0.618190954773869,2
+"A","additive quantile_difference",0.623015075376884,2
+"A","additive quantile_difference",0.6278391959799,2
+"A","additive quantile_difference",0.632663316582915,2
+"A","additive quantile_difference",0.63748743718593,2
+"A","additive quantile_difference",0.642311557788945,2
+"A","additive quantile_difference",0.64713567839196,2
+"A","additive quantile_difference",0.651959798994975,2
+"A","additive quantile_difference",0.65678391959799,2
+"A","additive quantile_difference",0.661608040201005,2
+"A","additive quantile_difference",0.66643216080402,2
+"A","additive quantile_difference",0.671256281407035,2
+"A","additive quantile_difference",0.67608040201005,2
+"A","additive quantile_difference",0.680904522613065,2
+"A","additive quantile_difference",0.68572864321608,2
+"A","additive quantile_difference",0.690552763819095,2
+"A","additive quantile_difference",0.69537688442211,2
+"A","additive quantile_difference",0.700201005025126,2
+"A","additive quantile_difference",0.705025125628141,2
+"A","additive quantile_difference",0.709849246231156,2
+"A","additive quantile_difference",0.714673366834171,2
+"A","additive quantile_difference",0.719497487437186,2
+"A","additive quantile_difference",0.724321608040201,2
+"A","additive quantile_difference",0.729145728643216,2
+"A","additive quantile_difference",0.733969849246231,2
+"A","additive quantile_difference",0.738793969849246,2
+"A","additive quantile_difference",0.743618090452261,2
+"A","additive quantile_difference",0.748442211055276,2
+"A","additive quantile_difference",0.753266331658291,2
+"A","additive quantile_difference",0.758090452261306,2
+"A","additive quantile_difference",0.762914572864322,2
+"A","additive quantile_difference",0.767738693467337,2
+"A","additive quantile_difference",0.772562814070352,2
+"A","additive quantile_difference",0.777386934673367,2
+"A","additive quantile_difference",0.782211055276382,2
+"A","additive quantile_difference",0.787035175879397,2
+"A","additive quantile_difference",0.791859296482412,2
+"A","additive quantile_difference",0.796683417085427,2
+"A","additive quantile_difference",0.801507537688442,2
+"A","additive quantile_difference",0.806331658291457,2
+"A","additive quantile_difference",0.811155778894472,2
+"A","additive quantile_difference",0.815979899497487,2
+"A","additive quantile_difference",0.820804020100502,2
+"A","additive quantile_difference",0.825628140703518,2
+"A","additive quantile_difference",0.830452261306533,2
+"A","additive quantile_difference",0.835276381909548,2
+"A","additive quantile_difference",0.840100502512563,2
+"A","additive quantile_difference",0.844924623115578,2
+"A","additive quantile_difference",0.849748743718593,2
+"A","additive quantile_difference",0.854572864321608,2
+"A","additive quantile_difference",0.859396984924623,2
+"A","additive quantile_difference",0.864221105527638,2
+"A","additive quantile_difference",0.869045226130653,2
+"A","additive quantile_difference",0.873869346733668,2
+"A","additive quantile_difference",0.878693467336683,2
+"A","additive quantile_difference",0.883517587939698,2
+"A","additive quantile_difference",0.888341708542713,2
+"A","additive quantile_difference",0.893165829145729,2
+"A","additive quantile_difference",0.897989949748744,2
+"A","additive quantile_difference",0.902814070351759,2
+"A","additive quantile_difference",0.907638190954774,2
+"A","additive quantile_difference",0.912462311557789,2
+"A","additive quantile_difference",0.917286432160804,2
+"A","additive quantile_difference",0.922110552763819,2
+"A","additive quantile_difference",0.926934673366834,2
+"A","additive quantile_difference",0.931758793969849,2
+"A","additive quantile_difference",0.936582914572864,2
+"A","additive quantile_difference",0.941407035175879,2
+"A","additive quantile_difference",0.946231155778894,2
+"A","additive quantile_difference",0.95105527638191,2
+"A","additive quantile_difference",0.955879396984925,2
+"A","additive quantile_difference",0.96070351758794,2
+"A","additive quantile_difference",0.965527638190955,2
+"A","additive quantile_difference",0.97035175879397,2
+"A","additive quantile_difference",0.975175879396985,2
+"A","additive quantile_difference",0.98,2
+"A","multiplicative quantile_difference",0.02,1.40966858675998
+"A","multiplicative quantile_difference",0.0248241206030151,1.4307819641093
+"A","multiplicative quantile_difference",0.0296482412060302,1.44893925050807
+"A","multiplicative quantile_difference",0.0344723618090452,1.46497680313838
+"A","multiplicative quantile_difference",0.0392964824120603,1.47941368750943
+"A","multiplicative quantile_difference",0.0441206030150754,1.49259553244422
+"A","multiplicative quantile_difference",0.0489447236180904,1.50476477318852
+"A","multiplicative quantile_difference",0.0537688442211055,1.5160984227755
+"A","multiplicative quantile_difference",0.0585929648241206,1.52672991772706
+"A","multiplicative quantile_difference",0.0634170854271357,1.53676249635548
+"A","multiplicative quantile_difference",0.0682412060301508,1.54627777862616
+"A","multiplicative quantile_difference",0.0730653266331658,1.55534148226426
+"A","multiplicative quantile_difference",0.0778894472361809,1.56400735475954
+"A","multiplicative quantile_difference",0.082713567839196,1.57231995288695
+"A","multiplicative quantile_difference",0.087537688442211,1.580316654318
+"A","multiplicative quantile_difference",0.0923618090452261,1.58802914365262
+"A","multiplicative quantile_difference",0.0971859296482412,1.59548453018731
+"A","multiplicative quantile_difference",0.102010050251256,1.60270620224963
+"A","multiplicative quantile_difference",0.106834170854271,1.60971448958722
+"A","multiplicative quantile_difference",0.111658291457286,1.61652718357653
+"A","multiplicative quantile_difference",0.116482412060302,1.62315995054011
+"A","multiplicative quantile_difference",0.121306532663317,1.6296266636163
+"A","multiplicative quantile_difference",0.126130653266332,1.63593967180594
+"A","multiplicative quantile_difference",0.130954773869347,1.64211002001823
+"A","multiplicative quantile_difference",0.135778894472362,1.64814763050343
+"A","multiplicative quantile_difference",0.140603015075377,1.65406145357009
+"A","multiplicative quantile_difference",0.145427135678392,1.65985959365553
+"A","multiplicative quantile_difference",0.150251256281407,1.66554941545924
+"A","multiplicative quantile_difference",0.155075376884422,1.67113763382758
+"A","multiplicative quantile_difference",0.159899497487437,1.67663039030312
+"A","multiplicative quantile_difference",0.164723618090452,1.68203331865809
+"A","multiplicative quantile_difference",0.169547738693467,1.68735160127227
+"A","multiplicative quantile_difference",0.174371859296482,1.69259001785794
+"A","multiplicative quantile_difference",0.179195979899497,1.69775298775323
+"A","multiplicative quantile_difference",0.184020100502513,1.70284460678312
+"A","multiplicative quantile_difference",0.188844221105528,1.70786867950997
+"A","multiplicative quantile_difference",0.193668341708543,1.71282874755353
+"A","multiplicative quantile_difference",0.198492462311558,1.7177281145457
+"A","multiplicative quantile_difference",0.203316582914573,1.72256986819244
+"A","multiplicative quantile_difference",0.208140703517588,1.72735689983933
+"A","multiplicative quantile_difference",0.212964824120603,1.73209192187507
+"A","multiplicative quantile_difference",0.217788944723618,1.73677748325595
+"A","multiplicative quantile_difference",0.222613065326633,1.74141598339189
+"A","multiplicative quantile_difference",0.227437185929648,1.74600968459942
+"A","multiplicative quantile_difference",0.232261306532663,1.75056072329734
+"A","multiplicative quantile_difference",0.237085427135678,1.7550711200961
+"A","multiplicative quantile_difference",0.241909547738693,1.75954278891139
+"A","multiplicative quantile_difference",0.246733668341709,1.76397754521433
+"A","multiplicative quantile_difference",0.251557788944724,1.76837711351634
+"A","multiplicative quantile_difference",0.256381909547739,1.77274313417347
+"A","multiplicative quantile_difference",0.261206030150754,1.77707716958465
+"A","multiplicative quantile_difference",0.266030150753769,1.78138070984864
+"A","multiplicative quantile_difference",0.270854271356784,1.78565517793689
+"A","multiplicative quantile_difference",0.275678391959799,1.78990193443213
+"A","multiplicative quantile_difference",0.280502512562814,1.7941222818771
+"A","multiplicative quantile_difference",0.285326633165829,1.79831746877244
+"A","multiplicative quantile_difference",0.290150753768844,1.80248869325816
+"A","multiplicative quantile_difference",0.294974874371859,1.80663710650957
+"A","multiplicative quantile_difference",0.299798994974874,1.81076381587491
+"A","multiplicative quantile_difference",0.304623115577889,1.81486988777898
+"A","multiplicative quantile_difference",0.309447236180905,1.81895635041453
+"A","multiplicative quantile_difference",0.31427135678392,1.82302419624092
+"A","multiplicative quantile_difference",0.319095477386935,1.82707438430744
+"A","multiplicative quantile_difference",0.32391959798995,1.831107842417
+"A","multiplicative quantile_difference",0.328743718592965,1.83512546914423
+"A","multiplicative quantile_difference",0.33356783919598,1.83912813572079
+"A","multiplicative quantile_difference",0.338391959798995,1.84311668779939
+"A","multiplicative quantile_difference",0.34321608040201,1.84709194710683
+"A","multiplicative quantile_difference",0.348040201005025,1.85105471299555
+"A","multiplicative quantile_difference",0.35286432160804,1.85500576390228
+"A","multiplicative quantile_difference",0.357688442211055,1.85894585872148
+"A","multiplicative quantile_difference",0.36251256281407,1.86287573810079
+"A","multiplicative quantile_difference",0.367336683417085,1.86679612566492
+"A","multiplicative quantile_difference",0.3721608040201,1.8707077291738
+"A","multiplicative quantile_difference",0.376984924623116,1.87461124162067
+"A","multiplicative quantile_difference",0.381809045226131,1.87850734227489
+"A","multiplicative quantile_difference",0.386633165829146,1.88239669767406
+"A","multiplicative quantile_difference",0.391457286432161,1.88627996256994
+"A","multiplicative quantile_difference",0.396281407035176,1.89015778083162
+"A","multiplicative quantile_difference",0.401105527638191,1.89403078631011
+"A","multiplicative quantile_difference",0.405929648241206,1.89789960366721
+"A","multiplicative quantile_difference",0.410753768844221,1.90176484917207
+"A","multiplicative quantile_difference",0.415577889447236,1.90562713146838
+"A","multiplicative quantile_difference",0.420402010050251,1.90948705231463
+"A","multiplicative quantile_difference",0.425226130653266,1.91334520730035
+"A","multiplicative quantile_difference",0.430050251256281,1.91720218654047
+"A","multiplicative quantile_difference",0.434874371859296,1.92105857535023
+"A","multiplicative quantile_difference",0.439698492462312,1.92491495490264
+"A","multiplicative quantile_difference",0.444522613065327,1.9287719028707
+"A","multiplicative quantile_difference",0.449346733668342,1.9326299940562
+"A","multiplicative quantile_difference",0.454170854271357,1.93648980100696
+"A","multiplicative quantile_difference",0.458994974874372,1.94035189462442
+"A","multiplicative quantile_difference",0.463819095477387,1.94421684476321
+"A","multiplicative quantile_difference",0.468643216080402,1.94808522082439
+"A","multiplicative quantile_difference",0.473467336683417,1.95195759234395
+"A","multiplicative quantile_difference",0.478291457286432,1.95583452957844
+"A","multiplicative quantile_difference",0.483115577889447,1.95971660408885
+"A","multiplicative quantile_difference",0.487939698492462,1.96360438932473
+"A","multiplicative quantile_difference",0.492763819095477,1.96749846120985
+"A","multiplicative quantile_difference",0.497587939698492,1.97139939873108
+"A","multiplicative quantile_difference",0.502412060301507,1.97530778453193
+"A","multiplicative quantile_difference",0.507236180904522,1.97922420551247
+"A","multiplicative quantile_difference",0.512060301507538,1.98314925343707
+"A","multiplicative quantile_difference",0.516884422110553,1.9870835255517
+"A","multiplicative quantile_difference",0.521708542713568,1.99102762521245
+"A","multiplicative quantile_difference",0.526532663316583,1.99498216252687
+"A","multiplicative quantile_difference",0.531356783919598,1.99894775501001
+"A","multiplicative quantile_difference",0.536180904522613,2.00292502825699
+"A","multiplicative quantile_difference",0.541005025125628,2.00691461663392
+"A","multiplicative quantile_difference",0.545829145728643,2.01091716398928
+"A","multiplicative quantile_difference",0.550653266331658,2.01493332438772
+"A","multiplicative quantile_difference",0.555477386934673,2.01896376286861
+"A","multiplicative quantile_difference",0.560301507537688,2.02300915623155
+"A","multiplicative quantile_difference",0.565125628140703,2.0270701938514
+"A","multiplicative quantile_difference",0.569949748743719,2.03114757852529
+"A","multiplicative quantile_difference",0.574773869346734,2.03524202735455
+"A","multiplicative quantile_difference",0.579597989949749,2.03935427266434
+"A","multiplicative quantile_difference",0.584422110552764,2.04348506296427
+"A","multiplicative quantile_difference",0.589246231155779,2.0476351639533
+"A","multiplicative quantile_difference",0.594070351758794,2.05180535957259
+"A","multiplicative quantile_difference",0.598894472361809,2.05599645311018
+"A","multiplicative quantile_difference",0.603718592964824,2.06020926836159
+"A","multiplicative quantile_difference",0.608542713567839,2.06444465085108
+"A","multiplicative quantile_difference",0.613366834170854,2.06870346911825
+"A","multiplicative quantile_difference",0.618190954773869,2.07298661607533
+"A","multiplicative quantile_difference",0.623015075376884,2.07729501044092
+"A","multiplicative quantile_difference",0.6278391959799,2.08162959825633
+"A","multiplicative quantile_difference",0.632663316582915,2.08599135449141
+"A","multiplicative quantile_difference",0.63748743718593,2.09038128474696
+"A","multiplicative quantile_difference",0.642311557788945,2.0948004270621
+"A","multiplicative quantile_difference",0.64713567839196,2.09924985383507
+"A","multiplicative quantile_difference",0.651959798994975,2.10373067386714
+"A","multiplicative quantile_difference",0.65678391959799,2.10824403454012
+"A","multiplicative quantile_difference",0.661608040201005,2.11279112413903
+"A","multiplicative quantile_difference",0.66643216080402,2.11737317433235
+"A","multiplicative quantile_difference",0.671256281407035,2.12199146282407
+"A","multiplicative quantile_difference",0.67608040201005,2.12664731619245
+"A","multiplicative quantile_difference",0.680904522613065,2.13134211293272
+"A","multiplicative quantile_difference",0.68572864321608,2.13607728672213
+"A","multiplicative quantile_difference",0.690552763819095,2.14085432992806
+"A","multiplicative quantile_difference",0.69537688442211,2.14567479738212
+"A","multiplicative quantile_difference",0.700201005025126,2.15054031044548
+"A","multiplicative quantile_difference",0.705025125628141,2.15545256139377
+"A","multiplicative quantile_difference",0.709849246231156,2.16041331815298
+"A","multiplicative quantile_difference",0.714673366834171,2.16542442942139
+"A","multiplicative quantile_difference",0.719497487437186,2.17048783021681
+"A","multiplicative quantile_difference",0.724321608040201,2.17560554789307
+"A","multiplicative quantile_difference",0.729145728643216,2.18077970867492
+"A","multiplicative quantile_difference",0.733969849246231,2.186012544767
+"A","multiplicative quantile_difference",0.738793969849246,2.19130640209915
+"A","multiplicative quantile_difference",0.743618090452261,2.19666374877863
+"A","multiplicative quantile_difference",0.748442211055276,2.20208718432902
+"A","multiplicative quantile_difference",0.753266331658291,2.2075794498064
+"A","multiplicative quantile_difference",0.758090452261306,2.21314343889548
+"A","multiplicative quantile_difference",0.762914572864322,2.21878221010317
+"A","multiplicative quantile_difference",0.767738693467337,2.2244990001833
+"A","multiplicative quantile_difference",0.772562814070352,2.230297238946
+"A","multiplicative quantile_difference",0.777386934673367,2.2361805656281
+"A","multiplicative quantile_difference",0.782211055276382,2.24215284702721
+"A","multiplicative quantile_difference",0.787035175879397,2.2482181976344
+"A","multiplicative quantile_difference",0.791859296482412,2.25438100203686
+"A","multiplicative quantile_difference",0.796683417085427,2.26064593990683
+"A","multiplicative quantile_difference",0.801507537688442,2.26701801394511
+"A","multiplicative quantile_difference",0.806331658291457,2.27350258121083
+"A","multiplicative quantile_difference",0.811155778894472,2.28010538834426
+"A","multiplicative quantile_difference",0.815979899497487,2.28683261128069
+"A","multiplicative quantile_difference",0.820804020100502,2.29369090016356
+"A","multiplicative quantile_difference",0.825628140703518,2.30068743029886
+"A","multiplicative quantile_difference",0.830452261306533,2.30782996015703
+"A","multiplicative quantile_difference",0.835276381909548,2.31512689762993
+"A","multiplicative quantile_difference",0.840100502512563,2.32258737599946
+"A","multiplicative quantile_difference",0.844924623115578,2.33022134138405
+"A","multiplicative quantile_difference",0.849748743718593,2.33803965381679
+"A","multiplicative quantile_difference",0.854572864321608,2.34605420459631
+"A","multiplicative quantile_difference",0.859396984924623,2.35427805317033
+"A","multiplicative quantile_difference",0.864221105527638,2.3627255876014
+"A","multiplicative quantile_difference",0.869045226130653,2.37141271368154
+"A","multiplicative quantile_difference",0.873869346733668,2.38035707908244
+"A","multiplicative quantile_difference",0.878693467336683,2.38957834065727
+"A","multiplicative quantile_difference",0.883517587939698,2.39909848529672
+"A","multiplicative quantile_difference",0.888341708542713,2.40894221779768
+"A","multiplicative quantile_difference",0.893165829145729,2.41913743333059
+"A","multiplicative quantile_difference",0.897989949748744,2.4297157977358
+"A","multiplicative quantile_difference",0.902814070351759,2.44071346669711
+"A","multiplicative quantile_difference",0.907638190954774,2.45217198582277
+"A","multiplicative quantile_difference",0.912462311557789,2.46413942933204
+"A","multiplicative quantile_difference",0.917286432160804,2.47667185777618
+"A","multiplicative quantile_difference",0.922110552763819,2.48983520882086
+"A","multiplicative quantile_difference",0.926934673366834,2.50370778580793
+"A","multiplicative quantile_difference",0.931758793969849,2.51838358706478
+"A","multiplicative quantile_difference",0.936582914572864,2.53397684285646
+"A","multiplicative quantile_difference",0.941407035175879,2.55062832890084
+"A","multiplicative quantile_difference",0.946231155778894,2.56851436571391
+"A","multiplicative quantile_difference",0.95105527638191,2.58786000850063
+"A","multiplicative quantile_difference",0.955879396984925,2.6089590207725
+"A","multiplicative quantile_difference",0.96070351758794,2.63220531999455
+"A","multiplicative quantile_difference",0.965527638190955,2.65814487327908
+"A","multiplicative quantile_difference",0.97035175879397,2.68756649208697
+"A","multiplicative quantile_difference",0.975175879396985,2.72167295675918
+"A","multiplicative quantile_difference",0.98,2.76243694107238
+"A","vqtl quantile_difference",0.02,-2.32828078481681
+"A","vqtl quantile_difference",0.0248241206030151,-2.27344303220345
+"A","vqtl quantile_difference",0.0296482412060302,-2.22486002263974
+"A","vqtl quantile_difference",0.0344723618090452,-2.18086331016362
+"A","vqtl quantile_difference",0.0392964824120603,-2.14039329802088
+"A","vqtl quantile_difference",0.0441206030150754,-2.10273066360452
+"A","vqtl quantile_difference",0.0489447236180904,-2.06736237009051
+"A","vqtl quantile_difference",0.0537688442211055,-2.03390829501195
+"A","vqtl quantile_difference",0.0585929648241206,-2.00207811881032
+"A","vqtl quantile_difference",0.0634170854271357,-1.97164455197077
+"A","vqtl quantile_difference",0.0682412060301508,-1.94242594854181
+"A","vqtl quantile_difference",0.0730653266331658,-1.91427459073023
+"A","vqtl quantile_difference",0.0778894472361809,-1.88706854613238
+"A","vqtl quantile_difference",0.082713567839196,-1.86070585646456
+"A","vqtl quantile_difference",0.087537688442211,-1.835100294473
+"A","vqtl quantile_difference",0.0923618090452261,-1.81017820355843
+"A","vqtl quantile_difference",0.0971859296482412,-1.7858761022345
+"A","vqtl quantile_difference",0.102010050251256,-1.76213883988563
+"A","vqtl quantile_difference",0.106834170854271,-1.73891815710384
+"A","vqtl quantile_difference",0.111658291457286,-1.71617154774112
+"A","vqtl quantile_difference",0.116482412060302,-1.69386134924564
+"A","vqtl quantile_difference",0.121306532663317,-1.67195400799966
+"A","vqtl quantile_difference",0.126130653266332,-1.65041948042139
+"A","vqtl quantile_difference",0.130954773869347,-1.62923074054336
+"A","vqtl quantile_difference",0.135778894472362,-1.60836337193643
+"A","vqtl quantile_difference",0.140603015075377,-1.587795227065
+"A","vqtl quantile_difference",0.145427135678392,-1.56750614101098
+"A","vqtl quantile_difference",0.150251256281407,-1.54747768938048
+"A","vqtl quantile_difference",0.155075376884422,-1.52769298237937
+"A","vqtl quantile_difference",0.159899497487437,-1.50813648869883
+"A","vqtl quantile_difference",0.164723618090452,-1.48879388412753
+"A","vqtl quantile_difference",0.169547738693467,-1.46965192079574
+"A","vqtl quantile_difference",0.174371859296482,-1.45069831373127
+"A","vqtl quantile_difference",0.179195979899497,-1.4319216420175
+"A","vqtl quantile_difference",0.184020100502513,-1.41331126232914
+"A","vqtl quantile_difference",0.188844221105528,-1.3948572330088
+"A","vqtl quantile_difference",0.193668341708543,-1.37655024715967
+"A","vqtl quantile_difference",0.198492462311558,-1.35838157348233
+"A","vqtl quantile_difference",0.203316582914573,-1.34034300378899
+"A","vqtl quantile_difference",0.208140703517588,-1.3224268062975
+"A","vqtl quantile_difference",0.212964824120603,-1.304625683945
+"A","vqtl quantile_difference",0.217788944723618,-1.28693273707664
+"A","vqtl quantile_difference",0.222613065326633,-1.26934142995898
+"A","vqtl quantile_difference",0.227437185929648,-1.25184556064748
+"A","vqtl quantile_difference",0.232261306532663,-1.23443923380376
+"A","vqtl quantile_difference",0.237085427135678,-1.2171168361143
+"A","vqtl quantile_difference",0.241909547738693,-1.19987301400922
+"A","vqtl quantile_difference",0.246733668341709,-1.1827026534199
+"A","vqtl quantile_difference",0.251557788944724,-1.16560086134816
+"A","vqtl quantile_difference",0.256381909547739,-1.14856294904843
+"A","vqtl quantile_difference",0.261206030150754,-1.1315844166499
+"A","vqtl quantile_difference",0.266030150753769,-1.11466093906566
+"A","vqtl quantile_difference",0.270854271356784,-1.09778835305566
+"A","vqtl quantile_difference",0.275678391959799,-1.0809626453248
+"A","vqtl quantile_difference",0.280502512562814,-1.06417994155219
+"A","vqtl quantile_difference",0.285326633165829,-1.04743649625883
+"A","vqtl quantile_difference",0.290150753768844,-1.03072868343165
+"A","vqtl quantile_difference",0.294974874371859,-1.01405298783075
+"A","vqtl quantile_difference",0.299798994974874,-0.997405996914665
+"A","vqtl quantile_difference",0.304623115577889,-0.98078439332517
+"A","vqtl quantile_difference",0.309447236180905,-0.964184947879644
+"A","vqtl quantile_difference",0.31427135678392,-0.947604513023752
+"A","vqtl quantile_difference",0.319095477386935,-0.931040016702394
+"A","vqtl quantile_difference",0.32391959798995,-0.914488456610851
+"A","vqtl quantile_difference",0.328743718592965,-0.897946894791765
+"A","vqtl quantile_difference",0.33356783919598,-0.881412452546634
+"A","vqtl quantile_difference",0.338391959798995,-0.864882305633756
+"A","vqtl quantile_difference",0.34321608040201,-0.84835367972692
+"A","vqtl quantile_difference",0.348040201005025,-0.831823846111291
+"A","vqtl quantile_difference",0.35286432160804,-0.815290117595229
+"A","vqtl quantile_difference",0.357688442211055,-0.798749844618481
+"A","vqtl quantile_difference",0.36251256281407,-0.78220041153871
+"A","vqtl quantile_difference",0.367336683417085,-0.765639233079909
+"A","vqtl quantile_difference",0.3721608040201,-0.749063750927444
+"A","vqtl quantile_difference",0.376984924623116,-0.732471430455675
+"A","vqtl quantile_difference",0.381809045226131,-0.715859757575004
+"A","vqtl quantile_difference",0.386633165829146,-0.699226235686435
+"A","vqtl quantile_difference",0.391457286432161,-0.682568382732011
+"A","vqtl quantile_difference",0.396281407035176,-0.665883728330801
+"A","vqtl quantile_difference",0.401105527638191,-0.649169810990351
+"A","vqtl quantile_difference",0.405929648241206,-0.632424175384159
+"A","vqtl quantile_difference",0.410753768844221,-0.615644369686603
+"A","vqtl quantile_difference",0.415577889447236,-0.59882794295638
+"A","vqtl quantile_difference",0.420402010050251,-0.581972442560971
+"A","vqtl quantile_difference",0.425226130653266,-0.565075411633991
+"A","vqtl quantile_difference",0.430050251256281,-0.548134386558274
+"A","vqtl quantile_difference",0.434874371859296,-0.531146894467355
+"A","vqtl quantile_difference",0.439698492462312,-0.514110450758587
+"A","vqtl quantile_difference",0.444522613065327,-0.497022556610677
+"A","vqtl quantile_difference",0.449346733668342,-0.479880696499531
+"A","vqtl quantile_difference",0.454170854271357,-0.462682335705267
+"A","vqtl quantile_difference",0.458994974874372,-0.445424917804235
+"A","vqtl quantile_difference",0.463819095477387,-0.428105862139262
+"A","vqtl quantile_difference",0.468643216080402,-0.410722561261835
+"A","vqtl quantile_difference",0.473467336683417,-0.393272378339333
+"A","vqtl quantile_difference",0.478291457286432,-0.375752644520997
+"A","vqtl quantile_difference",0.483115577889447,-0.358160656255578
+"A","vqtl quantile_difference",0.487939698492462,-0.340493672553876
+"A","vqtl quantile_difference",0.492763819095477,-0.322748912189095
+"A","vqtl quantile_difference",0.497587939698492,-0.304923550827741
+"A","vqtl quantile_difference",0.502412060301507,-0.287014718083231
+"A","vqtl quantile_difference",0.507236180904522,-0.269019494484848
+"A","vqtl quantile_difference",0.512060301507538,-0.250934908353429
+"A","vqtl quantile_difference",0.516884422110553,-0.232757932575577
+"A","vqtl quantile_difference",0.521708542713568,-0.214485481267189
+"A","vqtl quantile_difference",0.526532663316583,-0.196114406317133
+"A","vqtl quantile_difference",0.531356783919598,-0.177641493801062
+"A","vqtl quantile_difference",0.536180904522613,-0.159063460254821
+"A","vqtl quantile_difference",0.541005025125628,-0.140376948796479
+"A","vqtl quantile_difference",0.545829145728643,-0.121578525085283
+"A","vqtl quantile_difference",0.550653266331658,-0.10266467310468
+"A","vqtl quantile_difference",0.555477386934673,-0.0836317907565629
+"A","vqtl quantile_difference",0.560301507537688,-0.0644761852520439
+"A","vqtl quantile_difference",0.565125628140703,-0.0451940682838163
+"A","vqtl quantile_difference",0.569949748743719,-0.0257815509637034
+"A","vqtl quantile_difference",0.574773869346734,-0.00623463850783423
+"A","vqtl quantile_difference",0.579597989949749,0.0134507753493125
+"A","vqtl quantile_difference",0.584422110552764,0.0332789142321523
+"A","vqtl quantile_difference",0.589246231155779,0.0532541253144636
+"A","vqtl quantile_difference",0.594070351758794,0.0733808858466176
+"A","vqtl quantile_difference",0.598894472361809,0.0936638100447951
+"A","vqtl quantile_difference",0.603718592964824,0.114107656369864
+"A","vqtl quantile_difference",0.608542713567839,0.134717335225854
+"A","vqtl quantile_difference",0.613366834170854,0.155497917109781
+"A","vqtl quantile_difference",0.618190954773869,0.176454641248686
+"A","vqtl quantile_difference",0.623015075376884,0.197592924761246
+"A","vqtl quantile_difference",0.6278391959799,0.218918372386145
+"A","vqtl quantile_difference",0.632663316582915,0.240436786822006
+"A","vqtl quantile_difference",0.63748743718593,0.262154179728501
+"A","vqtl quantile_difference",0.642311557788945,0.284076783442611
+"A","vqtl quantile_difference",0.64713567839196,0.306211063468982
+"A","vqtl quantile_difference",0.651959798994975,0.328563731809098
+"A","vqtl quantile_difference",0.65678391959799,0.351141761200463
+"A","vqtl quantile_difference",0.661608040201005,0.373952400343313
+"A","vqtl quantile_difference",0.66643216080402,0.397003190201062
+"A","vqtl quantile_difference",0.671256281407035,0.420301981468686
+"A","vqtl quantile_difference",0.67608040201005,0.443856953313148
+"A","vqtl quantile_difference",0.680904522613065,0.467676633501213
+"A","vqtl quantile_difference",0.68572864321608,0.491769920041754
+"A","vqtl quantile_difference",0.690552763819095,0.516146104483674
+"A","vqtl quantile_difference",0.69537688442211,0.540814897025886
+"A","vqtl quantile_difference",0.700201005025126,0.565786453613548
+"A","vqtl quantile_difference",0.705025125628141,0.591071405213981
+"A","vqtl quantile_difference",0.709849246231156,0.616680889488585
+"A","vqtl quantile_difference",0.714673366834171,0.642626585101549
+"A","vqtl quantile_difference",0.719497487437186,0.668920748936323
+"A","vqtl quantile_difference",0.724321608040201,0.695576256521626
+"A","vqtl quantile_difference",0.729145728643216,0.722606646008291
+"A","vqtl quantile_difference",0.733969849246231,0.750026166078932
+"A","vqtl quantile_difference",0.738793969849246,0.777849828223399
+"A","vqtl quantile_difference",0.743618090452261,0.806093463867491
+"A","vqtl quantile_difference",0.748442211055276,0.834773786908912
+"A","vqtl quantile_difference",0.753266331658291,0.86390846228797
+"A","vqtl quantile_difference",0.758090452261306,0.893516181308598
+"A","vqtl quantile_difference",0.762914572864322,0.923616744524868
+"A","vqtl quantile_difference",0.767738693467337,0.954231153126464
+"A","vqtl quantile_difference",0.772562814070352,0.985381709892991
+"A","vqtl quantile_difference",0.777386934673367,1.01709213094779
+"A","vqtl quantile_difference",0.782211055276382,1.04938766973072
+"A","vqtl quantile_difference",0.787035175879397,1.08229525483162
+"A","vqtl quantile_difference",0.791859296482412,1.1158436435897
+"A","vqtl quantile_difference",0.796683417085427,1.15006359367671
+"A","vqtl quantile_difference",0.801507537688442,1.18498805525461
+"A","vqtl quantile_difference",0.806331658291457,1.22065238674442
+"A","vqtl quantile_difference",0.811155778894472,1.25709459777989
+"A","vqtl quantile_difference",0.815979899497487,1.29435562356584
+"A","vqtl quantile_difference",0.820804020100502,1.33247963564734
+"A","vqtl quantile_difference",0.825628140703518,1.37151439505116
+"A","vqtl quantile_difference",0.830452261306533,1.41151165493288
+"A","vqtl quantile_difference",0.835276381909548,1.45252762130464
+"A","vqtl quantile_difference",0.840100502512563,1.49462348220337
+"A","vqtl quantile_difference",0.844924623115578,1.53786601788201
+"A","vqtl quantile_difference",0.849748743718593,1.58232830739154
+"A","vqtl quantile_difference",0.854572864321608,1.62809055043362
+"A","vqtl quantile_difference",0.859396984924623,1.67524102782622
+"A","vqtl quantile_difference",0.864221105527638,1.7238772296322
+"A","vqtl quantile_difference",0.869045226130653,1.77410718736505
+"A","vqtl quantile_difference",0.873869346733668,1.82605105626057
+"A","vqtl quantile_difference",0.878693467336683,1.87984300617224
+"A","vqtl quantile_difference",0.883517587939698,1.9356334962993
+"A","vqtl quantile_difference",0.888341708542713,1.99359203125382
+"A","vqtl quantile_difference",0.893165829145729,2.05391052615779
+"A","vqtl quantile_difference",0.897989949748744,2.11680744982547
+"A","vqtl quantile_difference",0.902814070351759,2.18253297250968
+"A","vqtl quantile_difference",0.907638190954774,2.25137542555112
+"A","vqtl quantile_difference",0.912462311557789,2.32366949590868
+"A","vqtl quantile_difference",0.917286432160804,2.39980674675481
+"A","vqtl quantile_difference",0.922110552763819,2.4802493046083
+"A","vqtl quantile_difference",0.926934673366834,2.5655479306504
+"A","vqtl quantile_difference",0.931758793969849,2.65636627782558
+"A","vqtl quantile_difference",0.936582914572864,2.75351406304657
+"A","vqtl quantile_difference",0.941407035175879,2.85799340117295
+"A","vqtl quantile_difference",0.946231155778894,2.97106511266402
+"A","vqtl quantile_difference",0.95105527638191,3.09434632158148
+"A","vqtl quantile_difference",0.955879396984925,3.22995892842088
+"A","vqtl quantile_difference",0.96070351758794,3.38076452578493
+"A","vqtl quantile_difference",0.965527638190955,3.55075420649039
+"A","vqtl quantile_difference",0.97035175879397,3.74573469165838
+"A","vqtl quantile_difference",0.975175879396985,3.97463033405243
+"A","vqtl quantile_difference",0.98,4.25221244821753
+"A","combined quantile_difference",0.02,1.70483429337999
+"A","combined quantile_difference",0.0248241206030151,1.71539098205465
+"A","combined quantile_difference",0.0296482412060302,1.72446962525403
+"A","combined quantile_difference",0.0344723618090452,1.73248840156919
+"A","combined quantile_difference",0.0392964824120603,1.73970684375471
+"A","combined quantile_difference",0.0441206030150754,1.74629776622211
+"A","combined quantile_difference",0.0489447236180904,1.75238238659426
+"A","combined quantile_difference",0.0537688442211055,1.75804921138775
+"A","combined quantile_difference",0.0585929648241206,1.76336495886353
+"A","combined quantile_difference",0.0634170854271357,1.76838124817774
+"A","combined quantile_difference",0.0682412060301508,1.77313888931308
+"A","combined quantile_difference",0.0730653266331658,1.77767074113213
+"A","combined quantile_difference",0.0778894472361809,1.78200367737977
+"A","combined quantile_difference",0.082713567839196,1.78615997644348
+"A","combined quantile_difference",0.087537688442211,1.790158327159
+"A","combined quantile_difference",0.0923618090452261,1.79401457182631
+"A","combined quantile_difference",0.0971859296482412,1.79774226509366
+"A","combined quantile_difference",0.102010050251256,1.80135310112481
+"A","combined quantile_difference",0.106834170854271,1.80485724479361
+"A","combined quantile_difference",0.111658291457286,1.80826359178826
+"A","combined quantile_difference",0.116482412060302,1.81157997527005
+"A","combined quantile_difference",0.121306532663317,1.81481333180815
+"A","combined quantile_difference",0.126130653266332,1.81796983590297
+"A","combined quantile_difference",0.130954773869347,1.82105501000911
+"A","combined quantile_difference",0.135778894472362,1.82407381525172
+"A","combined quantile_difference",0.140603015075377,1.82703072678504
+"A","combined quantile_difference",0.145427135678392,1.82992979682776
+"A","combined quantile_difference",0.150251256281407,1.83277470772962
+"A","combined quantile_difference",0.155075376884422,1.83556881691379
+"A","combined quantile_difference",0.159899497487437,1.83831519515156
+"A","combined quantile_difference",0.164723618090452,1.84101665932904
+"A","combined quantile_difference",0.169547738693467,1.84367580063613
+"A","combined quantile_difference",0.174371859296482,1.84629500892897
+"A","combined quantile_difference",0.179195979899497,1.84887649387661
+"A","combined quantile_difference",0.184020100502513,1.85142230339156
+"A","combined quantile_difference",0.188844221105528,1.85393433975499
+"A","combined quantile_difference",0.193668341708543,1.85641437377677
+"A","combined quantile_difference",0.198492462311558,1.85886405727285
+"A","combined quantile_difference",0.203316582914573,1.86128493409622
+"A","combined quantile_difference",0.208140703517588,1.86367844991966
+"A","combined quantile_difference",0.212964824120603,1.86604596093753
+"A","combined quantile_difference",0.217788944723618,1.86838874162797
+"A","combined quantile_difference",0.222613065326633,1.87070799169594
+"A","combined quantile_difference",0.227437185929648,1.87300484229971
+"A","combined quantile_difference",0.232261306532663,1.87528036164867
+"A","combined quantile_difference",0.237085427135678,1.87753556004805
+"A","combined quantile_difference",0.241909547738693,1.87977139445569
+"A","combined quantile_difference",0.246733668341709,1.88198877260716
+"A","combined quantile_difference",0.251557788944724,1.88418855675817
+"A","combined quantile_difference",0.256381909547739,1.88637156708674
+"A","combined quantile_difference",0.261206030150754,1.88853858479232
+"A","combined quantile_difference",0.266030150753769,1.89069035492432
+"A","combined quantile_difference",0.270854271356784,1.89282758896844
+"A","combined quantile_difference",0.275678391959799,1.89495096721607
+"A","combined quantile_difference",0.280502512562814,1.89706114093855
+"A","combined quantile_difference",0.285326633165829,1.89915873438622
+"A","combined quantile_difference",0.290150753768844,1.90124434662908
+"A","combined quantile_difference",0.294974874371859,1.90331855325478
+"A","combined quantile_difference",0.299798994974874,1.90538190793746
+"A","combined quantile_difference",0.304623115577889,1.90743494388949
+"A","combined quantile_difference",0.309447236180905,1.90947817520726
+"A","combined quantile_difference",0.31427135678392,1.91151209812046
+"A","combined quantile_difference",0.319095477386935,1.91353719215372
+"A","combined quantile_difference",0.32391959798995,1.9155539212085
+"A","combined quantile_difference",0.328743718592965,1.91756273457212
+"A","combined quantile_difference",0.33356783919598,1.91956406786039
+"A","combined quantile_difference",0.338391959798995,1.9215583438997
+"A","combined quantile_difference",0.34321608040201,1.92354597355342
+"A","combined quantile_difference",0.348040201005025,1.92552735649777
+"A","combined quantile_difference",0.35286432160804,1.92750288195114
+"A","combined quantile_difference",0.357688442211055,1.92947292936074
+"A","combined quantile_difference",0.36251256281407,1.9314378690504
+"A","combined quantile_difference",0.367336683417085,1.93339806283246
+"A","combined quantile_difference",0.3721608040201,1.9353538645869
+"A","combined quantile_difference",0.376984924623116,1.93730562081033
+"A","combined quantile_difference",0.381809045226131,1.93925367113744
+"A","combined quantile_difference",0.386633165829146,1.94119834883703
+"A","combined quantile_difference",0.391457286432161,1.94313998128497
+"A","combined quantile_difference",0.396281407035176,1.94507889041581
+"A","combined quantile_difference",0.401105527638191,1.94701539315506
+"A","combined quantile_difference",0.405929648241206,1.9489498018336
+"A","combined quantile_difference",0.410753768844221,1.95088242458604
+"A","combined quantile_difference",0.415577889447236,1.95281356573419
+"A","combined quantile_difference",0.420402010050251,1.95474352615732
+"A","combined quantile_difference",0.425226130653266,1.95667260365017
+"A","combined quantile_difference",0.430050251256281,1.95860109327024
+"A","combined quantile_difference",0.434874371859296,1.96052928767511
+"A","combined quantile_difference",0.439698492462312,1.96245747745132
+"A","combined quantile_difference",0.444522613065327,1.96438595143535
+"A","combined quantile_difference",0.449346733668342,1.9663149970281
+"A","combined quantile_difference",0.454170854271357,1.96824490050348
+"A","combined quantile_difference",0.458994974874372,1.97017594731221
+"A","combined quantile_difference",0.463819095477387,1.97210842238161
+"A","combined quantile_difference",0.468643216080402,1.97404261041219
+"A","combined quantile_difference",0.473467336683417,1.97597879617198
+"A","combined quantile_difference",0.478291457286432,1.97791726478922
+"A","combined quantile_difference",0.483115577889447,1.97985830204443
+"A","combined quantile_difference",0.487939698492462,1.98180219466236
+"A","combined quantile_difference",0.492763819095477,1.98374923060493
+"A","combined quantile_difference",0.497587939698492,1.98569969936554
+"A","combined quantile_difference",0.502412060301507,1.98765389226596
+"A","combined quantile_difference",0.507236180904522,1.98961210275623
+"A","combined quantile_difference",0.512060301507538,1.99157462671853
+"A","combined quantile_difference",0.516884422110553,1.99354176277585
+"A","combined quantile_difference",0.521708542713568,1.99551381260623
+"A","combined quantile_difference",0.526532663316583,1.99749108126344
+"A","combined quantile_difference",0.531356783919598,1.999473877505
+"A","combined quantile_difference",0.536180904522613,2.00146251412849
+"A","combined quantile_difference",0.541005025125628,2.00345730831696
+"A","combined quantile_difference",0.545829145728643,2.00545858199464
+"A","combined quantile_difference",0.550653266331658,2.00746666219386
+"A","combined quantile_difference",0.555477386934673,2.0094818814343
+"A","combined quantile_difference",0.560301507537688,2.01150457811577
+"A","combined quantile_difference",0.565125628140703,2.0135350969257
+"A","combined quantile_difference",0.569949748743719,2.01557378926265
+"A","combined quantile_difference",0.574773869346734,2.01762101367728
+"A","combined quantile_difference",0.579597989949749,2.01967713633217
+"A","combined quantile_difference",0.584422110552764,2.02174253148213
+"A","combined quantile_difference",0.589246231155779,2.02381758197665
+"A","combined quantile_difference",0.594070351758794,2.0259026797863
+"A","combined quantile_difference",0.598894472361809,2.02799822655509
+"A","combined quantile_difference",0.603718592964824,2.03010463418079
+"A","combined quantile_difference",0.608542713567839,2.03222232542554
+"A","combined quantile_difference",0.613366834170854,2.03435173455912
+"A","combined quantile_difference",0.618190954773869,2.03649330803767
+"A","combined quantile_difference",0.623015075376884,2.03864750522046
+"A","combined quantile_difference",0.6278391959799,2.04081479912817
+"A","combined quantile_difference",0.632663316582915,2.04299567724571
+"A","combined quantile_difference",0.63748743718593,2.04519064237348
+"A","combined quantile_difference",0.642311557788945,2.04740021353105
+"A","combined quantile_difference",0.64713567839196,2.04962492691753
+"A","combined quantile_difference",0.651959798994975,2.05186533693357
+"A","combined quantile_difference",0.65678391959799,2.05412201727006
+"A","combined quantile_difference",0.661608040201005,2.05639556206951
+"A","combined quantile_difference",0.66643216080402,2.05868658716618
+"A","combined quantile_difference",0.671256281407035,2.06099573141204
+"A","combined quantile_difference",0.67608040201005,2.06332365809623
+"A","combined quantile_difference",0.680904522613065,2.06567105646636
+"A","combined quantile_difference",0.68572864321608,2.06803864336106
+"A","combined quantile_difference",0.690552763819095,2.07042716496403
+"A","combined quantile_difference",0.69537688442211,2.07283739869106
+"A","combined quantile_difference",0.700201005025126,2.07527015522274
+"A","combined quantile_difference",0.705025125628141,2.07772628069688
+"A","combined quantile_difference",0.709849246231156,2.08020665907649
+"A","combined quantile_difference",0.714673366834171,2.08271221471069
+"A","combined quantile_difference",0.719497487437186,2.08524391510841
+"A","combined quantile_difference",0.724321608040201,2.08780277394654
+"A","combined quantile_difference",0.729145728643216,2.09038985433746
+"A","combined quantile_difference",0.733969849246231,2.0930062723835
+"A","combined quantile_difference",0.738793969849246,2.09565320104958
+"A","combined quantile_difference",0.743618090452261,2.09833187438932
+"A","combined quantile_difference",0.748442211055276,2.10104359216451
+"A","combined quantile_difference",0.753266331658291,2.1037897249032
+"A","combined quantile_difference",0.758090452261306,2.10657171944774
+"A","combined quantile_difference",0.762914572864322,2.10939110505159
+"A","combined quantile_difference",0.767738693467337,2.11224950009165
+"A","combined quantile_difference",0.772562814070352,2.115148619473
+"A","combined quantile_difference",0.777386934673367,2.11809028281405
+"A","combined quantile_difference",0.782211055276382,2.12107642351361
+"A","combined quantile_difference",0.787035175879397,2.1241090988172
+"A","combined quantile_difference",0.791859296482412,2.12719050101843
+"A","combined quantile_difference",0.796683417085427,2.13032296995341
+"A","combined quantile_difference",0.801507537688442,2.13350900697256
+"A","combined quantile_difference",0.806331658291457,2.13675129060542
+"A","combined quantile_difference",0.811155778894472,2.14005269417213
+"A","combined quantile_difference",0.815979899497487,2.14341630564034
+"A","combined quantile_difference",0.820804020100502,2.14684545008178
+"A","combined quantile_difference",0.825628140703518,2.15034371514943
+"A","combined quantile_difference",0.830452261306533,2.15391498007851
+"A","combined quantile_difference",0.835276381909548,2.15756344881497
+"A","combined quantile_difference",0.840100502512563,2.16129368799973
+"A","combined quantile_difference",0.844924623115578,2.16511067069202
+"A","combined quantile_difference",0.849748743718593,2.1690198269084
+"A","combined quantile_difference",0.854572864321608,2.17302710229816
+"A","combined quantile_difference",0.859396984924623,2.17713902658517
+"A","combined quantile_difference",0.864221105527638,2.1813627938007
+"A","combined quantile_difference",0.869045226130653,2.18570635684077
+"A","combined quantile_difference",0.873869346733668,2.19017853954122
+"A","combined quantile_difference",0.878693467336683,2.19478917032863
+"A","combined quantile_difference",0.883517587939698,2.19954924264836
+"A","combined quantile_difference",0.888341708542713,2.20447110889884
+"A","combined quantile_difference",0.893165829145729,2.2095687166653
+"A","combined quantile_difference",0.897989949748744,2.2148578988679
+"A","combined quantile_difference",0.902814070351759,2.22035673334855
+"A","combined quantile_difference",0.907638190954774,2.22608599291138
+"A","combined quantile_difference",0.912462311557789,2.23206971466602
+"A","combined quantile_difference",0.917286432160804,2.23833592888808
+"A","combined quantile_difference",0.922110552763819,2.24491760441043
+"A","combined quantile_difference",0.926934673366834,2.25185389290397
+"A","combined quantile_difference",0.931758793969849,2.25919179353239
+"A","combined quantile_difference",0.936582914572864,2.26698842142823
+"A","combined quantile_difference",0.941407035175879,2.27531416445042
+"A","combined quantile_difference",0.946231155778894,2.28425718285695
+"A","combined quantile_difference",0.95105527638191,2.29393000425031
+"A","combined quantile_difference",0.955879396984925,2.30447951038625
+"A","combined quantile_difference",0.96070351758794,2.31610265999727
+"A","combined quantile_difference",0.965527638190955,2.32907243663954
+"A","combined quantile_difference",0.97035175879397,2.34378324604348
+"A","combined quantile_difference",0.975175879396985,2.36083647837959
+"A","combined quantile_difference",0.98,2.38121847053619
+"A","additive carrier_density",14,9.90506566380969e-07
+"A","additive carrier_density",14.1902377972466,1.56060314488431e-06
+"A","additive carrier_density",14.3804755944931,2.41967853753639e-06
+"A","additive carrier_density",14.5707133917397,3.69423680793498e-06
+"A","additive carrier_density",14.7609511889862,5.55714117290772e-06
+"A","additive carrier_density",14.9511889862328,8.24104788777867e-06
+"A","additive carrier_density",15.1414267834793,1.20545265047985e-05
+"A","additive carrier_density",15.3316645807259,1.74010513686785e-05
+"A","additive carrier_density",15.5219023779725,2.48009637647641e-05
+"A","additive carrier_density",15.712140175219,3.49163920886446e-05
+"A","additive carrier_density",15.9023779724656,4.85789797618551e-05
+"A","additive carrier_density",16.0926157697121,6.68201102466535e-05
+"A","additive carrier_density",16.2828535669587,9.09031402334832e-05
+"A","additive carrier_density",16.4730913642053,0.000122356962598245
+"A","additive carrier_density",16.6633291614518,0.000163010028446419
+"A","additive carrier_density",16.8535669586984,0.000215023772200897
+"A","additive carrier_density",17.0438047559449,0.000280924215822696
+"A","additive carrier_density",17.2340425531915,0.000363630388718634
+"A","additive carrier_density",17.424280350438,0.000466478099150995
+"A","additive carrier_density",17.6145181476846,0.000593237540445519
+"A","additive carrier_density",17.8047559449312,0.000748123218744655
+"A","additive carrier_density",17.9949937421777,0.000935794753984974
+"A","additive carrier_density",18.1852315394243,0.00116134723501713
+"A","additive carrier_density",18.3754693366708,0.00143029000317262
+"A","additive carrier_density",18.5657071339174,0.00174851299282929
+"A","additive carrier_density",18.755944931164,0.00212224006627884
+"A","additive carrier_density",18.9461827284105,0.00255796913424035
+"A","additive carrier_density",19.1364205256571,0.00306239924101135
+"A","additive carrier_density",19.3266583229036,0.00364234520087702
+"A","additive carrier_density",19.5168961201502,0.00430464078506926
+"A","additive carrier_density",19.7071339173967,0.00505603186072354
+"A","additive carrier_density",19.8973717146433,0.00590306125948355
+"A","additive carrier_density",20.0876095118899,0.00685194748902533
+"A","additive carrier_density",20.2778473091364,0.00790845968267742
+"A","additive carrier_density",20.468085106383,0.00907779139941007
+"A","additive carrier_density",20.6583229036295,0.0103644360301823
+"A","additive carrier_density",20.8485607008761,0.0117720666312337
+"A","additive carrier_density",21.0387984981227,0.013303422987673
+"A","additive carrier_density",21.2290362953692,0.0149602086120028
+"A","additive carrier_density",21.4192740926158,0.0167430002053447
+"A","additive carrier_density",21.6095118898623,0.0186511718601437
+"A","additive carrier_density",21.7997496871089,0.020682835970498
+"A","additive carrier_density",21.9899874843554,0.0228348024504404
+"A","additive carrier_density",22.180225281602,0.0251025574534272
+"A","additive carrier_density",22.3704630788486,0.0274802623509539
+"A","additive carrier_density",22.5607008760951,0.0299607732780157
+"A","additive carrier_density",22.7509386733417,0.0325356811014703
+"A","additive carrier_density",22.9411764705882,0.0351953712271153
+"A","additive carrier_density",23.1314142678348,0.0379291022444109
+"A","additive carrier_density",23.3216520650814,0.0407251020249118
+"A","additive carrier_density",23.5118898623279,0.0435706795507192
+"A","additive carrier_density",23.7021276595745,0.0464523504599252
+"A","additive carrier_density",23.892365456821,0.0493559740625142
+"A","additive carrier_density",24.0826032540676,0.052266899405997
+"A","additive carrier_density",24.2728410513141,0.055170117856734
+"A","additive carrier_density",24.4630788485607,0.0580504196101954
+"A","additive carrier_density",24.6533166458073,0.0608925515493854
+"A","additive carrier_density",24.8435544430538,0.0636813739318961
+"A","additive carrier_density",25.0337922403004,0.0664020134978721
+"A","additive carrier_density",25.2240300375469,0.069040010747866
+"A","additive carrier_density",25.4142678347935,0.0715814593346644
+"A","additive carrier_density",25.6045056320401,0.0740131357396871
+"A","additive carrier_density",25.7947434292866,0.0763226176552514
+"A","additive carrier_density",25.9849812265332,0.0784983897615541
+"A","additive carrier_density",26.1752190237797,0.0805299358645202
+"A","additive carrier_density",26.3654568210263,0.082407816640914
+"A","additive carrier_density",26.5556946182728,0.0841237325140286
+"A","additive carrier_density",26.7459324155194,0.0856705714511631
+"A","additive carrier_density",26.936170212766,0.0870424417280365
+"A","additive carrier_density",27.1264080100125,0.0882346899410385
+"A","additive carrier_density",27.3166458072591,0.0892439047624087
+"A","additive carrier_density",27.5068836045056,0.0900679071234504
+"A","additive carrier_density",27.6971214017522,0.0907057276749273
+"A","additive carrier_density",27.8873591989987,0.0911575725107898
+"A","additive carrier_density",28.0775969962453,0.091424778250976
+"A","additive carrier_density",28.2678347934919,0.0915097576614873
+"A","additive carrier_density",28.4580725907384,0.0914159370460899
+"A","additive carrier_density",28.648310387985,0.091147686675119
+"A","additive carrier_density",28.8385481852315,0.0907102455246804
+"A","additive carrier_density",29.0287859824781,0.0901096415860437
+"A","additive carrier_density",29.2190237797247,0.0893526089724457
+"A","additive carrier_density",29.4092615769712,0.0884465030012629
+"A","additive carrier_density",29.5994993742178,0.087399214366043
+"A","additive carrier_density",29.7897371714643,0.0862190834376953
+"A","additive carrier_density",29.9799749687109,0.0849148156496988
+"A","additive carrier_density",30.1702127659574,0.0834953988308437
+"A","additive carrier_density",30.360450563204,0.0819700232530515
+"A","additive carrier_density",30.5506883604506,0.0803480050632741
+"A","additive carrier_density",30.7409261576971,0.0786387136692884
+"A","additive carrier_density",30.9311639549437,0.0768515035510582
+"A","additive carrier_density",31.1214017521902,0.0749956508737383
+"A","additive carrier_density",31.3116395494368,0.07308029518662
+"A","additive carrier_density",31.5018773466834,0.0711143864054198
+"A","additive carrier_density",31.6921151439299,0.0691066371941602
+"A","additive carrier_density",31.8823529411765,0.0670654807881321
+"A","additive carrier_density",32.072590738423,0.0649990342315264
+"A","additive carrier_density",32.2628285356696,0.0629150669425831
+"A","additive carrier_density",32.4530663329161,0.0608209744656574
+"A","additive carrier_density",32.6433041301627,0.0587237572234571
+"A","additive carrier_density",32.8335419274093,0.0566300040437177
+"A","additive carrier_density",33.0237797246558,0.0545458802025577
+"A","additive carrier_density",33.2140175219024,0.052477119701352
+"A","additive carrier_density",33.4042553191489,0.0504290214748138
+"A","additive carrier_density",33.5944931163955,0.0484064492146453
+"A","additive carrier_density",33.784730913642,0.0464138344851208
+"A","additive carrier_density",33.9749687108886,0.0444551828038151
+"A","additive carrier_density",34.1652065081352,0.0425340823618613
+"A","additive carrier_density",34.3554443053817,0.0406537150630996
+"A","additive carrier_density",34.5456821026283,0.0388168695697567
+"A","additive carrier_density",34.7359198998748,0.0370259560533683
+"A","additive carrier_density",34.9261576971214,0.0352830223630537
+"A","additive carrier_density",35.116395494368,0.0335897713385222
+"A","additive carrier_density",35.3066332916145,0.0319475790119024
+"A","additive carrier_density",35.4968710888611,0.0303575134602648
+"A","additive carrier_density",35.6871088861076,0.028820354089187
+"A","additive carrier_density",35.8773466833542,0.0273366111465728
+"A","additive carrier_density",36.0675844806008,0.0259065452848999
+"A","additive carrier_density",36.2578222778473,0.0245301870088844
+"A","additive carrier_density",36.4480600750939,0.0232073558639976
+"A","additive carrier_density",36.6382978723404,0.0219376792391677
+"A","additive carrier_density",36.828535669587,0.0207206106742067
+"A","additive carrier_density",37.0187734668335,0.019555447578875
+"A","additive carrier_density",37.2090112640801,0.0184413482859698
+"A","additive carrier_density",37.3992490613267,0.0173773483752938
+"A","additive carrier_density",37.5894868585732,0.0163623762188101
+"A","additive carrier_density",37.7797246558198,0.0153952677096669
+"A","additive carrier_density",37.9699624530663,0.0144747801490842
+"A","additive carrier_density",38.1602002503129,0.0135996052753315
+"A","additive carrier_density",38.3504380475595,0.0127683814282116
+"A","additive carrier_density",38.540675844806,0.0119797048506284
+"A","additive carrier_density",38.7309136420526,0.0112321401359927
+"A","additive carrier_density",38.9211514392991,0.0105242298364574
+"A","additive carrier_density",39.1113892365457,0.00985450325231453
+"A","additive carrier_density",39.3016270337922,0.00922148442740236
+"A","additive carrier_density",39.4918648310388,0.00862369937909449
+"A","additive carrier_density",39.6821026282854,0.0080596825944594
+"A","additive carrier_density",39.8723404255319,0.00752798282652831
+"A","additive carrier_density",40.0625782227785,0.00702716822636086
+"A","additive carrier_density",40.252816020025,0.00655583084780917
+"A","additive carrier_density",40.4430538172716,0.00611259056260565
+"A","additive carrier_density",40.6332916145181,0.00569609842369587
+"A","additive carrier_density",40.8235294117647,0.00530503951465568
+"A","additive carrier_density",41.0137672090113,0.00493813532262383
+"A","additive carrier_density",41.2040050062578,0.00459414567148843
+"A","additive carrier_density",41.3942428035044,0.00427187025113875
+"A","additive carrier_density",41.5844806007509,0.00397014977746617
+"A","additive carrier_density",41.7747183979975,0.00368786681651047
+"A","additive carrier_density",41.9649561952441,0.00342394630473277
+"A","additive carrier_density",42.1551939924906,0.00317735579588365
+"A","additive carrier_density",42.3454317897372,0.00294710546335199
+"A","additive carrier_density",42.5356695869837,0.00273224788525276
+"A","additive carrier_density",42.7259073842303,0.0025318776378585
+"A","additive carrier_density",42.9161451814768,0.00234513072132134
+"A","additive carrier_density",43.1063829787234,0.00217118383998449
+"A","additive carrier_density",43.29662077597,0.00200925355795926
+"A","additive carrier_density",43.4868585732165,0.00185859534905615
+"A","additive carrier_density",43.6770963704631,0.00171850255861742
+"A","additive carrier_density",43.8673341677096,0.00158830529331128
+"A","additive carrier_density",44.0575719649562,0.00146736925352005
+"A","additive carrier_density",44.2478097622028,0.00135509452159243
+"A","additive carrier_density",44.4380475594493,0.00125091431793563
+"A","additive carrier_density",44.6282853566959,0.00115429373569946
+"A","additive carrier_density",44.8185231539424,0.00106472846365335
+"A","additive carrier_density",45.008760951189,0.000981743505777862
+"A","additive carrier_density",45.1989987484355,0.000904891905085504
+"A","additive carrier_density",45.3892365456821,0.00083375347824984
+"A","additive carrier_density",45.5794743429287,0.000767933566755951
+"A","additive carrier_density",45.7697121401752,0.000707061809486424
+"A","additive carrier_density",45.9599499374218,0.000650790940924592
+"A","additive carrier_density",46.1501877346683,0.000598795618485854
+"A","additive carrier_density",46.3404255319149,0.000550771281877803
+"A","additive carrier_density",46.5306633291615,0.000506433046836345
+"A","additive carrier_density",46.720901126408,0.000465514635085319
+"A","additive carrier_density",46.9111389236546,0.000427767341918113
+"A","additive carrier_density",47.1013767209011,0.000392959042398489
+"A","additive carrier_density",47.2916145181477,0.000360873236820617
+"A","additive carrier_density",47.4818523153942,0.000331308135752561
+"A","additive carrier_density",47.6720901126408,0.000304075784709964
+"A","additive carrier_density",47.8623279098874,0.000279001228264255
+"A","additive carrier_density",48.0525657071339,0.000255921713179933
+"A","additive carrier_density",48.2428035043805,0.000234685929995333
+"A","additive carrier_density",48.433041301627,0.00021515329230818
+"A","additive carrier_density",48.6232790988736,0.000197193252898843
+"A","additive carrier_density",48.8135168961201,0.000180684655718152
+"A","additive carrier_density",49.0037546933667,0.000165515122680519
+"A","additive carrier_density",49.1939924906133,0.000151580474135247
+"A","additive carrier_density",49.3842302878598,0.00013878418183701
+"A","additive carrier_density",49.5744680851064,0.000127036853199019
+"A","additive carrier_density",49.7647058823529,0.000116255745587578
+"A","additive carrier_density",49.9549436795995,0.0001063643094031
+"A","additive carrier_density",50.1451814768461,9.72917586887375e-05
+"A","additive carrier_density",50.3354192740926,8.89726680124218e-05
+"A","additive carrier_density",50.5256570713392,8.1346594379953e-05
+"A","additive carrier_density",50.7158948685857,7.43577229549401e-05
+"A","additive carrier_density",50.9061326658323,6.79545353847691e-05
+"A","additive carrier_density",51.0963704630788,6.20894995595773e-05
+"A","additive carrier_density",51.2866082603254,5.67187796625917e-05
+"A","additive carrier_density",51.476846057572,5.18019654045144e-05
+"A","additive carrier_density",51.6670838548185,4.73018193711993e-05
+"A","additive carrier_density",51.8573216520651,4.31840414521657e-05
+"A","multiplicative carrier_density",14,9.29194245504928e-06
+"A","multiplicative carrier_density",14.1902377972466,1.31678134219566e-05
+"A","multiplicative carrier_density",14.3804755944931,1.84507497763481e-05
+"A","multiplicative carrier_density",14.5707133917397,2.55725649269497e-05
+"A","multiplicative carrier_density",14.7609511889862,3.50714506503959e-05
+"A","multiplicative carrier_density",14.9511889862328,4.7610698231552e-05
+"A","multiplicative carrier_density",15.1414267834793,6.39988711268021e-05
+"A","multiplicative carrier_density",15.3316645807259,8.52111240311954e-05
+"A","multiplicative carrier_density",15.5219023779725,0.00011241126190734
+"A","multiplicative carrier_density",15.712140175219,0.000146974030664319
+"A","multiplicative carrier_density",15.9023779724656,0.000190507033320707
+"A","multiplicative carrier_density",16.0926157697121,0.000244871576547205
+"A","multiplicative carrier_density",16.2828535669587,0.00031220167746335
+"A","multiplicative carrier_density",16.4730913642053,0.000394920404304888
+"A","multiplicative carrier_density",16.6633291614518,0.000495752691505574
+"A","multiplicative carrier_density",16.8535669586984,0.00061773376359236
+"A","multiplicative carrier_density",17.0438047559449,0.000764212325905436
+"A","multiplicative carrier_density",17.2340425531915,0.000938847735249092
+"A","multiplicative carrier_density",17.424280350438,0.00114560045063344
+"A","multiplicative carrier_density",17.6145181476846,0.00138871518243055
+"A","multiplicative carrier_density",17.8047559449312,0.00167269630534947
+"A","multiplicative carrier_density",17.9949937421777,0.00200227527314989
+"A","multiplicative carrier_density",18.1852315394243,0.00238236996630807
+"A","multiplicative carrier_density",18.3754693366708,0.00281803611226602
+"A","multiplicative carrier_density",18.5657071339174,0.003314411135005
+"A","multiplicative carrier_density",18.755944931164,0.00387665100954118
+"A","multiplicative carrier_density",18.9461827284105,0.0045098609103634
+"A","multiplicative carrier_density",19.1364205256571,0.00521902064370053
+"A","multiplicative carrier_density",19.3266583229036,0.00600890603503682
+"A","multiplicative carrier_density",19.5168961201502,0.00688400759931843
+"A","multiplicative carrier_density",19.7071339173967,0.0078484479464853
+"A","multiplicative carrier_density",19.8973717146433,0.00890589946503099
+"A","multiplicative carrier_density",20.0876095118899,0.0100595038781297
+"A","multiplicative carrier_density",20.2778473091364,0.011311795278651
+"A","multiplicative carrier_density",20.468085106383,0.0126646282205887
+"A","multiplicative carrier_density",20.6583229036295,0.0141191123758617
+"A","multiplicative carrier_density",20.8485607008761,0.0156755551591244
+"A","multiplicative carrier_density",21.0387984981227,0.0173334135823155
+"A","multiplicative carrier_density",21.2290362953692,0.0190912564293331
+"A","multiplicative carrier_density",21.4192740926158,0.0209467376444007
+"A","multiplicative carrier_density",21.6095118898623,0.0228965816109682
+"A","multiplicative carrier_density",21.7997496871089,0.0249365807673553
+"A","multiplicative carrier_density",21.9899874843554,0.027061605766983
+"A","multiplicative carrier_density",22.180225281602,0.02926562815113
+"A","multiplicative carrier_density",22.3704630788486,0.031541755266685
+"A","multiplicative carrier_density",22.5607008760951,0.0338822769359622
+"A","multiplicative carrier_density",22.7509386733417,0.0362787231753996
+"A","multiplicative carrier_density",22.9411764705882,0.0387219320693521
+"A","multiplicative carrier_density",23.1314142678348,0.0412021267379178
+"A","multiplicative carrier_density",23.3216520650814,0.0437090001967783
+"A","multiplicative carrier_density",23.5118898623279,0.046231806794457
+"A","multiplicative carrier_density",23.7021276595745,0.0487594588295177
+"A","multiplicative carrier_density",23.892365456821,0.0512806268974723
+"A","multiplicative carrier_density",24.0826032540676,0.0537838424942624
+"A","multiplicative carrier_density",24.2728410513141,0.0562576014091054
+"A","multiplicative carrier_density",24.4630788485607,0.0586904664726172
+"A","multiplicative carrier_density",24.6533166458073,0.0610711682842745
+"A","multiplicative carrier_density",24.8435544430538,0.0633887026238498
+"A","multiplicative carrier_density",25.0337922403004,0.0656324233514887
+"A","multiplicative carrier_density",25.2240300375469,0.0677921297174244
+"A","multiplicative carrier_density",25.4142678347935,0.0698581471316134
+"A","multiplicative carrier_density",25.6045056320401,0.0718214005824571
+"A","multiplicative carrier_density",25.7947434292866,0.0736734800389386
+"A","multiplicative carrier_density",25.9849812265332,0.0754066973187196
+"A","multiplicative carrier_density",26.1752190237797,0.0770141340530085
+"A","multiplicative carrier_density",26.3654568210263,0.0784896805245275
+"A","multiplicative carrier_density",26.5556946182728,0.0798280652951723
+"A","multiplicative carrier_density",26.7459324155194,0.0810248756727858
+"A","multiplicative carrier_density",26.936170212766,0.0820765691899882
+"A","multiplicative carrier_density",27.1264080100125,0.0829804763807242
+"A","multiplicative carrier_density",27.3166458072591,0.0837347952409083
+"A","multiplicative carrier_density",27.5068836045056,0.0843385778474656
+"A","multiplicative carrier_density",27.6971214017522,0.084791709684649
+"A","multiplicative carrier_density",27.8873591989987,0.0850948822875635
+"A","multiplicative carrier_density",28.0775969962453,0.0852495598604124
+"A","multiplicative carrier_density",28.2678347934919,0.0852579405614059
+"A","multiplicative carrier_density",28.4580725907384,0.0851229131680803
+"A","multiplicative carrier_density",28.648310387985,0.0848480098466647
+"A","multiplicative carrier_density",28.8385481852315,0.0844373557479726
+"A","multiplicative carrier_density",29.0287859824781,0.0838956161410624
+"A","multiplicative carrier_density",29.2190237797247,0.0832279417756585
+"A","multiplicative carrier_density",29.4092615769712,0.0824399131361872
+"A","multiplicative carrier_density",29.5994993742178,0.081537484215383
+"A","multiplicative carrier_density",29.7897371714643,0.0805269263949235
+"A","multiplicative carrier_density",29.9799749687109,0.0794147729755802
+"A","multiplicative carrier_density",30.1702127659574,0.0782077648510078
+"A","multiplicative carrier_density",30.360450563204,0.0769127977685859
+"A","multiplicative carrier_density",30.5506883604506,0.0755368715686308
+"A","multiplicative carrier_density",30.7409261576971,0.0740870417407063
+"A","multiplicative carrier_density",30.9311639549437,0.0725703735834831
+"A","multiplicative carrier_density",31.1214017521902,0.0709938992033522
+"A","multiplicative carrier_density",31.3116395494368,0.0693645775373949
+"A","multiplicative carrier_density",31.5018773466834,0.0676892575389015
+"A","multiplicative carrier_density",31.6921151439299,0.0659746446188421
+"A","multiplicative carrier_density",31.8823529411765,0.0642272703948765
+"A","multiplicative carrier_density",32.072590738423,0.0624534657609291
+"A","multiplicative carrier_density",32.2628285356696,0.0606593372552227
+"A","multiplicative carrier_density",32.4530663329161,0.058850746673092
+"A","multiplicative carrier_density",32.6433041301627,0.057033293842934
+"A","multiplicative carrier_density",32.8335419274093,0.0552123024592872
+"A","multiplicative carrier_density",33.0237797246558,0.0533928088462117
+"A","multiplicative carrier_density",33.2140175219024,0.0515795535067698
+"A","multiplicative carrier_density",33.4042553191489,0.0497769753003213
+"A","multiplicative carrier_density",33.5944931163955,0.0479892080784127
+"A","multiplicative carrier_density",33.784730913642,0.0462200796020204
+"A","multiplicative carrier_density",33.9749687108886,0.0444731125576257
+"A","multiplicative carrier_density",34.1652065081352,0.0427515274868015
+"A","multiplicative carrier_density",34.3554443053817,0.0410582474434579
+"A","multiplicative carrier_density",34.5456821026283,0.0393959041943826
+"A","multiplicative carrier_density",34.7359198998748,0.0377668457819826
+"A","multiplicative carrier_density",34.9261576971214,0.0361731452729587
+"A","multiplicative carrier_density",35.116395494368,0.0346166105227905
+"A","multiplicative carrier_density",35.3066332916145,0.0330987947931652
+"A","multiplicative carrier_density",35.4968710888611,0.0316210080676383
+"A","multiplicative carrier_density",35.6871088861076,0.0301843289196778
+"A","multiplicative carrier_density",35.8773466833542,0.028789616796635
+"A","multiplicative carrier_density",36.0675844806008,0.0274375245929421
+"A","multiplicative carrier_density",36.2578222778473,0.026128511395806
+"A","multiplicative carrier_density",36.4480600750939,0.0248628552967175
+"A","multiplicative carrier_density",36.6382978723404,0.0236406661721093
+"A","multiplicative carrier_density",36.828535669587,0.0224618983463638
+"A","multiplicative carrier_density",37.0187734668335,0.0213263630600054
+"A","multiplicative carrier_density",37.2090112640801,0.0202337406752421
+"A","multiplicative carrier_density",37.3992490613267,0.0191835925599728
+"A","multiplicative carrier_density",37.5894868585732,0.0181753725999082
+"A","multiplicative carrier_density",37.7797246558198,0.0172084382965175
+"A","multiplicative carrier_density",37.9699624530663,0.0162820614160907
+"A","multiplicative carrier_density",38.1602002503129,0.0153954381622598
+"A","multiplicative carrier_density",38.3504380475595,0.0145476988508613
+"A","multiplicative carrier_density",38.540675844806,0.0137379170720213
+"A","multiplicative carrier_density",38.7309136420526,0.0129651183298217
+"A","multiplicative carrier_density",38.9211514392991,0.0122282881548579
+"A","multiplicative carrier_density",39.1113892365457,0.0115263796894454
+"A","multiplicative carrier_density",39.3016270337922,0.010858320749184
+"A","multiplicative carrier_density",39.4918648310388,0.0102230203680711
+"A","multiplicative carrier_density",39.6821026282854,0.0096193748373849
+"A","multiplicative carrier_density",39.8723404255319,0.00904627325116452
+"A","multiplicative carrier_density",40.0625782227785,0.00850260257332022
+"A","multiplicative carrier_density",40.252816020025,0.00798725224323897
+"A","multiplicative carrier_density",40.4430538172716,0.00749911833823948
+"A","multiplicative carrier_density",40.6332916145181,0.00703710731239845
+"A","multiplicative carrier_density",40.8235294117647,0.00660013933215168
+"A","multiplicative carrier_density",41.0137672090113,0.00618715122968626
+"A","multiplicative carrier_density",41.2040050062578,0.00579709909551961
+"A","multiplicative carrier_density",41.3942428035044,0.00542896053182623
+"A","multiplicative carrier_density",41.5844806007509,0.00508173658804877
+"A","multiplicative carrier_density",41.7747183979975,0.00475445340014418
+"A","multiplicative carrier_density",41.9649561952441,0.00444616355448192
+"A","multiplicative carrier_density",42.1551939924906,0.00415594719695685
+"A","multiplicative carrier_density",42.3454317897372,0.00388291290732008
+"A","multiplicative carrier_density",42.5356695869837,0.00362619835808427
+"A","multiplicative carrier_density",42.7259073842303,0.00338497077664283
+"A","multiplicative carrier_density",42.9161451814768,0.00315842722846914
+"A","multiplicative carrier_density",43.1063829787234,0.00294579473844597
+"A","multiplicative carrier_density",43.29662077597,0.00274633026652842
+"A","multiplicative carrier_density",43.4868585732165,0.00255932055307758
+"A","multiplicative carrier_density",43.6770963704631,0.00238408184832479
+"A","multiplicative carrier_density",43.8673341677096,0.00221995953954791
+"A","multiplicative carrier_density",44.0575719649562,0.00206632768866805
+"A","multiplicative carrier_density",44.2478097622028,0.00192258849211356
+"A","multiplicative carrier_density",44.4380475594493,0.00178817167395443
+"A","multiplicative carrier_density",44.6282853566959,0.00166253382248819
+"A","multiplicative carrier_density",44.8185231539424,0.00154515767966211
+"A","multiplicative carrier_density",45.008760951189,0.00143555139194914
+"A","multiplicative carrier_density",45.1989987484355,0.00133324773055865
+"A","multiplicative carrier_density",45.3892365456821,0.00123780328816008
+"A","multiplicative carrier_density",45.5794743429287,0.00114879765862873
+"A","multiplicative carrier_density",45.7697121401752,0.00106583260568955
+"A","multiplicative carrier_density",45.9599499374218,0.00098853122573683
+"A","multiplicative carrier_density",46.1501877346683,0.000916537109545961
+"A","multiplicative carrier_density",46.3404255319149,0.000849513507066571
+"A","multiplicative carrier_density",46.5306633291615,0.000787142498995226
+"A","multiplicative carrier_density",46.720901126408,0.000729124178368616
+"A","multiplicative carrier_density",46.9111389236546,0.000675175844994466
+"A","multiplicative carrier_density",47.1013767209011,0.000625031215146057
+"A","multiplicative carrier_density",47.2916145181477,0.000578439648585952
+"A","multiplicative carrier_density",47.4818523153942,0.00053516539465424
+"A","multiplicative carrier_density",47.6720901126408,0.00049498685885471
+"A","multiplicative carrier_density",47.8623279098874,0.000457695891097523
+"A","multiplicative carrier_density",48.0525657071339,0.000423097096507855
+"A","multiplicative carrier_density",48.2428035043805,0.000391007169485056
+"A","multiplicative carrier_density",48.433041301627,0.000361254251494543
+"A","multiplicative carrier_density",48.6232790988736,0.000333677312893802
+"A","multiplicative carrier_density",48.8135168961201,0.000308125558932727
+"A","multiplicative carrier_density",49.0037546933667,0.000284457859926008
+"A","multiplicative carrier_density",49.1939924906133,0.000262542205469743
+"A","multiplicative carrier_density",49.3842302878598,0.000242255182464908
+"A","multiplicative carrier_density",49.5744680851064,0.000223481476615263
+"A","multiplicative carrier_density",49.7647058823529,0.000206113396985586
+"A","multiplicative carrier_density",49.9549436795995,0.000190050423136842
+"A","multiplicative carrier_density",50.1451814768461,0.000175198774296568
+"A","multiplicative carrier_density",50.3354192740926,0.000161470999974745
+"A","multiplicative carrier_density",50.5256570713392,0.000148785591396545
+"A","multiplicative carrier_density",50.7158948685857,0.000137066613092723
+"A","multiplicative carrier_density",50.9061326658323,0.000126243353965252
+"A","multiplicative carrier_density",51.0963704630788,0.000116249997129317
+"A","multiplicative carrier_density",51.2866082603254,0.000107025307822185
+"A","multiplicative carrier_density",51.476846057572,9.85123386640919e-05
+"A","multiplicative carrier_density",51.6670838548185,9.06581515555695e-05
+"A","multiplicative carrier_density",51.8573216520651,8.34135554989399e-05
+"A","vqtl carrier_density",14,0.00183284963624521
+"A","vqtl carrier_density",14.1902377972466,0.00215660793672575
+"A","vqtl carrier_density",14.3804755944931,0.00252283461558612
+"A","vqtl carrier_density",14.5707133917397,0.00293472024143609
+"A","vqtl carrier_density",14.7609511889862,0.00339537836447455
+"A","vqtl carrier_density",14.9511889862328,0.00390780321620628
+"A","vqtl carrier_density",15.1414267834793,0.00447482683929369
+"A","vqtl carrier_density",15.3316645807259,0.00509907638091625
+"A","vqtl carrier_density",15.5219023779725,0.00578293228792117
+"A","vqtl carrier_density",15.712140175219,0.00652848812961215
+"A","vqtl carrier_density",15.9023779724656,0.00733751274507681
+"A","vqtl carrier_density",16.0926157697121,0.00821141536778293
+"A","vqtl carrier_density",16.2828535669587,0.00915121432243009
+"A","vqtl carrier_density",16.4730913642053,0.0101575098196806
+"A","vqtl carrier_density",16.6633291614518,0.0112304612955638
+"A","vqtl carrier_density",16.8535669586984,0.0123697696563517
+"A","vqtl carrier_density",17.0438047559449,0.0135746646988739
+"A","vqtl carrier_density",17.2340425531915,0.0148438978829037
+"A","vqtl carrier_density",17.424280350438,0.0161757405386396
+"A","vqtl carrier_density",17.6145181476846,0.0175679875005131
+"A","vqtl carrier_density",17.8047559449312,0.0190179660704932
+"A","vqtl carrier_density",17.9949937421777,0.0205225501313927
+"A","vqtl carrier_density",18.1852315394243,0.0220781791548536
+"A","vqtl carrier_density",18.3754693366708,0.0236808817808592
+"A","vqtl carrier_density",18.5657071339174,0.0253263035866759
+"A","vqtl carrier_density",18.755944931164,0.0270097386136969
+"A","vqtl carrier_density",18.9461827284105,0.0287261641810992
+"A","vqtl carrier_density",19.1364205256571,0.0304702784856514
+"A","vqtl carrier_density",19.3266583229036,0.0322365404673149
+"A","vqtl carrier_density",19.5168961201502,0.0340192114101553
+"A","vqtl carrier_density",19.7071339173967,0.0358123977470346
+"A","vqtl carrier_density",19.8973717146433,0.0376100945439719
+"A","vqtl carrier_density",20.0876095118899,0.0394062291551777
+"A","vqtl carrier_density",20.2778473091364,0.0411947045617628
+"A","vqtl carrier_density",20.468085106383,0.0429694419350911
+"A","vqtl carrier_density",20.6583229036295,0.044724421998764
+"A","vqtl carrier_density",20.8485607008761,0.0464537248003363
+"A","vqtl carrier_density",21.0387984981227,0.0481515675441445
+"A","vqtl carrier_density",21.2290362953692,0.0498123401791669
+"A","vqtl carrier_density",21.4192740926158,0.0514306384797633
+"A","vqtl carrier_density",21.6095118898623,0.0530012944016566
+"A","vqtl carrier_density",21.7997496871089,0.0545194035398746
+"A","vqtl carrier_density",21.9899874843554,0.0559803495588964
+"A","vqtl carrier_density",22.180225281602,0.0573798255073577
+"A","vqtl carrier_density",22.3704630788486,0.0587138519698494
+"A","vqtl carrier_density",22.5607008760951,0.05997879204617
+"A","vqtl carrier_density",22.7509386733417,0.0611713631835116
+"A","vqtl carrier_density",22.9411764705882,0.0622886459192167
+"A","vqtl carrier_density",23.1314142678348,0.0633280896207182
+"A","vqtl carrier_density",23.3216520650814,0.0642875153349818
+"A","vqtl carrier_density",23.5118898623279,0.0651651158821009
+"A","vqtl carrier_density",23.7021276595745,0.0659594533466948
+"A","vqtl carrier_density",23.892365456821,0.0666694541364345
+"A","vqtl carrier_density",24.0826032540676,0.0672944017894969
+"A","vqtl carrier_density",24.2728410513141,0.0678339277221335
+"A","vqtl carrier_density",24.4630788485607,0.0682880001140116
+"A","vqtl carrier_density",24.6533166458073,0.0686569111327216
+"A","vqtl carrier_density",24.8435544430538,0.0689412627000642
+"A","vqtl carrier_density",25.0337922403004,0.0691419510016411
+"A","vqtl carrier_density",25.2240300375469,0.0692601499381193
+"A","vqtl carrier_density",25.4142678347935,0.0692972937115434
+"A","vqtl carrier_density",25.6045056320401,0.0692550587334749
+"A","vqtl carrier_density",25.7947434292866,0.0691353450337725
+"A","vqtl carrier_density",25.9849812265332,0.0689402573397155
+"A","vqtl carrier_density",26.1752190237797,0.0686720859851325
+"A","vqtl carrier_density",26.3654568210263,0.0683332877984324
+"A","vqtl carrier_density",26.5556946182728,0.0679264671071389
+"A","vqtl carrier_density",26.7459324155194,0.0674543569848781
+"A","vqtl carrier_density",26.936170212766,0.0669198008549312
+"A","vqtl carrier_density",27.1264080100125,0.0663257345525797
+"A","vqtl carrier_density",27.3166458072591,0.0656751689366795
+"A","vqtl carrier_density",27.5068836045056,0.0649711731293196
+"A","vqtl carrier_density",27.6971214017522,0.0642168584511438
+"A","vqtl carrier_density",27.8873591989987,0.0634153631090408
+"A","vqtl carrier_density",28.0775969962453,0.062569837682498
+"A","vqtl carrier_density",28.2678347934919,0.061683431445041
+"A","vqtl carrier_density",28.4580725907384,0.0607592795478747
+"A","vqtl carrier_density",28.648310387985,0.0598004910841577
+"A","vqtl carrier_density",28.8385481852315,0.0588101380442837
+"A","vqtl carrier_density",29.0287859824781,0.0577912451651424
+"A","vqtl carrier_density",29.2190237797247,0.0567467806695863
+"A","vqtl carrier_density",29.4092615769712,0.0556796478862373
+"A","vqtl carrier_density",29.5994993742178,0.054592677734321
+"A","vqtl carrier_density",29.7897371714643,0.0534886220534035
+"A","vqtl carrier_density",29.9799749687109,0.0523701477537027
+"A","vqtl carrier_density",30.1702127659574,0.051239831759031
+"A","vqtl carrier_density",30.360450563204,0.0501001567113722
+"A","vqtl carrier_density",30.5506883604506,0.048953507403575
+"A","vqtl carrier_density",30.7409261576971,0.0478021679046184
+"A","vqtl carrier_density",30.9311639549437,0.0466483193403463
+"A","vqtl carrier_density",31.1214017521902,0.0454940382914425
+"A","vqtl carrier_density",31.3116395494368,0.0443412957696828
+"A","vqtl carrier_density",31.5018773466834,0.0431919567331353
+"A","vqtl carrier_density",31.6921151439299,0.0420477801009335
+"A","vqtl carrier_density",31.8823529411765,0.0409104192285032
+"A","vqtl carrier_density",32.072590738423,0.0397814228046317
+"A","vqtl carrier_density",32.2628285356696,0.0386622361325169
+"A","vqtl carrier_density",32.4530663329161,0.037554202757871
+"A","vqtl carrier_density",32.6433041301627,0.0364585664082729
+"A","vqtl carrier_density",32.8335419274093,0.0353764732092188
+"A","vqtl carrier_density",33.0237797246558,0.0343089741437002
+"A","vqtl carrier_density",33.2140175219024,0.033257027723617
+"A","vqtl carrier_density",33.4042553191489,0.0322215028428743
+"A","vqtl carrier_density",33.5944931163955,0.0312031817836275
+"A","vqtl carrier_density",33.784730913642,0.0302027633487702
+"A","vqtl carrier_density",33.9749687108886,0.0292208660954291
+"A","vqtl carrier_density",34.1652065081352,0.0282580316458931
+"A","vqtl carrier_density",34.3554443053817,0.0273147280540649
+"A","vqtl carrier_density",34.5456821026283,0.0263913532071653
+"A","vqtl carrier_density",34.7359198998748,0.0254882382440308
+"A","vqtl carrier_density",34.9261576971214,0.0246056509729211
+"A","vqtl carrier_density",35.116395494368,0.0237437992732817
+"A","vqtl carrier_density",35.3066332916145,0.0229028344673845
+"A","vqtl carrier_density",35.4968710888611,0.0220828546491922
+"A","vqtl carrier_density",35.6871088861076,0.0212839079591511
+"A","vqtl carrier_density",35.8773466833542,0.0205059957949165
+"A","vqtl carrier_density",36.0675844806008,0.0197490759492447
+"A","vqtl carrier_density",36.2578222778473,0.0190130656674512
+"A","vqtl carrier_density",36.4480600750939,0.0182978446179268
+"A","vqtl carrier_density",36.6382978723404,0.0176032577702356
+"A","vqtl carrier_density",36.828535669587,0.0169291181762725
+"A","vqtl carrier_density",37.0187734668335,0.0162752096508521
+"A","vqtl carrier_density",37.2090112640801,0.015641289348925
+"A","vqtl carrier_density",37.3992490613267,0.0150270902373789
+"A","vqtl carrier_density",37.5894868585732,0.0144323234600777
+"A","vqtl carrier_density",37.7797246558198,0.013856680595431
+"A","vqtl carrier_density",37.9699624530663,0.0132998358063636
+"A","vqtl carrier_density",38.1602002503129,0.0127614478830774
+"A","vqtl carrier_density",38.3504380475595,0.0122411621794687
+"A","vqtl carrier_density",38.540675844806,0.0117386124444804
+"A","vqtl carrier_density",38.7309136420526,0.0112534225500429
+"A","vqtl carrier_density",38.9211514392991,0.010785208117579
+"A","vqtl carrier_density",39.1113892365457,0.0103335780453353
+"A","vqtl carrier_density",39.3016270337922,0.00989813593904381
+"A","vqtl carrier_density",39.4918648310388,0.00947848144862502
+"A","vqtl carrier_density",39.6821026282854,0.009074211513816
+"A","vqtl carrier_density",39.8723404255319,0.00868492152174809
+"A","vqtl carrier_density",40.0625782227785,0.00831020637960925
+"A","vqtl carrier_density",40.252816020025,0.00794966150561157
+"A","vqtl carrier_density",40.4430538172716,0.00760288374154465
+"A","vqtl carrier_density",40.6332916145181,0.00726947219023216
+"A","vqtl carrier_density",40.8235294117647,0.00694902898122826
+"A","vqtl carrier_density",41.0137672090113,0.00664115996808879
+"A","vqtl carrier_density",41.2040050062578,0.00634547536053578
+"A","vqtl carrier_density",41.3942428035044,0.00606159029480322
+"A","vqtl carrier_density",41.5844806007509,0.00578912534540665
+"A","vqtl carrier_density",41.7747183979975,0.00552770698152568
+"A","vqtl carrier_density",41.9649561952441,0.00527696797112234
+"A","vqtl carrier_density",42.1551939924906,0.00503654773584536
+"A","vqtl carrier_density",42.3454317897372,0.00480609265969005
+"A","vqtl carrier_density",42.5356695869837,0.00458525635429724
+"A","vqtl carrier_density",42.7259073842303,0.00437369988368329
+"A","vqtl carrier_density",42.9161451814768,0.0041710919510983
+"A","vqtl carrier_density",43.1063829787234,0.00397710905061165
+"A","vqtl carrier_density",43.29662077597,0.00379143558592336
+"A","vqtl carrier_density",43.4868585732165,0.00361376395879902
+"A","vqtl carrier_density",43.6770963704631,0.00344379462942244
+"A","vqtl carrier_density",43.8673341677096,0.00328123615085871
+"A","vqtl carrier_density",44.0575719649562,0.00312580517971754
+"A","vqtl carrier_density",44.2478097622028,0.00297722646500549
+"A","vqtl carrier_density",44.4380475594493,0.00283523281705584
+"A","vqtl carrier_density",44.6282853566959,0.00269956505832611
+"A","vqtl carrier_density",44.8185231539424,0.00256997195775687
+"A","vqtl carrier_density",45.008760951189,0.00244621015029105
+"A","vqtl carrier_density",45.1989987484355,0.0023280440430612
+"A","vqtl carrier_density",45.3892365456821,0.00221524570966258
+"A","vqtl carrier_density",45.5794743429287,0.00210759477384379
+"A","vqtl carrier_density",45.7697121401752,0.00200487828386274
+"A","vqtl carrier_density",45.9599499374218,0.00190689057867537
+"A","vqtl carrier_density",46.1501877346683,0.00181343314704676
+"A","vqtl carrier_density",46.3404255319149,0.00172431448060002
+"A","vqtl carrier_density",46.5306633291615,0.00163934992174668
+"A","vqtl carrier_density",46.720901126408,0.00155836150737463
+"A","vqtl carrier_density",46.9111389236546,0.00148117780910395
+"A","vqtl carrier_density",47.1013767209011,0.00140763377085955
+"A","vqtl carrier_density",47.2916145181477,0.00133757054445023
+"A","vqtl carrier_density",47.4818523153942,0.00127083532378789
+"A","vqtl carrier_density",47.6720901126408,0.00120728117832802
+"A","vqtl carrier_density",47.8623279098874,0.00114676688626185
+"A","vqtl carrier_density",48.0525657071339,0.00108915676794384
+"A","vqtl carrier_density",48.2428035043805,0.00103432051999322
+"A","vqtl carrier_density",48.433041301627,0.000982133050466594
+"A","vqtl carrier_density",48.6232790988736,0.000932474315459064
+"A","vqtl carrier_density",48.8135168961201,0.000885229157454399
+"A","vqtl carrier_density",49.0037546933667,0.00084028714571042
+"A","vqtl carrier_density",49.1939924906133,0.000797542418933118
+"A","vqtl carrier_density",49.3842302878598,0.000756893530463156
+"A","vqtl carrier_density",49.5744680851064,0.000718243296170282
+"A","vqtl carrier_density",49.7647058823529,0.000681498645224993
+"A","vqtl carrier_density",49.9549436795995,0.0006465704738928
+"A","vqtl carrier_density",50.1451814768461,0.00061337350247389
+"A","vqtl carrier_density",50.3354192740926,0.00058182613549037
+"A","vqtl carrier_density",50.5256570713392,0.000551850325204208
+"A","vqtl carrier_density",50.7158948685857,0.000523371438531483
+"A","vqtl carrier_density",50.9061326658323,0.000496318127402359
+"A","vqtl carrier_density",51.0963704630788,0.000470622202601581
+"A","vqtl carrier_density",51.2866082603254,0.000446218511110807
+"A","vqtl carrier_density",51.476846057572,0.000423044816961858
+"A","vqtl carrier_density",51.6670838548185,0.000401041685598828
+"A","vqtl carrier_density",51.8573216520651,0.000380152371737023
+"A","combined carrier_density",14,3.34145331525089e-06
+"A","combined carrier_density",14.1902377972466,4.96658229705831e-06
+"A","combined carrier_density",14.3804755944931,7.28402489292278e-06
+"A","combined carrier_density",14.5707133917397,1.05459967333067e-05
+"A","combined carrier_density",14.7609511889862,1.50801980641807e-05
+"A","combined carrier_density",14.9511889862328,2.13069330512995e-05
+"A","combined carrier_density",15.1414267834793,2.975854330207e-05
+"A","combined carrier_density",15.3316645807259,4.11010737784864e-05
+"A","combined carrier_density",15.5219023779725,5.61579776991557e-05
+"A","combined carrier_density",15.712140175219,7.59355417135387e-05
+"A","combined carrier_density",15.9023779724656,0.00010164957768928
+"A","combined carrier_density",16.0926157697121,0.000134752788150817
+"A","combined carrier_density",16.2828535669587,0.000176962074977043
+"A","combined carrier_density",16.4730913642053,0.000230284932334532
+"A","combined carrier_density",16.6633291614518,0.000297043952271653
+"A","combined carrier_density",16.8535669586984,0.000379898382173252
+"A","combined carrier_density",17.0438047559449,0.000481861614171165
+"A","combined carrier_density",17.2340425531915,0.000606313463556636
+"A","combined carrier_density",17.424280350438,0.000757006110935171
+"A","combined carrier_density",17.6145181476846,0.000938062644417118
+"A","combined carrier_density",17.8047559449312,0.00115396724483797
+"A","combined carrier_density",17.9949937421777,0.00140954620815673
+"A","combined carrier_density",18.1852315394243,0.00170993919205955
+"A","combined carrier_density",18.3754693366708,0.00206056030368968
+"A","combined carrier_density",18.5657071339174,0.0024670489058071
+"A","combined carrier_density",18.755944931164,0.00293521030146631
+"A","combined carrier_density",18.9461827284105,0.00347094675318467
+"A","combined carrier_density",19.1364205256571,0.00408017959143589
+"A","combined carrier_density",19.3266583229036,0.00476876345864519
+"A","combined carrier_density",19.5168961201502,0.00554239400827036
+"A","combined carrier_density",19.7071339173967,0.0064065106241329
+"A","combined carrier_density",19.8973717146433,0.00736619593396962
+"A","combined carrier_density",20.0876095118899,0.00842607405556533
+"A","combined carrier_density",20.2778473091364,0.00959020962775853
+"A","combined carrier_density",20.468085106383,0.010862009737869
+"A","combined carrier_density",20.6583229036295,0.0122441308594071
+"A","combined carrier_density",20.8485607008761,0.0137383928590167
+"A","combined carrier_density",21.0387984981227,0.0153457020211657
+"A","combined carrier_density",21.2290362953692,0.0170659848766372
+"A","combined carrier_density",21.4192740926158,0.0188981344115635
+"A","combined carrier_density",21.6095118898623,0.0208399699841419
+"A","combined carrier_density",21.7997496871089,0.0228882119939457
+"A","combined carrier_density",21.9899874843554,0.025038472042386
+"A","combined carrier_density",22.180225281602,0.0272852590013009
+"A","combined carrier_density",22.3704630788486,0.0296220010789637
+"A","combined carrier_density",22.5607008760951,0.0320410836479045
+"A","combined carrier_density",22.7509386733417,0.0345339022853054
+"A","combined carrier_density",22.9411764705882,0.0370909301821174
+"A","combined carrier_density",23.1314142678348,0.0397017988083166
+"A","combined carrier_density",23.3216520650814,0.0423553904846438
+"A","combined carrier_density",23.5118898623279,0.0450399413103754
+"A","combined carrier_density",23.7021276595745,0.047743152735495
+"A","combined carrier_density",23.892365456821,0.0504523099461895
+"A","combined carrier_density",24.0826032540676,0.0531544051557216
+"A","combined carrier_density",24.2728410513141,0.0558362638581372
+"A","combined carrier_density",24.4630788485607,0.0584846721085457
+"A","combined carrier_density",24.6533166458073,0.0610865029385136
+"A","combined carrier_density",24.8435544430538,0.0636288400952831
+"A","combined carrier_density",25.0337922403004,0.0660990974052192
+"A","combined carrier_density",25.2240300375469,0.0684851322007776
+"A","combined carrier_density",25.4142678347935,0.0707753514116823
+"A","combined carrier_density",25.6045056320401,0.0729588091000218
+"A","combined carrier_density",25.7947434292866,0.0750252944107121
+"A","combined carrier_density",25.9849812265332,0.0769654091083692
+"A","combined carrier_density",26.1752190237797,0.0787706340744626
+"A","combined carrier_density",26.3654568210263,0.0804333843403354
+"A","combined carrier_density",26.5556946182728,0.081947052428326
+"A","combined carrier_density",26.7459324155194,0.0833060399612908
+"A","combined carrier_density",26.936170212766,0.0845057776772796
+"A","combined carrier_density",27.1264080100125,0.0855427341484513
+"A","combined carrier_density",27.3166458072591,0.0864144136495329
+"A","combined carrier_density",27.5068836045056,0.0871193437497555
+"A","combined carrier_density",27.6971214017522,0.0876570533122747
+"A","combined carrier_density",27.8873591989987,0.0880280416760968
+"A","combined carrier_density",28.0775969962453,0.0882337398674251
+"A","combined carrier_density",28.2678347934919,0.0882764647404424
+"A","combined carrier_density",28.4580725907384,0.0881593669825212
+"A","combined carrier_density",28.648310387985,0.0878863739366771
+"A","combined carrier_density",28.8385481852315,0.087462128195947
+"A","combined carrier_density",29.0287859824781,0.0868919229116876
+"A","combined carrier_density",29.2190237797247,0.086181634732072
+"A","combined carrier_density",29.4092615769712,0.0853376552499492
+"A","combined carrier_density",29.5994993742178,0.0843668217923843
+"A","combined carrier_density",29.7897371714643,0.0832763483293051
+"A","combined carrier_density",29.9799749687109,0.0820737572173904
+"A","combined carrier_density",30.1702127659574,0.0807668124292457
+"A","combined carrier_density",30.360450563204,0.0793634548485375
+"A","combined carrier_density",30.5506883604506,0.0778717401405094
+"A","combined carrier_density",30.7409261576971,0.076299779635472
+"A","combined carrier_density",30.9311639549437,0.0746556845916124
+"A","combined carrier_density",31.1214017521902,0.0729475141338353
+"A","combined carrier_density",31.3116395494368,0.0711832270982091
+"A","combined carrier_density",31.5018773466834,0.0693706379477044
+"A","combined carrier_density",31.6921151439299,0.0675173768648811
+"A","combined carrier_density",31.8823529411765,0.0656308540714924
+"A","combined carrier_density",32.072590738423,0.0637182283739771
+"A","combined carrier_density",32.2628285356696,0.0617863798877559
+"A","combined carrier_density",32.4530663329161,0.0598418868522492
+"A","combined carrier_density",32.6433041301627,0.0578910064126589
+"A","combined carrier_density",32.8335419274093,0.0559396592137264
+"A","combined carrier_density",33.0237797246558,0.0539934176248028
+"A","combined carrier_density",33.2140175219024,0.0520574973944528
+"A","combined carrier_density",33.4042553191489,0.0501367525162167
+"A","combined carrier_density",33.5944931163955,0.048235673074836
+"A","combined carrier_density",33.784730913642,0.0463583858338581
+"A","combined carrier_density",33.9749687108886,0.0445086573207906
+"A","combined carrier_density",34.1652065081352,0.0426898991645038
+"A","combined carrier_density",34.3554443053817,0.0409051754410514
+"A","combined carrier_density",34.5456821026283,0.0391572117881354
+"A","combined carrier_density",34.7359198998748,0.0374484060547481
+"A","combined carrier_density",34.9261576971214,0.0357808402607351
+"A","combined carrier_density",35.116395494368,0.0341562936508396
+"A","combined carrier_density",35.3066332916145,0.0325762566388761
+"A","combined carrier_density",35.4968710888611,0.0310419454497971
+"A","combined carrier_density",35.6871088861076,0.0295543172802549
+"A","combined carrier_density",35.8773466833542,0.0281140858116202
+"A","combined carrier_density",36.0675844806008,0.0267217369230506
+"A","combined carrier_density",36.2578222778473,0.0253775444659374
+"A","combined carrier_density",36.4480600750939,0.0240815859747062
+"A","combined carrier_density",36.6382978723404,0.0228337582023709
+"A","combined carrier_density",36.828535669587,0.0216337923823084
+"A","combined carrier_density",37.0187734668335,0.0204812691303238
+"A","combined carrier_density",37.2090112640801,0.0193756329131341
+"A","combined carrier_density",37.3992490613267,0.0183162060208283
+"A","combined carrier_density",37.5894868585732,0.0173022019916301
+"A","combined carrier_density",37.7797246558198,0.0163327384473359
+"A","combined carrier_density",37.9699624530663,0.0154068493071198
+"A","combined carrier_density",38.1602002503129,0.0145234963559634
+"A","combined carrier_density",38.3504380475595,0.0136815801517905
+"A","combined carrier_density",38.540675844806,0.0128799502624559
+"A","combined carrier_density",38.7309136420526,0.0121174148300965
+"A","combined carrier_density",38.9211514392991,0.011392749465987
+"A","combined carrier_density",39.1113892365457,0.0107047054840127
+"A","combined carrier_density",39.3016270337922,0.0100520174851933
+"A","combined carrier_density",39.4918648310388,0.0094334103093925
+"A","combined carrier_density",39.6821026282854,0.00884760537348745
+"A","combined carrier_density",39.8723404255319,0.00829332641786751
+"A","combined carrier_density",40.0625782227785,0.00776930468523489
+"A","combined carrier_density",40.252816020025,0.00727428355732771
+"A","combined carrier_density",40.4430538172716,0.00680702267642002
+"A","combined carrier_density",40.6332916145181,0.00636630157930952
+"A","combined carrier_density",40.8235294117647,0.00595092287202492
+"A","combined carrier_density",41.0137672090113,0.00555971497370547
+"A","combined carrier_density",41.2040050062578,0.00519153445805931
+"A","combined carrier_density",41.3942428035044,0.00484526802053192
+"A","combined carrier_density",41.5844806007509,0.00451983409883994
+"A","combined carrier_density",41.7747183979975,0.00421418417387868
+"A","combined carrier_density",41.9649561952441,0.00392730377722209
+"A","combined carrier_density",42.1551939924906,0.00365821323052745
+"A","combined carrier_density",42.3454317897372,0.00340596814115332
+"A","combined carrier_density",42.5356695869837,0.0031696596772256
+"A","combined carrier_density",42.7259073842303,0.00294841464425357
+"A","combined carrier_density",42.9161451814768,0.00274139538423179
+"A","combined carrier_density",43.1063829787234,0.00254779951697098
+"A","combined carrier_density",43.29662077597,0.00236685954220187
+"A","combined carrier_density",43.4868585732165,0.00219784231979799
+"A","combined carrier_density",43.6770963704631,0.00204004844427746
+"A","combined carrier_density",43.8673341677096,0.0018928115285803
+"A","combined carrier_density",44.0575719649562,0.00175549741098142
+"A","combined carrier_density",44.2478097622028,0.00162750329789771
+"A","combined carrier_density",44.4380475594493,0.00150825685428604
+"A","combined carrier_density",44.6282853566959,0.00139721525230885
+"A","combined carrier_density",44.8185231539424,0.00129386418797192
+"A","combined carrier_density",45.008760951189,0.00119771687451333
+"A","combined carrier_density",45.1989987484355,0.00110831302044787
+"A","combined carrier_density",45.3892365456821,0.00102521779934628
+"A","combined carrier_density",45.5794743429287,0.000948020817654439
+"A","combined carrier_density",45.7697121401752,0.00087633508613365
+"A","combined carrier_density",45.9599499374218,0.00080979599982932
+"A","combined carrier_density",46.1501877346683,0.0007480603308492
+"A","combined carrier_density",46.3404255319149,0.000690805237654185
+"A","combined carrier_density",46.5306633291615,0.000637727294032008
+"A","combined carrier_density",46.720901126408,0.000588541540435229
+"A","combined carrier_density",46.9111389236546,0.00054298055991825
+"A","combined carrier_density",47.1013767209011,0.000500793580501469
+"A","combined carrier_density",47.2916145181477,0.000461745605421772
+"A","combined carrier_density",47.4818523153942,0.000425616572395847
+"A","combined carrier_density",47.6720901126408,0.000392200542723517
+"A","combined carrier_density",47.8623279098874,0.000361304920790804
+"A","combined carrier_density",48.0525657071339,0.000332749704294182
+"A","combined carrier_density",48.2428035043805,0.000306366765296938
+"A","combined carrier_density",48.433041301627,0.000281999162043214
+"A","combined carrier_density",48.6232790988736,0.000259500481293501
+"A","combined carrier_density",48.8135168961201,0.000238734210805119
+"A","combined carrier_density",49.0037546933667,0.000219573141460845
+"A","combined carrier_density",49.1939924906133,0.00020189879844647
+"A","combined carrier_density",49.3842302878598,0.000185600900792236
+"A","combined carrier_density",49.5744680851064,0.000170576848522149
+"A","combined carrier_density",49.7647058823529,0.000156731236597735
+"A","combined carrier_density",49.9549436795995,0.000143975394797513
+"A","combined carrier_density",50.1451814768461,0.00013222695263899
+"A","combined carrier_density",50.3354192740926,0.000121409428425319
+"A","combined carrier_density",50.5256570713392,0.00011145184148255
+"A","combined carrier_density",50.7158948685857,0.000102288346644953
+"A","combined carrier_density",50.9061326658323,9.38578900439467e-05
+"A","combined carrier_density",51.0963704630788,8.61038852601734e-05
+"A","combined carrier_density",51.2866082603254,7.8973908907187e-05
+"A","combined carrier_density",51.476846057572,7.24194147285154e-05
+"A","combined carrier_density",51.6670838548185,6.639546530682e-05
+"A","combined carrier_density",51.8573216520651,6.08604805038692e-05
+"A","noncarrier_density",14,5.72938643189164e-05
+"A","noncarrier_density",14.1902377972466,7.83590675784105e-05
+"A","noncarrier_density",14.3804755944931,0.00010601542040128
+"A","noncarrier_density",14.5707133917397,0.000141941297314523
+"A","noncarrier_density",14.7609511889862,0.000188131931451736
+"A","noncarrier_density",14.9511889862328,0.000246932067713037
+"A","noncarrier_density",15.1414267834793,0.000321066110616345
+"A","noncarrier_density",15.3316645807259,0.000413664346227048
+"A","noncarrier_density",15.5219023779725,0.000528283740472831
+"A","noncarrier_density",15.712140175219,0.000668921791513779
+"A","noncarrier_density",15.9023779724656,0.000840021948309845
+"A","noncarrier_density",16.0926157697121,0.00104646920528985
+"A","noncarrier_density",16.2828535669587,0.00129357464539839
+"A","noncarrier_density",16.4730913642053,0.00158704792902229
+"A","noncarrier_density",16.6633291614518,0.00193295700949569
+"A","noncarrier_density",16.8535669586984,0.00233767468919257
+"A","noncarrier_density",17.0438047559449,0.00280781200309695
+"A","noncarrier_density",17.2340425531915,0.00335013881644311
+"A","noncarrier_density",17.424280350438,0.00397149243515606
+"A","noncarrier_density",17.6145181476846,0.00467867543705108
+"A","noncarrier_density",17.8047559449312,0.00547834432248226
+"A","noncarrier_density",17.9949937421777,0.00637689094025553
+"A","noncarrier_density",18.1852315394243,0.00738031895420238
+"A","noncarrier_density",18.3754693366708,0.0084941178656944
+"A","noncarrier_density",18.5657071339174,0.00972313728771788
+"A","noncarrier_density",18.755944931164,0.0110714642697724
+"A","noncarrier_density",18.9461827284105,0.0125423064956057
+"A","noncarrier_density",19.1364205256571,0.0141378841165198
+"A","noncarrier_density",19.3266583229036,0.0158593328435644
+"A","noncarrier_density",19.5168961201502,0.0177066207071396
+"A","noncarrier_density",19.7071339173967,0.0196784806096889
+"A","noncarrier_density",19.8973717146433,0.0217723604558277
+"A","noncarrier_density",20.0876095118899,0.0239843922556917
+"A","noncarrier_density",20.2778473091364,0.0263093811740596
+"A","noncarrier_density",20.468085106383,0.0287408150531454
+"A","noncarrier_density",20.6583229036295,0.0312708944843649
+"A","noncarrier_density",20.8485607008761,0.0338905830570092
+"A","noncarrier_density",21.0387984981227,0.0365896769820899
+"A","noncarrier_density",21.2290362953692,0.0393568928889526
+"A","noncarrier_density",21.4192740926158,0.0421799722304896
+"A","noncarrier_density",21.6095118898623,0.0450458004180986
+"A","noncarrier_density",21.7997496871089,0.0479405385462955
+"A","noncarrier_density",21.9899874843554,0.0508497653635105
+"A","noncarrier_density",22.180225281602,0.053758627002561
+"A","noncarrier_density",22.3704630788486,0.0566519919022229
+"A","noncarrier_density",22.5607008760951,0.0595146083290731
+"A","noncarrier_density",22.7509386733417,0.0623312619436146
+"A","noncarrier_density",22.9411764705882,0.065086930942555
+"A","noncarrier_density",23.1314142678348,0.0677669364447141
+"A","noncarrier_density",23.3216520650814,0.070357085965293
+"A","noncarrier_density",23.5118898623279,0.0728438080353521
+"A","noncarrier_density",23.7021276595745,0.0752142762631912
+"A","noncarrier_density",23.892365456821,0.0774565213945687
+"A","noncarrier_density",24.0826032540676,0.0795595302021313
+"A","noncarrier_density",24.2728410513141,0.0815133303140563
+"A","noncarrier_density",24.4630788485607,0.0833090603711942
+"A","noncarrier_density",24.6533166458073,0.0849390251749553
+"A","noncarrier_density",24.8435544430538,0.0863967357494891
+"A","noncarrier_density",25.0337922403004,0.0876769344867866
+"A","noncarrier_density",25.2240300375469,0.088775605768395
+"A","noncarrier_density",25.4142678347935,0.0896899726594981
+"A","noncarrier_density",25.6045056320401,0.0904184804479728
+"A","noncarrier_density",25.7947434292866,0.0909607679512914
+"A","noncarrier_density",25.9849812265332,0.0913176276370761
+"A","noncarrier_density",26.1752190237797,0.0914909556987143
+"A","noncarrier_density",26.3654568210263,0.091483693296263
+"A","noncarrier_density",26.5556946182728,0.0912997602159934
+"A","noncarrier_density",26.7459324155194,0.0909439822208558
+"A","noncarrier_density",26.936170212766,0.0904220133607579
+"A","noncarrier_density",27.1264080100125,0.0897402544879697
+"A","noncarrier_density",27.3166458072591,0.0889057691815239
+"A","noncarrier_density",27.5068836045056,0.0879261982276196
+"A","noncarrier_density",27.6971214017522,0.0868096737332424
+"A","noncarrier_density",27.8873591989987,0.0855647338699729
+"A","noncarrier_density",28.0775969962453,0.0842002391566853
+"A","noncarrier_density",28.2678347934919,0.0827252910958487
+"A","noncarrier_density",28.4580725907384,0.0811491538806016
+"A","noncarrier_density",28.648310387985,0.079481179790673
+"A","noncarrier_density",28.8385481852315,0.0777307387963715
+"A","noncarrier_density",29.0287859824781,0.0759071527928574
+"A","noncarrier_density",29.2190237797247,0.0740196347931249
+"A","noncarrier_density",29.4092615769712,0.0720772333187343
+"A","noncarrier_density",29.5994993742178,0.0700887821432902
+"A","noncarrier_density",29.7897371714643,0.0680628554657161
+"A","noncarrier_density",29.9799749687109,0.0660077285190935
+"A","noncarrier_density",30.1702127659574,0.0639313435565763
+"A","noncarrier_density",30.360450563204,0.061841281098888
+"A","noncarrier_density",30.5506883604506,0.0597447362782136
+"A","noncarrier_density",30.7409261576971,0.0576485000708527
+"A","noncarrier_density",30.9311639549437,0.0555589451756125
+"A","noncarrier_density",31.1214017521902,0.0534820162663464
+"A","noncarrier_density",31.3116395494368,0.0514232243248899
+"A","noncarrier_density",31.5018773466834,0.0493876447445518
+"A","noncarrier_density",31.6921151439299,0.0473799188837779
+"A","noncarrier_density",31.8823529411765,0.0454042587441635
+"A","noncarrier_density",32.072590738423,0.0434644544461207
+"A","noncarrier_density",32.2628285356696,0.0415638841786945
+"A","noncarrier_density",32.4530663329161,0.0397055263067594
+"A","noncarrier_density",32.6433041301627,0.0378919733285971
+"A","noncarrier_density",32.8335419274093,0.0361254473891831
+"A","noncarrier_density",33.0237797246558,0.0344078170689188
+"A","noncarrier_density",33.2140175219024,0.0327406151836118
+"A","noncarrier_density",33.4042553191489,0.0311250573488071
+"A","noncarrier_density",33.5944931163955,0.0295620610797575
+"A","noncarrier_density",33.784730913642,0.0280522652170303
+"A","noncarrier_density",33.9749687108886,0.0265960494866993
+"A","noncarrier_density",34.1652065081352,0.0251935540229825
+"A","noncarrier_density",34.3554443053817,0.0238446986998385
+"A","noncarrier_density",34.5456821026283,0.0225492021362194
+"A","noncarrier_density",34.7359198998748,0.0213066002572397
+"A","noncarrier_density",34.9261576971214,0.0201162643103108
+"A","noncarrier_density",35.116395494368,0.0189774182512142
+"A","noncarrier_density",35.3066332916145,0.0178891554300517
+"A","noncarrier_density",35.4968710888611,0.0168504545209624
+"A","noncarrier_density",35.6871088861076,0.0158601946523975
+"A","noncarrier_density",35.8773466833542,0.0149171697065743
+"A","noncarrier_density",36.0675844806008,0.0140201017674865
+"A","noncarrier_density",36.2578222778473,0.0131676537065454
+"A","noncarrier_density",36.4480600750939,0.0123584409035788
+"A","noncarrier_density",36.6382978723404,0.0115910421085721
+"A","noncarrier_density",36.828535669587,0.0108640094562166
+"A","noncarrier_density",37.0187734668335,0.0101758776511088
+"A","noncarrier_density",37.2090112640801,0.00952517234634919
+"A","noncarrier_density",37.3992490613267,0.0089104177423936
+"A","noncarrier_density",37.5894868585732,0.00833014343636342
+"A","noncarrier_density",37.7797246558198,0.00778289055468714
+"A","noncarrier_density",37.9699624530663,0.00726721720398131
+"A","noncarrier_density",38.1602002503129,0.00678170327654556
+"A","noncarrier_density",38.3504380475595,0.00632495464780186
+"A","noncarrier_density",38.540675844806,0.00589560680350471
+"A","noncarrier_density",38.7309136420526,0.00549232793464618
+"A","noncarrier_density",38.9211514392991,0.0051138215377233
+"A","noncarrier_density",39.1113892365457,0.0047588285574754
+"A","noncarrier_density",39.3016270337922,0.00442612910838209
+"A","noncarrier_density",39.4918648310388,0.00411454381017619
+"A","noncarrier_density",39.6821026282854,0.00382293477141313
+"A","noncarrier_density",39.8723404255319,0.00355020625378085
+"A","noncarrier_density",40.0625782227785,0.0032953050483652
+"A","noncarrier_density",40.252816020025,0.00305722059353455
+"A","noncarrier_density",40.4430538172716,0.0028349848624986
+"A","noncarrier_density",40.6332916145181,0.00262767204695211
+"A","noncarrier_density",40.8235294117647,0.00243439806155798
+"A","noncarrier_density",41.0137672090113,0.00225431989236828
+"A","noncarrier_density",41.2040050062578,0.0020866348106455
+"A","noncarrier_density",41.3942428035044,0.00193057947194046
+"A","noncarrier_density",41.5844806007509,0.00178542891871796
+"A","noncarrier_density",41.7747183979975,0.00165049550330767
+"A","noncarrier_density",41.9649561952441,0.00152512774649955
+"A","noncarrier_density",42.1551939924906,0.00140870914570897
+"A","noncarrier_density",42.3454317897372,0.00130065694530846
+"A","noncarrier_density",42.5356695869837,0.00120042088046537
+"A","noncarrier_density",42.7259073842303,0.00110748190463746
+"A","noncarrier_density",42.9161451814768,0.00102135090976456
+"A","noncarrier_density",43.1063829787234,0.00094156744715236
+"A","noncarrier_density",43.29662077597,0.000867698456073867
+"A","noncarrier_density",43.4868585732165,0.000799337006214895
+"A","noncarrier_density",43.6770963704631,0.000736101059258106
+"A","noncarrier_density",43.8673341677096,0.00067763225413606
+"A","noncarrier_density",44.0575719649562,0.000623594719783011
+"A","noncarrier_density",44.2478097622028,0.000573673918575894
+"A","noncarrier_density",44.4380475594493,0.000527575523074297
+"A","noncarrier_density",44.6282853566959,0.000485024328143585
+"A","noncarrier_density",44.8185231539424,0.000445763200072226
+"A","noncarrier_density",45.008760951189,0.000409552063870111
+"A","noncarrier_density",45.1989987484355,0.000376166929556412
+"A","noncarrier_density",45.3892365456821,0.000345398957910034
+"A","noncarrier_density",45.5794743429287,0.00031705356585988
+"A","noncarrier_density",45.7697121401752,0.000290949571433035
+"A","noncarrier_density",45.9599499374218,0.000266918377953737
+"A","noncarrier_density",46.1501877346683,0.000244803196991631
+"A","noncarrier_density",46.3404255319149,0.000224458309391946
+"A","noncarrier_density",46.5306633291615,0.000205748363580101
+"A","noncarrier_density",46.720901126408,0.000188547710216574
+"A","noncarrier_density",46.9111389236546,0.000172739772182319
+"A","noncarrier_density",47.1013767209011,0.000158216448798546
+"A","noncarrier_density",47.2916145181477,0.000144877553125173
+"A","noncarrier_density",47.4818523153942,0.000132630281138065
+"A","noncarrier_density",47.6720901126408,0.000121388711554339
+"A","noncarrier_density",47.8623279098874,0.000111073335056137
+"A","noncarrier_density",48.0525657071339,0.000101610611654781
+"A","noncarrier_density",48.2428035043805,9.29325549379044e-05
+"A","noncarrier_density",48.433041301627,8.49763419505404e-05
+"A","noncarrier_density",48.6232790988736,7.76839474764496e-05
+"A","noncarrier_density",48.8135168961201,7.10018015068564e-05
+"A","noncarrier_density",49.0037546933667,6.4880468709564e-05
+"A","noncarrier_density",49.1939924906133,5.92743487411026e-05
+"A","noncarrier_density",49.3842302878598,5.41413962775763e-05
+"A","noncarrier_density",49.5744680851064,4.94428596754008e-05
+"A","noncarrier_density",49.7647058823529,4.51430372106424e-05
+"A","noncarrier_density",49.9549436795995,4.12090498846845e-05
+"A","noncarrier_density",50.1451814768461,3.76106298239007e-05
+"A","noncarrier_density",50.3354192740926,3.43199233416203e-05
+"A","noncarrier_density",50.5256570713392,3.13113077714777e-05
+"A","noncarrier_density",50.7158948685857,2.85612212220153e-05
+"A","noncarrier_density",50.9061326658323,2.60480044428255e-05
+"A","noncarrier_density",51.0963704630788,2.37517540324277e-05
+"A","noncarrier_density",51.2866082603254,2.16541862572249e-05
+"A","noncarrier_density",51.476846057572,1.9738510789153e-05
+"A","noncarrier_density",51.6670838548185,1.7989313706886e-05
+"A","noncarrier_density",51.8573216520651,1.63924491415942e-05
+"B","additive",0.02,1
+"B","additive",0.0418181818181818,1
+"B","additive",0.0636363636363636,1
+"B","additive",0.0854545454545454,1
+"B","additive",0.107272727272727,1
+"B","additive",0.129090909090909,1
+"B","additive",0.150909090909091,1
+"B","additive",0.172727272727273,1
+"B","additive",0.194545454545455,1
+"B","additive",0.216363636363636,1
+"B","additive",0.238181818181818,1
+"B","additive",0.26,1
+"B","additive",0.281818181818182,1
+"B","additive",0.303636363636364,1
+"B","additive",0.325454545454545,1
+"B","additive",0.347272727272727,1
+"B","additive",0.369090909090909,1
+"B","additive",0.390909090909091,1
+"B","additive",0.412727272727273,1
+"B","additive",0.434545454545455,1
+"B","additive",0.456363636363636,1
+"B","additive",0.478181818181818,1
+"B","additive",0.5,1
+"B","additive",0.521818181818182,1
+"B","additive",0.543636363636364,1
+"B","additive",0.565454545454545,1
+"B","additive",0.587272727272727,1
+"B","additive",0.609090909090909,1
+"B","additive",0.630909090909091,1
+"B","additive",0.652727272727273,1
+"B","additive",0.674545454545455,1
+"B","additive",0.696363636363636,1
+"B","additive",0.718181818181818,1
+"B","additive",0.74,1
+"B","additive",0.761818181818182,1
+"B","additive",0.783636363636364,1
+"B","additive",0.805454545454545,1
+"B","additive",0.827272727272727,1
+"B","additive",0.849090909090909,1
+"B","additive",0.870909090909091,1
+"B","additive",0.892727272727273,1
+"B","additive",0.914545454545454,1
+"B","additive",0.936363636363636,1
+"B","additive",0.958181818181818,1
+"B","additive",0.98,1
+"B","log_additive",0.02,0.704834293379994
+"B","log_additive",0.0418181818181818,0.743221769648059
+"B","log_additive",0.0636363636363636,0.768602841479606
+"B","log_additive",0.0854545454545454,0.788450069113112
+"B","log_additive",0.107272727272727,0.805170829113621
+"B","log_additive",0.129090909090909,0.819871138818196
+"B","log_additive",0.150909090909091,0.833158642726645
+"B","log_additive",0.172727272727273,0.845406442461881
+"B","log_additive",0.194545454545455,0.856861981638415
+"B","log_additive",0.216363636363636,0.86769905805926
+"B","log_additive",0.238181818181818,0.878045371218331
+"B","log_additive",0.26,0.88799828833676
+"B","log_additive",0.281818181818182,0.897634433861392
+"B","log_additive",0.303636363636364,0.907015818879878
+"B","log_additive",0.325454545454545,0.916193926692799
+"B","log_additive",0.347272727272727,0.925212538233712
+"B","log_additive",0.369090909090909,0.934109753262531
+"B","log_additive",0.390909090909091,0.942919484357364
+"B","log_additive",0.412727272727273,0.951672598797058
+"B","log_additive",0.434545454545455,0.960397823298311
+"B","log_additive",0.456363636363636,0.969122490182995
+"B","log_additive",0.478181818181818,0.977873181242094
+"B","log_additive",0.5,0.986676312011074
+"B","log_additive",0.521818181818182,0.995558691411493
+"B","log_additive",0.543636363636364,1.00454808813687
+"B","log_additive",0.565454545454545,1.01367383501595
+"B","log_additive",0.587272727272727,1.02296750575181
+"B","log_additive",0.609090909090909,1.03246370536851
+"B","log_additive",0.630909090909091,1.04220102753832
+"B","log_additive",0.652727272727273,1.0522232508244
+"B","log_additive",0.674545454545455,1.06258087542442
+"B","log_additive",0.696363636363636,1.07333314857291
+"B","log_additive",0.718181818181818,1.08455080148374
+"B","log_additive",0.74,1.09631984370963
+"B","log_additive",0.761818181818182,1.10874696979833
+"B","log_additive",0.783636363636364,1.12196750202913
+"B","log_additive",0.805454545454545,1.13615747406867
+"B","log_additive",0.827272727272727,1.15155278666766
+"B","log_additive",0.849090909090909,1.16848112083161
+"B","log_additive",0.870909090909091,1.18741848394257
+"B","log_additive",0.892727272727273,1.20909763429395
+"B","log_additive",0.914545454545454,1.23473912023224
+"B","log_additive",0.936363636363636,1.26662314025495
+"B","log_additive",0.958181818181818,1.30987840297624
+"B","log_additive",0.98,1.38121847053619
+"B","combined",0.02,0.852417146689997
+"B","combined",0.0418181818181818,0.87161088482403
+"B","combined",0.0636363636363636,0.884301420739803
+"B","combined",0.0854545454545454,0.894225034556556
+"B","combined",0.107272727272727,0.90258541455681
+"B","combined",0.129090909090909,0.909935569409098
+"B","combined",0.150909090909091,0.916579321363322
+"B","combined",0.172727272727273,0.92270322123094
+"B","combined",0.194545454545455,0.928430990819207
+"B","combined",0.216363636363636,0.93384952902963
+"B","combined",0.238181818181818,0.939022685609165
+"B","combined",0.26,0.94399914416838
+"B","combined",0.281818181818182,0.948817216930696
+"B","combined",0.303636363636364,0.953507909439939
+"B","combined",0.325454545454545,0.9580969633464
+"B","combined",0.347272727272727,0.962606269116856
+"B","combined",0.369090909090909,0.967054876631265
+"B","combined",0.390909090909091,0.971459742178682
+"B","combined",0.412727272727273,0.975836299398529
+"B","combined",0.434545454545455,0.980198911649155
+"B","combined",0.456363636363636,0.984561245091498
+"B","combined",0.478181818181818,0.988936590621047
+"B","combined",0.5,0.993338156005537
+"B","combined",0.521818181818182,0.997779345705747
+"B","combined",0.543636363636364,1.00227404406844
+"B","combined",0.565454545454545,1.00683691750798
+"B","combined",0.587272727272727,1.01148375287591
+"B","combined",0.609090909090909,1.01623185268426
+"B","combined",0.630909090909091,1.02110051376916
+"B","combined",0.652727272727273,1.0261116254122
+"B","combined",0.674545454545455,1.03129043771221
+"B","combined",0.696363636363636,1.03666657428645
+"B","combined",0.718181818181818,1.04227540074187
+"B","combined",0.74,1.04815992185481
+"B","combined",0.761818181818182,1.05437348489916
+"B","combined",0.783636363636364,1.06098375101456
+"B","combined",0.805454545454545,1.06807873703433
+"B","combined",0.827272727272727,1.07577639333383
+"B","combined",0.849090909090909,1.08424056041581
+"B","combined",0.870909090909091,1.09370924197129
+"B","combined",0.892727272727273,1.10454881714697
+"B","combined",0.914545454545454,1.11736956011612
+"B","combined",0.936363636363636,1.13331157012747
+"B","combined",0.958181818181818,1.15493920148812
+"B","combined",0.98,1.1906092352681
+"B","vqtl_raw",0.02,0.704834293379994
+"B","vqtl_raw",0.0418181818181818,0.743221769648059
+"B","vqtl_raw",0.0636363636363636,0.768602841479606
+"B","vqtl_raw",0.0854545454545454,0.788450069113112
+"B","vqtl_raw",0.107272727272727,0.805170829113621
+"B","vqtl_raw",0.129090909090909,0.819871138818196
+"B","vqtl_raw",0.150909090909091,0.833158642726645
+"B","vqtl_raw",0.172727272727273,0.845406442461881
+"B","vqtl_raw",0.194545454545455,0.856861981638415
+"B","vqtl_raw",0.216363636363636,0.86769905805926
+"B","vqtl_raw",0.238181818181818,0.878045371218331
+"B","vqtl_raw",0.26,0.88799828833676
+"B","vqtl_raw",0.281818181818182,0.897634433861392
+"B","vqtl_raw",0.303636363636364,0.907015818879878
+"B","vqtl_raw",0.325454545454545,0.916193926692799
+"B","vqtl_raw",0.347272727272727,0.925212538233712
+"B","vqtl_raw",0.369090909090909,0.934109753262531
+"B","vqtl_raw",0.390909090909091,0.942919484357364
+"B","vqtl_raw",0.412727272727273,0.951672598797058
+"B","vqtl_raw",0.434545454545455,0.960397823298311
+"B","vqtl_raw",0.456363636363636,0.969122490182995
+"B","vqtl_raw",0.478181818181818,0.977873181242094
+"B","vqtl_raw",0.5,0.986676312011074
+"B","vqtl_raw",0.521818181818182,0.995558691411493
+"B","vqtl_raw",0.543636363636364,1.00454808813687
+"B","vqtl_raw",0.565454545454545,1.01367383501595
+"B","vqtl_raw",0.587272727272727,1.02296750575181
+"B","vqtl_raw",0.609090909090909,1.03246370536851
+"B","vqtl_raw",0.630909090909091,1.04220102753832
+"B","vqtl_raw",0.652727272727273,1.0522232508244
+"B","vqtl_raw",0.674545454545455,1.06258087542442
+"B","vqtl_raw",0.696363636363636,1.07333314857291
+"B","vqtl_raw",0.718181818181818,1.08455080148374
+"B","vqtl_raw",0.74,1.09631984370963
+"B","vqtl_raw",0.761818181818182,1.10874696979833
+"B","vqtl_raw",0.783636363636364,1.12196750202913
+"B","vqtl_raw",0.805454545454545,1.13615747406867
+"B","vqtl_raw",0.827272727272727,1.15155278666766
+"B","vqtl_raw",0.849090909090909,1.16848112083161
+"B","vqtl_raw",0.870909090909091,1.18741848394257
+"B","vqtl_raw",0.892727272727273,1.20909763429395
+"B","vqtl_raw",0.914545454545454,1.23473912023224
+"B","vqtl_raw",0.936363636363636,1.26662314025495
+"B","vqtl_raw",0.958181818181818,1.30987840297624
+"B","vqtl_raw",0.98,1.38121847053619
+"B","vqtl_log",0.02,-4.06656711918076
+"B","vqtl_log",0.0418181818181818,-3.55342881289374
+"B","vqtl_log",0.0636363636363636,-3.19373165351198
+"B","vqtl_log",0.0854545454545454,-2.9015477250442
+"B","vqtl_log",0.107272727272727,-2.64815332300697
+"B","vqtl_log",0.129090909090909,-2.4200268941934
+"B","vqtl_log",0.150909090909091,-2.20959532122468
+"B","vqtl_log",0.172727272727273,-2.0121295211707
+"B","vqtl_log",0.194545454545455,-1.82444275087758
+"B","vqtl_log",0.216363636363636,-1.64426065140996
+"B","vqtl_log",0.238181818181818,-1.46988379939651
+"B","vqtl_log",0.26,-1.2999925617216
+"B","vqtl_log",0.281818181818182,-1.1335271940738
+"B","vqtl_log",0.303636363636364,-0.969610387410225
+"B","vqtl_log",0.325454545454545,-0.807495021165099
+"B","vqtl_log",0.347272727272727,-0.64652750522196
+"B","vqtl_log",0.369090909090909,-0.486121067335023
+"B","vqtl_log",0.390909090909091,-0.325735522448766
+"B","vqtl_log",0.412727272727273,-0.164861305362754
+"B","vqtl_log",0.434545454545455,-0.00300628125835584
+"B","vqtl_log",0.456363636363636,0.160315712330259
+"B","vqtl_log",0.478181818181818,0.325595377011581
+"B","vqtl_log",0.5,0.493338156005537
+"B","vqtl_log",0.521818181818182,0.66407469769408
+"B","vqtl_log",0.543636363636364,0.838372146549496
+"B","vqtl_log",0.565454545454545,1.01684688328654
+"B","vqtl_log",0.587272727272727,1.20017945716777
+"B","vqtl_log",0.609090909090909,1.38913265755038
+"B","vqtl_log",0.630909090909091,1.5845739918662
+"B","vqtl_log",0.652727272727273,1.78750432968955
+"B","vqtl_log",0.674545454545455,1.99909523280257
+"B","vqtl_log",0.696363636363636,2.22073868257257
+"B","vqtl_log",0.718181818181818,2.45411482494475
+"B","vqtl_log",0.74,2.70128649827351
+"B","vqtl_log",0.761818181818182,2.96483466407682
+"B","vqtl_log",0.783636363636364,3.24805833803096
+"B","vqtl_log",0.805454545454545,3.55528017041754
+"B","vqtl_log",0.827272727272727,3.89233312717809
+"B","vqtl_log",0.849090909090909,4.26737523909859
+"B","vqtl_log",0.870909090909091,4.69234081837859
+"B","vqtl_log",0.892727272727273,5.18573936337917
+"B","vqtl_log",0.914545454545454,5.77865968753319
+"B","vqtl_log",0.936363636363636,6.52975020379223
+"B","vqtl_log",0.958181818181818,7.57255779236911
+"B","vqtl_log",0.98,9.35020872745528
+"B","whitened additive log_additive",,11.1207699959709
+"B","whitened additive combined",,5.30831973736438
+"B","whitened additive vqtl_raw",,11.1207699959709
+"B","whitened additive vqtl_log",,107.436466193396
+"B","whitened additive variance_only",,114.987549082503
+"B","whitened log_additive combined",,5.8124502586066
+"B","whitened log_additive vqtl_raw",,0
+"B","whitened log_additive vqtl_log",,96.3951390688076
+"B","whitened log_additive variance_only",,103.948450154708
+"B","whitened combined vqtl_raw",,5.8124502586066
+"B","whitened combined vqtl_log",,102.166885011973
+"B","whitened combined variance_only",,109.719618895586
+"B","whitened vqtl_raw vqtl_log",,96.3951390688076
+"B","whitened vqtl_raw variance_only",,103.948450154708
+"B","whitened vqtl_log variance_only",,7.5533110859004
+"B","tau additive log_additive",,8.73459812437445
+"B","tau additive combined",,4.38914523263825
+"B","tau additive vqtl_raw",,8.73459812437445
+"B","tau additive vqtl_log",,72.8355184538326
+"B","tau additive variance_only",,81.594241596164
+"B","tau log_additive combined",,4.34545289173613
+"B","tau log_additive vqtl_raw",,0
+"B","tau log_additive vqtl_log",,64.1369300816781
+"B","tau log_additive variance_only",,72.8965868312121
+"B","tau combined vqtl_raw",,4.34545289173613
+"B","tau combined vqtl_log",,68.4639270010548
+"B","tau combined variance_only",,77.2233415883969
+"B","tau vqtl_raw vqtl_log",,64.1369300816781
+"B","tau vqtl_raw variance_only",,72.8965868312121
+"B","tau vqtl_log variance_only",,8.75965674953404
+"C","median_scaled_profile",0.02,0.575299317744304
+"C","median_scaled_profile",0.0418181818181818,0.663001591505801
+"C","median_scaled_profile",0.0636363636363636,0.690301144524923
+"C","median_scaled_profile",0.0854545454545454,0.710707867328461
+"C","median_scaled_profile",0.107272727272727,0.714308008622434
+"C","median_scaled_profile",0.129090909090909,0.726338296226714
+"C","median_scaled_profile",0.150909090909091,0.751162266664986
+"C","median_scaled_profile",0.172727272727273,0.76957338500009
+"C","median_scaled_profile",0.194545454545455,0.791703325328515
+"C","median_scaled_profile",0.216363636363636,0.81297868590152
+"C","median_scaled_profile",0.238181818181818,0.819062258571879
+"C","median_scaled_profile",0.26,0.830967241187469
+"C","median_scaled_profile",0.281818181818182,0.84044714249107
+"C","median_scaled_profile",0.303636363636364,0.858234640691992
+"C","median_scaled_profile",0.325454545454545,0.865462681920445
+"C","median_scaled_profile",0.347272727272727,0.876597607158881
+"C","median_scaled_profile",0.369090909090909,0.88821382119175
+"C","median_scaled_profile",0.390909090909091,0.898965516439675
+"C","median_scaled_profile",0.412727272727273,0.904495885184558
+"C","median_scaled_profile",0.434545454545455,0.913801706590268
+"C","median_scaled_profile",0.456363636363636,0.926094385797452
+"C","median_scaled_profile",0.478181818181818,0.940298071682541
+"C","median_scaled_profile",0.5,0.955048155640579
+"C","median_scaled_profile",0.521818181818182,0.969000920196428
+"C","median_scaled_profile",0.543636363636364,0.977784273133378
+"C","median_scaled_profile",0.565454545454545,0.996773516193828
+"C","median_scaled_profile",0.587272727272727,1.00908319970782
+"C","median_scaled_profile",0.609090909090909,1.01876387119966
+"C","median_scaled_profile",0.630909090909091,1.03138576563045
+"C","median_scaled_profile",0.652727272727273,1.0475035090868
+"C","median_scaled_profile",0.674545454545455,1.06205595163083
+"C","median_scaled_profile",0.696363636363636,1.08009557058475
+"C","median_scaled_profile",0.718181818181818,1.0990354604252
+"C","median_scaled_profile",0.74,1.13361448863972
+"C","median_scaled_profile",0.761818181818182,1.15274475361195
+"C","median_scaled_profile",0.783636363636364,1.17990656322127
+"C","median_scaled_profile",0.805454545454545,1.203912206406
+"C","median_scaled_profile",0.827272727272727,1.2256285386381
+"C","median_scaled_profile",0.849090909090909,1.26308833299414
+"C","median_scaled_profile",0.870909090909091,1.30329102189412
+"C","median_scaled_profile",0.892727272727273,1.36624840748182
+"C","median_scaled_profile",0.914545454545454,1.44593867959214
+"C","median_scaled_profile",0.936363636363636,1.47001769880335
+"C","median_scaled_profile",0.958181818181818,1.53540884180383
+"C","median_scaled_profile",0.98,1.63118860444821

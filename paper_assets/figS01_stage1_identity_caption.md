@@ -1,0 +1,5 @@
+# figS01_stage1_identity
+
+Figure S1. Identity of Stage 1 G-MoQ and independently fitted ordinary RIF-OLS regressions. Simulated data on 400,000 participants; 45,000 coefficients (1,000 variants × 45 quantile levels), each fitted by G-MoQ Stage 1 and by a separate ordinary RIF-OLS regression (Methods). **a**, Difference between the G-MoQ and the ordinary RIF-OLS coefficient: point, mean over the 45,000 coefficients (3.7 × 10⁻¹⁶); bar, ±2 s.d. across coefficients (root mean square difference 2.8 × 10⁻¹⁴). **b**, Ratio of the G-MoQ standard error to the ordinary RIF-OLS standard error, with the pooled covariance and with the 1,000-block jackknife: point, mean over the same 45,000 coefficients; bar, ±2 s.d. Pooled, mean 1.000003 (s.d. 1.3 × 10⁻⁴; bar hidden by its point); jackknife, mean 1.000155 (s.d. 0.0226). The dashed line marks a ratio of 1. No statistical tests are shown. RIF-OLS, recentred influence function ordinary least squares; SE, standard error; s.d., standard deviation.
+
+Source data: results/08_simulations/summary.

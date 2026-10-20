@@ -1,0 +1,527 @@
+{
+ "description": "Weight-design simulation (Supplementary Note 2): 400 replicates per scenario; N 100,000 (400,000 where named); minor allele frequency 0.3; per-allele effects beta_left 0.055, beta_right 0.04, gamma 0.08 (gamma = logit P(lower component)); 20 null variants per replicate",
+ "seed": 20260924,
+ "n": 100000,
+ "maf": 0.3,
+ "tau_from": 0.02,
+ "tau_to": 0.98,
+ "n_tau": 45,
+ "scenarios": {
+  "ctrl_sep": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 1.0,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 1.0,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 100
+  },
+  "ctrl_sep_n400k": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 1.0,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 1.0,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "n": 400000,
+   "seed_index": 107
+  },
+  "heavy_c03": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.97,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.03,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.97,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.03,
+      "xi": 4.6,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 101
+  },
+  "heavy_c06": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.94,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.94,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 4.6,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 102
+  },
+  "heavy_c06_n400k": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.94,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.94,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 4.6,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "n": 400000,
+   "seed_index": 108
+  },
+  "bimodal_sep": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.6,
+      "xi": 0.0,
+      "omega": 1.0,
+      "alpha": -1.0
+     },
+     {
+      "w": 0.4,
+      "xi": 1.9,
+      "omega": 0.7,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 1,
+      "xi": 6.0,
+      "omega": 0.9,
+      "alpha": -2.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 104
+  },
+  "heavy_c06_shrink05": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.94,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.94,
+      "xi": 2.75,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 1.8499999999999996,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 105
+  },
+  "heavy_c06_shrink07": {
+   "family": "mixture",
+   "p_lower": 0.5,
+   "components": {
+    "lower": [
+     {
+      "w": 0.94,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.94,
+      "xi": 1.6500000000000004,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.75,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 106
+  },
+  "bmi_like": {
+   "family": "lognormal",
+   "lognormal": {
+    "shift": 12.0,
+    "meanlog": 2.64,
+    "sdlog": 0.3
+   },
+   "snp_set": "main_ln",
+   "seed_index": 109
+  },
+  "heavy_c06_p03": {
+   "family": "mixture",
+   "p_lower": 0.3,
+   "components": {
+    "lower": [
+     {
+      "w": 0.94,
+      "xi": 0.0,
+      "omega": 1.3,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 0.8,
+      "omega": 1.4,
+      "alpha": 0.0
+     }
+    ],
+    "upper": [
+     {
+      "w": 0.94,
+      "xi": 5.5,
+      "omega": 0.9,
+      "alpha": -2.0
+     },
+     {
+      "w": 0.06,
+      "xi": 4.6,
+      "omega": 1.2,
+      "alpha": 0.0
+     }
+    ]
+   },
+   "snp_set": "main",
+   "seed_index": 120
+  }
+ },
+ "snp_sets": {
+  "main": [
+   {
+    "id": "L",
+    "role": "left",
+    "beta_left": 0.055
+   },
+   {
+    "id": "R",
+    "role": "right",
+    "beta_right": 0.04
+   },
+   {
+    "id": "G",
+    "role": "gamma",
+    "gamma": 0.08
+   },
+   {
+    "id": "LRG",
+    "role": "all",
+    "beta_left": 0.055,
+    "beta_right": 0.04,
+    "gamma": 0.08
+   },
+   {
+    "id": "LReq",
+    "role": "shift_both",
+    "beta_left": 0.055,
+    "beta_right": 0.055
+   },
+   {
+    "id": "N01",
+    "role": "null"
+   },
+   {
+    "id": "N02",
+    "role": "null"
+   },
+   {
+    "id": "N03",
+    "role": "null"
+   },
+   {
+    "id": "N04",
+    "role": "null"
+   },
+   {
+    "id": "N05",
+    "role": "null"
+   },
+   {
+    "id": "N06",
+    "role": "null"
+   },
+   {
+    "id": "N07",
+    "role": "null"
+   },
+   {
+    "id": "N08",
+    "role": "null"
+   },
+   {
+    "id": "N09",
+    "role": "null"
+   },
+   {
+    "id": "N10",
+    "role": "null"
+   },
+   {
+    "id": "N11",
+    "role": "null"
+   },
+   {
+    "id": "N12",
+    "role": "null"
+   },
+   {
+    "id": "N13",
+    "role": "null"
+   },
+   {
+    "id": "N14",
+    "role": "null"
+   },
+   {
+    "id": "N15",
+    "role": "null"
+   },
+   {
+    "id": "N16",
+    "role": "null"
+   },
+   {
+    "id": "N17",
+    "role": "null"
+   },
+   {
+    "id": "N18",
+    "role": "null"
+   },
+   {
+    "id": "N19",
+    "role": "null"
+   },
+   {
+    "id": "N20",
+    "role": "null"
+   }
+  ],
+  "main_ln": [
+   {
+    "id": "A",
+    "role": "additive",
+    "additive": 0.13
+   },
+   {
+    "id": "M",
+    "role": "multiplicative",
+    "multiplicative": 0.02
+   },
+   {
+    "id": "AM",
+    "role": "both",
+    "additive": 0.13,
+    "multiplicative": 0.02
+   },
+   {
+    "id": "N01",
+    "role": "null"
+   },
+   {
+    "id": "N02",
+    "role": "null"
+   },
+   {
+    "id": "N03",
+    "role": "null"
+   },
+   {
+    "id": "N04",
+    "role": "null"
+   },
+   {
+    "id": "N05",
+    "role": "null"
+   },
+   {
+    "id": "N06",
+    "role": "null"
+   },
+   {
+    "id": "N07",
+    "role": "null"
+   },
+   {
+    "id": "N08",
+    "role": "null"
+   },
+   {
+    "id": "N09",
+    "role": "null"
+   },
+   {
+    "id": "N10",
+    "role": "null"
+   },
+   {
+    "id": "N11",
+    "role": "null"
+   },
+   {
+    "id": "N12",
+    "role": "null"
+   },
+   {
+    "id": "N13",
+    "role": "null"
+   },
+   {
+    "id": "N14",
+    "role": "null"
+   },
+   {
+    "id": "N15",
+    "role": "null"
+   },
+   {
+    "id": "N16",
+    "role": "null"
+   },
+   {
+    "id": "N17",
+    "role": "null"
+   },
+   {
+    "id": "N18",
+    "role": "null"
+   },
+   {
+    "id": "N19",
+    "role": "null"
+   },
+   {
+    "id": "N20",
+    "role": "null"
+   }
+  ]
+ }
+}

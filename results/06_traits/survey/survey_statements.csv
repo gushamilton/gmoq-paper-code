@@ -1,0 +1,15 @@
+"quantity","value"
+"n_traits_fig6",22
+"n_traits_at_most_two_components",20
+"n_traits_one_component",5
+"n_traits_two_components",15
+"n_traits_more_than_two",2
+"n_traits_frame_failure",2
+"hba1c_skew_beyond_with_diabetes_log",69
+"hba1c_skew_beyond_without_diabetes_log",4
+"hba1c_skew_beyond_without_diabetes_raw",3
+"log_bmi_tau",0.116103237855767
+"log_bmi_tau_floor",0.06
+"bmi_spread_leads_raw",152
+"bmi_spread_leads_log",51
+"bmi_spread_leads_boxcox",11

@@ -1,0 +1,7 @@
+"trait","column","max_rel_diff_package_vs_analytic","max_abs_Wadd_minus_1","pass"
+"bmi","additive",0,0,TRUE
+"bmi","meanlog",1.36095280246253e-16,0,TRUE
+"bmi","sdlog",3.4790047487987e-16,0,TRUE
+"weight","additive",0,0,TRUE
+"weight","meanlog",1.31543498942301e-16,0,TRUE
+"weight","sdlog",7.68605148923483e-16,0,TRUE

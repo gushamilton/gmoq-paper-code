@@ -1,0 +1,6 @@
+"item","trait","scale","n_leads","n_components","n_skew_beyond_bonf","lof_frac_p_lt_0.05","note"
+"hba1c:hba1c_nodiab","hba1c_nodiab","raw",533,2,3,0.125703564727955,"diabetes excluded, analysed raw"
+"hba1c:log_hba1c","log_hba1c","log",472,3,69,0.372881355932203,"with diabetes (log)"
+"hba1c:hba1c_nodiab_log","hba1c_nodiab","log (converted from raw)",533,2,4,0.127579737335835,"diabetes excluded, converted to log (like-for-like)"
+"lpa:frame_failure","log_lipoprotein_a","log",35,4,32,1,"shift + spread frame rejected (lack of fit)"
+"other:log_bilirubin_total","log_bilirubin_total","log",183,2,19,0.174863387978142,"skew beyond > 5% of leads"

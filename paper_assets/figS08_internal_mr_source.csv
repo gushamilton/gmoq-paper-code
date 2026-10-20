@@ -1,0 +1,17 @@
+"arm","weight_design","component","direction","reference","nsnp","beta","se","ci_low","ci_high"
+"testosterone","hybrid","female","REGENIE -> G-MoQ","paper_matched",97,1.02406339123686,0.0124753640783928,0.999611677643207,1.04851510483051
+"testosterone","hybrid","female","G-MoQ -> REGENIE","paper_matched",98,0.968246575570106,0.0119432189955237,0.94483786633888,0.991655284801333
+"testosterone","hybrid","male","REGENIE -> G-MoQ","paper_matched",111,1.00754937034595,0.00955197187132515,0.988827505478148,1.02627123521374
+"testosterone","hybrid","male","G-MoQ -> REGENIE","paper_matched",128,0.977430654168103,0.00994735237886709,0.957933843505524,0.996927464830683
+"testosterone_shrink_0_2","hybrid","female","REGENIE -> G-MoQ","paper_matched",96,1.03958083671122,0.0129165038381854,1.01426448918838,1.06489718423407
+"testosterone_shrink_0_2","hybrid","female","G-MoQ -> REGENIE","paper_matched",88,0.946874988101104,0.0119824204877599,0.923389443945094,0.970360532257113
+"testosterone_shrink_0_2","hybrid","male","REGENIE -> G-MoQ","paper_matched",111,0.991417476044047,0.00962217450092195,0.97255801402224,1.01027693806585
+"testosterone_shrink_0_2","hybrid","male","G-MoQ -> REGENIE","paper_matched",125,0.988555673270028,0.0100989410595478,0.968761748793314,1.00834959774674
+"testosterone_shrink_0_5","model","female","REGENIE -> G-MoQ","paper_matched",96,1.08971333045789,0.0159909436058642,1.05837108099039,1.12105557992538
+"testosterone_shrink_0_5","model","female","G-MoQ -> REGENIE","paper_matched",65,0.872529023775789,0.0119417743235976,0.849123146101538,0.895934901450041
+"testosterone_shrink_0_5","model","male","REGENIE -> G-MoQ","paper_matched",111,0.932557209681817,0.0106730784491653,0.911637975921453,0.953476443442181
+"testosterone_shrink_0_5","model","male","G-MoQ -> REGENIE","paper_matched",85,1.02605695579251,0.0104529465294735,1.00556918059475,1.04654473099028
+"testosterone_shrink_0_7","model","female","REGENIE -> G-MoQ","paper_matched",97,0.831730125740037,0.021872327283247,0.788860364264872,0.874599887215201
+"testosterone_shrink_0_7","model","female","G-MoQ -> REGENIE","paper_matched",11,1.01427120630531,0.0227484484167412,0.969684247408498,1.05885816520212
+"testosterone_shrink_0_7","model","male","REGENIE -> G-MoQ","paper_matched",112,0.893599845348065,0.0127376788730569,0.868633994756874,0.918565695939257
+"testosterone_shrink_0_7","model","male","G-MoQ -> REGENIE","paper_matched",50,1.02331637054521,0.0114162355370376,1.00094054889262,1.0456921921978

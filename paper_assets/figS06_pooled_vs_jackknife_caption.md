@@ -1,0 +1,5 @@
+# figS06_pooled_vs_jackknife
+
+Figure S6. Pooled and 1,000-block jackknife covariance across sample size and minor allele frequency. Simulated normal phenotypes with no genetic effect (Null) or a genetic effect on dispersion (Dispersion), in every combination (rows) of 10,000, 50,000 or 400,000 participants and minor allele frequency 0.05, 0.01 or 0.001; Stage 2 location (β_μ) and dispersion (β_σ²) estimates by ordinary least squares, against their population projection targets (Methods). Each point summarizes 200 replicates of one row; MC interval, ±1.96 Monte Carlo standard errors. **a**, Bias as a fraction of the empirical standard deviation of the estimates, with 95% MC intervals; pooled and jackknife share point estimates. **b**, Mean SE over the empirical standard deviation, for each covariance; the dashed line marks 1. **c**, Coverage of the nominal 95% confidence interval for each covariance, with 95% MC intervals; the dashed line marks 0.95. No statistical tests are shown. MC, Monte Carlo; SD, standard deviation; SE, standard error; CI, confidence interval; MAF, minor allele frequency.
+
+Source data: results/08_simulations/summary.

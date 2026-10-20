@@ -1,0 +1,5 @@
+"weight_design","arm","rg_new_n399710","rg_old_n462869","rg_se_new_n399710","rg_se_old_n462869","gcov_int_new_n399710","gcov_int_old_n462869","rg_diff_new_minus_old"
+"hybrid","testosterone",1.0003,0.8533,0.002,0.0203,0.9999,0.9316,0.147
+"model","testosterone_shrink_0_2",0.9981,0.838,0.0025,0.022,0.9874,0.9199,0.1601
+"model","testosterone_shrink_0_5",0.9717,0.7305,0.0176,0.0399,0.8362,0.7796,0.2412
+"model","testosterone_shrink_0_7",0.6858,0.8383,0.1109,0.1179,0.4539,0.4269,-0.1525

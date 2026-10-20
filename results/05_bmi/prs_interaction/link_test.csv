@@ -1,0 +1,9 @@
+"scale","test","r","se_boot","lo","hi","n_leads","z","p"
+"log_bmi","PRIMARY cross-fitted: mean(cor(int_h1, tilt_h2), cor(int_h2, tilt_h1))",0.0492719637748946,0.0309744773284314,-0.0131497417980249,0.110661013244687,639,1.59072785159374,0.111670836078297
+"log_bmi","cross-fit component int_h1 x tilt_h2",0.0136500642521046,,,,639,,
+"log_bmi","cross-fit component int_h2 x tilt_h1",0.0848938632976847,,,,639,,
+"log_bmi","full-sample int x PRS-referenced tilt (non-inferential: shared estimation error)",0.436329036174772,,,,639,,
+"bmi","PRIMARY cross-fitted: mean(cor(int_h1, tilt_h2), cor(int_h2, tilt_h1))",0.0357966671744807,0.0316764810791545,-0.0291280809377896,0.0989586121252081,639,1.13007082715503,0.258446381157857
+"bmi","cross-fit component int_h1 x tilt_h2",-0.00467897650277154,,,,639,,
+"bmi","cross-fit component int_h2 x tilt_h1",0.0762723108517329,,,,639,,
+"bmi","full-sample int x PRS-referenced tilt (non-inferential: shared estimation error)",0.442707156792622,,,,639,,

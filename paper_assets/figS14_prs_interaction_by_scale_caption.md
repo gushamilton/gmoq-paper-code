@@ -1,0 +1,5 @@
+# figS14_prs_interaction_by_scale
+
+Figure S14. Interaction of BMI lead variants with the BMI polygenic score on four scales of BMI. Each bar is the common relative interaction κ = δ/β across the 639 BMI lead variants (BMI-increasing allele; n = 461,320), where β is a variant's main effect and δ its interaction with a polygenic risk score (PRS) per standard deviation of the score, estimated with a score that excludes the variant's chromosome, on raw BMI, log BMI, rank-inverse-normal BMI and the implied natural scale, under which the leads' common quantile-effect profile is a pure shift (Methods). Error bars are 95% bootstrap confidence intervals over leads; per-lead regressions used heteroskedasticity-robust standard errors. κ is 0.180 on raw BMI, 0.119 on log BMI, 0.072 on the rank-inverse-normal scale and 0.047 on the implied natural scale. No statistical tests are shown. BMI, body mass index; PRS, polygenic risk score; s.d., standard deviation.
+
+Source data: results/05_bmi/prs_interaction.

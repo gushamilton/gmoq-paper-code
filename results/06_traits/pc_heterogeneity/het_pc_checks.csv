@@ -1,0 +1,13 @@
+"check","value"
+"max over traits/scales |tau_pc - tau_pc(analysed)|",5.62093774303385e-15
+"max relative |Q_pc - Q_pc(analysed)|",3.17255954226159e-14
+"max |tau_pc CI - CI(analysed)|",6.74460487459783e-15
+"max |tau_old - P13 tau_unit_se| (same Stage 1)",4.44089209850063e-16
+"max |tau_old - P13 tau_unit_se| (log_bmi vs P13 bmi rows)",7.12741659575356e-05
+"max relative range of tau_old over scales",0.506050669331773
+"all fold IRLS converged",1
+"max |PC2 share - P11 observed_pct|",7.90478793533111e-14
+"max |null median recomputed - P11| / P11",0.00540253620843593
+"PC2 share ratio inside its raw fixed-null percentile CI (number of traits)",9
+"PC2 share ratio inside its duplicated-noise-null CI (number of traits)",14
+"median bootstrap shift of the ratio (fixed null)",0.124915317016329

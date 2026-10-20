@@ -1,0 +1,10 @@
+"weight_design","category","snp_id","chr","bp","effect_allele","other_allele","sex_beta","sex_se","sex_mlog10p","sex_n","sex_z","sex_allele_flip","allele_source","gamma_sign_vs_sex","sex_beta_gamma_oriented"
+"hybrid","discordant","rs4149056",12,21331549,"T","C",0.00742305,0.00623609,0.630944000000001,399710,1.1903372145046,1,"P08 exemplar_estimates",-1,-0.00742305
+"hybrid","female_specific","rs11166576",1,101740406,"G","A",0.0160422,0.00487127,3.00417,399710,3.29322743350297,1,"P08 exemplar_estimates",-1,-0.0160422
+"hybrid","male_specific","rs7097461",10,67255662,"G","A",-0.00104432,0.0045495,0.0870106999999998,399710,-0.229546103967469,1,"P08 exemplar_estimates",-1,0.00104432
+"hybrid","membership","rs2048485",18,42090667,"C","T",-0.0475725,0.00646668,12.7242,399710,-7.3565569967897,1,"P08 exemplar_estimates",-1,0.0475725
+"hybrid","shared_concordant","rs1260326",2,27730940,"T","C",0.0204922,0.00459073,5.09415,399710,4.46382165799339,1,"P08 exemplar_estimates",-1,-0.0204922
+"model","discordant","rs11973801",7,99102911,"A","G",-0.0817068,0.00819985,22.6613,399710,-9.96442617852766,1,"P07 p07-20260923-02 model/testosterone",-1,0.0817068
+"model","female_specific","rs2152318",1,179293511,"C","T",0.0127949,0.00520257,1.85637,399710,2.45934220971558,1,"P07 p07-20260923-02 model/testosterone",-1,-0.0127949
+"model","male_specific","rs7097461",10,67255662,"G","A",-0.00104432,0.0045495,0.0870106999999998,399710,-0.229546103967469,1,"P08 exemplar_estimates",-1,0.00104432
+"model","membership","rs10858891",12,89907474,"T","C",0.0174446,0.00448705,3.99494,399710,3.8877659041018,1,"P07 p07-20260923-02 model/testosterone",-1,-0.0174446

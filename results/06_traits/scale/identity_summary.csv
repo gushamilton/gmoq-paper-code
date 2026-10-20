@@ -1,0 +1,13 @@
+"quantity","value"
+"n_leads",639
+"n_cells",28755
+"mean_abs_rel_error_pct",0.608928136356971
+"median_abs_rel_error_pct",0.400277858270725
+"p95_abs_rel_error_pct",1.43926620138588
+"max_abs_rel_error_pct",366.510085085039
+"overall_r",0.999937074048167
+"overall_slope",1.00056465884867
+"fto_rs1421085_mean_abs_rel_error_pct",0.141443672397794
+"fto_rs1421085_max_abs_rel_error_pct",0.640780589365863
+"quantile_map_max_abs_diff_log_q",7.07980341019265e-11
+"overall_r_stage1_allele_coding",0.999985389033325

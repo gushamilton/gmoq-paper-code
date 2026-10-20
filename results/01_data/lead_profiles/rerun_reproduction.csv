@@ -1,0 +1,5 @@
+"lead_set","compared_to","n","max_abs_diff","profile_r"
+"bmi_prs_covariate","bmi_A_regenie",639,0.016039,0.999821480106076
+"log_bmi_prs_covariate","log_bmi_A_regenie",639,0.00044616,0.999774599718429
+"bmi_prs_none","bmi_A_regenie",639,0.091456,0.992527105159116
+"log_bmi_prs_none","log_bmi_A_regenie",639,0.00222168,0.989868278747783
