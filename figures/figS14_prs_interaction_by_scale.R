@@ -16,7 +16,7 @@ source(file.path(system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE
 
 ## 1. Load (per-lead regressions with heteroskedasticity-robust HC0 standard errors) --------
 kappa <- as.data.table(read_result("05_bmi/prs_interaction", "kappa_by_scale"))[se_type == "HC0"]
-scale_lab <- c(raw = "Raw BMI", log = "Log BMI", int = "Rank-inverse\nnormal", natural = "Implied\nnatural")
+scale_lab <- c(raw = "Untransformed\nBMI", log = "Log BMI", int = "Rank-inverse\nnormal", natural = "Flattening\ntransformation")
 stopifnot(setequal(kappa$scale, names(scale_lab)), uniqueN(kappa$n_leads) == 1)
 kappa[, scale_f := factor(scale_lab[scale], levels = scale_lab)]
 

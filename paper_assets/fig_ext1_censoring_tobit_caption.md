@@ -1,0 +1,5 @@
+# fig_ext1_censoring_tobit
+
+Extended Data Figure 1. Limit-of-detection censoring in G-MoQ reproduces exact Tobit maximum likelihood. a, Simulation benchmark (200 replicates per scenario, n = 20,000, true beta = 0.04) comparing relative bias (left) and mean absolute z statistic (right) across double-censored Gaussian (11% left, 7% right), heavily left-censored Gaussian (70% left), and double-censored bimodal (11% left, 7% right) distributions; dashed horizontal bars mark uncensored oracle ordinary least squares. b, Real UK Biobank female testosterone lead variants (n = 97; 199,546 observed and 37,037 left-censored women below 0.35 nmol/L, 15.7% censored), comparing sex-stratified and sex-blind G-MoQ estimators against exact female Tobit maximum likelihood (dashed identity line; censored G-MoQ slope = 0.992, Pearson r = 0.9996; dropped OLS slope = 0.578; sex-blind censored mixture slope = 1.002, r = 0.995).
+
+Source data: results/03_testosterone/censoring_tobit.

@@ -1,0 +1,5 @@
+# fig1_concept_testosterone
+
+Figure 1. Overview of the Genomic Method of Quantiles (G-MoQ) and application to a two-component testosterone mixture. **a**, Stage 1 estimates additive per-allele shifts across genotypes AA (0), AG (1) and GG (2) at each quantile tau. **b**, Stage 1 produces one summary-statistics table of SNP-by-quantile effects beta_hat(tau) across 45 quantiles. **c**, Stage 2 regresses each SNP's quantile profile on a model design matrix W (here female location, male location and mixing parameter gamma) to estimate mechanistic parameters theta. **d**, UK Biobank testosterone distributions (n = 399,710; 199,572 female, 200,138 male) in the unshrunk trait and three arms with male-female separation shrunk by 0.2, 0.5 and 0.7. **e**, Exact Stage 2 weights W[tau, p] for the fitted two-component skew-normal mixture across the four arms (solid, model-density weights; dashed in the unshrunk arm, hybrid membership weight; Methods).
+
+Source data: results/03_testosterone/recovery, results/02_mixtures/stage2_mixtures.

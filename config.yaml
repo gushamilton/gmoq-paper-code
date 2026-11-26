@@ -62,19 +62,16 @@ estimation:
   stage2_estimator: ols            # ordinary least squares in Stage 2 (no GLS)
   cov_source: pooled               # pooled Stage 1 covariance for empirical analyses
   density_mode: parametric_model_density   # single-component baselines (BMI, weight): weights use the model density
-  # Two-component mixtures (testosterone and its shrinkage variants, JCV VP1, MCV VP1) are
-  # fitted with both weight designs. 'model' divides every weight column by the fitted
-  # mixture density; 'hybrid' divides the membership column by the Stage 1 kernel density
-  # instead. 'model' is reported everywhere except unshrunk testosterone, where the gap
-  # between the components is nearly empty (mixture density 0.46 times the kernel density at
-  # u = 0.5) and 'hybrid' is reported. Read through mixture_design(cfg, fit).
+  # Two-component mixtures (testosterone and its shrinkage variants, JCV VP1, MCV VP1, HbA1c)
+  # are fitted with both weight designs. 'hybrid' (reported for every mixture) divides the
+  # membership column by the Stage 1 kernel density, the density Stage 1 divided by, so that
+  # density cancels for membership; the location columns are the component shares, as in
+  # 'model'. 'model' divides every column by the fitted mixture density and is kept as a
+  # sensitivity analysis. Read through mixture_design(cfg, fit).
   mixture_weight_designs: [hybrid, model]
   mixture_weights:
-    default: model
-    overrides:                     # hybrid where the weight-design simulation shows the model design
-      testosterone: hybrid         # under-recovers membership: well-separated or bimodal mixtures
-      testosterone_shrink_0_2: hybrid
-      mcv_vp1_log_all: hybrid
+    default: hybrid
+    overrides: {}
   loco_mode: covariate             # Stage 1: REGENIE leave-one-chromosome-out prediction as a covariate
   weight_gates:
     beta_left_plus_right_tol: 1.0e-8   # tolerance on the mixture weight identity checked before fitting

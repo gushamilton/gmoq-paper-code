@@ -16,7 +16,7 @@ suppressPackageStartupMessages({library(data.table)})
 source(file.path(system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE), "figures", "theme.R"))
 
 ## 1. Load and join -------------------------------------------------------------------------
-# Reported weight design per antibody (config.yaml): 'model' for JCV VP1, 'hybrid' for MCV VP1.
+# Reported weight design per antibody (config.yaml): 'hybrid' for both antigens.
 all_leads <- as.data.table(read_result("04_antibodies/decomposition", "lead_decomposition"))
 all_leads[, reported := weight_design == mixture_design(read_config(), trait)]
 detection <- as.data.table(read_result("04_antibodies/decomposition", "detection_bounds_per_lead"))
@@ -76,7 +76,7 @@ save_table(
     "variant and antigen; n = 9,145; log mean fluorescence intensity. Leads follow the rule used for every trait",
     "(REGENIE two-sided P < 5 × 10⁻⁸, clumped at r² < 0.01 within 10 Mb; Methods); Fig. 3 examples that are not leads",
     "are flagged ‘example, not a lead’. Stage 2 by ordinary least squares with the pooled Stage 1 covariance and",
-    "mixture weights of the model design for JCV and the hybrid design for MCV (Supplementary Note 2); the alternative",
+    "mixture weights of the hybrid design (Supplementary Note 2); the alternative",
     "columns repeat γ, label, joint test and mixture Q under the other design. γ, lower location, upper location: per-allele effects (s.e.) on membership of the upper",
     "component (log odds) and on the lower- and upper-component locations. Joint test: −log₁₀ P of the Hotelling",
     "test of the three parameters. Mean / REGENIE: ratio of the mixture mean effect to the REGENIE effect. Label:",
@@ -85,8 +85,8 @@ save_table(
     "bounds: smallest departure from the common spread-to-location line detectable at nominal and Bonferroni-corrected",
     "thresholds (%). Shift + spread lack of fit: residual of the profile from the location + scale frame (43 degrees of",
     "freedom), with exact P (Davies' method), printed ‘<1e-12’ below the computable floor. Mixture Q: residual from the",
-    "fitted mixture (42 degrees of freedom). Membership is weakly identified: its scale rests on the kernel",
-    "density near the gap, but its sign and z hardly depend on the design. Leads in the major histocompatibility complex (MHC,",
+    "fitted mixture (42 degrees of freedom). JCV has no dip between its components (valley depth 1.00), so its",
+    "membership and component locations are less well identified than MCV's (0.74; Methods). Leads in the major histocompatibility complex (MHC,",
     "chromosome 6) are in strong linkage disequilibrium and are not independent signals. JCV, JC polyomavirus; MCV,",
     "Merkel cell polyomavirus; s.e., standard error; VP1, major capsid protein VP1."),
   results_used = "04_antibodies/decomposition")

@@ -19,7 +19,7 @@ repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel")
 source(file.path(repo, "R", "load.R"))
 cfg <- read_config()
 p8 <- cfg$p08
-REPORTED <- setNames(mixture_design(cfg, p8$arms), p8$arms)   # hybrid for unshrunk, model otherwise
+REPORTED <- setNames(mixture_design(cfg, p8$arms), p8$arms)   # hybrid for unshrunk and F = 0.2, model otherwise
 out_dir <- "03_testosterone/sex_gwas"
 SEX_GWAS <- list(
   old_n462869 = list(raw = p8$sex_reference_full_cohort, munged = p8$sex_reference_full_cohort_munged),

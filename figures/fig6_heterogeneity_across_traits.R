@@ -15,7 +15,7 @@
 #   results/06_traits/pc_heterogeneity/pc2_share_ratio.csv,
 #   results/07_hba1c/skew_diabetes/{examples,profiles}.csv,
 #   results/07_hba1c/mixture/weight_matrices.csv
-# Output: paper_assets/fig5_heterogeneity_across_traits.{png,pdf}, _source.csv, _caption.md
+# Output: paper_assets/fig6_heterogeneity_across_traits.{png,pdf}, _source.csv, _caption.md
 # Runs: locally from results/ in about 2 seconds
 
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
@@ -150,6 +150,6 @@ cap <- paste(
   "logistic regression in the same participants, two-sided P < 0.05/472); top, a lead with no asymmetry beyond the",
   "frame matched to each on mean effect. Dashed grey lines are least-squares fits of a single mechanism: a pure shift",
   "(top) and a change only in membership of the diabetes-enriched mixture component (bottom) (Methods).")
-save_figure(fig, "fig5_heterogeneity_across_traits", src, cap, width = 183, height = 190,
+save_figure(fig, "fig6_heterogeneity_across_traits", src, cap, width = 183, height = 190,
             results_used = c("06_traits/survey", "06_traits/moments", "06_traits/scale", "06_traits/pc_heterogeneity",
                              "07_hba1c/skew_diabetes", "07_hba1c/mixture"))

@@ -1,0 +1,37 @@
+workload,method,n,m,metric,mean_value,count
+n2000_m1,gmoq,2000,1,fit + SE seconds,0.0010914594555894535,3
+n2000_m1,gmoq,2000,1,whole-process seconds,0.15,3
+n2000_m1,gmoq,2000,1,peak RSS MiB,31.865885416666668,3
+n2000_m1,ordinary_rif_ols,2000,1,fit + SE seconds,0.0014577032998204231,3
+n2000_m1,ordinary_rif_ols,2000,1,whole-process seconds,0.14,3
+n2000_m1,ordinary_rif_ols,2000,1,peak RSS MiB,32.256510416666664,3
+n2000_m1,gmoq_jackknife,2000,1,fit + SE seconds,0.01127168939759334,3
+n2000_m1,gmoq_jackknife,2000,1,whole-process seconds,0.15666666666666665,3
+n2000_m1,gmoq_jackknife,2000,1,peak RSS MiB,38.682291666666664,3
+n2000_m256,gmoq,2000,256,fit + SE seconds,0.005103504906098048,3
+n2000_m256,gmoq,2000,256,whole-process seconds,0.2066666666666667,3
+n2000_m256,gmoq,2000,256,peak RSS MiB,40.26171875,3
+n2000_m256,ordinary_rif_ols,2000,256,fit + SE seconds,0.17136328853666782,3
+n2000_m256,ordinary_rif_ols,2000,256,whole-process seconds,0.36999999999999994,3
+n2000_m256,ordinary_rif_ols,2000,256,peak RSS MiB,41.903645833333336,3
+n2000_m256,gmoq_jackknife,2000,256,fit + SE seconds,0.15823676126698652,3
+n2000_m256,gmoq_jackknife,2000,256,whole-process seconds,0.35666666666666663,3
+n2000_m256,gmoq_jackknife,2000,256,peak RSS MiB,52.395833333333336,3
+n400000_m1,gmoq,400000,1,fit + SE seconds,0.18027507110188404,3
+n400000_m1,gmoq,400000,1,whole-process seconds,0.9500000000000001,3
+n400000_m1,gmoq,400000,1,peak RSS MiB,462.84765625,3
+n400000_m1,ordinary_rif_ols,400000,1,fit + SE seconds,0.5275709593358139,3
+n400000_m1,ordinary_rif_ols,400000,1,whole-process seconds,6.743333333333333,3
+n400000_m1,ordinary_rif_ols,400000,1,peak RSS MiB,466.9153645833333,3
+n400000_m1,gmoq_jackknife,400000,1,fit + SE seconds,1.1352043657874067,3
+n400000_m1,gmoq_jackknife,400000,1,whole-process seconds,3.6833333333333336,3
+n400000_m1,gmoq_jackknife,400000,1,peak RSS MiB,498.2721354166667,3
+n400000_m1000,gmoq,400000,1000,fit + SE seconds,6.682273061325152,3
+n400000_m1000,gmoq,400000,1000,whole-process seconds,171.41,3
+n400000_m1000,gmoq,400000,1000,peak RSS MiB,6424.317708333333,3
+n400000_m1000,ordinary_rif_ols,400000,1000,fit + SE seconds,359.9104065297482,3
+n400000_m1000,ordinary_rif_ols,400000,1000,whole-process seconds,559.7633333333333,3
+n400000_m1000,ordinary_rif_ols,400000,1000,peak RSS MiB,3613.17578125,3
+n400000_m1000,gmoq_jackknife,400000,1000,fit + SE seconds,13.321363298067203,3
+n400000_m1000,gmoq_jackknife,400000,1000,whole-process seconds,208.2833333333333,3
+n400000_m1000,gmoq_jackknife,400000,1000,peak RSS MiB,6636.072916666667,3

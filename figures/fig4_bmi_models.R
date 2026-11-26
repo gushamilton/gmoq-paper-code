@@ -33,8 +33,8 @@ DELTA <- 2                                   # display mean effect (kg/m^2), exa
 cm <- log(1 + DELTA / E0)                    # multiplicative effect with the same mean change
 s_v <- 1.35 * s0; m_v <- m0 + s0^2 / 2 - s_v^2 / 2   # log-scale variance effect, mean held fixed
 ch <- log(1 + (DELTA / 2) / E0)              # combined: half additive, half multiplicative
-mods_a <- c(additive = "Additive", multiplicative = "Multiplicative (log-additive)",
-            vqtl = "vQTL (log-scale variance,\nmean matched)", combined = "Combined\n(additive + multiplicative)")
+mods_a <- c(additive = "Shift", multiplicative = "Proportional",
+            vqtl = "Spread of log BMI\n(mean matched)", combined = "Combined\n(shift + proportional)")
 x <- seq(14, 52, length.out = 800)
 u <- seq(0.02, 0.98, length.out = 200)
 dln <- function(x, m, s, shift = 0) ifelse(x > shift, dlnorm(x - shift, m, s), 0)   # shifted log-normal density
@@ -71,8 +71,8 @@ pA_qdiff <- ggplot(qdiff, aes(u, d)) +
 pA <- pA_dens / pA_qdiff + plot_layout(heights = c(1, 0.8))
 
 ## 3. Panel b: model profiles and the angles between them ----------------------------------
-mods <- c(additive = "Additive", log_additive = "Log-additive (multiplicative)", combined = "Combined",
-          vqtl_raw = "Raw-scale vQTL (constant CV)", vqtl_log = "Log-scale vQTL")
+mods <- c(additive = "Shift", log_additive = "Proportional", combined = "Combined",
+          vqtl_raw = "vQTL of BMI (constant CV)", vqtl_log = "vQTL of log BMI")
 mod_col <- c(additive = paper_palette[["shift"]], log_additive = paper_palette[["spread"]], combined = paper_palette[["bend"]],
              vqtl_raw = "#e4a02e", vqtl_log = "#2a9d8f")
 mod_lty <- c(additive = "solid", log_additive = "solid", combined = "42", vqtl_raw = "13", vqtl_log = "solid")
@@ -96,8 +96,8 @@ g <- CJ(a = cand, b = cand); g[, k := pair_key(a, b)]
 angles[, k := pair_key(profile_a, profile_b)]
 g <- merge(g, angles[metric == "whitened", .(k, w = angle_deg)], by = "k", all.x = TRUE)
 g <- merge(g, angles[metric == "tau", .(k, t = angle_deg)], by = "k", all.x = TRUE)
-short <- c(additive = "Additive", log_additive = "Log-additive", combined = "Combined", vqtl_raw = "vQTL raw", vqtl_log = "vQTL log")
-short2 <- c(additive = "Additive", log_additive = "Log-\nadditive", combined = "Combined", vqtl_raw = "vQTL\nraw", vqtl_log = "vQTL\nlog")
+short <- c(additive = "Shift", log_additive = "Proportional", combined = "Combined", vqtl_raw = "vQTL BMI", vqtl_log = "vQTL log BMI")
+short2 <- c(additive = "Shift", log_additive = "Propor-\ntional", combined = "Combined", vqtl_raw = "vQTL\nBMI", vqtl_log = "vQTL\nlog BMI")
 g[, `:=`(ia = match(a, cand), ib = match(b, cand))]
 g <- g[ia < ib]
 g[, lab := sprintf("%.1f\n(%.1f)", w, t)]
@@ -144,14 +144,14 @@ cap <- paste(
   "Figure 4. Competing models of a genetic effect on BMI predict nearly the same quantile profile.",
   "n = 461,320. **a**, Analytic illustration on a log-normal baseline fitted to the Stage 1 BMI quantiles:",
   sprintf("non-carrier and carrier distributions (top) and their quantile difference (bottom) for an allele raising mean BMI by %g kg/m2,", DELTA),
-  "exaggerated for display, under an additive shift, a multiplicative effect, a log-scale variance effect with the",
-  "mean held fixed and a combined additive and multiplicative effect. **b**, The same models as quantile-effect",
+  "exaggerated for display, under a shift, a proportional effect, a variance effect on log BMI with the",
+  "mean held fixed and a combined shift and proportional effect. **b**, The same models as quantile-effect",
   "profiles per unit mean effect (left) and the pairwise angles between them in the whitened metric, with the angle in",
-  "quantile space in brackets (right). A raw-scale variance effect at constant coefficient of variation is exactly the",
-  "multiplicative profile on this baseline. **c**, Stage 1 profiles of the 639 BMI lead variants, each divided by its",
+  "quantile space in brackets (right). A variance effect on untransformed BMI at constant coefficient of variation is exactly the",
+  "proportional profile on this baseline. **c**, Stage 1 profiles of the 639 BMI lead variants, each divided by its",
   "own mean effect (blue); the red line and band are the pointwise median and interquartile range and the dashed line",
   "is a pure shift. Models are fitted to the same Stage 1 output by ordinary least squares with the pooled Stage 1",
-  "covariance; a purely additive profile is rejected in favour of a multiplicative one at 89% of leads (90% on the raw scale), and the reverse",
+  "covariance; a pure shift is rejected in favour of a proportional effect at 89% of leads (90% for untransformed BMI), and the reverse",
   "at one lead (Methods).")
 save_figure(fig, "fig4_bmi_models", src, cap, width = 183, height = 170,
             results_used = c("05_bmi/model_profiles", "01_data/lead_profiles"))

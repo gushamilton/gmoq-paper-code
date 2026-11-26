@@ -37,9 +37,9 @@ tab <- won[, .(
   pct_gap_lt_2 = 100 * mean(winners[winner == unique(model), gap < 2]),
   pct_lof_rejected = 100 * mean(lof_rejected)
 ), by = model][order(-n)]
-model_labels <- c(additive = "Additive", log_additive = "Log-additive", shifted = "Log-additive, shifted baseline",
-                  both = "Additive + log-additive", logscale_vqtl = "vQTL (log scale)",
-                  shifted_lognormal_full = "Additive + vQTL", three_components = "Shift + spread + bend")
+model_labels <- c(additive = "Shift", log_additive = "Proportional", shifted = "Multiplicative, fitted origin",
+                  both = "Shift + proportional", logscale_vqtl = "vQTL of log BMI",
+                  shifted_lognormal_full = "Shift + vQTL", three_components = "Shift + spread + bend")
 tab[, model_name := model_labels[model]]
 tab[, `:=`(n_label = as.character(n), pct_label = sprintf("%.1f%%", pct), gap_label = sprintf("%.2f", median_gap),
            gap2_label = sprintf("%.1f%%", pct_gap_lt_2), lof_label = sprintf("%.1f%%", pct_lof_rejected))]

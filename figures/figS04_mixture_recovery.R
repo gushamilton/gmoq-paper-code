@@ -1,104 +1,87 @@
 #!/usr/bin/env Rscript
-# Supplementary Figure S4: G-MoQ Stage 2 against direct mixture maximum likelihood
-#
-# What: on simulated two-component mixtures, the G-MoQ mixture estimates (Stage 1 then Stage 2,
-#   pooled or jackknife covariance) are compared with refitting the mixture by maximum
-#   likelihood at every variant, for the lower and upper component locations (delta_1,
-#   delta_2) and membership (gamma).
-#   a: bias by sample size, with 95% Monte Carlo intervals.
-#   b: mean SE over RMSE.
-#   c: coverage of 95% intervals in a second simulation, by mixture design (separation).
-#   d: median time to fit one 100-variant panel against sample size.
-# Paper: Supplementary Fig. S4
-# Input: results/08_simulations/summary/{table_s2_numerical_summary,lowsep_sim_summary,
-#   mixture_timings}.csv
-# Output: paper_assets/figS04_mixture_recovery.{png,pdf}, _source.csv, _caption.md
-# Runs: locally from results/ in about 2 seconds
-
+# Fig S4: G-MoQ Stage 2 (pooled, jackknife) vs full mixture maximum likelihood on the same simulated
+# datasets. Replaces the beta / SE scatter with bias, SE / error SD and coverage by parameter and
+# design (author review, 28 Sep 2026). Reads results/P17_simulations only:
+#   S4 rows of table_s2_numerical_summary (bias, rmse, mean_se; 20 replicate panels per N; no coverage
+#   recorded), lowsep_sim_summary (A2 mixture simulation: coverage by parameter and design) and
+#   mixture_timings.
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
-source(file.path(system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE), "figures", "theme.R"))
-
-method_lab <- c(gmoq_pooled = "G-MoQ, pooled", gmoq_jackknife = "G-MoQ, jackknife", mixture_ml = "Mixture ML")
-method_col <- setNames(c(paper_palette[["gmoq"]], "#7fb3d5", paper_palette[["mixture"]]), method_lab)
-# Greek letters as plotmath, which every PDF device can draw.
-par_lab <- c(delta1 = "delta[1]", delta2 = "delta[2]", gamma = "gamma")
-fmt <- function(v) format(v, big.mark = ",", scientific = FALSE, trim = TRUE)
-
-## 1. Panels a, b: bias and SE calibration ------------------------------------------------
-sim <- as.data.table(read_result("08_simulations/summary", "table_s2_numerical_summary"))[study == "S4"]
-sim[, method_f := factor(method_lab[method], levels = method_lab)]
-sim[, n_f := factor(sprintf("N = %s", fmt(n)), levels = sprintf("N = %s", fmt(sort(unique(n)))))]
-sim[, par_f := factor(par_lab[parameter], levels = par_lab)]
-sim[, mcse := rmse / sqrt(success)]               # Monte Carlo standard error of the bias
-dodge <- position_dodge(width = 0.6)
-pA <- ggplot(sim, aes(bias, n_f, colour = method_f)) +
+.repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
+source(file.path(.repo, "figures", "theme.R"))
+x <- as.data.table(read_result("08_simulations/summary", "table_s2_numerical_summary"))[study == "S4"]
+mlab <- c(gmoq_pooled = "G-MoQ, pooled", gmoq_jackknife = "G-MoQ, jackknife", mixture_ml = "Mixture ML")
+mcol <- setNames(c(paper_palette[["gmoq"]], "#7fb3d5", paper_palette[["mixture"]]), mlab)
+x[, method_f := factor(mlab[method], levels = mlab)]
+x[, n_f := factor(sprintf("N = %s", format(n, big.mark = ",", scientific = FALSE, trim = TRUE)),
+                  levels = sprintf("N = %s", format(sort(unique(n)), big.mark = ",", scientific = FALSE, trim = TRUE)))]
+# Greek as plotmath (the Mac PDF fallback device cannot draw Unicode Greek)
+plab <- c(delta1 = "delta[1]", delta2 = "delta[2]", gamma = "gamma")
+x[, par_f := factor(plab[parameter], levels = plab)]
+x[, mcse := rmse / sqrt(success)]
+pd <- position_dodge(width = 0.6)
+pA <- ggplot(x, aes(bias, n_f, colour = method_f)) +
   geom_vline(xintercept = 0, linewidth = 0.3, colour = "grey50") +
-  geom_errorbar(aes(xmin = bias - 1.96 * mcse, xmax = bias + 1.96 * mcse), width = 0, linewidth = 0.6, position = dodge,
+  geom_errorbar(aes(xmin = bias - 1.96 * mcse, xmax = bias + 1.96 * mcse), width = 0, linewidth = 0.6, position = pd,
                 orientation = "y") +
-  geom_point(size = 1.7, position = dodge) +
+  geom_point(size = 1.7, position = pd) +
   facet_wrap(~par_f, ncol = 1, strip.position = "left", labeller = label_parsed) +
-  scale_colour_manual(values = method_col, name = NULL) +
+  scale_colour_manual(values = mcol, name = NULL) +
   labs(x = "Bias", y = NULL, tag = "a") +
   theme_paper() + theme(strip.placement = "outside", strip.text.y.left = element_text(angle = 0, hjust = 1, size = rel(1.15)),
                         panel.grid.major.y = element_blank(), legend.position = "none")
-pB <- ggplot(sim, aes(mean_se / rmse, n_f, colour = method_f)) +
+pB <- ggplot(x, aes(mean_se / rmse, n_f, colour = method_f)) +
   geom_vline(xintercept = 1, linewidth = 0.3, linetype = 2, colour = "grey45") +
-  geom_point(size = 1.7, position = dodge) +
+  geom_point(size = 1.7, position = pd) +
   facet_wrap(~par_f, ncol = 1, strip.position = "left", labeller = label_parsed) +
-  scale_colour_manual(values = method_col, name = NULL) +
+  scale_colour_manual(values = mcol, name = NULL) +
   labs(x = "Mean SE / RMSE", y = NULL, tag = "b") +
   theme_paper() + theme(strip.placement = "outside", strip.text = element_blank(), axis.text.y = element_blank(),
                         panel.grid.major.y = element_blank()) +
   legend_inside(0.98, 0.02, c(1, 0))
-
-## 2. Panel c: coverage by mixture design ---------------------------------------------------
-# A second simulation whose mixtures copy the separations of the empirical fits; each
-# design has several cells of sample size, allele frequency and effect.
-lowsep <- as.data.table(read_result("08_simulations/summary", "lowsep_sim_summary"))
-geom_lab <- c(testosterone_unshrunk = "Testosterone,\nunshrunk", testosterone_shrink_0.2 = "Shrink 0.2", testosterone_shrink_0.5 = "Shrink 0.5",
-              testosterone_shrink_0.7 = "Shrink 0.7", mcv_vp1 = "MCV VP1", jcv_vp1 = "JCV VP1")
-lowsep <- lowsep[geometry %in% names(geom_lab)]
-cov_cells <- rbind(
-  lowsep[, .(geometry, separation, parameter, n, maf, effect, cov = "G-MoQ, pooled", coverage = pooled_coverage95, mcse = pooled_coverage95_mcse)],
-  lowsep[, .(geometry, separation, parameter, n, maf, effect, cov = "G-MoQ, jackknife", coverage = jackknife_coverage95, mcse = jackknife_coverage95_mcse)])
-cov_sum <- cov_cells[, .(coverage = mean(coverage), lo = min(coverage), hi = max(coverage), cells = .N), by = .(geometry, parameter, cov)]
-sep <- unique(lowsep[, .(geometry, separation)])
-cov_sum <- merge(cov_sum, sep, by = "geometry")
-geom_row <- function(g, s) sprintf("%s (S %.1f)", sub("\n", " ", geom_lab[g]), s)
-cov_sum[, g_f := factor(geom_row(geometry, separation), levels = sep[order(-separation), geom_row(geometry, separation)])]
-cov_sum[, par_f := factor(c(beta_1 = "delta[1]", beta_2 = "delta[2]", gamma = "gamma")[parameter], levels = unname(par_lab))]
-cov_sum[, cov := factor(cov, levels = method_lab[1:2])]
-median_mcse <- median(cov_cells$mcse)
-pC <- ggplot(cov_sum, aes(coverage, g_f, colour = cov)) +
-  annotate("rect", xmin = 0.95 - 1.96 * median_mcse, xmax = 0.95 + 1.96 * median_mcse, ymin = -Inf, ymax = Inf, fill = "grey90") +
+# coverage by parameter and mixture design (A2 low-separation simulation)
+ls <- as.data.table(read_result("08_simulations/summary", "lowsep_sim_summary"))
+glab <- c(testosterone_unshrunk = "Testosterone,\nunshrunk", testosterone_shrink_0.2 = "Shrink 0.2", testosterone_shrink_0.5 = "Shrink 0.5",
+          testosterone_shrink_0.7 = "Shrink 0.7", mcv_vp1 = "MCV VP1", jcv_vp1 = "JCV VP1")
+ls <- ls[geometry %in% names(glab)]
+cvl <- rbind(ls[, .(geometry, separation, parameter, n, maf, effect, cov = "G-MoQ, pooled", coverage = pooled_coverage95, mcse = pooled_coverage95_mcse)],
+             ls[, .(geometry, separation, parameter, n, maf, effect, cov = "G-MoQ, jackknife", coverage = jackknife_coverage95, mcse = jackknife_coverage95_mcse)])
+cvs <- cvl[, .(coverage = mean(coverage), lo = min(coverage), hi = max(coverage), cells = .N), by = .(geometry, parameter, cov)]
+sep <- unique(ls[, .(geometry, separation)])
+cvs <- merge(cvs, sep, by = "geometry")
+cvs[, g_f := factor(sprintf("%s (S %.1f)", sub("\n", " ", glab[geometry]), separation),
+                    levels = sep[order(-separation), sprintf("%s (S %.1f)", sub("\n", " ", glab[geometry]), separation)])]
+cvs[, par_f := factor(c(beta_1 = "delta[1]", beta_2 = "delta[2]", gamma = "gamma")[parameter], levels = unname(plab))]
+cvs[, cov := factor(cov, levels = mlab[1:2])]
+mc0 <- median(cvl$mcse)
+pC <- ggplot(cvs, aes(coverage, g_f, colour = cov)) +
+  annotate("rect", xmin = 0.95 - 1.96 * mc0, xmax = 0.95 + 1.96 * mc0, ymin = -Inf, ymax = Inf, fill = "grey90") +
   geom_vline(xintercept = 0.95, linewidth = 0.3, linetype = 2, colour = "grey45") +
   geom_errorbar(aes(xmin = lo, xmax = hi), width = 0, linewidth = 0.5, position = position_dodge(width = 0.5), orientation = "y") +
   geom_point(size = 1.6, position = position_dodge(width = 0.5)) +
   facet_wrap(~par_f, nrow = 1, labeller = label_parsed) +
-  scale_colour_manual(values = method_col, guide = "none") +
+  scale_colour_manual(values = mcol, guide = "none") +
   scale_x_continuous(breaks = c(0.92, 0.95, 0.98)) +
   labs(x = "95% CI coverage", y = NULL, tag = "c") +
   theme_paper() + theme(panel.grid.major.y = element_blank())
-
-## 3. Panel d: time per 100-variant panel ---------------------------------------------------
-timings <- as.data.table(read_result("08_simulations/summary", "mixture_timings"))
-timings[, method_f := factor(method_lab[method], levels = method_lab)]
-pD <- ggplot(timings, aes(n, median_fit_seconds, colour = method_f)) +
+tm_raw <- as.data.table(read_result("08_simulations/speed_benchmark", "mixture_panel_repeats"))[method %in% names(mlab)]
+tm <- tm_raw[, .(median_fit_seconds = median(fit_seconds), n_panels = .N), by = .(n, method)]
+tm[, method_f := factor(mlab[method], levels = mlab)]
+pD <- ggplot(tm, aes(n, median_fit_seconds, colour = method_f)) +
   geom_line(linewidth = 0.7) + geom_point(size = 1.5) +
   scale_x_log10(breaks = c(1e4, 5e4, 4e5), labels = c("10k", "50k", "400k")) +
-  scale_y_log10(breaks = c(3, 10, 30, 100, 300, 1000), labels = c("3", "10", "30", "100", "300", "1,000")) +
-  scale_colour_manual(values = method_col, guide = "none") +
+  scale_y_log10(breaks = c(1, 3, 10, 30, 100, 300, 1000), labels = c("1", "3", "10", "30", "100", "300", "1,000")) +
+  scale_colour_manual(values = mcol, guide = "none") +
   labs(x = "Sample size", y = "Fit + SE time per panel (s)", tag = "d") +
   theme_paper()
-
-## 4. Assemble and save ---------------------------------------------------------------------
-fig <- ((pA | pB) + plot_layout(widths = c(1.3, 1))) / free((pC | pD) + plot_layout(widths = c(2.4, 1))) + plot_layout(heights = c(1.5, 1))
-src <- rbind(sim[, .(panel = "a/b", design = "S4", parameter, n, method, value1 = bias, value2 = mean_se / rmse, value3 = NA_real_)],
-             cov_sum[, .(panel = "c", design = geometry, parameter, n = NA_real_, method = as.character(cov), value1 = coverage, value2 = lo, value3 = hi)],
-             timings[, .(panel = "d", design = "M100", parameter = NA_character_, n, method, value1 = median_fit_seconds, value2 = NA_real_, value3 = NA_real_)])
-t_at <- function(nn, m) timings[n == nn & method == m, median_fit_seconds]
-n_pan <- unique(sim$success)
-cells_per_design <- lowsep[, .(k = uniqueN(cell)), by = geometry]
+p <- ((pA | pB) + plot_layout(widths = c(1.3, 1))) / free((pC | pD) + plot_layout(widths = c(2.4, 1))) + plot_layout(heights = c(1.5, 1))
+src <- rbind(x[, .(panel = "a/b", design = "S4", parameter, n, method, value1 = bias, value2 = mean_se / rmse, value3 = NA_real_)],
+             cvs[, .(panel = "c", design = geometry, parameter, n = NA_real_, method = as.character(cov), value1 = coverage, value2 = lo, value3 = hi)],
+             tm[, .(panel = "d", design = "M100", parameter = NA_character_, n, method, value1 = median_fit_seconds, value2 = NA_real_, value3 = NA_real_)])
+r10 <- tm[n == 1e4 & method == "mixture_ml", median_fit_seconds]; g10 <- tm[n == 1e4 & method == "gmoq_pooled", median_fit_seconds]
+r400 <- tm[n == 4e5 & method == "mixture_ml", median_fit_seconds]; g400 <- tm[n == 4e5 & method == "gmoq_pooled", median_fit_seconds]
+fmt <- function(v) format(v, big.mark = ",", scientific = FALSE, trim = TRUE)
+n_pan <- unique(x$success); n_ls <- unique(ls$replicates_ok)
+ncell <- ls[, .(k = uniqueN(cell)), by = geometry]
 cap <- paste(
   "Figure S4. G-MoQ Stage 2 and direct mixture maximum likelihood on simulated two-component mixtures.",
   "Parameters are the lower and upper component locations (δ_1, δ_2) and membership (γ), each against the",
@@ -111,13 +94,13 @@ cap <- paste(
                 "S, component separation). Each design has %s cells of sample size, minor allele frequency",
                 "and effect, each of %s replicates; point, mean over cells; bar, range over cells; grey band,",
                 "0.95 ± 1.96 times the median Monte Carlo standard error; dashed line, 0.95."),
-          paste(sort(unique(cells_per_design$k)), collapse = " or "), fmt(unique(lowsep$replicates_ok))),
+          paste(sort(unique(ncell$k)), collapse = " or "), fmt(n_ls)),
   sprintf(paste("**d**, Median time to fit one 100-variant panel with standard errors, over %d panels per sample size:",
                 "G-MoQ pooled %.1f s against mixture maximum likelihood %.0f s at 10,000 participants, and",
-                "%.0f s against %s s at 400,000."), unique(timings$n_panels), t_at(1e4, "gmoq_pooled"), t_at(1e4, "mixture_ml"),
-          t_at(4e5, "gmoq_pooled"), fmt(round(t_at(4e5, "mixture_ml")))),
+                "%.0f s against %s s at 400,000."), unique(tm$n_panels), g10, r10, g400, fmt(round(r400))),
   "No statistical tests are shown.",
   "ML, maximum likelihood; RMSE, root mean square error; SE, standard error; CI, confidence interval;",
   "JCV, JC polyomavirus; MCV, Merkel cell polyomavirus; VP1, major capsid protein VP1.")
-save_figure(fig, "figS04_mixture_recovery", src, cap, width = 183, height = 150,
-            results_used = "08_simulations/summary")
+save_figure(p, "figS04_mixture_recovery", src, cap, width = 183, height = 150,
+            results_used = c("08_simulations/summary/table_s2_numerical_summary", "08_simulations/summary/lowsep_sim_summary",
+                             "08_simulations/summary/mixture_timings"))

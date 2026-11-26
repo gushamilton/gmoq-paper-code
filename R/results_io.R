@@ -29,9 +29,10 @@ tau_grid <- function(cfg = NULL) {
   seq(g$tau_from, g$tau_to, length.out = g$n_tau)
 }
 
-# Which Stage 2 weight design is reported for a mixture fit: 'model' (every weight column
-# divided by the fitted mixture density) everywhere except unshrunk testosterone, which uses
-# 'hybrid' (the membership column divided by the Stage 1 kernel density instead).
+# Which Stage 2 weight design is reported for a mixture fit, from config.yaml: the default
+# ('hybrid': the membership column divided by the Stage 1 kernel density) unless a fit is listed
+# under estimation$mixture_weights$overrides ('model' divides every column by the fitted
+# mixture density).
 mixture_design <- function(cfg, fit) {
   mw <- cfg$estimation$mixture_weights
   f <- gsub(".", "_", as.character(fit), fixed = TRUE)

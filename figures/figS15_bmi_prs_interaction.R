@@ -12,7 +12,7 @@
 # Paper: Fig. 6
 # Input: results/05_bmi/prs_interaction/{per_lead_prs,kappa_by_scale,fto_prs_deciles,
 #   fig5d_curves,fig5d_summary}.csv
-# Output: paper_assets/fig6_bmi_prs_interaction.{png,pdf}, _source.csv, _caption.md
+# Output: paper_assets/figS15_bmi_prs_interaction.{png,pdf}, _source.csv, _caption.md
 # Runs: locally from results/ in about 2 seconds
 
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
@@ -105,5 +105,5 @@ cap <- paste(
   "each allele's effect grew with a modifier correlated with BMI, for four candidate modifiers. Amplification by",
   "polygenic background is one reading of these results; a convex measurement scale and environments correlated with",
   "genetic liability predict the same pattern.")
-save_figure(fig, "fig6_bmi_prs_interaction", src, cap, width = 183, height = 150,
+save_figure(fig, "figS15_bmi_prs_interaction", src, cap, width = 183, height = 150,
             results_used = "05_bmi/prs_interaction")

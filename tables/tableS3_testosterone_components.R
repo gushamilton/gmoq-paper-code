@@ -29,7 +29,7 @@ d <- merge(d, lambda, by = c("weight_design", "arm", "param"), all.x = TRUE)
 rg_full <- as.data.table(read_result("03_testosterone/sex_gwas", "ldsc_rg_gamma_vs_sex"))[sex_gwas == "old_n462869",
   .(weight_design, arm, param, rg_full = rg, rg_full_se = rg_se)]
 d <- merge(d, rg_full, by = c("weight_design", "arm", "param"), all.x = TRUE)
-# Reported design per arm (config.yaml): hybrid for unshrunk and F = 0.2, model otherwise.
+# Reported design per arm (config.yaml): hybrid for every arm.
 d[, reported := weight_design == mixture_design(cfg, arm)]
 
 ## 2. Format --------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ save_table(
     "Stage 2 by ordinary least squares with the pooled Stage 1 covariance. Weights: ‘Model’, every column divided by",
     "the fitted mixture density; ‘Hybrid’, only the membership (γ) column divided by the Stage 1 kernel density",
     "(Supplementary Note 2). Design: ‘Reported’, the design used in Figs 1 and 2 and Supplementary Fig. S8 (hybrid",
-    "for unshrunk and F = 0.2, model for F = 0.5 and 0.7); ‘Alternative’, the other design. Phenotype: unshrunk, or male values",
+    "for every phenotype); ‘Alternative’, the other design. Phenotype: unshrunk, or male values",
     "shifted towards the female mean by F = 0.2, 0.5 or 0.7 of the difference. Components: female (lower component",
     "location), male (upper component location) and membership (γ). GWS variants: two-sided P < 5 × 10⁻⁸. λGC:",
     "median genomic inflation of the component and of the reference. r and slope: Pearson correlation and",
