@@ -1,0 +1,15 @@
+cohort,metric,value
+alt,n_total,441106.0
+alt,n_bmi_nonmissing,439662.0
+alt,cases_masld_k760_k758,5718.0
+alt,cases_fo_k76,12670.0
+alt,cases_cirrhosis_k74,2425.0
+alt,cases_masld_any,13882.0
+alt,cases_masld_nonalc,12740.0
+alt,cases_alc_k70,1988.0
+ldl,n_total,440443.0
+ldl,n_statin_users,76089.0
+ldl,n_untreated,364354.0
+ldl,mean_ldl_all,3.5675146840794385
+ldl,mean_ldl_untreated,3.7216601080268097
+ldl,mean_ldl_treated,2.8293856273574365

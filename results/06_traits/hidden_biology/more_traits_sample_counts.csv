@@ -1,0 +1,11 @@
+trait,metric,value
+fev_fvc,n_all,345527
+fev_fvc,n_never_smoker,184580
+fev_fvc,n_ever_smoker,159816
+fev_fvc,cases_copd_j44,13053
+urate,n_all,440735
+urate,cases_gout_m10,8644
+bilirubin,n_all,439432
+crp,n_all,440316
+crp,n_crp_le_10,422195
+crp,n_crp_gt_10,18121

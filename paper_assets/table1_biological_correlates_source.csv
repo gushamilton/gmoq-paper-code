@@ -1,0 +1,39 @@
+trait,quantity,value,n_leads
+log_hba1c,primary_pc2_ratio,3.74913906838774,472
+hba1c_nodiab,primary_pc2_ratio,1.66500753423198,533
+log_alt,primary_pc2_ratio,1.62714350854593,316
+log_urate,primary_pc2_ratio,1.1222322207585,396
+fev1_fvc_ratio,primary_pc2_ratio,1.15767340278122,421
+log_crp,primary_pc2_ratio,1.50671342503691,389
+ldl,primary_pc2_ratio,1.43482992407908,230
+log_bilirubin_total,primary_pc2_ratio,1.77953827054674,183
+log_hba1c,primary_dimension,3,472
+hba1c_nodiab,primary_dimension,2,533
+log_alt,primary_dimension,2,316
+log_urate,primary_dimension,2,396
+fev1_fvc_ratio,primary_dimension,2,421
+log_crp,primary_dimension,2,389
+ldl,primary_dimension,2,230
+log_bilirubin_total,primary_dimension,2,183
+log_alt,unnormalised whitened PC2 projection vs SNP x BMI interaction Pearson r,0.744958189547023,316
+log_alt,unnormalised whitened PC2 projection vs Recorded liver disease Pearson r,0.698432971491024,316
+log_urate,unnormalised whitened PC2 projection vs SNP x sex interaction Pearson r,0.821745240544423,396
+fev1_fvc_ratio,unnormalised whitened PC2 projection vs SNP x ever-smoking interaction Pearson r,-0.269242364718355,421
+log_crp,unnormalised whitened PC2 projection vs SNP x BMI interaction Pearson r,0.567925893032098,389
+log_bilirubin_total,unnormalised whitened PC2 projection vs Quadratic dosage term adjusted for additive dosage Pearson r,0.585951953036524,183
+log_hba1c,unit-length whitened PC2 direction vs Diabetes Pearson r,0.805631942613692,472
+hba1c_nodiab,unit-length whitened PC2 direction vs Diabetes Pearson r,0.644784494150595,266
+hba1c_nodiab,heterogeneity residual z vs Diabetes Pearson r,0.657357568470128,266
+log_alt,unnormalised whitened PC2 projection vs SNP x BMI interaction nominal two-sided P,3.78563169503744e-57,316
+log_alt,unnormalised whitened PC2 projection vs Recorded liver disease nominal two-sided P,1.54326178085875e-47,316
+log_urate,unnormalised whitened PC2 projection vs SNP x sex interaction nominal two-sided P,2.88285393115795e-98,396
+fev1_fvc_ratio,unnormalised whitened PC2 projection vs SNP x ever-smoking interaction nominal two-sided P,2.00083158441185e-08,421
+log_crp,unnormalised whitened PC2 projection vs SNP x BMI interaction nominal two-sided P,1.34031899719251e-34,389
+log_bilirubin_total,unnormalised whitened PC2 projection vs Quadratic dosage term adjusted for additive dosage nominal two-sided P,2.94815929107584e-18,183
+log_hba1c,unit-length whitened PC2 direction vs Diabetes nominal two-sided P,6.21936819008045e-109,472
+hba1c_nodiab,unit-length whitened PC2 direction vs Diabetes nominal two-sided P,1.17589446583737e-32,266
+hba1c_nodiab,heterogeneity residual z vs Diabetes nominal two-sided P,2.70879787033768e-34,266
+log_hba1c,log-scale asymmetry hits,69,472
+hba1c_nodiab_log,log-scale asymmetry hits,4,533
+ldl_all,asymmetry hits,6,230
+ldl_untreated,asymmetry hits,0,230

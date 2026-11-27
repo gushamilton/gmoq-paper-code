@@ -1,0 +1,15 @@
+"scale","model","n","max_rel_diff"
+"log","additive",639,1.03314741880799e-13
+"log","both",639,3.08975932151159e-13
+"log","log_additive",639,1.81655995773225e-13
+"log","logscale_vqtl",639,6.00249355801569e-13
+"log","shifted",639,2.93031712540521e-13
+"log","shifted_lognormal_full",639,3.21571373744109e-13
+"log","three_components",639,4.77189975132233e-13
+"raw","additive",639,1.00892698728299e-13
+"raw","both",639,3.29105133726473e-13
+"raw","log_additive",639,9.90403094839811e-14
+"raw","logscale_vqtl",639,1.34713509531431e-13
+"raw","shifted",639,1.43880588225277e-13
+"raw","shifted_lognormal_full",639,4.25726020277629e-13
+"raw","three_components",639,1.34476846362023e-13
