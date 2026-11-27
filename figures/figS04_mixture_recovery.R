@@ -85,7 +85,9 @@ ncell <- ls[, .(k = uniqueN(cell)), by = geometry]
 cap <- paste(
   "Figure S4. G-MoQ Stage 2 and direct mixture maximum likelihood on simulated two-component mixtures.",
   "Parameters are the lower and upper component locations (δ_1, δ_2) and membership (γ), each against the",
-  "method's own known truth; G-MoQ with pooled or 1,000-block jackknife covariance shares point estimates (Methods).",
+  "method's own known truth.",
+  "Signed membership bias in panel a and the corresponding Supplementary Table S2 entries use the simulation's stored lower-component log-odds convention; empirical membership effects and Supplementary Note 2 use the upper-component convention.",
+  "G-MoQ with pooled or 1,000-block jackknife covariance shares point estimates (Methods).",
   sprintf(paste("Panels a and b use the same simulated datasets at three sample sizes: %s replicate panels of 100",
                 "variants per sample size. **a**, Bias; point, mean over the panels; error bars, 95%% Monte Carlo",
                 "intervals (±1.96 RMSE/√%s). **b**, Mean SE over the RMSE; the dashed line marks 1."), n_pan, n_pan),
