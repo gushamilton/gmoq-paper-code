@@ -402,7 +402,7 @@ regenie_gwas:
     comparator: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_mcv_vp1_log_all.regenie
     leads: /user/work/fh6520/fungwas_paper/data/derived/antibody/antigen_scan_20260920/regenie_step2/chr{chr}/antigen_qt_chr{chr}_mcv_vp1_log_all.regenie
 
-# HbA1c and diabetes (trait-survey phenotypes; UK Biobank application 43612).
+# HbA1c and diabetes (trait-survey phenotypes from basket 43612 under UK Biobank application 81499).
 hba1c:
   phenotypes: /user/work/fh6520/gmoq-trait-survey-20260922/pheno/phenotypes_43612.txt
   keep_all: /user/work/fh6520/gmoq-trait-survey-20260922/keep_43612/keep_hba1c.txt

@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # Fig 5: Scale-invariant dimensionality of genetic effects (1D, 2D and 3D archetypes).
 #   a  1D trait (IGF-1, 644 leads): profiles across three transformations (log, untransformed,
-#      Box-Cox lambda = 0.57). All leads rotate together onto a flat pure shift.
+#      Box-Cox lambda = 0.57). The median profile is approximately flat onto a flat pure shift.
 #   b  2D trait (GGT, 454 leads): profiles across three transformations (untransformed, log,
 #      Box-Cox lambda = -0.67). Two high-precision leads (rs2650000 and rs12373325) diverge in
 #      opposite directions on the trait-flattening transformation; no monotonic transformation
@@ -9,7 +9,7 @@
 #   c  Exact invariance of whitened principal-component spectra (PCs 1-6) across untransformed,
 #      log and Box-Cox transformations for IGF-1 (1D), BMI (2D), GGT (2D), HbA1c (3D) and
 #      HbA1c without diabetes (2D), with parallel-analysis null 95th percentiles.
-#   d  Scale-invariant whitened PC1 and PC2 scores of the 472 HbA1c leads, separating
+#   d  PC1 and PC2 scores from unit-length whitened profiles of the 472 HbA1c leads, separating
 #      diabetes-associated loci (TCF7L2, HLA-DOB, CDKAL1) from baseline shift loci (FN3KRP).
 # Reads aggregate results/ only (P03_baseline, P05_lead_profiles, P11_moments, P13_scale,
 # aux_hba1c_skew_diabetes).
@@ -275,8 +275,8 @@ cap <- paste(
   "UK Biobank lead variants; quantile profiles are converted across transformations directly from Stage 1 output (Methods).",
   "**a**, One-dimensional trait: IGF-1 (644 lead variants; n = 438,938) on log, untransformed and Box-Cox (lambda = 0.57)",
   "scales, each profile divided by its mean effect. Thin lines show the 120 most precise leads; heavy line and band show",
-  "the pointwise median and interquartile range across all 644 leads; dashed line, pure shift. All leads rotate together",
-  "onto a flat shift under one transformation.",
+  "the pointwise median and interquartile range across all 644 leads; dashed line, pure shift. The median profile is approximately flat",
+  "on the Box-Cox scale.",
   "**b**, Two-dimensional trait: GGT (454 lead variants; n = 441,089) on untransformed, log and Box-Cox (lambda = -0.67)",
   "scales. Grey lines show the 120 most precise leads and dashed grey line the pointwise median across all leads;",
   "coloured curves and bands show two high-precision leads (rs2650000 and rs12373325, 95% confidence intervals).",
@@ -287,10 +287,10 @@ cap <- paste(
   "Symbols for all three transformations coincide identically (maximum difference < 10^-10), demonstrating exact scale",
   "invariance and distinguishing one-dimensional (IGF-1), two-dimensional (BMI, GGT, HbA1c without diabetes) and",
   "three-dimensional (HbA1c) genetic architectures.",
-  "**d**, Scale-invariant whitened PC1 and PC2 scores for the 472 log HbA1c leads (n = 441,144), coloured by association",
+  "**d**, PC1 and PC2 scores from unit-length whitened profiles for the 472 log HbA1c leads (n = 441,144), coloured by association",
   "with diabetes (logistic regression in the same participants, two-sided Bonferroni P < 0.05/472; Pearson r = 0.81",
   "between PC2 and diabetes z statistic). Exemplar diabetes loci (TCF7L2, HLA-DOB, CDKAL1) separate cleanly from a",
-  "mean-matched shift locus (FN3KRP) purely from quantile-profile geometry. GGT, gamma-glutamyltransferase; IGF-1,",
+  "comparison locus (FN3KRP) matched on the absolute mean-effect z statistic purely from quantile-profile geometry. GGT, gamma-glutamyltransferase; IGF-1,",
   "insulin-like growth factor 1; PC, principal component."
 )
 

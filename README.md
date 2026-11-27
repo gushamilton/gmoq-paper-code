@@ -64,4 +64,4 @@ This requires R 4.5 with `data.table`, `ggplot2`, `patchwork`, `ragg` and `yaml`
 
 ## Licence
 
-MIT for the code. Aggregate results derive from UK Biobank (application 81499; the trait survey also used application 43612) and contain no individual-level data.
+MIT for the code. Aggregate results derive from UK Biobank (application 81499) and contain no individual-level data.

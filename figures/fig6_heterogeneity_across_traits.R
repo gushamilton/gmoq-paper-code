@@ -134,22 +134,22 @@ stopifnot(p_m * 10^p_e >= p_max)
 superscript <- function(n) paste(c("⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹")[as.integer(strsplit(as.character(n), "")[[1]]) + 1], collapse = "")
 p_bound <- sprintf("%.1f × 10⁻%s", p_m, superscript(abs(p_e)))
 cap <- paste(
-  "Figure 5. Heterogeneity of genetic effects between lead variants across quantitative traits.",
-  sprintf("%d UK Biobank trait analyses (20 traits); %s lead variants in total, with leads per trait in brackets.", n_traits,
+  "Figure 6. Heterogeneity of genetic effects between lead variants across quantitative traits.",
+  sprintf("%d UK Biobank trait analyses (20 traits); %s lead-variant entries across analyses, with leads per trait in brackets.", n_traits,
           format(sum(d$n_leads), big.mark = ",")),
-  "**a**, Between-lead heterogeneity: the standard deviation across leads of the change in spread per unit change in",
-  "location, around the trait's common ratio, on the analysed scale with 95% bootstrap confidence intervals; grey",
+  "**a**, Between-lead heterogeneity: the between-lead standard deviation of orthonormalised tilt per unit level,",
+  "on the unit-standard-error basis with 95% bootstrap confidence intervals; grey",
   "symbols, the same estimate on the raw, log and Box-Cox scales. Colour, principal components above noise.",
   sprintf("Heterogeneity was tested by a one-sided Cochran Q test; every trait has P ≤ %s, not adjusted for multiple",
           p_bound),
   "comparisons. **b**, Share of shape variance explained by the second principal component relative to its",
   "expectation if every lead shared one shape (parallel-analysis null median; tick, null 95th percentile), with 95%",
-  "bootstrap intervals over leads (Methods); 1 indicates no second shape, on any scale.",
-  "**c**, Per-allele effects of six lead variants on log HbA1c, with 95% confidence intervals.",
+  "bootstrap intervals over leads (Methods); the dashed line at 1 marks the one-shape null median.",
+  "**c**, Per-allele effects of six lead variants on log HbA1c, with pointwise 95% confidence intervals.",
   "Bottom, the three diabetes-associated leads with the largest asymmetry beyond shift and spread (diabetes,",
   "logistic regression in the same participants, two-sided P < 0.05/472); top, a lead with no asymmetry beyond the",
-  "frame matched to each on mean effect. Dashed grey lines are least-squares fits of a single mechanism: a pure shift",
-  "(top) and a change only in membership of the diabetes-enriched mixture component (bottom) (Methods).")
+  "frame matched to each on the absolute mean-effect z statistic. Dashed grey lines show a fitted constant shift",
+  "(top) and a fitted change in membership of the diabetes-enriched mixture component (bottom) (Methods).")
 save_figure(fig, "fig6_heterogeneity_across_traits", src, cap, width = 183, height = 190,
             results_used = c("06_traits/survey", "06_traits/moments", "06_traits/scale", "06_traits/pc_heterogeneity",
                              "07_hba1c/skew_diabetes", "07_hba1c/mixture"))
