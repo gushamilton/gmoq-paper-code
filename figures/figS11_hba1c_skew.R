@@ -5,7 +5,7 @@
 #   profile after a least-squares fit of shift and spread (the residual third L-moment, as a
 #   z statistic) is plotted against the variant's association with diabetes. Leads with
 #   asymmetry beyond the Bonferroni threshold are mostly diabetes-associated. The six leads of
-#   Fig. 5c are circled.
+#   Fig. 6c are circled.
 #   Single panel: asymmetry z against diabetes z, one point per lead.
 # Paper: Supplementary Fig. S11
 # Input: results/07_hba1c/skew_diabetes/{examples,per_lead,tests}.csv
@@ -49,7 +49,7 @@ cap <- paste(
   "a least-squares fit of shift and spread to the lead's quantile-effect profile (Methods); the horizontal axis is the z",
   sprintf("statistic for association with diabetes (logistic regression; %s cases, %s controls).", fmtn(n_case), fmtn(n_ctrl)),
   sprintf("Dashed lines mark the two-sided Bonferroni threshold for asymmetry (P = 0.05/%d); Asymmetry, leads beyond it;", nrow(per_lead)),
-  "circled and labelled points are the six leads shown in Fig. 5c.",
+  "circled and labelled points are the six leads shown in Fig. 6c.",
   sprintf("Of the %d leads with asymmetry beyond shift and spread, %d (%.0f%%) were associated with diabetes at two-sided",
           tv("n_skew_hits"), tv("n_diab_p_lt_bonf472_hit"), 100 * tv("frac_diab_p_lt_bonf472_hit")),
   sprintf("P < 0.05/%d, against %d (%.0f%%) of the other %d; Spearman correlation of the two z statistics, ρ = %.2f.",

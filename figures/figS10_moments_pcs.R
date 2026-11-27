@@ -109,6 +109,6 @@ cap <- paste(
   "**d**, What is left of each lead's unit-length profile after fitting PC1, PC1 + PC2, shift, and shift + spread",
   sprintf("(%s of total squared length; unwhitened, so not comparable with the whitened shares).",
           paste(sprintf("%.1f%%", 100 * left), collapse = ", ")),
-  "The second component is compared across traits in Fig. 5b.")
+  "The second component is compared across traits in Fig. 6b.")
 save_figure(fig, "figS10_moments_pcs", src, cap, width = 183, height = 125,
             results_used = c("01_data/lead_profiles", "06_traits/moments"))
