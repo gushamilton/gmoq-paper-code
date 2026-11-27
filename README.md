@@ -13,7 +13,7 @@ The analyses use UK Biobank data (application 81499), which are available to app
 
 ## Rebuilding the figures and tables
 
-Every main figure, Extended Data figure, supplementary figure and supplementary table is rebuilt directly from `results/` in under a minute:
+Run the following from the repository root to rebuild the figures, main Table 1 and supplementary tables from the aggregate results. For a downloaded ZIP archive, run `git init -q` in the extracted directory first so the scripts can locate its root.
 
 ```bash
 make all

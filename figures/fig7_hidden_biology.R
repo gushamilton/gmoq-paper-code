@@ -170,8 +170,8 @@ cap <- paste(
   "(Pearson r = -0.269, nominal two-sided P = 2.0 x 10^-8), coloured by Bonferroni SNP x ever-smoking significance (two-sided",
   "P < 0.05/421); the smoking-dependent CHRNA3/CHRNA5 locus (rs12914385; PC2 = -7.35, interaction z = 11.4) stands apart",
   "from all other variants.",
-  "**d**, Per-allele quantile-effect profiles (95% confidence intervals) on LDL at APOE (rs7254892) and PCSK9 (rs11591147)",
-  "in all participants (n = 440,443) and those reporting no lipid medication (n = 364,354, excluding 76,089 participants reporting cholesterol-lowering",
+  "**d**, Per-allele quantile-effect profiles (pointwise 95% confidence intervals) on LDL at APOE (rs7254892) and PCSK9 (rs11591147)",
+  "in all participants (n = 440,443) and those without reported cholesterol-lowering medication (n = 364,354, excluding 76,089 participants reporting cholesterol-lowering",
   "medication). Profiles at both loci change after exclusion. ALT, alanine aminotransferase; BMI, body mass index; FEV1/FVC, forced",
   "expiratory volume in 1 s to forced vital capacity ratio; LDL, low-density lipoprotein cholesterol."
 )
