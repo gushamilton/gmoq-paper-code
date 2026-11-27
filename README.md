@@ -21,6 +21,16 @@ make all
 
 This requires R 4.5 with `data.table`, `ggplot2`, `patchwork`, `ragg` and `yaml`. Outputs are written to `paper_assets/`: PNG and PDF artwork, source data CSVs and legends.
 
+## Where is the code for each method?
+
+| If you want to… | Look here |
+|---|---|
+| Run Stage 1 quantile GWAS or Stage 2 parametric models | <https://github.com/gushamilton/GMoQ> (examples: `analysis/02_mixtures/01_fit_mixtures.R`, `02_genomewide_stage2.R`) |
+| Run the **scale-invariant whitened PCA**, parallel analysis and per-variant **PC2 scores** | `R/pca.R` and `analysis/06_traits/01_moments_and_principal_components.R` |
+| Convert Stage 1 profiles across phenotype transformations (raw, log, Box–Cox) | `R/scale.R` and `analysis/06_traits/04_change_of_scale.R` |
+| Compute L-moments and between-lead heterogeneity | `R/moment_decomposition.R` and `R/heterogeneity.R` |
+| Reproduce every figure (Figs. 1–7, Extended Data Fig. 1, S1–S15) and table (S1–S8) | `make all` (`figures/` and `tables/`) |
+
 ## How the repository follows the paper
 
 | Paper section | What is done | Analysis scripts | Figure / table scripts |
