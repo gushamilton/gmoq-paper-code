@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# Figure 6: BMI variant effects grow with polygenic background
+# Supplementary Figure S15: BMI variant effects grow with polygenic background
 #
 # What: the common tilt of the BMI lead profiles (Fig. 4c) means that alleles have larger
 #   effects in people with higher BMI. One explanation is that each allele's effect grows
@@ -9,7 +9,7 @@
 #   b: interaction against main effect per lead, with the common relative interaction kappa.
 #   c: effect of the FTO lead rs1421085 by PRS decile.
 #   d: the observed common tilt beside the tilt predicted by four candidate modifiers.
-# Paper: Fig. 6
+# Paper: Supplementary Fig. S15
 # Input: results/05_bmi/prs_interaction/{per_lead_prs,kappa_by_scale,fto_prs_deciles,
 #   fig5d_curves,fig5d_summary}.csv
 # Output: paper_assets/figS15_bmi_prs_interaction.{png,pdf}, _source.csv, _caption.md
@@ -61,11 +61,8 @@ pC <- ggplot(fto, aes(prs_decile, beta)) +
 ## 5. Panel d: observed and predicted common profiles -------------------------------------
 # b(tau)/beta is the common lead profile per unit mean effect; each prediction assumes the
 # allele's effect grows with a modifier correlated with BMI, and F is its fit to the observed.
-curve_lab <- c(observed = "observed (95% band)",
-               pred_bmi = sprintf("BMI itself (F = %.2f)", curve_fit[hyp_key == "bmi", F]),
-               pred_twin = sprintf("twin h2 0.5 (F = %.2f)", curve_fit[hyp_key == "twin", F]),
-               pred_h2snp = sprintf("h2_SNP %.3f (F = %.2f)", curve_fit[hyp_key == "h2snp", omega], curve_fit[hyp_key == "h2snp", F]),
-               pred_prs = sprintf("measured PRS (F = %.2f)", curve_fit[hyp_key == "prs", F]))
+curve_lab <- c(observed = "Observed", pred_bmi = "BMI", pred_twin = "Twin heritability",
+               pred_h2snp = "SNP heritability", pred_prs = "Polygenic score")
 curves_long <- melt(curves, id.vars = "tau", measure.vars = names(curve_lab), variable.name = "series", value.name = "value")
 curves_s <- smooth_curve(curves_long, "tau", "value", by = "series")
 curves_s[, series := factor(series, levels = names(curve_lab))]
@@ -89,7 +86,7 @@ src <- rbind(
   fto[, .(panel = "C", series = paste0("decile_", prs_decile), x = prs_decile, y = beta, se = se_hc0, z = NA_real_)],
   curves_long[, .(panel = "D", series = as.character(series), x = tau, y = value, se = NA_real_, z = NA_real_)])
 cap <- paste(
-  "Figure 6. BMI variant effects grow with polygenic background.",
+  "Figure S15. BMI variant effects grow with polygenic background.",
   "Log BMI, 639 lead variants aligned to the BMI-increasing allele; n = 461,320. For each lead, log BMI was regressed",
   "on the variant, a polygenic score excluding that variant's chromosome, their interaction, age, sex and ten genetic",
   "principal components, with heteroscedasticity-robust standard errors. **a**, Distribution of the interaction z",
@@ -102,8 +99,11 @@ cap <- paste(
           fto_contrast$ratio_top_over_bottom),
   sprintf("(95%% confidence interval %.2f to %.2f). **d**,", fto_contrast$ratio_lo, fto_contrast$ratio_hi),
   "The common tilt of the lead profiles, observed and as predicted if",
-  "each allele's effect grew with a modifier correlated with BMI, for four candidate modifiers. Amplification by",
-  "polygenic background is one reading of these results; a convex measurement scale and environments correlated with",
+  "each allele's effect grew with a modifier correlated with BMI, for four candidate modifiers.",
+  sprintf("The fitted fractions of the observed tilt are %.2f for BMI, %.2f for twin heritability (0.5), %.2f for SNP heritability (%.3f) and %.2f for the measured polygenic score.",
+          curve_fit[hyp_key == "bmi", F], curve_fit[hyp_key == "twin", F], curve_fit[hyp_key == "h2snp", F],
+          curve_fit[hyp_key == "h2snp", omega], curve_fit[hyp_key == "prs", F]),
+  "Amplification by polygenic background is one reading of these results; a convex measurement scale and environments correlated with",
   "genetic liability predict the same pattern.")
 save_figure(fig, "figS15_bmi_prs_interaction", src, cap, width = 183, height = 150,
             results_used = "05_bmi/prs_interaction")

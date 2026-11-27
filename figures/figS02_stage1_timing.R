@@ -4,7 +4,7 @@
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
 .repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
 source(file.path(.repo, "figures", "theme.R"))
-tm <- as.data.table(read_result("08_simulations/speed_benchmark", "stage1_panel_times"))
+tm <- as.data.table(read_result("08_simulations/summary", "s2_mean_timings"))
 ds <- as.data.table(read_result("08_simulations/summary", "table_s1_design_provenance"))[study == "S2"]
 mlab <- c(ordinary_rif_ols = "RIF-OLS", gmoq = "G-MoQ, pooled", gmoq_jackknife = "G-MoQ, jackknife")
 mcol <- setNames(c(paper_palette[["regenie"]], paper_palette[["gmoq"]], "#7fb3d5"), mlab)

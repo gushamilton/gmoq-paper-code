@@ -5,8 +5,7 @@
 #   scored by an AIC-like criterion that uses the full Stage 1 covariance. For most leads the
 #   runner-up model is within 2 units of the winner, so the winning model does not identify
 #   the mechanism (compare Fig. 4).
-#   a: table per winning model: wins, share, median gap to runner-up, share of gaps below 2,
-#      and share of wins whose residual lack-of-fit test rejects.
+#   a: table per winning model: wins, share, median gap to runner-up, share of gaps below 2.
 #   b: distribution of the gap between winner and runner-up.
 # Paper: Supplementary Fig. S13
 # Input: results/05_bmi/model_scores/{lead_winners,lead_scores,model_definitions,gap_summary}.csv
@@ -23,37 +22,27 @@ models <- as.data.table(read_result("05_bmi/model_scores", "model_definitions"))
 gap_summary <- as.data.table(read_result("05_bmi/model_scores", "gap_summary"))[set == "primary" & scale == "log" & criterion == "AIC"]
 
 ## 2. Panel a: summary per winning model -------------------------------------------------
-# Residual lack of fit of the winning model: Q_full against chi-square on 45 - k degrees of
-# freedom (k, the model's effective number of parameters), one-sided.
-won <- merge(winners[, .(snp_id, winner)], scores[model != "builder_shifted", .(snp_id, model, Q_full)], by = "snp_id")
-won <- won[model == winner]
-won <- merge(won, models[, .(model, k)], by = "model")
-won[, lof_rejected := pchisq(Q_full, 45 - k, lower.tail = FALSE) < 0.05]
-stopifnot(nrow(won) == nrow(winners))
-tab <- won[, .(
+tab <- winners[, .(
   n = .N,
   pct = 100 * .N / nrow(winners),
-  median_gap = median(winners[winner == unique(model), gap]),
-  pct_gap_lt_2 = 100 * mean(winners[winner == unique(model), gap < 2]),
-  pct_lof_rejected = 100 * mean(lof_rejected)
-), by = model][order(-n)]
+  median_gap = median(gap),
+  pct_gap_lt_2 = 100 * mean(gap < 2)
+), by = .(model = winner)][order(-n)]
 model_labels <- c(additive = "Shift", log_additive = "Proportional", shifted = "Multiplicative, fitted origin",
                   both = "Shift + proportional", logscale_vqtl = "vQTL of log BMI",
                   shifted_lognormal_full = "Shift + vQTL", three_components = "Shift + spread + bend")
 tab[, model_name := model_labels[model]]
 tab[, `:=`(n_label = as.character(n), pct_label = sprintf("%.1f%%", pct), gap_label = sprintf("%.2f", median_gap),
-           gap2_label = sprintf("%.1f%%", pct_gap_lt_2), lof_label = sprintf("%.1f%%", pct_lof_rejected))]
+           gap2_label = sprintf("%.1f%%", pct_gap_lt_2))]
 # Top row: all leads together.
 tab <- rbind(tab, data.table(
   model = "TOTAL", n = nrow(winners), pct = 100.0, median_gap = median(winners$gap),
-  pct_gap_lt_2 = 100 * mean(winners$gap < 2), pct_lof_rejected = 100 * mean(won$lof_rejected),
+  pct_gap_lt_2 = 100 * mean(winners$gap < 2),
   model_name = "All leads", n_label = as.character(nrow(winners)), pct_label = "100%",
-  gap_label = sprintf("%.2f", median(winners$gap)), gap2_label = sprintf("%.1f%%", 100 * mean(winners$gap < 2)),
-  lof_label = sprintf("%.1f%%", 100 * mean(won$lof_rejected))), fill = TRUE)
+  gap_label = sprintf("%.2f", median(winners$gap)), gap2_label = sprintf("%.1f%%", 100 * mean(winners$gap < 2))), fill = TRUE)
 tab[, model_f := factor(model_name, levels = c("All leads", rev(tab$model_name[tab$model != "TOTAL"])))]
 # Drawn as a table of tiles; short column headers are defined in the legend.
-hdr <- c(n_label = "Wins", pct_label = "%", gap_label = "Median gap", gap2_label = "Gap < 2",
-         lof_label = "Lack of fit")
+hdr <- c(n_label = "Wins", pct_label = "%", gap_label = "Median gap", gap2_label = "Gap < 2")
 tab_long <- melt(tab, id.vars = c("model_f", "model"), measure.vars = names(hdr),
                  variable.name = "field", value.name = "label")
 tab_long[, field := factor(hdr[as.character(field)], levels = unname(hdr))]
@@ -82,8 +71,8 @@ pB <- ggplot(winners, aes(gap)) +
 ## 4. Assemble and save ---------------------------------------------------------------------
 fig <- (pA | pB) + plot_layout(widths = c(1.35, 1))
 src <- rbind(
-  tab[, .(panel = "A", item = model, n, pct, median_gap, pct_gap_lt_2, pct_lof_rejected)],
-  winners[, .(panel = "B", item = "gap_dist", n = .N, pct = NA_real_, median_gap = median(gap), pct_gap_lt_2 = NA_real_, pct_lof_rejected = NA_real_)])
+  tab[, .(panel = "A", item = model, n, pct, median_gap, pct_gap_lt_2)],
+  winners[, .(panel = "B", item = "gap_dist", n = .N, pct = NA_real_, median_gap = median(gap), pct_gap_lt_2 = NA_real_)])
 n_lead <- nrow(winners); n_within <- sum(winners$gap < 2)
 stopifnot(isTRUE(all.equal(gap_summary$frac_gap_lt_2, n_within / n_lead)))
 cap <- paste(
@@ -93,9 +82,7 @@ cap <- paste(
   "profile, by ordinary least squares with the pooled Stage 1 covariance, and scored by an AIC-like criterion using",
   "the full covariance (Methods).",
   "**a**, Per winning model: the number of leads it wins (Wins) and their share (%); the median AIC-like gap from the",
-  "winner to the runner-up (Median gap); the percentage of its wins with a gap below 2 (Gap < 2); and the",
-  "percentage of its wins whose residual lack-of-fit test rejects at P < 0.05 (Lack of fit; one-sided χ² test on",
-  "45 − k degrees of freedom, k the model's effective number of parameters; not adjusted for multiple comparisons).",
+  "winner to the runner-up (Median gap); and the percentage of its wins with a gap below 2 (Gap < 2).",
   "Top row, all leads.",
   sprintf("**b**, Distribution of the gap across the %d leads; bars, leads per 0.1-unit bin; dashed line, a gap of 2.",
           n_lead),
