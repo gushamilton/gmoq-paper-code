@@ -1,14 +1,15 @@
 #!/usr/bin/env Rscript
 # Fig 2: testosterone recovery of sex-specific effects from a sex-blind quantile GWAS.
 # Layout after the author's review (28 Sep 2026), old Fig 2 style:
-#   (A) top: G-MoQ component vs sex-stratified reference REGENIE at the reference lead SNPs, every arm;
+#   (A) top: G-MoQ component vs sex-stratified reference REGENIE at clumped reference lead SNPs;
+#       compute their agreement directly, keeping all-significant-SNP statistics separate.
 #   (B) matched LDSC rg by component and shrinkage (old Fig 2E tile style); (C) cost per additional SNP;
 #   (D, E) two exemplar SNPs picked by the pre-written selection rule (P08 exemplar_selected, unshrunk,
 #   hybrid): the mixed-component SNP (rule category shared_concordant: female, male and gamma all
 #   |z| > 1.96) and the male-specific SNP. Each exemplar: LEFT forest of sex-stratified reference vs
 #   G-MoQ per-allele estimates (female, male, mixing), RIGHT Stage 1 profile + fitted curves.
-# Mixture weight design per arm (conventions decision 11 revised): hybrid for the unshrunk arm, model
-# for the shrink arms; the unshrunk arm is flagged simply (dashed outline + "hybrid weights").
+# Use the reported hybrid design in every arm, matching Supplementary Table S3.
+# Retain the dashed outline marking the unshrunk near-empty-gap example.
 # Reads results/P08_testosterone (+ P08b_exemplar_sex_reference when present), P07 weight_density and
 # aux_speed_profile per_snp_costs (panel C).
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
@@ -23,26 +24,26 @@ comp_col <- c(female = paper_palette[["female"]], male = paper_palette[["male"]]
 D0 <- mixture_design(cfg, "testosterone")
 rr <- function(name, all = FALSE) { x <- as.data.table(read_result("03_testosterone/recovery", name))
   if (all) x else if ("arm" %in% names(x)) pick_design(x, "arm", cfg = cfg) else pick_design(x, fit = "testosterone", cfg = cfg) }
-flag_arm <- "testosterone"   # the one arm on hybrid weights
+flag_arm <- "testosterone"   # unshrunk near-empty-gap example
 
 # ---- A: lead-level G-MoQ vs reference (top) --------------------------------------------------
 cl <- rr("concordance_leads")[reference == "combined" & component %in% c("female", "male")]
 cl[, arm_f := factor(arm_lab[arm], levels = arm_lab)]
 cc <- rr("concordance")
-ccl <- cc[reference == "combined" & snp_set == "reference_p_lt_5e-8" & component %in% c("female", "male")]
+ccl <- cl[, .(n = .N, pearson_beta = cor(beta_regenie, beta_gmoq),
+              slope_gmoq_on_regenie = unname(coef(lm(beta_gmoq ~ beta_regenie))[2])),
+          by = .(arm, component)]
 ccl[, arm_f := factor(arm_lab[arm], levels = arm_lab)]
-ccl <- merge(ccl[, !"n"], cl[, .(n = .N), by = .(arm, component)], by = c("arm", "component"))
 cl[, comp_f := factor(component, levels = c("female", "male"), labels = c("Female effect", "Male effect"))]
 ccl[, comp_f := factor(component, levels = c("female", "male"), labels = c("Female effect", "Male effect"))]
 flag <- CJ(arm_f = factor(arm_lab[[flag_arm]], levels = arm_lab), comp_f = levels(cl$comp_f))
 flag[, comp_f := factor(comp_f, levels = levels(cl$comp_f))]
+flag[, `:=`(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf)]
 pA <- ggplot(cl, aes(beta_regenie, beta_gmoq, colour = component)) +
-  geom_rect(data = flag, aes(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf), inherit.aes = FALSE,
+  geom_rect(data = flag, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), inherit.aes = FALSE,
             fill = NA, colour = "grey45", linetype = "22", linewidth = 0.35) +
   geom_abline(slope = 1, intercept = 0, linewidth = 0.3, linetype = 2, colour = "grey45") +
   geom_point(size = 0.7, alpha = 0.65, stroke = 0) +
-  geom_text(data = ccl, aes(x = -Inf, y = Inf, label = sprintf("r = %.3f\nslope = %.2f", pearson_beta,
-            slope_gmoq_on_regenie, n)), hjust = -0.08, vjust = 1.12, size = 2.0, colour = "grey15", lineheight = 0.95) +
   facet_grid(comp_f ~ arm_f) +
   scale_x_continuous(breaks = c(-0.05, 0, 0.05)) +
   scale_colour_manual(values = comp_col, guide = "none") +
@@ -51,10 +52,9 @@ pA <- ggplot(cl, aes(beta_regenie, beta_gmoq, colour = component)) +
 
 # ---- B: LDSC rg matrix (old Fig 2E style) -----------------------------------------------------
 rg <- rr("ldsc_rg")
-rg[, arm_f := factor(ifelse(arm == flag_arm, paste0(arm_lab[arm], "\n(hybrid)"), arm_lab[arm]),
-                     levels = c(paste0(arm_lab[[flag_arm]], "\n(hybrid)"), arm_lab[-1]))]
+rg[, arm_f := factor(arm_lab[arm], levels = arm_lab)]
 rg[, comp_f := factor(component, levels = rev(c("female", "male", "sex")),
-                      labels = rev(c("Female effect", "Male effect", "Mixing (-gamma)\nvs sex GWAS")))]
+                      labels = rev(c("Female effect", "Male effect", "Upper membership\nvs sex GWAS")))]
 pB <- ggplot(rg, aes(arm_f, comp_f, fill = rg)) +
   geom_tile(colour = "white", linewidth = 0.8) +
   geom_text(aes(label = sprintf("%.2f", rg), colour = rg > 0.93), size = 2.5) +
@@ -101,7 +101,7 @@ sexref <- if (file.exists(file.path(.repo, "results", "03_testosterone", "exempl
 pick <- c(shared_concordant = "Mixed-component signal", male_specific = "Male-specific signal")
 fcols <- c(ref = "grey25", female = comp_col[["female"]], male = comp_col[["male"]], gamma = comp_col[["gamma"]])
 pcols <- c(total = "grey10", female = comp_col[["female"]], male = comp_col[["male"]], gamma = comp_col[["gamma"]])
-plabs <- c(total = "total", female = "female", male = "male", gamma = "mixing")
+plabs <- c(total = "total", female = "female", male = "male", gamma = "membership")
 ex_rows <- list(); src_ex <- list()
 for (k in seq_along(pick)) {
   cat_k <- names(pick)[k]; s <- es[category == cat_k]
@@ -112,8 +112,9 @@ for (k in seq_along(pick)) {
     data.table(label = "Female: G-MoQ", est = e$beta_left, se = e$beta_left_se, ck = "female", block = "f"),
     data.table(label = "Male: reference REGENIE", est = e$regenie_combined_male_beta, se = e$regenie_combined_male_se, ck = "ref", block = "m"),
     data.table(label = "Male: G-MoQ", est = e$beta_right, se = e$beta_right_se, ck = "male", block = "m"),
-    if (!is.null(sx) && nrow(sx)) data.table(label = "Mixing: sex GWAS", est = sx$sex_beta, se = sx$sex_se, ck = "ref", block = "g"),
-    data.table(label = "Mixing: G-MoQ (-gamma)", est = -e$gamma, se = e$gamma_se, ck = "gamma", block = "g"))
+    if (!is.null(sx) && nrow(sx)) data.table(label = "Membership: sex GWAS", est = sx$sex_beta, se = sx$sex_se, ck = "ref", block = "g"),
+    # Stored gamma is lower-component log odds; display manuscript upper-component log odds.
+    data.table(label = "Membership: G-MoQ", est = -e$gamma, se = e$gamma_se, ck = "gamma", block = "g"))
   obs <- pr[, .(tau, beta = beta_stage1, se = se_stage1)]
   fits <- rbind(pr[, .(tau, series = "total", value = fitted_total)], pr[, .(tau, series = "female", value = fitted_beta_left)],
                 pr[, .(tau, series = "male", value = fitted_beta_right)], pr[, .(tau, series = "gamma", value = fitted_gamma)])
@@ -121,13 +122,11 @@ for (k in seq_along(pick)) {
   away <- pr[abs(tau - 0.5) > 0.03]
   yl <- range(c(away$beta_stage1 - 1.96 * away$se_stage1, away$beta_stage1 + 1.96 * away$se_stage1, pr$fitted_total[abs(pr$tau - 0.5) > 0.03]))
   yl <- yl + c(-0.08, 0.08) * diff(yl)
-  pf <- snp_forest(fd, fcols, xlab = "Per-allele effect on log testosterone (95% CI)")
+  pf <- snp_forest(fd, fcols, xlab = "Per-allele estimate (95% CI)")
   pp <- snp_profile(obs, fits, pcols, labels = plabs, ylim = yl,
                     legend_pos = if (k == 1) c(0.02, 0.98) else c(0.02, 0.03), legend_just = if (k == 1) c(0, 1) else c(0, 0)) +
     labs(y = "Stage 1 beta_tau (95% CI)")
-  ex_rows[[k]] <- (pf + labs(tag = letters[3 + k]) + ggtitle(s$snp_id) +
-                     theme(plot.title = element_text(size = 7, face = "plain", hjust = 0,
-                                                     margin = margin(b = 2))) | pp) +
+  ex_rows[[k]] <- (pf + labs(tag = letters[3 + k]) | pp) +
     plot_layout(widths = c(1, 1.45))
   src_ex[[k]] <- rbind(fd[, .(panel = LETTERS[3 + k], group = s$snp_id, series = label, x = NA_real_, y = est, se)],
                        obs[, .(panel = LETTERS[3 + k], group = s$snp_id, series = "stage1", x = tau, y = beta, se)],
@@ -155,19 +154,35 @@ sx_note <- if (is.null(sexref)) paste(
 cap <- paste(
   "Figure 2. Recovery of sex-specific testosterone effects from a sex-blind analysis.",
   "n = 399,710; the sex-stratified reference is REGENIE in the same 199,572 female and 200,138 male participants.",
-  "Stage 2 is the mixture model of Fig. 1, fitted by ordinary least squares with the pooled Stage 1 covariance.",
-  "**a**, G-MoQ female and male estimates against the sex-stratified reference at reference lead variants",
-  "(two-sided P < 5 x 10-8), by degree of shrinkage; r is the Pearson correlation and the slope is from ordinary least",
-  "squares; the dashed line is y = x. **b**, LD score regression genetic correlation of each G-MoQ component with its",
+  "Hybrid membership weights are used in all arms (Methods).",
+  "**a**, G-MoQ female and male estimates against the sex-stratified reference at clumped reference lead variants",
+  "(two-sided P < 5 x 10-8), by degree of shrinkage; the dashed line is y = x.",
+  sprintf("For no shrinkage, shrinkage 0.2, 0.5 and 0.7, respectively, female lead counts are %s, Pearson correlations are %s and ordinary least-squares slopes are %s; male lead counts are %s, correlations are %s and slopes are %s.",
+          paste(ccl[component == "female"]$n, collapse = ", "),
+          paste(sprintf("%.3f", ccl[component == "female"]$pearson_beta), collapse = ", "),
+          paste(sprintf("%.2f", ccl[component == "female"]$slope_gmoq_on_regenie), collapse = ", "),
+          paste(ccl[component == "male"]$n, collapse = ", "),
+          paste(sprintf("%.3f", ccl[component == "male"]$pearson_beta), collapse = ", "),
+          paste(sprintf("%.2f", ccl[component == "male"]$slope_gmoq_on_regenie), collapse = ", ")),
+  "The all-significant-SNP statistics in Supplementary Table S3 use 1,578 female and 3,048 male reference-significant SNPs before clumping.",
+  "**b**, LD score regression genetic correlation of each G-MoQ component with its",
   "reference: sex-stratified GWAS for the female and male components, and a GWAS of chromosomal sex in the same",
   "participants for membership. **c**, Computational cost per additional variant on one core against sample size, for",
   "direct mixture maximum likelihood, G-MoQ Stages 1 and 2, and Stage 2 alone given the Stage 1 output.",
-  "**d**,**e**, Two exemplar loci selected by a rule fixed in advance: rs1260326, with effects on all three",
-  "parameters, and rs7097461, with a male-specific effect. Left, per-allele estimates with 95% confidence intervals;",
+  "**d**,**e**, Two exemplar loci selected in advance: rs1260326, with effects on all three",
+  "parameters, and rs7097461, with a male-specific effect. Left, per-allele estimates with 95% confidence intervals (location on log testosterone, membership on the log-odds scale);",
   "right, Stage 1 quantile effects (grey, 95% confidence intervals) with the fitted profile (black) and each",
   "parameter's contribution. Few participants lie between the modes, so effects near tau = 0.5 are very imprecise and",
-  "values beyond the axis are drawn at its edge as triangles. Membership is plotted as -gamma, signed to match the",
-  "GWAS of sex.")
+  "values beyond the axis are drawn at its edge as triangles. Membership is oriented to the upper (male) component.")
+
+# Export the three denominators separately; the plotted lead statistics are recalculated
+# from exactly the same rows as the scatterplot, rather than relabelled all-SNP estimates.
+stats_source <- rbind(
+  cc[reference == "combined" & component %in% c("female", "male"),
+     .(arm, component, snp_set, weight_design, n, pearson_beta, slope_gmoq_on_regenie)],
+  ccl[, .(arm, component, snp_set = "plotted_clumped_reference_leads",
+          weight_design = mixture_design(cfg, arm), n, pearson_beta, slope_gmoq_on_regenie)])
+fwrite(stats_source, file.path(assets_dir, "fig2_testosterone_recovery_statistics.csv"))
 save_figure(p, "fig2_testosterone_recovery", src, cap, width = 183, height = 235,
             results_used = c("03_testosterone/recovery/exemplar_profiles", "03_testosterone/recovery/exemplar_selected",
                              "03_testosterone/recovery/exemplar_estimates", "03_testosterone/recovery/concordance_leads",

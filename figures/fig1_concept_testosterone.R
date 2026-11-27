@@ -4,7 +4,9 @@
 #   (b) Stage 1 output: SNP x quantile summary-statistics table beta_hat(tau) (run once);
 #   (c) Stage 2: model design matrix W (45 x p) converting beta_hat(tau) into parameters theta_hat;
 #   (d) UKB testosterone distributions by sex across the shrinkage series (n = 399,710);
-#   (e) Stage 2 weights W[tau, p] for female location, male location, and mixing parameter gamma.
+#   (e) Stage 2 weights for female location, male location and upper-component membership.
+# Stored gamma is lower-component log odds; the manuscript gamma is upper-component log odds.
+# Negate its stored weight column for panels c/e; estimates and fitted profiles are unchanged.
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
 .repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
 source(file.path(.repo, "figures", "theme.R"))
@@ -83,16 +85,18 @@ p0_b <- ggplot(tbl_dt, aes(q, snp, fill = val)) +
                     axis.title.x.top = element_text(size = 6.2, margin = margin(b = 3)))
 
 # c: Stage 2 design matrix W (45 x p)
-w_cols <- c("Female\nloc.", "Male\nloc.", "Mixing\n(gamma)")
+w_cols <- c("Female\nloc.", "Male\nloc.", "Upper\nmembership")
 w_rows <- c("0.05", "0.25", "0.50", "0.75", "0.95")
-w_mat <- matrix(c(1.00, 0.00, -0.05, 1.00, 0.00, -0.15, 0.50, 0.50, -0.95, 0.00, 1.00, -0.15, 0.00, 1.00, -0.05),
+w_mat <- matrix(c(1.00, 0.00, 0.05, 1.00, 0.00, 0.15, 0.50, 0.50, 0.95, 0.00, 1.00, 0.15, 0.00, 1.00, 0.05),
                 nrow = 5, byrow = TRUE)
 w_dt <- CJ(r = 1:5, c = 1:3)
 w_dt[, `:=`(q = factor(w_rows[r], levels = rev(w_rows)),
             par = factor(w_cols[c], levels = w_cols),
             val = mapply(function(i, j) w_mat[i, j], r, c))]
 w_dt[, lbl := sprintf("%.2f", val)]
-p0_c <- ggplot(w_dt, aes(par, q, fill = val)) +
+# Retain the original illustrative colour scheme while orienting the displayed numbers.
+w_dt[, fill_value := ifelse(c == 3, -val, val)]
+p0_c <- ggplot(w_dt, aes(par, q, fill = fill_value)) +
   geom_tile(colour = "white", linewidth = 0.6) +
   geom_text(aes(label = lbl, colour = abs(val) > 0.65), size = 1.85) +
   scale_colour_manual(values = c(`FALSE` = "grey15", `TRUE` = "white"), guide = "none") +
@@ -140,7 +144,13 @@ pD <- ggplot() +
   theme_paper() + legend_inside(0.02, 0.98, c(0, 1)) + theme(legend.key.width = unit(0.9, "lines"))
 
 cfg <- read_config()
+# Preserve the weight designs illustrated in the authoritative manuscript artwork.
+# Figure 2 uses the reported hybrid estimates in all four arms (Table S3).
+cfg$estimation$mixture_weights <- list(default = "model", overrides = list(testosterone = "hybrid"))
 wall <- as.data.table(read_result("02_mixtures/stage2_mixtures", "weight_matrices"))[fit %in% names(arm_lab)]
+# Convert stored lower-component log-odds weights to upper-component log-odds weights.
+wall[param == "gamma", c("W_chr01", "W_min_chr", "W_max_chr") :=
+       .(-W_chr01, -W_max_chr, -W_min_chr)]
 w <- pick_design(wall, "fit", cfg = cfg)
 D0 <- mixture_design(cfg, "testosterone"); Dalt <- setdiff(unlist(cfg$estimation$mixture_weight_designs), D0)[1]
 arm_lab_d <- arm_lab
@@ -170,30 +180,33 @@ pE1 <- ggplot(sl, aes(x, y, colour = param)) +
   scale_colour_manual(values = c(beta_left = paper_palette[["female"]], beta_right = paper_palette[["male"]]), guide = "none") +
   labs(x = NULL, y = "Stage 2 weight", tag = "e") +
   theme_paper() + row_theme + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-sg[, param_f := "Mixing\n(gamma)"]
+sg[, param_f := "Upper\nmembership"]
 pE2 <- ggplot(sg, aes(x, y)) +
   geom_hline(yintercept = 0, linewidth = 0.25, linetype = 2, colour = "grey60") +
   geom_line(data = sg[line == "model"], colour = paper_palette[["mixture"]], linewidth = 0.7, lineend = "round") +
   geom_line(data = sg[line == "hybrid"], colour = "grey10", linewidth = 0.6, linetype = "22") +
   facet_grid(param_f ~ arm_f) + xsc +
   labs(x = "Quantile level tau", y = NULL) +
-  theme_paper() + row_theme + theme(strip.text.x = element_blank())
+  theme_paper() + row_theme + theme(strip.text.x = element_blank(),
+                                    strip.text.y.right = element_text(size = 5.5))
 
 pE <- pE1 / pE2 + plot_layout(heights = c(2, 1.15))
 p <- (pTop / pD / pE) + plot_layout(heights = c(0.92, 0.95, 1.75))
 
 src <- rbind(
+  w_dt[, .(panel = "C", arm = "illustration", series = c("female_location", "male_location", "upper_membership")[c],
+            x_lower = as.numeric(as.character(q)), x_upper = as.numeric(as.character(q)), value = val, n = NA_real_)],
   hs[, .(panel = "D", arm, series = group, x_lower = bin_lower, x_upper = bin_upper, value = dens_plot, n = n_group)],
   ha[, .(panel = "D", arm, series = "all", x_lower = bin_lower, x_upper = bin_upper, value = dens_plot, n = n_group)],
-  w[, .(panel = "E", arm = fit, series = paste(param, weight_design), x_lower = tau, x_upper = tau, value = W_chr01, n = NA_real_)],
-  wa[, .(panel = "E", arm = fit, series = paste(param, weight_design), x_lower = tau, x_upper = tau, value = W_chr01, n = NA_real_)])
+  w[, .(panel = "E", arm = fit, series = paste(ifelse(param == "gamma", "gamma_upper", param), weight_design), x_lower = tau, x_upper = tau, value = W_chr01, n = NA_real_)],
+  wa[, .(panel = "E", arm = fit, series = paste(ifelse(param == "gamma", "gamma_upper", param), weight_design), x_lower = tau, x_upper = tau, value = W_chr01, n = NA_real_)])
 cap <- paste(
   "Figure 1. Overview of the Genomic Method of Quantiles (G-MoQ) and application to a two-component testosterone mixture.",
   "**a**, Stage 1 estimates additive per-allele shifts across genotypes AA (0), AG (1) and GG (2) at each quantile tau.",
   "**b**, Stage 1 produces one summary-statistics table of SNP-by-quantile effects beta_hat(tau) across 45 quantiles.",
-  "**c**, Stage 2 regresses each SNP's quantile profile on a model design matrix W (here female location, male location and mixing parameter gamma) to estimate mechanistic parameters theta.",
+  "**c**, Stage 2 regresses each SNP's quantile profile on a model design matrix W (here female location, male location and upper-component log-odds parameter gamma) to estimate mechanistic parameters theta.",
   "**d**, UK Biobank testosterone distributions (n = 399,710; 199,572 female, 200,138 male) in the unshrunk trait and three arms with male-female separation shrunk by 0.2, 0.5 and 0.7.",
-  "**e**, Exact Stage 2 weights W[tau, p] for the fitted two-component skew-normal mixture across the four arms (solid, model-density weights; dashed in the unshrunk arm, hybrid membership weight; Methods).")
+  "**e**, Stage 2 weights W[tau, p] for the fitted two-component skew-normal mixture across the four arms (solid, model-density weights; dashed in the unshrunk arm, hybrid membership weight; Methods). Membership is oriented to the upper (male) component.")
 
 save_figure(p, "fig1_concept_testosterone", src, cap, width = 183, height = 205,
             results_used = c("03_testosterone/recovery", "02_mixtures/stage2_mixtures"))
