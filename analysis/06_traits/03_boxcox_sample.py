@@ -16,7 +16,7 @@ Paper: Supplementary Table S5 (normalising and maximum-likelihood Box-Cox powers
 Input: phenotype, covariate, keep and LOCO files of the trait's Stage 1 run; the UK Biobank
   BGEN sample file
 Output: one JSON per trait in the private work directory (read by 03_normalising_powers.R)
-Runs: on a cluster with UK Biobank data, with the pinned Stage 1 package (gmoq)
+Runs: on a cluster with UK Biobank data, with the pinned Stage 1 package (fungwas_stage1)
 """
 import argparse
 import json
@@ -24,7 +24,12 @@ import sys
 
 import numpy as np
 
-from gmoq import cli
+import importlib
+import os
+
+# Historical paper pin; GMOQ_STAGE1_MODULE=gmoq selects a modern installation.
+stage1_module = os.environ.get("GMOQ_STAGE1_MODULE", "fungwas_stage1")
+cli = importlib.import_module(stage1_module + ".cli")
 
 
 def bc(y, lam):

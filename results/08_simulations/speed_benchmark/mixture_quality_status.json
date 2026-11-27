@@ -1,0 +1,29 @@
+{
+  "status": "incomplete",
+  "expected_cells": 9,
+  "available_cells": 9,
+  "variants_per_cell": 100,
+  "missing": [],
+  "invalid": [
+    {
+      "cell": "/user/work/fh6520/gmoq-paper-v1/private/speed-rerun-166635d4/mixture-full/n400000_rep1",
+      "completion": {
+        "status": "quality_failure",
+        "n": 400000,
+        "M": 100,
+        "rep": 1,
+        "quality": "failed",
+        "stage2_reuse": true,
+        "methods": [
+          "mixture_ml",
+          "mixture_ml_warm",
+          "gmoq_pooled",
+          "gmoq_jackknife"
+        ]
+      }
+    }
+  ],
+  "timing_rows": 36,
+  "estimate_rows": 10800,
+  "quality_rows": 900
+}

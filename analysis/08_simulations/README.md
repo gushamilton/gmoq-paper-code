@@ -1,7 +1,9 @@
 # Simulations (Supplementary Figs. S1–S6; Supplementary Tables S1, S2)
 
-The simulation studies were run once, on a cluster, with the G-MoQ packages at the
-Stage 1 release named in `config.yaml` (`package.stage1`). The code is in `code/`
+The recovery and coverage simulation studies were run on a cluster with the historical
+packages recorded in the simulation provenance. Later computational benchmarks use
+G-MoQ 0.8.1; their exact workloads and timing boundaries are in [speed_benchmark/README.md](speed_benchmark/README.md).
+The earlier code is in `code/`
 (studies 1–6) and `lowsep_se_check/` (study 7). Their per-cell summaries are kept in
 `inputs/` and imported into `results/08_simulations/summary/` by
 
@@ -9,7 +11,8 @@ Stage 1 release named in `config.yaml` (`package.stage1`). The code is in `code/
 Rscript analysis/08_simulations/import_simulation_summaries.R
 ```
 
-which copies them unchanged, adds the mixture timing rows and recomputes the summary
+which preserves the recovery and coverage summaries, replaces the S2/S5 cost columns
+from `results/08_simulations/speed_benchmark/`, adds the later mixture timing medians and recomputes the summary
 sentence of study 7. The supplementary figures and tables are then drawn from `results/` by
 `figures/figS01_*.R` … `figS06_*.R`, `tables/tableS1_*.R` and `tables/tableS2_*.R`.
 Study 8 (the weight-design simulation) is in `analysis/02_mixtures/`.
@@ -21,10 +24,10 @@ Scripts are under `code/validation/` unless a path is given.
 | Study | Question | Script(s) | Summary file in `inputs/` | Paper |
 |---|---|---|---|---|
 | 1 | Does Stage 1 reproduce ordinary RIF–OLS, coefficient by coefficient? | `figures/run_stage1.py`, with `figures/stage1_methods.py`, `figures/export_stage1.py`, `benchmark.py`; job `figures/stage1.sbatch` | `simulation_summaries/TableS2_numerical_summary.csv` (S1 rows) | Supplementary Fig. S1; Table S2 |
-| 2 | How fast is Stage 1, and how much memory does it use? | as study 1 (same run) | `simulation_summaries/S2_mean_timings.csv`; Table S2 (S2 rows) | Supplementary Fig. S2; Table S2 |
+| 2 | How fast is Stage 1, and how much memory does it use? | `speed_benchmark/scripts/rif-speed/` | Later `results/08_simulations/speed_benchmark/stage1_panel_times.csv`; imported Table S2 (S2 rows) | Supplementary Fig. S2; Table S2 |
 | 3 | Does Stage 2 recover simple simulated effects and their projection targets? | `figures/simulate_stage2.py`; job `figures/stage2.sbatch` | Table S2 (S3 rows) | Supplementary Fig. S3; Table S2 |
-| 4 | Mixture recovery against direct mixture maximum likelihood | `figures/mixture_comparison.sh`, with `comparators.py` | Table S2 (S4 rows) | Supplementary Fig. S4a,b,d; Table S2 |
-| 5 | Cost of G-MoQ against mixture maximum likelihood on matched panels | as study 4 (same run, panel arm) | `simulation_summaries/S5_mean_timings.csv`; Table S2 (S5 rows) | Supplementary Fig. S5a–c; Table S2 |
+| 4 | Mixture recovery against direct mixture maximum likelihood | `figures/mixture_comparison.sh`, with `comparators.py` | Table S2 (S4 rows) | Supplementary Fig. S4a,b; Table S2 |
+| 5 | Cost of G-MoQ against mixture maximum likelihood on matched null panels | `speed_benchmark/scripts/paired-speed/` | Later `results/08_simulations/speed_benchmark/mixture_panel_times.csv` and `mixture_panel_repeats.csv`; imported Table S2 (S5 rows) | Supplementary Figs. S4d, S5a–c; Table S2 |
 | 6 | Pooled against jackknife standard errors, common and rare variants | `figures/rare_variant_se.sh` | Table S2 (S6 rows) | Supplementary Fig. S6; Table S2 |
 | 1–6 | Summary tables from the run outputs | `figures/plot_simulation_supplement.R` | all four files in `simulation_summaries/` | Supplementary Tables S1, S2 |
 | 7 | Standard errors at the empirical mixture separations | `lowsep_se_check/run_lowsep_se_check.sh`, with `sim_lowsep_se.py`, `empirical_se_ratio.R`, `assemble_summary.py` | `lowsep_se_check/*.csv` | Supplementary Fig. S4c; Tables S1, S2 |
@@ -32,13 +35,15 @@ Scripts are under `code/validation/` unless a path is given.
 `simulation_summaries/TableS1_design_provenance.csv` gives, per study, the sample sizes,
 numbers of variants and replicates, effect ranges and estimation target. The four files in
 `simulation_summaries/` are byte-identical to those written by
-`plot_simulation_supplement.R` on the cluster.
+`plot_simulation_supplement.R` on the cluster. Their cost measurements are historical;
+the import script uses the later benchmark for all reported S2/S5 cost rows.
 
 ## The shared harness (`code/validation/`)
 
 Every driver uses the same few files. None of them reimplements the estimator: Stage 1 runs
 through the package's own `compute_rif`, `residualize`, pooled-covariance and
-block-jackknife routines, and Stage 2 through `gmoq::param_gwas`.
+block-jackknife routines, and Stage 2 through `fungwasStage2::param_gwas`. The
+later speed-benchmark subtree uses the released `gmoq` package separately.
 
 | File | Role |
 |---|---|

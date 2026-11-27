@@ -4,8 +4,8 @@
 # What: reads one variant's Stage 1 summary (45 quantile effects, their pooled or jackknife
 #   covariance, the sample quantiles and the null-model fit) written by run_examples.py,
 #   builds the model's weight matrix W (normal: location and dispersion; two-component
-#   mixture: membership and the two component locations) with gmoq, and fits Stage 2
-#   with gmoq::param_gwas (OLS, the chosen covariance). It also returns the exact
+#   mixture: membership and the two component locations) with fungwasStage2, and fits Stage 2
+#   with fungwasStage2::param_gwas (OLS, the chosen covariance). It also returns the exact
 #   population projection target passed in from truth.py. It is a thin adapter around the
 #   package and does not reimplement the estimator.
 # Paper: Supplementary Figs. S3-S6; Supplementary Table S2 (studies 3-7)
@@ -128,11 +128,11 @@ check_environment_manifest <- function(path, r_lib, package_root) {
   installed <- manifest_path(manifest$r$gmoq$installed_path,
                              "r.gmoq.installed_path")
   if (!startsWith(installed, paste0(manifest_rlib, .Platform$file.sep))) {
-    stop("Manifest gmoq path is outside its private Rlib", call. = FALSE)
+    stop("Manifest fungwasStage2 path is outside its private Rlib", call. = FALSE)
   }
   if (!identical(manifest_string(manifest$r$gmoq$version,
                                  "r.gmoq.version"), PINNED_PACKAGE_VERSION)) {
-    stop("Environment manifest records the wrong gmoq version", call. = FALSE)
+    stop("Environment manifest records the wrong fungwasStage2 version", call. = FALSE)
   }
   description_sha <- tolower(manifest_string(manifest$stage2$description_sha256,
                                               "stage2.description_sha256"))
@@ -169,14 +169,14 @@ check_weight_design <- function(W, label) {
 
 make_weights <- function(family, taus, q_tau, baseline) {
   if (identical(family, "normal")) {
-    gmoq::make_weights_vqtl(
+    fungwasStage2::make_weights_vqtl(
       taus = taus,
       q_tau = q_tau,
       mu = as.numeric(baseline$mu),
       sd = as.numeric(baseline$sd)
     )
   } else if (identical(family, "mixture")) {
-    gmoq::make_weights_normal_mixture(
+    fungwasStage2::make_weights_normal_mixture(
       taus = taus,
       q_tau = q_tau,
       p1 = as.numeric(baseline$p1),
@@ -265,7 +265,7 @@ run_one <- function(input, cov_source, installed_stage2_path) {
   )
   cov_data <- list(cov_vec = covariance_upper, offsets = 0)
   is_pooled <- identical(cov_source, "pooled")
-  result <- gmoq::param_gwas(
+  result <- fungwasStage2::param_gwas(
     stage1 = stage1,
     transform = "custom_W",
     transform_args = list(W = W_hat),
@@ -373,8 +373,8 @@ run_one <- function(input, cov_source, installed_stage2_path) {
     estimate = estimate,
     stage1_package = input$package,
     package = list(
-      name = "gmoq",
-      version = as.character(utils::packageVersion("gmoq")),
+      name = "fungwasStage2",
+      version = as.character(utils::packageVersion("fungwasStage2")),
       location = installed_stage2_path
     )
   )
@@ -398,20 +398,20 @@ if (!requireNamespace("jsonlite", quietly = TRUE)) {
 environment <- check_environment_manifest(environment_manifest, r_lib, package_root)
 source_sha <- check_source_pin(package_root, PINNED_PACKAGE_COMMIT)
 .libPaths(unique(c(environment$rlib, .libPaths())))
-stage2_path <- find.package("gmoq", lib.loc = environment$rlib, quiet = TRUE)
-if (!length(stage2_path)) stop("gmoq is not installed in the manifest private Rlib", call. = FALSE)
+stage2_path <- find.package("fungwasStage2", lib.loc = environment$rlib, quiet = TRUE)
+if (!length(stage2_path)) stop("fungwasStage2 is not installed in the manifest private Rlib", call. = FALSE)
 stage2_path <- normalizePath(stage2_path[[1L]], mustWork = TRUE)
 if (!startsWith(stage2_path, paste0(environment$rlib, .Platform$file.sep)) ||
     !identical(stage2_path, environment$installed_path)) {
-  stop("installed gmoq resolved outside the manifest installation path", call. = FALSE)
+  stop("installed fungwasStage2 resolved outside the manifest installation path", call. = FALSE)
 }
-library(gmoq, lib.loc = environment$rlib)
-if (!identical(as.character(utils::packageVersion("gmoq")), PINNED_PACKAGE_VERSION)) {
-  stop("installed gmoq is not version ", PINNED_PACKAGE_VERSION, call. = FALSE)
+library(fungwasStage2, lib.loc = environment$rlib)
+if (!identical(as.character(utils::packageVersion("fungwasStage2")), PINNED_PACKAGE_VERSION)) {
+  stop("installed fungwasStage2 is not version ", PINNED_PACKAGE_VERSION, call. = FALSE)
 }
 description_path <- normalizePath(file.path(stage2_path, "DESCRIPTION"), mustWork = TRUE)
 if (!identical(sha256_file(description_path), environment$description_sha)) {
-  stop("installed gmoq DESCRIPTION SHA does not match environment manifest", call. = FALSE)
+  stop("installed fungwasStage2 DESCRIPTION SHA does not match environment manifest", call. = FALSE)
 }
 input <- jsonlite::fromJSON(input_path, simplifyVector = TRUE)
 n_samples <- suppressWarnings(as.integer(input$n))

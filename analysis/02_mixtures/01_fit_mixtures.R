@@ -20,7 +20,7 @@
 repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE))
 source(file.path(repo, "R", "load.R"))
 cfg <- read_config()
-suppressPackageStartupMessages(library(gmoq))   # the paper used a development version of this package (Stage 2 commit 9fee67d)
+load_stage2(cfg)
 taus_grid <- round(tau_grid(cfg), 3)
 
 weight_rows <- list(); density_rows <- list()

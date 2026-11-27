@@ -71,7 +71,7 @@ for (design in DESIGNS) {
   for (a in ARMS) for (i in seq_len(nrow(exemplar_ids))) {
     e <- exemplar_ids[i]
     wobj <- readRDS(weight_file(cfg, design, a, e$chr)); W <- wobj$W
-    s1 <- read_stage1(wobj$stage1_dir)[snp_id == e$snp_id]
+    s1 <- read_mixture_stage1(wobj$stage1_dir)[snp_id == e$snp_id]
     beta_cols <- grep("^beta_tau_", names(s1), value = TRUE)
     taus <- as.numeric(sub("^beta_tau_", "", beta_cols))
     Sigma0 <- gw_read_sigma0(file.path(wobj$stage1_dir, "scan.sigma0.tsv.gz"), taus)

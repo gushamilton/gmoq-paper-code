@@ -18,8 +18,7 @@ cfg <- read_config()
 check_environment <- "--check" %in% commandArgs(trailingOnly = TRUE)
 
 ## 1. The G-MoQ packages
-# Stage 1 produced every quantile GWAS. Stage 2 is the current release; the earlier release
-# produced some analyses, and its default output is identical to the current one.
+# Historical analysis environments and the build recorded by the timing benchmark.
 pk <- cfg$package
 earlier <- pk$stage2_history[[1]]
 package_pins <- data.table(
@@ -29,15 +28,22 @@ package_pins <- data.table(
   version = c(NA, pk$stage2$r_package_version, earlier$r_package_version),
   lib = c(pk$stage1$root, pk$stage2$lib, earlier$lib),
   pin_json_commit = NA_character_, pin_json_matches = NA, install_job = NA_character_,
-  note = c("Stage 1 quantile regressions (RIF-OLS) for every GWAS in the paper",
-           "gmoq: Stage 2 projections, mixture models and lack-of-fit tests",
-           "gmoq, earlier release: model-profile angles, BMI polygenic-score interactions and the weight-design simulation; default output identical to the current release"))
+  note = c("Primary Stage 1 quantile GWAS (RIF-OLS)",
+           "fungwasStage2: Stage 2 projections, mixture models and lack-of-fit tests",
+           "fungwasStage2, earlier release: model-profile angles, BMI polygenic-score interactions and the weight-design simulation"))
+
+benchmark <- jsonlite::read_json(repo_path("results", "08_simulations", "speed_benchmark", "software_pin.json"))
+package_pins <- rbindlist(list(package_pins, data.table(
+  role = "timing benchmark", commit = benchmark$commit, short = substr(benchmark$commit, 1, 7),
+  version = benchmark$r_package_version,
+  note = "Single-core timings in Fig. 2c and Supplementary Figs. S2, S4d and S5"
+)), use.names = TRUE, fill = TRUE)
 
 ## 2. Versions in the analysis environment
 software <- data.table(
   component = c("R", "data.table", "yaml", "jsonlite", "CompQuadForm", "testthat",
                 "stage1 env: python", "stage1 env: numpy", "stage1 env: scipy",
-                "stage1 env: pandas", "stage1 env: gmoq",
+                "stage1 env: pandas", "stage1 env: fungwas_stage1",
                 "plink2 (lead clumping)", "Stage 1 density", "Stage 1 blocks / taus",
                 "mixsmsn", "sn", "REGENIE", "LDSC"),
   version = c("R version 4.5.1 (2025-06-13)", "1.18.2.1", "2.3.12", "2.0.0", "1.4.4", "3.2.3",
@@ -56,7 +62,7 @@ if (check_environment) {
                    function(p) tryCatch(as.character(packageVersion(p)), error = function(e) NA)))
   py <- system2(pk$stage1$python, c("-c", shQuote(paste(
     "import sys, importlib; print('python|' + sys.version.split()[0])",
-    "for m in ['numpy', 'scipy', 'pandas', 'gmoq']:",
+    "for m in ['numpy', 'scipy', 'pandas', 'fungwas_stage1']:",
     "    print('stage1 env: ' + m + '|' + str(getattr(importlib.import_module(m), '__version__', 'importable')))",
     sep = "\n"))), stdout = TRUE)
   py <- do.call(rbind, strsplit(py, "|", fixed = TRUE))

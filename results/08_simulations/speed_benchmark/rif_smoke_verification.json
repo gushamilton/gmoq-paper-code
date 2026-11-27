@@ -1,0 +1,19 @@
+{
+  "atol": 1e-10,
+  "common_dense_rif_setup_in_whole_process": true,
+  "fit_includes_residualisation_plan_coefficients_se": true,
+  "input_checksums_equal": true,
+  "max_beta_difference_from_ols": 6.966649479522857e-15,
+  "methods": [
+    "gmoq",
+    "ordinary_rif_ols",
+    "gmoq_jackknife"
+  ],
+  "n_results": 18,
+  "pooled_ols_se_convention_identity": true,
+  "repeats": 3,
+  "rtol": 1e-10,
+  "scope": "speed benchmark integrity only",
+  "status": "verified",
+  "within_method_repeats_equal": true
+}

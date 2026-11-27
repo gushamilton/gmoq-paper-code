@@ -218,6 +218,7 @@ def load_environment_manifest(path: Path, package_root: Path) -> dict[str, Any]:
     if not rscript.is_file() or not os.access(rscript, os.X_OK):
         raise RuntimeError(f"manifest Rscript is not executable: {rscript}")
     rlib = Path(_manifest_string(manifest, "stage2", "isolated_library")).resolve()
+    # r.gmoq is the original manifest schema key, independent of the package rename.
     r_gmoq = Path(_manifest_string(manifest, "r", "gmoq", "isolated_library")).resolve()
     if rlib != r_gmoq:
         raise RuntimeError("environment manifest has inconsistent private R library paths")
@@ -263,12 +264,12 @@ def load_pinned_core(package_root: Path, environment: Mapping[str, Any] | None =
     sys.path.insert(0, str(stage1_root))
     # Do not silently reuse an installed package imported before this check.
     for name in list(sys.modules):
-        if name == "gmoq" or name.startswith("gmoq."):
+        if name == "fungwas_stage1" or name.startswith("fungwas_stage1."):
             del sys.modules[name]
     try:
-        package = importlib.import_module("gmoq")
-        core = importlib.import_module("gmoq.core")
-        from gmoq.pooled_cov import compute_sigma0
+        package = importlib.import_module("fungwas_stage1")
+        core = importlib.import_module("fungwas_stage1.core")
+        from fungwas_stage1.pooled_cov import compute_sigma0
     except Exception as exc:
         raise RuntimeError("failed to import Stage 1 from the pinned checkout") from exc
 
@@ -283,7 +284,7 @@ def load_pinned_core(package_root: Path, environment: Mapping[str, Any] | None =
         ) from exc
     if getattr(package, "__version__", PINNED_STAGE1_VERSION) != PINNED_STAGE1_VERSION:
         raise RuntimeError(
-            f"unexpected gmoq version: {getattr(package, '__version__', None)!r}"
+            f"unexpected fungwas_stage1 version: {getattr(package, '__version__', None)!r}"
         )
     if not bool(getattr(core, "HAVE_CPP", False)):
         raise RuntimeError(

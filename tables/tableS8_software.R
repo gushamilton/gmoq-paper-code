@@ -20,7 +20,8 @@ version_of <- function(component_name) {
 }
 stage2_current <- pins[role == "stage2 (current pin)"]
 stage2_earlier <- pins[startsWith(role, "stage2 history")]
-stopifnot(nrow(stage2_current) == 1, nrow(stage2_earlier) == 1)
+timing <- pins[role == "timing benchmark"]
+stopifnot(nrow(stage2_current) == 1, nrow(stage2_earlier) == 1, nrow(timing) == 1)
 r_version <- sub("^R version ([0-9.]+).*", "\\1", version_of("R"))
 plink_version <- sub("^plink2 ", "", version_of("plink2 (lead clumping)"))
 
@@ -34,27 +35,28 @@ out <- data.table(
                 "Python", "NumPy", "SciPy", "pandas",
                 "R", "data.table", "CompQuadForm", "mixsmsn", "sn",
                 "PLINK", "REGENIE", "LDSC"),
-  version = c(version_of("stage1 env: gmoq"), stage2_current$version, stage2_earlier$version,
+  version = c(version_of("stage1 env: fungwas_stage1"), stage2_current$version, stage2_earlier$version,
               version_of("stage1 env: python"), version_of("stage1 env: numpy"), version_of("stage1 env: scipy"),
               version_of("stage1 env: pandas"),
               r_version, version_of("data.table"), version_of("CompQuadForm"), version_of("mixsmsn"), version_of("sn"),
               plink_version, regenie_version, ldsc_version),
-  use = c("Stage 1 quantile regressions (all traits)",
-          "Stage 2 projections, mixture models, lack of fit",
-          "Model-profile angles (Fig. 4b), BMI polygenic-score interactions (Fig. 6, Supplementary Fig. S14) and the weight-design simulation (Supplementary Fig. S7); default output identical to the current release",
+  use = c("Primary Stage 1 quantile GWAS (fungwas_stage1, commit 9c47e7b)",
+          "Stage 2 projections, mixture models and lack of fit (fungwasStage2, commit 9fee67d)",
+          "Model-profile angles (Fig. 4b), BMI polygenic-score interactions (Supplementary Figs. S14 and S15) and the weight-design simulation (Supplementary Fig. S7), commit 759b5b3",
           "Stage 1 environment", "Stage 1 environment", "Stage 1 environment", "Stage 1 environment",
-          "Stage 2 and all downstream analyses", "Data handling", "Generalised chi-square (Davies) P values",
+          "Stage 2 and downstream R analyses", "Data handling", "Generalised chi-square (Davies) P values",
           "Skew-normal mixture fits (mixture densities, simulations)", "Skew-normal densities (simulations)",
           "Lead-variant clumping, LD, genotype extraction and the BMI polygenic score (clumping and thresholding)",
           "Reference GWAS", "Heritability and genetic correlation"))
+out <- rbind(out, data.table(component = "G-MoQ Stages 1 and 2 (timing benchmarks)",
+                            version = timing$version,
+                            use = paste0(timing$note, " (commit ", timing$short, ")")))
 stopifnot(!anyNA(out$version), all(nzchar(out$version)))
 
 ## 4. Save ----------------------------------------------------------------------------------
 cap <- paste(
   "Table S8. Software and versions. One row per software package used for the results reported in the paper, with",
-  "its release and the analyses it served (Methods). The earlier G-MoQ Stage 2 release produced the analyses listed",
-  "against it; its default output is identical to the current release. Versions are those recorded in the analysis",
-  "environment. Test, file-format and",
+  "its release and the analyses it served (Methods). The computational benchmarks used the build listed in the last row. Versions are those recorded in the analysis environment. Test, file-format and",
   "plotting software are not listed. BMI, body mass index; GWAS, genome-wide association study; LD, linkage",
   "disequilibrium; LDSC, LD score regression.")
 save_table(as.data.frame(out), "tableS8_software", cap,

@@ -20,8 +20,13 @@ import sys
 
 import numpy as np
 
-from gmoq import cli
-from gmoq.core import compute_rif
+import importlib
+import os
+
+# Historical paper pin; GMOQ_STAGE1_MODULE=gmoq selects a modern installation.
+stage1_module = os.environ.get("GMOQ_STAGE1_MODULE", "fungwas_stage1")
+cli = importlib.import_module(stage1_module + ".cli")
+compute_rif = importlib.import_module(stage1_module + ".core").compute_rif
 
 
 def main():
@@ -81,7 +86,7 @@ def main():
         "n_distinct": int(np.unique(y).size),
         "taus": taus.tolist(), "q_tau": q.tolist(), "fhat": fhat.tolist(),
         "q_tau_type7": np.quantile(y, taus, method="linear").tolist(),
-        "quantile_method": "numpy median_unbiased (R type 8), as gmoq.core.compute_rif",
+        "quantile_method": f"numpy median_unbiased (R type 8), as {stage1_module}.core.compute_rif",
         "density_method": a.density_method,
     }
     with open(a.out, "w") as fh:

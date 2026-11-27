@@ -24,6 +24,8 @@ package:
     short: 9c47e7b
     root: /user/work/fh6520/G-MoQ-validation-9c47e7b
     python: /user/home/fh6520/miniforge3/envs/fungwas-stage1/bin/python
+    python_module: fungwas_stage1
+    cli: fungwas-stage1
   # Stage 2 version used for every result. It provides the mixture weight-density option
   # density = "model" / "hybrid" / "stage1" for the weight builders.
   stage2:
@@ -45,6 +47,7 @@ package:
     - commit: 759b5b3a0698a5fb0ab29a5fca554079aeb87f69
       short: 759b5b3
       r_package_version: 0.4.0
+      r_package: fungwasStage2
       lib: /user/work/fh6520/gmoq-paper-v1/Rlib/stage2-759b5b3
       used_by: "model-profile angles (Fig. 4b), BMI polygenic-score interactions and the weight-design simulation"
 

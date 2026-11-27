@@ -23,6 +23,36 @@ read_config <- function(path = Sys.getenv("GMOQ_CONFIG", repo_path("config.yaml"
   yaml::read_yaml(path, handlers = list("bool#yes" = keep_yn(TRUE), "bool#no" = keep_yn(FALSE)))
 }
 
+# The paper's pinned releases predate the gmoq rename. Use the configured package
+# and library explicitly; an installed modern package must not silently replace it.
+load_stage2 <- function(cfg = read_config()) {
+  pkg <- Sys.getenv("GMOQ_STAGE2_PACKAGE", cfg$package$stage2$r_package)
+  lib <- Sys.getenv("GMOQ_STAGE2_LIB", cfg$package$stage2$lib)
+  if (!nzchar(pkg)) stop("set package.stage2.r_package in config.yaml")
+  if (nzchar(lib) && !dir.exists(lib))
+    stop("Stage 2 library does not exist: ", lib, "; update config.yaml or GMOQ_STAGE2_LIB")
+  suppressPackageStartupMessages(library(pkg, lib.loc = if (nzchar(lib)) lib else NULL,
+                                         character.only = TRUE))
+  if (nzchar(lib)) {
+    requested <- normalizePath(find.package(pkg, lib.loc = lib), mustWork = TRUE)
+    loaded <- normalizePath(getNamespaceInfo(asNamespace(pkg), "path"), mustWork = TRUE)
+    if (!identical(requested, loaded))
+      stop("Stage 2 is already loaded from another library: ", loaded,
+           "; start a fresh R session to use ", requested)
+  }
+  expected <- cfg$package$stage2$r_package_version
+  if (!identical(pkg, cfg$package$stage2$r_package)) expected <- NULL
+  if (!is.null(expected) && as.character(utils::packageVersion(pkg)) != as.character(expected))
+    stop("Stage 2 version mismatch: expected ", expected, ", loaded ", utils::packageVersion(pkg))
+  options(gmoq.stage2_package = pkg)
+  invisible(pkg)
+}
+stage2_fn <- function(name) {
+  pkg <- getOption("gmoq.stage2_package")
+  if (is.null(pkg)) { load_stage2(); pkg <- getOption("gmoq.stage2_package") }
+  getExportedValue(pkg, name)
+}
+
 # The 45 quantile levels used throughout: 0.02, 0.0418, ..., 0.98.
 tau_grid <- function(cfg = NULL) {
   g <- if (is.null(cfg)) list(tau_from = 0.02, tau_to = 0.98, n_tau = 45) else cfg$grid

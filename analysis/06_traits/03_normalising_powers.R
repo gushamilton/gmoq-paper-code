@@ -21,7 +21,7 @@ source(file.path(repo, "R", "load.R"))
 
 cfg <- read_config()
 lambda_grid <- round(seq(-500, 500) / 100, 2)
-python <- cfg$package$stage1$python                     # Python with the pinned gmoq
+python <- cfg$package$stage1$python                     # Python with the pinned fungwas_stage1
 helper <- file.path(repo, "analysis", "06_traits", "03_boxcox_sample.py")
 work <- file.path(cfg$bp$private_root, "06_traits", "boxcox_sample")   # participant-level side stays here
 dir.create(work, recursive = TRUE, showWarnings = FALSE)

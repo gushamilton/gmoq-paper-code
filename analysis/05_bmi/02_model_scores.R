@@ -22,8 +22,8 @@ repo <- Sys.getenv("GMOQ_REPO", unset = NA)
 if (is.na(repo)) repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
 source(file.path(repo, "R", "load.R"))
 source(file.path(repo, "analysis", "05_bmi", "bmi_common.R"))
-suppressPackageStartupMessages(library(gmoq))   # G-MoQ Stage 2
 cfg <- read_config()
+load_stage2(cfg)
 u <- tau_grid(cfg); n_tau <- length(u); z <- qnorm(u)
 N_BMI <- cfg$cohorts$bmi$n
 OUT <- "05_bmi/model_scores"
@@ -57,7 +57,7 @@ weight_gates <- rbindlist(lapply(names(fits), function(trait) {
   d_shift <- function(x, p) -pdf(x, p)
   d_meanlog <- function(x, p) { zz <- (log(x - p$shift) - p$meanlog) / p$sdlog; -dnorm(zz) / p$sdlog }
   d_sdlog <- function(x, p) { zz <- (log(x - p$shift) - p$meanlog) / p$sdlog; -dnorm(zz) * zz / p$sdlog }
-  W_package <- gmoq::make_weights_generic(u, qm, cdf, pdf, par,
+  W_package <- stage2_fn("make_weights_generic")(u, qm, cdf, pdf, par,
                  list(additive = d_shift, meanlog = d_meanlog, sdlog = d_sdlog))
   W_analytic <- bmi_model_weights(fp, q_of(trait), u)$shifted_lognormal_full
   rel <- apply(abs(W_package - W_analytic), 2, max) / apply(abs(W_analytic), 2, max)
@@ -107,7 +107,7 @@ for (sc in names(W_by_scale)) {
     iu <- which(upper.tri(Sk, diag = TRUE)); ord <- order(row(Sk)[iu], col(Sk)[iu])
     stage1 <- list(Q_slope = t(B[i, , drop = FALSE]), SE_tau = t(sqrt(outer(1 / d, diag(Sk)))))
     colnames(stage1$Q_slope) <- colnames(stage1$SE_tau) <- meta$snp_id[i]
-    fit <- gmoq::param_gwas_multi(stage1, Wl, N = N_BMI, se_mode = "tau_cov",
+    fit <- stage2_fn("param_gwas_multi")(stage1, Wl, N = N_BMI, se_mode = "tau_cov",
              cov_data = list(cov_vec = as.numeric(Sk[iu[ord]]), offsets = rep(0, length(i)), cov_scales = 1 / d),
              residual_loss = "full_cov")
     Sigma0_inv <- solve((Sk + t(Sk)) / 2)

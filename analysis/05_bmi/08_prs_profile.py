@@ -23,8 +23,12 @@ import sys
 import numpy as np
 import pandas as pd
 
-from gmoq.cli import build_rif_residuals
-from gmoq.pooled_cov import compute_sigma0
+import importlib
+
+# Historical paper pin; GMOQ_STAGE1_MODULE=gmoq selects a modern installation.
+stage1_module = os.environ.get("GMOQ_STAGE1_MODULE", "fungwas_stage1")
+build_rif_residuals = importlib.import_module(stage1_module + ".cli").build_rif_residuals
+compute_sigma0 = importlib.import_module(stage1_module + ".pooled_cov").compute_sigma0
 
 BASE = sys.argv[1]
 OUT = os.path.join(BASE, "rif")

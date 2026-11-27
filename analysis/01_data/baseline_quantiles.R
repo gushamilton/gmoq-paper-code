@@ -20,7 +20,7 @@
 source(file.path(.repo, "R", "load.R"))
 cfg <- read_config()
 
-python <- cfg$package$stage1$python                  # Python with the gmoq package
+python <- cfg$package$stage1$python                  # Python with the pinned fungwas_stage1 package
 bgen <- gsub("{chr}", "22", cfg$ukb$bgen, fixed = TRUE) # any chromosome: only its sample list is read
 sample_file <- cfg$ukb$sample
 helper <- repo_path("analysis", "01_data", "baseline_sample.py")

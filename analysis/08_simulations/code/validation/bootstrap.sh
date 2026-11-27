@@ -2,14 +2,14 @@
 # Build the software environment used by every simulation study
 #
 # What: checks that a checkout of the G-MoQ package is at the pinned Stage 1 commit with no
-#   local changes, compiles the Stage 1 extension in the gmoq-stage1 conda environment,
-#   installs Stage 2 (gmoq) into a new private R library, and writes
+#   local changes, compiles the Stage 1 extension in the fungwas-stage1 conda environment,
+#   installs Stage 2 (fungwasStage2) into a new private R library, and writes
 #   environment.json (interpreter paths, versions and source hashes, read by
 #   run_examples.load_environment_manifest) and activate.sh (exports GMOQ_STAGE1_PYTHON,
 #   GMOQ_RSCRIPT_BIN and GMOQ_VALIDATION_ENV for the drivers). It installs no other
 #   dependencies.
 # Paper: Supplementary Figs. S1-S6; Supplementary Tables S1, S2 (setup for studies 1-7)
-# Input: a G-MoQ package checkout; a conda environment gmoq-stage1 with numpy, scipy and a
+# Input: a G-MoQ package checkout; a conda environment fungwas-stage1 with numpy, scipy and a
 #   C++ compiler; R 4.5 with jsonlite and the Stage 2 dependencies
 # Output: <out>/{environment.json,activate.sh,Rlib/}
 # Runs: once, inside a cluster compute-node job, a few minutes:
@@ -134,13 +134,13 @@ source /user/home/fh6520/miniforge3/etc/profile.d/conda.sh
 if ! type conda >/dev/null 2>&1; then
     die "conda command was not defined by $CONDA_SH"
 fi
-conda activate gmoq-stage1
-[[ "${CONDA_DEFAULT_ENV:-}" == "gmoq-stage1" ]] || die "conda activation did not select gmoq-stage1"
+conda activate fungwas-stage1
+[[ "${CONDA_DEFAULT_ENV:-}" == "fungwas-stage1" ]] || die "conda activation did not select fungwas-stage1"
 PYTHON_BIN=$(type -P python || true)
-[[ -n "$PYTHON_BIN" && -x "$PYTHON_BIN" ]] || die "python was not found after activating gmoq-stage1"
+[[ -n "$PYTHON_BIN" && -x "$PYTHON_BIN" ]] || die "python was not found after activating fungwas-stage1"
 case "$PYTHON_BIN" in
     "${CONDA_PREFIX:-}"/*) ;;
-    *) die "python is not from gmoq-stage1: $PYTHON_BIN" ;;
+    *) die "python is not from fungwas-stage1: $PYTHON_BIN" ;;
 esac
 export PYTHONPATH="$PACKAGE_ROOT/stage1${PYTHONPATH:+:$PYTHONPATH}"
 
@@ -182,8 +182,8 @@ if missing:
     )
 
 try:
-    package = importlib.import_module("gmoq")
-    core = importlib.import_module("gmoq.core")
+    package = importlib.import_module("fungwas_stage1")
+    core = importlib.import_module("fungwas_stage1.core")
 except Exception as exc:
     raise SystemExit(
         "Pinned Stage 1 package import failed (compiled extension/dependencies): "
@@ -200,11 +200,11 @@ extension_path = os.path.realpath(getattr(extension, "__file__", ""))
 if not extension_path or not os.path.isfile(extension_path):
     raise SystemExit(f"Stage 1 extension path is missing or not a file: {extension_path!r}")
 
-records["gmoq"] = {
+records["fungwas_stage1"] = {
     "version": str(getattr(package, "__version__", "unknown")),
     "path": os.path.realpath(getattr(package, "__file__", "")),
 }
-records["gmoq.core"] = {
+records["fungwas_stage1.core"] = {
     "path": os.path.realpath(getattr(core, "__file__", "")),
     "have_cpp": True,
 }
@@ -213,7 +213,7 @@ print(json.dumps({
     "conda_prefix": os.path.realpath(os.environ.get("CONDA_PREFIX", "")),
     "python_version": sys.version,
     "modules": records,
-    "extension": {"path": extension_path, "module": "gmoq._stage1_cpp"},
+    "extension": {"path": extension_path, "module": "fungwas_stage1._stage1_cpp"},
 }, indent=2, sort_keys=True))
 PY
 
@@ -280,18 +280,18 @@ if (length(missing)) {
     stop("Required R packages became unavailable: ", paste(missing, collapse = ", "))
 }
 
-stage2_path <- find.package("gmoq", lib.loc = rlib, quiet = TRUE)
+stage2_path <- find.package("fungwasStage2", lib.loc = rlib, quiet = TRUE)
 if (!length(stage2_path)) {
-    stop("Pinned gmoq was not found in isolated Rlib: ", rlib)
+    stop("Pinned fungwasStage2 was not found in isolated Rlib: ", rlib)
 }
 stage2_path <- normalizePath(stage2_path[[1]], mustWork = TRUE)
 rlib_prefix <- paste0(rlib, .Platform$file.sep)
 if (!startsWith(stage2_path, rlib_prefix)) {
-    stop("gmoq resolved outside isolated Rlib: ", stage2_path)
+    stop("fungwasStage2 resolved outside isolated Rlib: ", stage2_path)
 }
-suppressPackageStartupMessages(library(gmoq, lib.loc = rlib))
-if (as.character(packageVersion("gmoq")) != "0.4.0") {
-    stop("Pinned Stage 2 version is not 0.4.0: ", packageVersion("gmoq"))
+suppressPackageStartupMessages(library(fungwasStage2, lib.loc = rlib))
+if (as.character(packageVersion("fungwasStage2")) != "0.4.0") {
+    stop("Pinned Stage 2 version is not 0.4.0: ", packageVersion("fungwasStage2"))
 }
 
 package_info <- function(name) {
@@ -315,8 +315,9 @@ info <- list(
         jsonlite = package_info("jsonlite"),
         dglm = if (optional_dglm) package_info("dglm") else list(available = FALSE)
     ),
+    # Keep the existing manifest field name for readers of stored environments.
     gmoq = list(
-        version = as.character(packageVersion("gmoq")),
+        version = as.character(packageVersion("fungwasStage2")),
         installed_path = stage2_path,
         isolated_library = rlib
     )
@@ -324,7 +325,7 @@ info <- list(
 jsonlite::write_json(info, out, auto_unbox = TRUE, pretty = TRUE)
 RS
 
-STAGE2_DESCRIPTION="$RLIB/gmoq/DESCRIPTION"
+STAGE2_DESCRIPTION="$RLIB/fungwasStage2/DESCRIPTION"
 [[ -f "$STAGE2_DESCRIPTION" ]] || die "installed Stage 2 DESCRIPTION is missing from isolated Rlib"
 STAGE2_DESCRIPTION_SHA=$(sha256sum -- "$STAGE2_DESCRIPTION" | awk '{print $1}')
 
@@ -345,7 +346,7 @@ if ! type module >/dev/null 2>&1; then
     done
 fi
 source /user/home/fh6520/miniforge3/etc/profile.d/conda.sh
-conda activate gmoq-stage1
+conda activate fungwas-stage1
 module load git/2.45.1-pqk5
 unset R_HOME R_LIBS R_LIBS_USER R_LIBS_SITE || true
 module load languages/R/4.5.1
@@ -381,7 +382,7 @@ with open(r_info_path, encoding="utf-8") as handle:
 manifest = {
     "created_utc": datetime.now(timezone.utc).isoformat(),
     "requested_environment": {
-        "conda": "gmoq-stage1",
+        "conda": "fungwas-stage1",
         "git_module": "git/2.45.1-pqk5",
         "r_module": "languages/R/4.5.1",
     },

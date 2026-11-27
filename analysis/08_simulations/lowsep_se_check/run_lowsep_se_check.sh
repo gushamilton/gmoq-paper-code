@@ -20,9 +20,10 @@ set -euo pipefail
 ## User-set paths --------------------------------------------------------------------
 HERE=$(cd "$(dirname "$0")" && pwd)
 OUT=/path/to/lowsep_se_check_output             # per-variant Stage 2 reruns (not shared)
-PYTHON=/path/to/gmoq-env/bin/python   # Python with the gmoq package
-RSCRIPT=Rscript                                 # R with the gmoq package
-STAGE2_LIB=/path/to/R/library/with/gmoq
+PYTHON=/path/to/fungwas-env/bin/python   # Python with the pinned fungwas_stage1 package
+STAGE1_MODULE=${GMOQ_STAGE1_MODULE:-fungwas_stage1}
+RSCRIPT=Rscript                                 # R with fungwasStage2 at the pinned commit
+STAGE2_LIB=/path/to/R/library/with/fungwasStage2
 STAGE2_CHR_SCRIPT=/path/to/run_stage2_chr.R     # per-chromosome Stage 2 driver (G-MoQ scripts/stage2/)
 VALIDATION_DIR=$HERE/../code/validation        # simulation harness (run_examples.py, truth.py, stage2.R)
 ENV_MANIFEST=/path/to/environment.json          # names the Python, Rscript, R library and Stage 1 build
@@ -60,7 +61,7 @@ stage2 () {  # trait model chr stage1_file weights_file covariance_prefix out_di
 for t in jcv_vp1_log_all mcv_vp1_log_all; do
   for c in 6 22; do
     cc=$(printf %02d $c); src="$SCAN_DIR/$t/chr$cc"; w="$OUT/antibody/$t/chr$cc"; mkdir -p "$w"
-    "$PYTHON" -m gmoq.cli \
+    "$PYTHON" -m "$STAGE1_MODULE.cli" \
       --bgen "$BGEN_DIR/data.chr$cc.bgen" --sample "$SAMPLE" \
       --pheno "$ANTIBODY_DIR/phenotypes_antibody_all.txt" --pheno-col "$t" \
       --covar "$ANTIBODY_DIR/covars_antibody_all.txt" --keep "$ANTIBODY_DIR/keep_files/keep_$t.txt" \

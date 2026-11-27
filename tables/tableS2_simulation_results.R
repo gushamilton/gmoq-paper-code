@@ -69,8 +69,8 @@ save_table(
     "polyomavirus VP1 with the weights of the 44-antigen scan); the coverage column of study 7 gives the range of null",
     "coverage for each covariance over that case's simulated cells (200 replicates each). Timing columns give the time to",
     "fit with standard errors and the whole-process wall time (s) and peak resident memory (MiB), as means of the stated",
-    "repeats; mixture timing rows give the median over three 100-variant panels for G-MoQ with pooled covariance against",
-    "direct mixture maximum likelihood.",
+    "repeats; mixture timing rows give the median over three independent 100-variant null panels for G-MoQ with pooled covariance against",
+    "six-start direct mixture maximum likelihood. Cost rows use the later benchmark independently of the recovery and coverage simulations.",
     "MAF, minor allele frequency; MiB, mebibyte; ML, maximum likelihood; RIF–OLS, recentred influence function ordinary",
     "least squares; RMSE, root mean square error; s.d., standard deviation; SE, standard error."),
   results_used = "08_simulations/summary")

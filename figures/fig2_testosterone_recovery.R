@@ -57,7 +57,6 @@ rg[, comp_f := factor(component, levels = rev(c("female", "male", "sex")),
                       labels = rev(c("Female effect", "Male effect", "Upper membership\nvs sex GWAS")))]
 pB <- ggplot(rg, aes(arm_f, comp_f, fill = rg)) +
   geom_tile(colour = "white", linewidth = 0.8) +
-  geom_text(aes(label = sprintf("%.2f", rg), colour = rg > 0.93), size = 2.5) +
   scale_colour_manual(values = c(`TRUE` = "white", `FALSE` = "grey10"), guide = "none") +
   scale_fill_gradient(low = "#f1e6d8", high = "#2f6690", limits = c(min(0.7, min(rg$rg)), 1),
                       oob = scales::squish, name = "rg") +  # rg can exceed 1 by sampling error (1.0003)
@@ -75,22 +74,14 @@ tm <- rbind(pc[, .(n, method = c_lv[1], s = direct_seconds_per_variant)],
             pc[, .(n, method = c_lv[2], s = stage1_seconds_per_extra_variant + stage2_seconds_per_variant_given_summaries)],
             pc[, .(n, method = c_lv[3], s = stage2_seconds_per_variant_given_summaries)])
 tm[, method := factor(method, levels = c_lv)]
-fmt_t <- function(s) ifelse(s >= 1, sprintf("%.1f s", s),
-                     ifelse(s >= 1e-3, sprintf("%.1f ms", s * 1e3), sprintf("%.2f us", s * 1e6)))
-G_snps <- 1.2e6
 c400 <- tm[n == 4e5][order(method)]
-gw_h <- c400$s * G_snps / 3600                     # genome-wide CPU-hours at N = 400,000
-gw_x <- gw_h[1] / gw_h[-1]                         # speed-up of G-MoQ / Stage 2 alone over direct ML
 pC <- ggplot(tm, aes(n, s, colour = method)) +
   geom_line(linewidth = 0.7, lineend = "round") + geom_point(size = 1.3) +
-  geom_text(data = c400, aes(label = fmt_t(s)), hjust = -0.22, size = 1.95, show.legend = FALSE) +
   scale_x_log10(breaks = c(1e4, 5e4, 4e5), labels = c("10k", "50k", "400k"), expand = expansion(mult = c(0.05, 0.28))) +
   scale_y_log10(breaks = 10^(-5:1), labels = c("10 us", "0.1 ms", "1 ms", "10 ms", "0.1 s", "1 s", "10 s"), limits = c(3e-6, 25)) +
-  scale_colour_manual(values = c_col, guide = "none") +
-  coord_cartesian(clip = "off") +   # end labels sit in the right-hand x expansion
+  scale_colour_manual(values = c_col, breaks = c_lv, labels = c("Mixture ML", "Stages 1 + 2", "Stage 2"), name = NULL) +
   labs(x = "Sample size", y = "Seconds per SNP") +
-  theme_paper() + theme(plot.caption = element_text(hjust = 0, size = 5.6, lineheight = 0.95, colour = "grey15"),
-                        plot.caption.position = "plot")
+  theme_paper() + legend_inside(0.02, 0.66, c(0, 1))
 
 # ---- D, E: exemplars (single-SNP layout) ------------------------------------------------------
 es <- rr("exemplar_selected")
@@ -168,7 +159,11 @@ cap <- paste(
   "**b**, LD score regression genetic correlation of each G-MoQ component with its",
   "reference: sex-stratified GWAS for the female and male components, and a GWAS of chromosomal sex in the same",
   "participants for membership. **c**, Computational cost per additional variant on one core against sample size, for",
-  "direct mixture maximum likelihood, G-MoQ Stages 1 and 2, and Stage 2 alone given the Stage 1 output.",
+  "six-start direct mixture maximum likelihood, G-MoQ Stages 1 and 2, and Stage 2 alone given the Stage 1 output.",
+  sprintf(paste("At 400,000 participants these costs are %.3f s, %.3f ms and %.2f microseconds per variant, respectively.",
+                "Stage 1 marginal cost is the difference between 300- and 100-variant panel times divided by 200;",
+                "Stage 2 is measured on 100,000 columns tiled from 100 simulated variants; direct ML averages five variants.",
+                "One-off per-trait costs and storage input/output are excluded."), c400$s[1], c400$s[2] * 1000, c400$s[3] * 1e6),
   "**d**,**e**, Two exemplar loci selected in advance: rs1260326, with effects on all three",
   "parameters, and rs7097461, with a male-specific effect. Left, per-allele estimates with 95% confidence intervals (location on log testosterone, membership on the log-odds scale);",
   "right, Stage 1 quantile effects (grey, 95% confidence intervals) with the fitted profile (black) and each",
@@ -186,6 +181,6 @@ fwrite(stats_source, file.path(assets_dir, "fig2_testosterone_recovery_statistic
 save_figure(p, "fig2_testosterone_recovery", src, cap, width = 183, height = 235,
             results_used = c("03_testosterone/recovery/exemplar_profiles", "03_testosterone/recovery/exemplar_selected",
                              "03_testosterone/recovery/exemplar_estimates", "03_testosterone/recovery/concordance_leads",
-                             "03_testosterone/recovery/concordance", "03_testosterone/recovery/ldsc_rg", "08_simulations/speed_benchmark/per_snp_costs",
+                             "03_testosterone/recovery/concordance", "03_testosterone/recovery/ldsc_rg", "08_simulations/speed_benchmark/component_costs",
                              "02_mixtures/stage2_mixtures/weight_density",
                              if (!is.null(sexref)) "03_testosterone/exemplars/exemplar_sex_reference"))

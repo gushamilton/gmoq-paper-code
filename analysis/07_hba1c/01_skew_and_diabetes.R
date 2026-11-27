@@ -49,20 +49,20 @@ bgen_sample <- fread(cfg$ukb$bgen_sample, skip = 2, header = FALSE, select = 1:2
                      colClasses = "character")
 diabetes_ids <- unique(fread(cfg$hba1c$diabetes_cases, header = FALSE, colClasses = "character")[[1]])
 funnel <- function(k, col, label) {
-  f <- data.table(sample = label, stage = "keep", n = nrow(k))
+  f <- data.table(sample_group = label, stage = "keep", n = nrow(k))
   k <- merge(k, pheno[!is.na(get(col)), .(FID, IID)], by = c("FID", "IID"))
-  f <- rbind(f, data.table(sample = label, stage = paste0("non_missing_", col), n = nrow(k)))
+  f <- rbind(f, data.table(sample_group = label, stage = paste0("non_missing_", col), n = nrow(k)))
   k <- merge(k, covar_complete, by = c("FID", "IID"))
-  f <- rbind(f, data.table(sample = label, stage = "complete_covariates", n = nrow(k)))
+  f <- rbind(f, data.table(sample_group = label, stage = "complete_covariates", n = nrow(k)))
   k <- merge(k, bgen_sample, by = c("FID", "IID"))
-  f <- rbind(f, data.table(sample = label, stage = "in_bgen_sample", n = nrow(k)))
+  f <- rbind(f, data.table(sample_group = label, stage = "in_bgen_sample", n = nrow(k)))
   list(k = k, f = f)
 }
 all_p <- funnel(read_keep(cfg$hba1c$keep_all), "log_hba1c", "log_hba1c")
 no_diab <- funnel(read_keep(cfg$hba1c$keep_no_diabetes), "hba1c", "hba1c_nodiab")
 all_p$k[, diab := as.integer(IID %in% diabetes_ids)]
 sample_counts <- rbind(all_p$f, no_diab$f,
-                       data.table(sample = "log_hba1c", stage = c("diabetes_cases", "diabetes_controls"),
+                       data.table(sample_group = "log_hba1c", stage = c("diabetes_cases", "diabetes_controls"),
                                   n = c(sum(all_p$k$diab), sum(all_p$k$diab == 0L))))
 stopifnot(nrow(all_p$k) == cfg$cohorts$survey$traits$log_hba1c$n,
           nrow(no_diab$k) == cfg$cohorts$survey$traits$hba1c_nodiab$n)

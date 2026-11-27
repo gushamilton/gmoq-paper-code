@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # Fig S2: matched Stage 1 cost: fit + SE time, whole-process time and peak memory by workload and
-# method (frozen S2 timing means). Reads results/P17_simulations.
+# method (later matched timing means).
 suppressPackageStartupMessages({library(ggplot2); library(patchwork); library(data.table)})
 .repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
 source(file.path(.repo, "figures", "theme.R"))
@@ -33,13 +33,14 @@ cap <- paste(
           paste(wl[, .(s = sprintf("%s participants with %s variants", fmt(n[1]), paste(fmt(m), collapse = " or "))), by = n]$s,
                 collapse = ", and "),
           as.integer(ds$threads), if (as.integer(ds$threads) == 1) "" else "s"),
-  "Methods are ordinary RIF-OLS fitted separately at each quantile level, and G-MoQ Stage 1 with the pooled",
+  "Methods are ordinary RIF-OLS fitted separately at each variant with 45 responses, and G-MoQ Stage 1 with the pooled",
   "covariance or with the 1,000-block jackknife covariance (Methods).",
   sprintf(paste("Each point is the arithmetic mean of %s timing repeats of one method on one workload, on a log scale;",
                 "no error bars are shown. **a**, Time to fit the coefficients and their standard errors (s).",
                 "**b**, Wall time of the whole process (s). **c**, Peak resident memory (MiB)."),
           if (length(reps) == 1 && reps == 3) "three" else paste(reps, collapse = "/")),
   "No statistical tests are shown.",
+  "All methods include the same dense RIF setup in whole-process time; fitting time includes residualisation, plan construction, coefficients and standard errors. BGEN decoding is not timed.",
   "RIF-OLS, recentred influence function ordinary least squares; SE, standard error; MiB, mebibyte.")
 save_figure(p, "figS02_stage1_timing", tm[, .(workload, n, m, method, metric, mean_value, timing_repeats = count)], cap,
             width = 183, height = 65,

@@ -20,7 +20,7 @@
 repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE))
 source(file.path(repo, "R", "load.R"))
 cfg <- read_config()
-suppressPackageStartupMessages(library(gmoq))   # the paper used a development version of this package (Stage 2 commit 9fee67d)
+load_stage2(cfg)
 stage2_commit <- cfg$package$stage2$commit
 args <- commandArgs(trailingOnly = TRUE)
 chromosomes <- if (length(args)) as.integer(args) else 1:22
@@ -39,7 +39,7 @@ stage2_one <- function(f, design, chr, stage1_plain, stage1) {
   # theta = A b with A = (W'W)^-1 W' for each variant's Stage 1 profile b; its covariance is
   # A Sigma0 A' / d, with d the residual genotype sum of squares (pooled covariance).
   t0 <- proc.time()[["elapsed"]]
-  fit <- gmoq::param_gwas_from_file(
+  fit <- stage2_fn("param_gwas_from_file")(
     stage1_file = stage1_plain, W = W, se_mode = "tau_cov", cov_source = "pooled",
     sigma0_file = sigma0_file, cov_meta_file = file.path(dir, "scan.cov.meta.json"),
     tau_cov_estimator = cfg$estimation$stage2_estimator, return_cov = "upper",
@@ -71,7 +71,7 @@ stage2_one <- function(f, design, chr, stage1_plain, stage1) {
   set(out, j = "mlog10p_joint", value = mlog10_p_hotelling(joint_T, ncol(Wp), nu))
   fwrite(out, stage2_file(cfg, design, f$fit, chr), sep = "\t")
   fwrite(data.table(n_samples = nu, k = ncol(Wp), seconds = seconds,
-                    density_weight_mode = gmoq::weight_density_mode(W, label = TRUE)),
+                    density_weight_mode = stage2_fn("weight_density_mode")(W, label = TRUE)),
          info_file(design, f$fit, chr))
   message(f$fit, " / ", design, " chr", chr, ": ", nrow(out), " variants, ", round(seconds, 1), " s")
 }

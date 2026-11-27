@@ -18,7 +18,7 @@ Input: <work>/prep/rif_input.csv.gz (BMI, age, sex, PC1-PC40, PRS01-PRS22; no id
   written by 07_siqreg_flat_power.R
 Output: <work>/rif/{profiles,sigma0,nuisance}.csv (aggregates; kept in the private work
   directory until 07_siqreg_flat_power.R exports the derived powers)
-Runs: on a cluster with UK Biobank data, with the pinned Stage 1 package (gmoq)
+Runs: on a cluster with UK Biobank data, with the pinned Stage 1 package (fungwas_stage1)
 Usage: 07_siqreg_covariate_rif.py --run <work> [--prep <file>] [--tau-from 0.02 --tau-to 0.98 --n-tau 45]
 """
 import os
@@ -27,9 +27,13 @@ import sys
 import numpy as np
 import pandas as pd
 
-from gmoq.cli import build_rif_residuals
-from gmoq.core import compute_rif
-from gmoq.pooled_cov import compute_sigma0
+import importlib
+
+# Historical paper pin; GMOQ_STAGE1_MODULE=gmoq selects a modern installation.
+stage1_module = os.environ.get("GMOQ_STAGE1_MODULE", "fungwas_stage1")
+build_rif_residuals = importlib.import_module(stage1_module + ".cli").build_rif_residuals
+compute_rif = importlib.import_module(stage1_module + ".core").compute_rif
+compute_sigma0 = importlib.import_module(stage1_module + ".pooled_cov").compute_sigma0
 
 
 def main():

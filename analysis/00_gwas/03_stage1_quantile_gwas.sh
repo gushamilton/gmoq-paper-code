@@ -26,7 +26,14 @@ SAMPLE=/path/to/ukb_imputed/data.chr1-22.sample
 HM3=/path/to/hapmap3/w_hm3_chrNN_only.txt     # HapMap3 rsIDs on chromosome NN
 LEAD_SNPS=/path/to/bmi_leads/chrNN.txt        # the 639 BMI lead rsIDs on chromosome NN
 PREP=/path/to/prs_prep                        # keep files of the polygenic-score analysis (section 6)
-PY=python                                     # Python with gmoq installed
+PY=${GMOQ_STAGE1_PYTHON:-python}               # Python with the pinned fungwas-stage1 installed
+STAGE1_MODULE=${GMOQ_STAGE1_MODULE:-fungwas_stage1}
+# Forward a single CLI invocation (also useful for a synthetic smoke test), without
+# entering the participant-data loops below. Modern installations can select gmoq.
+if [[ "${1:-}" == --cli ]]; then
+  shift
+  exec "$PY" -m "$STAGE1_MODULE.cli" "$@"
+fi
 THREADS=4
 export OMP_NUM_THREADS=$THREADS OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 KEEP=$IN/keep; S1=$IN/regenie_step1
@@ -39,7 +46,7 @@ TAUS=$("$PY" -c 'import numpy as np; print(",".join(f"{x:.17g}" for x in np.lins
 stage1() {   # out_dir chr pheno_file pheno_col covar_file keep_file snp_list  [flags...]
   local od=$1 c=$2 pheno=$3 col=$4 covar=$5 keep=$6 snps=$7; shift 7
   mkdir -p "$od"
-  "$PY" -m gmoq.cli --bgen "$BGEN_DIR/data.chr$(chr2 "$c").bgen" --sample "$SAMPLE" \
+  "$PY" -m "$STAGE1_MODULE.cli" --bgen "$BGEN_DIR/data.chr$(chr2 "$c").bgen" --sample "$SAMPLE" \
     --pheno "$pheno" --pheno-col "$col" --covar "$covar" --keep "$keep" --snps "$snps" \
     --threads "$THREADS" --out "$od/scan" "$@"
 }
@@ -50,9 +57,9 @@ stage1() {   # out_dir chr pheno_file pheno_col covar_file keep_file snp_list  [
 # dosage MAF > 0.05 (the antibody variant list).
 nuisance() {   # out_dir chr pheno_file pheno_col covar_file keep_file loco_list snp_list [--maf-out]
   "$PY" - "$@" <<'PY'
-import json, os, sys
+import importlib, json, os, sys
 import numpy as np
-from gmoq import cli
+cli = importlib.import_module(os.environ["GMOQ_STAGE1_MODULE"] + ".cli")
 od, c, pheno, col, covar, keep, loco, snps = sys.argv[1:9]
 maf_out = "--maf-out" in sys.argv[9:]
 taus = np.linspace(.02, .98, 45)
@@ -79,7 +86,7 @@ if maf_out:
 handle.close()
 PY
 }
-export BGEN_DIR SAMPLE
+export BGEN_DIR SAMPLE GMOQ_STAGE1_MODULE="$STAGE1_MODULE"
 
 ## 1. BMI, log BMI and testosterone (with its shrunk arms) ------------------------------------
 # LOCO prediction as a covariate; full jackknife covariance output (--cov-mode full).

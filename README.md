@@ -26,10 +26,11 @@ This requires R 4.5 with `data.table`, `ggplot2`, `patchwork`, `ragg` and `yaml`
 | If you want to… | Look here |
 |---|---|
 | Run Stage 1 quantile GWAS or Stage 2 parametric models | <https://github.com/gushamilton/GMoQ> (examples: `analysis/02_mixtures/01_fit_mixtures.R`, `02_genomewide_stage2.R`) |
+| Reproduce the computational benchmarks (Fig. 2c, Figs. S2, S4d and S5, Table S2) | [Benchmark inputs, software build and timing definitions](analysis/08_simulations/speed_benchmark/README.md) |
 | Run the **scale-invariant whitened PCA**, parallel analysis and per-variant **PC2 scores** | `R/pca.R` and `analysis/06_traits/01_moments_and_principal_components.R` |
 | Convert Stage 1 profiles across phenotype transformations (raw, log, Box–Cox) | `R/scale.R` and `analysis/06_traits/04_change_of_scale.R` |
 | Compute L-moments and between-lead heterogeneity | `R/moment_decomposition.R` and `R/heterogeneity.R` |
-| Reproduce every figure (Figs. 1–7, Extended Data Fig. 1, S1–S15) and table (S1–S8) | `make all` (`figures/` and `tables/`) |
+| Reproduce every figure (Figs. 1–7, Extended Data Fig. 1, S1–S15) and table (Table 1 and S1–S8) | `make all` (`figures/` and `tables/`) |
 
 ## How the repository follows the paper
 
@@ -58,7 +59,7 @@ This requires R 4.5 with `data.table`, `ggplot2`, `patchwork`, `ragg` and `yaml`
 
 ## Running the analyses on your own data
 
-1. Install G-MoQ from <https://github.com/gushamilton/GMoQ> (`pip install ./stage1` and `R CMD INSTALL stage2`).
+1. Install the historical Stage 1 and Stage 2 commits in `config.yaml` from <https://github.com/gushamilton/GMoQ>. They use the earlier package names `fungwas_stage1` / `fungwasStage2`; see [analysis environment and dependencies](docs/analysis_environment.md) for the separate checkouts, install commands and modern-package overrides.
 2. Prepare phenotypes and covariates (`analysis/00_gwas/`), update the paths in `config.yaml`, and run the section folders in `analysis/` in order.
 3. Run `make all` to regenerate all figures and tables in `paper_assets/`.
 

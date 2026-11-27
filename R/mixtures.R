@@ -67,7 +67,7 @@ read_stage2 <- function(cfg, design, fit, select = NULL) {
 }
 
 read_json <- function(path) jsonlite::read_json(path, simplifyVector = TRUE)
-read_stage1 <- function(dir) fread(cmd = paste("gzip -dc", shQuote(file.path(dir, "scan.stage1.tsv.gz"))),
+read_mixture_stage1 <- function(dir) fread(cmd = paste("gzip -dc", shQuote(file.path(dir, "scan.stage1.tsv.gz"))),
                                    showProgress = FALSE)
 
 ## 3. The analysed sample -----------------------------------------------------------------
@@ -147,11 +147,11 @@ mixture_functions <- function(components) {
     (1 - z$p1) * sn::psn(x, xi = z$xi2, omega = z$omega2, alpha = z$alpha2)
   pdf <- function(x, z) z$p1 * sn::dsn(x, xi = z$xi1, omega = z$omega1, alpha = z$alpha1) +
     (1 - z$p1) * sn::dsn(x, xi = z$xi2, omega = z$omega2, alpha = z$alpha2)
-  dF_dp1 <- gmoq::make_fd_grad("p1", cdf)
+  dF_dp1 <- stage2_fn("make_fd_grad")("p1", cdf)
   list(p = p, cdf = cdf, pdf = pdf, grads = list(
     gamma = function(x, z) dF_dp1(x, z) * z$p1 * (1 - z$p1),
-    beta_left = gmoq::make_fd_grad("xi1", cdf),
-    beta_right = gmoq::make_fd_grad("xi2", cdf)))
+    beta_left = stage2_fn("make_fd_grad")("xi1", cdf),
+    beta_right = stage2_fn("make_fd_grad")("xi2", cdf)))
 }
 
 # Stage 2 weight matrix W (quantile levels x {gamma, beta_left, beta_right}):
@@ -166,7 +166,7 @@ mixture_functions <- function(components) {
 #   are then the component shares P(k | q_tau), which sum to 1 at every tau.
 mixture_weight_matrix <- function(components, taus, q_tau, design, stage1_density_file = NULL) {
   mf <- mixture_functions(components)
-  gmoq::make_weights_generic(
+  stage2_fn("make_weights_generic")(
     taus = taus, q_tau = q_tau, dist_cdf = mf$cdf, dist_pdf = mf$pdf, params = mf$p,
     grad_funcs = mf$grads, density = design,
     stage1_density = if (design == "model") NULL else stage1_density_file,

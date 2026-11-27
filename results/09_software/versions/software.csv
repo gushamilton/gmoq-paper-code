@@ -9,7 +9,7 @@
 "stage1 env: numpy","2.2.6","Stage 1 Python environment"
 "stage1 env: scipy","1.15.2","Stage 1 Python environment"
 "stage1 env: pandas","2.3.3","Stage 1 Python environment"
-"stage1 env: gmoq","0.1.0","Stage 1 Python environment"
+"stage1 env: fungwas_stage1","0.1.0","Stage 1 Python environment"
 "plink2 (lead clumping)","plink2 2.0.0-a.6.8LM","lead-variant clumping log"
 "Stage 1 density","Silverman Gaussian KDE (--density-method)","Stage 1 default"
 "Stage 1 blocks / taus","45 taus on 0.02 - 0.98","config.yaml grid"

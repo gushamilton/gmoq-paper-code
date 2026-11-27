@@ -8,6 +8,11 @@ onwards start from aggregate summaries of these outputs in `results/`.
 
 Software: REGENIE v4.1.2, PLINK 2.00a6.8LM, gmoq-stage1 (G-MoQ Stage 1, commit in
 `config.yaml`), LDSC 2.0.0, bgenix 1.1.7, R 4.5.1.
+The pinned Stage 1 executable is named `fungwas-stage1` and its Python module is
+`fungwas_stage1.cli`. Install and select that historical environment as described in
+[the environment guide](../../docs/analysis_environment.md). The shell driver also accepts
+`--cli <Stage 1 options>` for a single scan, bypassing its trait/chromosome loops; for example,
+`GMOQ_STAGE1_PYTHON=/path/to/python bash analysis/00_gwas/03_stage1_quantile_gwas.sh --cli --help`.
 Genotypes: UK Biobank directly genotyped array (REGENIE step 1) and imputed BGEN (everything else);
 HapMap3 variants (1,200,240 after intersection). Quantile levels: 45, `linspace(0.02, 0.98, 45)`.
 

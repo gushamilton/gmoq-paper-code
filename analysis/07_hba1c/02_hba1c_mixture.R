@@ -26,9 +26,8 @@
 
 repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE))
 source(file.path(repo, "R", "load.R"))
-suppressPackageStartupMessages(library(gmoq))
-
 cfg <- read_config()
+load_stage2(cfg)
 pheno_file <- file.path(cfg$bp$private_root, "07_hba1c", "skew_diabetes", "pheno", "pheno.txt")
 seeds <- c(20260915L, 1L, 2L)
 n_cores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", "1"))
@@ -40,8 +39,11 @@ ph <- fread(pheno_file, select = c("diab", "log_hba1c_all"))
 y <- ph$log_hba1c_all; diabetes <- ph$diab == 2L
 rm(ph)
 counts <- as.data.table(read_result("07_hba1c/skew_diabetes", "sample_counts"))
+# Published aggregate CSVs used the earlier category name.
+if (!"sample_group" %in% names(counts) && "sample" %in% names(counts))
+  setnames(counts, "sample", "sample_group")
 stopifnot(length(y) == cfg$cohorts$survey$traits$log_hba1c$n, !anyNA(y),
-          sum(diabetes) == counts[sample == "log_hba1c" & stage == "diabetes_cases"]$n_participants)
+          sum(diabetes) == counts[sample_group == "log_hba1c" & stage == "diabetes_cases"]$n_participants)
 baseline <- as.data.table(read_result("01_data/baseline_quantiles", "baseline_quantiles"))[trait == "log_hba1c"]
 baseline <- baseline[match(round(u, 3), round(as.numeric(baseline$tau), 3))]
 q_tau <- as.numeric(baseline$q); f_kde <- as.numeric(baseline$fhat)   # Stage 1 quantiles and kernel density
@@ -72,7 +74,7 @@ fit_mixture <- function(seed) {
        seed = seed, seconds = proc.time()[["elapsed"]] - t0)
 }
 runs <- parallel::mclapply(seeds, fit_mixture, mc.cores = max(1L, min(n_cores, length(seeds))), mc.preschedule = FALSE)
-mixture_seeds <- data.table(fit = "sn2_all", g = 2L, family = "Skew.normal", sample = "all", seed = seeds,
+mixture_seeds <- data.table(fit = "sn2_all", g = 2L, family = "Skew.normal", sample_group = "all", seed = seeds,
   ok = vapply(runs, function(r) isTRUE(r$ok), logical(1)),
   loglik = vapply(runs, function(r) if (isTRUE(r$ok)) r$loglik else NA_real_, numeric(1)),
   iter = vapply(runs, function(r) if (isTRUE(r$ok)) as.numeric(r$iter) else NA_real_, numeric(1)),
@@ -81,10 +83,10 @@ mixture_seeds <- data.table(fit = "sn2_all", g = 2L, family = "Skew.normal", sam
 best <- runs[[which(mixture_seeds$ok)[which.max(mixture_seeds$loglik[mixture_seeds$ok])]]]
 comp <- best$comp
 n_par <- 4L * 2L - 1L
-mixture_params <- copy(comp)[, `:=`(fit = "sn2_all", family = "Skew.normal", sample = "all", n = length(y),
+mixture_params <- copy(comp)[, `:=`(fit = "sn2_all", family = "Skew.normal", sample_group = "all", n = length(y),
   component = c("lower", "upper"), mean_mmol_mol = exp(mean), loglik = best$loglik, n_par = n_par,
   bic = -2 * best$loglik + n_par * log(length(y)), seed = best$seed)]
-setcolorder(mixture_params, c("fit", "family", "sample", "n", "component"))
+setcolorder(mixture_params, c("fit", "family", "sample_group", "n", "component"))
 print(mixture_params)
 
 ## 3. Upper component against recorded diabetes

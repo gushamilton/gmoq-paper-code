@@ -17,6 +17,8 @@
 # Runs: on a cluster (03_weight_design_simulation.sh); about 10 s per replicate at N = 100,000
 
 import argparse
+import importlib
+import os
 import json
 import sys
 import time
@@ -28,11 +30,12 @@ import numpy as np
 def load_stage1(package_root):
     """Import the pinned gmoq-stage1 package from its checkout."""
     sys.path.insert(0, str(Path(package_root) / "stage1"))
-    from gmoq import core
-    from gmoq.pooled_cov import compute_sigma0
-    import gmoq
+    module = os.environ.get("GMOQ_STAGE1_MODULE", "fungwas_stage1")
+    package = importlib.import_module(module)
+    core = importlib.import_module(module + ".core")
+    compute_sigma0 = importlib.import_module(module + ".pooled_cov").compute_sigma0
     core.require_cpp_extension("weight-design simulation")
-    return core, compute_sigma0, str(Path(gmoq.__file__).resolve())
+    return core, compute_sigma0, str(Path(package.__file__).resolve())
 
 
 def rsn(rng, n, xi, omega, alpha):

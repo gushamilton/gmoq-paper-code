@@ -31,8 +31,8 @@
 
 repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE))
 source(file.path(repo, "R", "load.R"))
-suppressPackageStartupMessages(library(gmoq))   # the paper used a development version of this package (Stage 2 commit 9fee67d)
 cfg <- read_config()
+load_stage2(cfg)
 p9 <- cfg$p09
 TRAITS <- unlist(cfg$headline$antibody_traits)              # jcv_vp1_log_all, mcv_vp1_log_all
 PRIMARY <- unique(mixture_design(cfg, TRAITS))              # model
@@ -70,7 +70,7 @@ for (design in DESIGNS) {
       A <- solve(crossprod(W), t(W)); V_unit <- A %*% Sigma0 %*% t(A)
       # Effect on the mean antibody level: g' theta, with g the gradient of the mixture mean
       # with respect to (gamma, beta_left, beta_right); variance g' A Sigma0 A' g / d.
-      grad <- gmoq::functional_grad(list(W = W, components = wobj$components), mixture_mean)[colnames(W)]
+      grad <- stage2_fn("functional_grad")(list(W = W, components = wobj$components), mixture_mean)[colnames(W)]
       theta <- as.matrix(g[, colnames(W), with = FALSE])
       g[, mean_eff := as.numeric(theta %*% grad)]
       g[, mean_se := sqrt(as.numeric(t(grad) %*% V_unit %*% grad) / d_resid)]
@@ -102,7 +102,7 @@ for (design in DESIGNS) {
     }
     want <- unique(c(L$snp_id, EXAMPLES, NULL_IDS[[tr]]))
     B <- rbindlist(lapply(1:22, function(chr) {
-      s1 <- read_stage1(CH[[chr]]$s1d)[snp_id %in% want]; s1[, chr := chr]; s1
+      s1 <- read_mixture_stage1(CH[[chr]]$s1d)[snp_id %in% want]; s1[, chr := chr]; s1
     }))
     S[[tr]] <- list(G = G, L = L, B = B, bcols = grep("^beta_tau_", names(B), value = TRUE), CH = CH, q = q,
                     n = n_an, null_ids = NULL_IDS[[tr]])

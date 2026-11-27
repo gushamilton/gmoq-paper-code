@@ -5,12 +5,12 @@
 #   mixture recovery against full mixture maximum likelihood, mixture speed, pooled versus
 #   jackknife standard errors, and the standard-error check at the empirical mixture
 #   separations) were run once with the G-MoQ packages; their per-cell summaries are kept
-#   in inputs/. This script copies them unchanged into results/, adds the mixture timing
-#   rows, and derives the one-sentence summary of the low-separation standard-error check
+#   in inputs/. This script imports them, replaces cost rows with the later timing
+#   benchmarks, and derives the one-sentence summary of the low-separation standard-error check
 #   quoted in the Supplementary Information, so that the sentence and the table agree.
 # Paper: Supplementary Figs. S1-S6; Supplementary Tables S1, S2
 # Input: analysis/08_simulations/inputs/ (aggregate per-cell summaries);
-#   results/03_testosterone/recovery/timings.csv (timings of one panel of 100 variants)
+#   results/08_simulations/speed_benchmark/ (later single-thread timing benchmarks)
 # Output: results/08_simulations/summary/{table_s1_design_provenance,
 #   table_s2_numerical_summary, s2_mean_timings, s5_mean_timings, mixture_timings,
 #   lowsep_empirical_se_ratio, lowsep_lowsep_se_summary, lowsep_reproducibility_checks,
@@ -28,25 +28,54 @@ out <- "08_simulations/summary"
 save_summary <- function(x, name) write_result(x, out, name, count_cols = character(0))
 
 ## 1. Simulation studies 1-6: copy the per-cell summaries unchanged
-# Table S1 (design of each study), Table S2 (bias, RMSE, coverage, timing per cell) and the
-# mean timings plotted in Supplementary Figs. S2 and S5.
-copy_summary <- function(file, name) {
-  x <- fread(file.path(inputs, "simulation_summaries", file))
-  save_summary(x, name)
+# Table S1 records each study's own source. Table S2 retains historical recovery
+# and coverage rows, with the later costs used in Supplementary Figs. S2 and S5.
+design <- fread(file.path(inputs, "simulation_summaries", "TableS1_design_provenance.csv"))
+timing_pin <- jsonlite::fromJSON(repo_path("results", "08_simulations", "speed_benchmark", "software_pin.json"))$commit
+design[study %in% c("S2", "S5"), `:=`(package_pin = timing_pin, source = "results/08_simulations/speed_benchmark")]
+design[study == "S2", `:=`(N = "2000/400000", M_MAF = "M=1/256/1000")]
+design[study == "S5", `:=`(DGP = "Independent balanced null-mixture panels", M_MAF = "MAF .30; M=100 panel",
+                          effect_range = "null; shared panel genotypes", tau45 = "yes")]
+save_summary(design, "table_s1_design_provenance")
+# Recovery/coverage rows retain the historical simulations. Cost rows use the later
+# benchmark throughout; do not infer timing from the effect-recovery runs.
+summary_rows <- fread(file.path(inputs, "simulation_summaries", "TableS2_numerical_summary.csv"))
+stage1 <- as.data.table(read_result("08_simulations/speed_benchmark", "stage1_panel_times"))
+panel <- as.data.table(read_result("08_simulations/speed_benchmark", "mixture_panel_times"))[
+  method %in% c("gmoq_pooled", "gmoq_jackknife", "mixture_ml")]
+stopifnot(nrow(stage1) == 36L, all(stage1$count == 3L), nrow(panel) == 9L,
+          all(panel$variants_per_panel == 100L), all(panel$panels == 3L), all(panel$successful_fits == 300L))
+mixture_means <- rbind(
+  panel[, .(n, M = variants_per_panel, method, metric = "fit + SE seconds", mean_value = mean_fit_seconds, count = panels)],
+  panel[, .(n, M = variants_per_panel, method, metric = "whole-process seconds", mean_value = mean_wall_seconds, count = panels)],
+  panel[, .(n, M = variants_per_panel, method, metric = "peak RSS MiB", mean_value = mean_peak_rss_mib, count = panels)])
+save_summary(stage1, "s2_mean_timings")
+save_summary(mixture_means, "s5_mean_timings")
+metric_columns <- c("fit + SE seconds" = "timing_fit_seconds", "whole-process seconds" = "timing_wall_seconds",
+                    "peak RSS MiB" = "peak_rss_mib")
+for (i in which(summary_rows$study %in% c("S2", "S5"))) {
+  row <- summary_rows[i]
+  t <- if (row$study == "S2") stage1[workload == row$workload & method == row$method] else
+    mixture_means[n == row$n & method == row$method]
+  stopifnot(nrow(t) == 3L, identical(sort(t$metric), sort(names(metric_columns))))
+  for (metric_name in names(metric_columns)) set(summary_rows, i, metric_columns[[metric_name]], t[metric == metric_name, mean_value])
+  set(summary_rows, i, "source", "results/08_simulations/speed_benchmark")
 }
-copy_summary("TableS1_design_provenance.csv", "table_s1_design_provenance")
-copy_summary("TableS2_numerical_summary.csv", "table_s2_numerical_summary")
-copy_summary("S2_mean_timings.csv", "s2_mean_timings")
-copy_summary("S5_mean_timings.csv", "s5_mean_timings")
+save_summary(summary_rows, "table_s2_numerical_summary")
 
 ## 2. Mixture timings: G-MoQ against full mixture maximum likelihood
 # Median time to fit the estimates and their standard errors for one panel of 100 variants,
 # over three panels per sample size (G-MoQ with the pooled or the jackknife covariance, and
 # mixture maximum likelihood refitted at every variant).
-timings <- as.data.table(read_result("03_testosterone/recovery", "timings"))
+timings <- as.data.table(read_result("08_simulations/speed_benchmark", "mixture_panel_repeats"))
+stopifnot(nrow(timings) == 36L, all(timings$status == "complete"), all(timings$M == 100L),
+          all(timings$successful_snp_fits == timings$attempted_snp_fits),
+          all(tolower(as.character(timings$primary_wall_eligible)) == "true"))
 mixture_timings <- timings[method %in% c("gmoq_pooled", "mixture_ml", "gmoq_jackknife"),
-  .(study = "mixture_timing", n, M, method, n_panels, median_fit_seconds, min_fit_seconds,
-    max_fit_seconds, median_wall_seconds, ratio_to_gmoq_pooled)]
+  .(study = "mixture_timing", n_panels = .N, median_fit_seconds = median(fit_seconds),
+    min_fit_seconds = min(fit_seconds), max_fit_seconds = max(fit_seconds),
+    median_wall_seconds = median(process_wall_seconds)), by = .(n, M, method)]
+mixture_timings[, ratio_to_gmoq_pooled := median_fit_seconds / median_fit_seconds[method == "gmoq_pooled"], by = n]
 setorder(mixture_timings, n, method)
 save_summary(mixture_timings, "mixture_timings")
 
@@ -57,7 +86,13 @@ save_summary(mixture_timings, "mixture_timings")
 for (file in c("empirical_se_ratio", "lowsep_se_summary", "reproducibility_checks",
                "separations", "sim_summary")) {
   x <- fread(file.path(inputs, "lowsep_se_check", paste0(file, ".csv")))
-  save_summary(x, paste0("lowsep_", file))
+  name <- paste0("lowsep_", file)
+  path <- file.path(Sys.getenv("GMOQ_OUT", repo_path("results")), out, paste0(name, ".csv"))
+  # Keep the frozen unrelated export when importing only changes binary-rounding
+  # at the last printed digit; changed inputs still regenerate their summary.
+  unchanged <- file.exists(path) && isTRUE(all.equal(as.data.frame(x), utils::read.csv(path, check.names = FALSE),
+                                                    check.attributes = FALSE, tolerance = 1e-12))
+  if (!unchanged) save_summary(x, name)
 }
 
 ## 4. The one-sentence summary of study 7, recomputed from the combined table

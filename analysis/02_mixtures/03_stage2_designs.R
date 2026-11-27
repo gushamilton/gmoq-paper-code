@@ -25,7 +25,7 @@
 repo <- Sys.getenv("GMOQ_REPO", system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE))
 source(file.path(repo, "R", "load.R"))
 cfg <- read_config()
-suppressPackageStartupMessages(library(gmoq))   # the paper used a development version of this package (Stage 2 commit 9fee67d)
+load_stage2(cfg)
 args <- commandArgs(trailingOnly = TRUE)
 getarg <- function(flag) { i <- match(flag, args); if (is.na(i)) NULL else args[[i + 1L]] }
 `%||%` <- function(a, b) if (is.null(a)) b else a
@@ -59,7 +59,7 @@ fit_mixture_weights <- function(y, q_tau, taus, seed) {
   components <- data.table(component = c("lower", "upper"), weight = pii, xi = mu,
                            omega = sqrt(sigma2), alpha = shape)
   mf <- mixture_functions(components)
-  W <- gmoq::make_weights_generic(taus = taus, q_tau = q_tau, dist_cdf = mf$cdf,
+  W <- stage2_fn("make_weights_generic")(taus = taus, q_tau = q_tau, dist_cdf = mf$cdf,
                                            dist_pdf = mf$pdf, params = mf$p, grad_funcs = mf$grads)
   list(W = W, f = pmax(mf$pdf(q_tau, mf$p), 1e-12), Fq = mf$cdf(q_tau, mf$p), p = mf$p,
        iter = if (is.null(fit$iter)) NA_real_ else as.numeric(fit$iter))
@@ -78,7 +78,7 @@ fit_lognormal_weights <- function(y, q_tau, taus) {
   grad_shift <- function(x, p) -pdf(x, p)
   grad_meanlog <- function(x, p) { o <- numeric(length(x)); ok <- x > p$shift
     z <- (log(x[ok] - p$shift) - p$meanlog) / p$sdlog; o[ok] <- -dnorm(z) / p$sdlog; o }
-  W <- gmoq::make_weights_generic(taus = taus, q_tau = q_tau, dist_cdf = cdf, dist_pdf = pdf,
+  W <- stage2_fn("make_weights_generic")(taus = taus, q_tau = q_tau, dist_cdf = cdf, dist_pdf = pdf,
     params = p, grad_funcs = list(additive = grad_shift, multiplicative = grad_meanlog))
   list(W = W, f = pmax(pdf(q_tau, p), 1e-12), Fq = cdf(q_tau, p), p = p)
 }

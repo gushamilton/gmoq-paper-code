@@ -63,8 +63,7 @@ pC <- ggplot(cvs, aes(coverage, g_f, colour = cov)) +
   scale_x_continuous(breaks = c(0.92, 0.95, 0.98)) +
   labs(x = "95% CI coverage", y = NULL, tag = "c") +
   theme_paper() + theme(panel.grid.major.y = element_blank())
-tm_raw <- as.data.table(read_result("08_simulations/speed_benchmark", "mixture_panel_repeats"))[method %in% names(mlab)]
-tm <- tm_raw[, .(median_fit_seconds = median(fit_seconds), n_panels = .N), by = .(n, method)]
+tm <- as.data.table(read_result("08_simulations/summary", "mixture_timings"))[method %in% names(mlab)]
 tm[, method_f := factor(mlab[method], levels = mlab)]
 pD <- ggplot(tm, aes(n, median_fit_seconds, colour = method_f)) +
   geom_line(linewidth = 0.7) + geom_point(size = 1.5) +
@@ -99,7 +98,7 @@ cap <- paste(
           paste(sort(unique(ncell$k)), collapse = " or "), fmt(n_ls)),
   sprintf(paste("**d**, Median time to fit one 100-variant panel with standard errors, over %d panels per sample size:",
                 "G-MoQ pooled %.1f s against mixture maximum likelihood %.0f s at 10,000 participants, and",
-                "%.0f s against %s s at 400,000."), unique(tm$n_panels), g10, r10, g400, fmt(round(r400))),
+                "%.0f s against %s s at 400,000. These timings use independent null panels, a phenotype-only baseline fit for G-MoQ, and six-start direct mixture fits."), unique(tm$n_panels), g10, r10, g400, fmt(round(r400))),
   "No statistical tests are shown.",
   "ML, maximum likelihood; RMSE, root mean square error; SE, standard error; CI, confidence interval;",
   "JCV, JC polyomavirus; MCV, Merkel cell polyomavirus; VP1, major capsid protein VP1.")
